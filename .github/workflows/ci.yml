@@ -1,0 +1,57 @@
+name: CA2 CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Check JavaScript syntax
+        working-directory: app
+        run: node --check server.js
+
+      - name: Smoke test application endpoints
+        working-directory: app
+        run: |
+          PORT=4000 node server.js > /tmp/devops-ca2.log 2>&1 &
+          APP_PID=$!
+          trap 'kill "$APP_PID" 2>/dev/null || true' EXIT
+
+          ready=false
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:4000/health -o /tmp/devops-ca2-health.json; then
+              ready=true
+              break
+            fi
+            sleep 1
+          done
+          test "$ready" = true
+
+          node -e "const health = require('/tmp/devops-ca2-health.json'); if (health.status !== 'healthy' || Number.isNaN(Date.parse(health.timestamp))) process.exit(1);"
+          curl --fail --silent http://127.0.0.1:4000/ | grep --fixed-strings "DevOps CA2 Monitoring Service"
+          curl --fail --silent http://127.0.0.1:4000/metrics | grep --extended-regexp '^(http_requests_total|http_request_duration_seconds|nodejs_heap_size_used_bytes|process_resident_memory_bytes)'
+
+      - name: Simulate deployment
+        run: echo "Deployment simulation complete; no deployment target is configured."

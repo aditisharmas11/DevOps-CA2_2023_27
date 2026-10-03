@@ -1,0 +1,131 @@
+---
+- name: Configure and deploy the DevOps CA2 Express application
+  hosts: ca2_app
+  become: true
+  gather_facts: true
+
+  vars:
+    app_name: devops-ca2
+    app_dir: /opt/devops-ca2
+    app_user: devops-ca2
+    app_group: devops-ca2
+    app_port: 4000
+    node_binary: /usr/bin/node
+    app_source_dir: "{{ playbook_dir }}/../app"
+
+  tasks:
+    - name: Require a Debian or Ubuntu target
+      ansible.builtin.assert:
+        that:
+          - ansible_os_family == "Debian"
+        fail_msg: This playbook installs packages with apt and requires Debian or Ubuntu.
+
+    # Install the target host's Node.js runtime and npm from its configured apt repositories.
+    - name: Install Node.js and npm
+      ansible.builtin.apt:
+        name:
+          - nodejs
+          - npm
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Create the application group
+      ansible.builtin.group:
+        name: "{{ app_group }}"
+        system: true
+        state: present
+
+    - name: Create the restricted application user
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        group: "{{ app_group }}"
+        system: true
+        create_home: false
+        shell: /usr/sbin/nologin
+        state: present
+
+    - name: Create the application directory
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0755"
+
+    # Copy only runtime inputs, not the local node_modules directory.
+    - name: Copy application manifests from the project checkout
+      ansible.builtin.copy:
+        src: "{{ app_source_dir }}/{{ item }}"
+        dest: "{{ app_dir }}/{{ item }}"
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0644"
+      loop:
+        - package.json
+        - package-lock.json
+      register: app_manifests
+
+    - name: Check whether production dependencies are installed
+      ansible.builtin.stat:
+        path: "{{ app_dir }}/node_modules"
+      register: installed_dependencies
+
+    # npm ci uses the copied lockfile and runs again when either manifest changes.
+    - name: Install locked production dependencies
+      ansible.builtin.command:
+        cmd: npm ci --omit=dev
+        chdir: "{{ app_dir }}"
+      when: app_manifests.changed or not installed_dependencies.stat.exists
+      notify: Restart the application service
+
+    - name: Copy the Express application entry point
+      ansible.builtin.copy:
+        src: "{{ app_source_dir }}/server.js"
+        dest: "{{ app_dir }}/server.js"
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0644"
+      notify: Restart the application service
+
+    # systemd keeps the service running after Ansible disconnects and restarts it on failure.
+    - name: Install the systemd service definition
+      ansible.builtin.copy:
+        dest: "/etc/systemd/system/{{ app_name }}.service"
+        owner: root
+        group: root
+        mode: "0644"
+        content: |
+          [Unit]
+          Description=DevOps CA2 Express application
+          After=network.target
+
+          [Service]
+          Type=simple
+          User={{ app_user }}
+          Group={{ app_group }}
+          WorkingDirectory={{ app_dir }}
+          Environment=PORT={{ app_port }}
+          ExecStart={{ node_binary }} {{ app_dir }}/server.js
+          Restart=on-failure
+          RestartSec=5
+          NoNewPrivileges=true
+          PrivateTmp=true
+
+          [Install]
+          WantedBy=multi-user.target
+      notify: Restart the application service
+
+    - name: Enable and start the application service
+      ansible.builtin.systemd_service:
+        name: "{{ app_name }}"
+        enabled: true
+        state: started
+        daemon_reload: true
+
+  handlers:
+    - name: Restart the application service
+      ansible.builtin.systemd_service:
+        name: "{{ app_name }}"
+        state: restarted
+        daemon_reload: true
