@@ -1,0 +1,32 @@
+---
+- name: Configure BATIR TCHAD CONNECT environment
+  hosts: local
+  connection: local
+  gather_facts: true
+
+  tasks:
+
+
+
+
+    - name: Ensure Git is installed
+      ansible.builtin.homebrew:
+        name: git
+        state: present
+
+    - name: Create DevOps user
+      ansible.builtin.user:
+        name: batirdev
+        state: present
+        create_home: true
+      become: true
+
+    - name: Create BATIR TCHAD configuration file
+      ansible.builtin.copy:
+        dest: /tmp/batir-tchad-config.txt
+        content: |
+          Application: BATIR TCHAD CONNECT
+          Environment: DevOps
+          Managed by: Ansible
+          Project: Configuration Management
+        mode: '0644'

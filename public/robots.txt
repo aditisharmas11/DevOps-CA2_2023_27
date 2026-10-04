@@ -1,0 +1,15 @@
+# robots.txt for BATIR TCHAD
+User-agent: *
+Allow: /
+Allow: /carte
+Allow: /signalements
+Allow: /signalements/*
+
+# Exclude authentication, user profile, and admin pages
+Disallow: /auth
+Disallow: /profil
+Disallow: /signaler
+Disallow: /tableau-de-bord
+Disallow: /_authenticated/
+
+Sitemap: https://batirtchad.org/sitemap.xml
