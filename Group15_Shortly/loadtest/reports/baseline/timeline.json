@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2026-10-04T13:21:41.595+00:00",
+    "event": "preflight complete",
+    "changes": [
+      "chaos reset",
+      "deployment already on shortly:v1"
+    ]
+  },
+  {
+    "timestamp": "2026-10-04T13:21:41.598+00:00",
+    "event": "load started",
+    "users": 30
+  },
+  {
+    "timestamp": "2026-10-04T13:22:26.603+00:00",
+    "event": "warmup complete"
+  },
+  {
+    "timestamp": "2026-10-04T13:25:27.063+00:00",
+    "event": "cleanup complete",
+    "firing_alerts": []
+  }
+]

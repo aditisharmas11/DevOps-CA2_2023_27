@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-10-04T13:58:16.172+00:00",
+    "event": "preflight complete",
+    "changes": [
+      "chaos reset",
+      "deployment released to shortly:v1"
+    ]
+  },
+  {
+    "timestamp": "2026-10-04T13:58:16.176+00:00",
+    "event": "load started",
+    "users": 30
+  },
+  {
+    "timestamp": "2026-10-04T13:59:01.179+00:00",
+    "event": "warmup complete"
+  },
+  {
+    "timestamp": "2026-10-04T13:59:01.179+00:00",
+    "event": "release started",
+    "image": "shortly:v2"
+  },
+  {
+    "timestamp": "2026-10-04T13:59:17.056+00:00",
+    "event": "rollout complete",
+    "duration_seconds": 15.87696385383606
+  },
+  {
+    "timestamp": "2026-10-04T13:59:47.126+00:00",
+    "event": "cleanup complete",
+    "firing_alerts": []
+  }
+]
