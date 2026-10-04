@@ -1,0 +1,41 @@
+﻿---
+- name: Configure runtime environment for PBL backend
+  hosts: app_servers
+  become: true
+  vars:
+    app_user: pbluser
+    app_dir: /opt/pbl-backend
+    app_port: 5000
+  tasks:
+    - name: Install required packages
+      ansible.builtin.apt:
+        name: [git, curl, ca-certificates, nodejs, npm]
+        state: present
+        update_cache: true
+
+    - name: Create application user
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        shell: /bin/bash
+        create_home: true
+
+    - name: Create application directory
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ app_user }}"
+        mode: "0755"
+
+    - name: Render environment file (managed file)
+      ansible.builtin.template:
+        src: app.env.j2
+        dest: "{{ app_dir }}/.env"
+        owner: "{{ app_user }}"
+        mode: "0600"
+
+    - name: Copy docker-compose file
+      ansible.builtin.copy:
+        src: ../docker-compose.yml
+        dest: "{{ app_dir }}/docker-compose.yml"
+        owner: "{{ app_user }}"
+        mode: "0644"

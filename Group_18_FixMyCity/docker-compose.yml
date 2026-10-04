@@ -1,0 +1,26 @@
+services:
+  mongo:
+    image: mongo:7
+  backend:
+    build: ./backend
+    environment:
+      MONGO_URI: mongodb://mongo:27017/pbl
+      JWT_SECRET: dev-secret
+    ports: ["5000:5000"]
+    depends_on: [mongo]
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports: ["9091:9090"]
+  grafana:
+    image: grafana/grafana:11.2.0
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports: ["3001:3000"]
+    depends_on: [prometheus]
