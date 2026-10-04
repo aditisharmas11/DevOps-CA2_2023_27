@@ -1,0 +1,40 @@
+# Variables applied to every host in [app_servers]
+app_name: connect-the-dots
+app_user: ctd                     # service account that owns & runs the app
+app_group: ctd
+app_home: /opt/connect-the-dots
+app_repo: https://github.com/saumya08-07/Connect-The-Dots.git   # the fork that has the DevOps files
+app_branch: main
+
+# Human operator account(s) with sudo
+admin_users:
+  - name: devops
+    comment: "DevOps operator"
+
+base_packages:
+  - git
+  - acl                     # setfacl: lets Ansible hand temp files to the ctd user
+  - curl
+  - ca-certificates
+  - gnupg
+  - htop
+  - unzip
+  - ufw
+  - python3-debian          # required by the deb822_repository module
+
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+open_ports: [22, 80, 3001, 9090]   # ssh, app, grafana, prometheus
+enable_monitoring: true
+enable_firewall: true            # set false for WSL (see inventory.ini)
+
+# Secrets: demo defaults only. For real use, encrypt with:
+#   ansible-vault encrypt_string 'S3cret!' --name minio_secret_key
+minio_access_key: admin
+minio_secret_key: password
+grafana_admin_password: admin

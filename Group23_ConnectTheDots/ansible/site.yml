@@ -1,0 +1,163 @@
+---
+# Playbook: configure an Ubuntu server to run Connect-The-Dots.
+# Run:  ansible-galaxy collection install -r requirements.yml
+#       ansible-playbook site.yml            (add --check --diff for a dry run)
+- name: Configure Connect-The-Dots runtime environment
+  hosts: app_servers
+  become: true
+
+  handlers:
+    - name: Reload systemd
+      ansible.builtin.systemd_service:
+        daemon_reload: true
+
+    - name: Restart app
+      ansible.builtin.systemd_service:
+        name: "{{ app_name }}"
+        state: restarted
+
+  tasks:
+    # ---------- 1. Packages ----------
+    - name: Install base packages
+      ansible.builtin.apt:
+        name: "{{ base_packages }}"
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Add Docker's official apt repository (key is downloaded and pinned automatically)
+      ansible.builtin.deb822_repository:
+        name: docker
+        types: [deb]
+        uris: https://download.docker.com/linux/ubuntu
+        suites: ["{{ ansible_distribution_release }}"]
+        components: [stable]
+        architectures: ["{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"]
+        signed_by: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Install Docker Engine and Compose plugin
+      ansible.builtin.apt:
+        name: "{{ docker_packages }}"
+        state: present
+        update_cache: true
+
+    - name: Ensure Docker is running and starts on boot
+      ansible.builtin.systemd_service:
+        name: docker
+        state: started
+        enabled: true
+
+    # ---------- 2. Users & groups ----------
+    - name: Create application group
+      ansible.builtin.group:
+        name: "{{ app_group }}"
+        system: true
+
+    - name: Create application service user (no login shell)
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        group: "{{ app_group }}"
+        groups: docker
+        append: true
+        system: true
+        shell: /usr/sbin/nologin
+        home: "{{ app_home }}"
+        create_home: false
+
+    - name: Create admin users with sudo + docker access
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        comment: "{{ item.comment }}"
+        groups: [sudo, docker]
+        append: true
+        shell: /bin/bash
+        create_home: true
+      loop: "{{ admin_users }}"
+
+    # ---------- 3. Files & directories ----------
+    - name: Create application directories
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0750"
+      loop:
+        - "{{ app_home }}"
+        - /var/log/{{ app_name }}
+
+    - name: Clone / update application source
+      ansible.builtin.git:
+        repo: "{{ app_repo }}"
+        dest: "{{ app_home }}/app"
+        version: "{{ app_branch }}"
+        force: true
+      become_user: "{{ app_user }}"
+      notify: Restart app
+
+    - name: Write environment file (secrets, owner-only permissions)
+      ansible.builtin.template:
+        src: env.j2
+        dest: "{{ app_home }}/.env"
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0600"
+      notify: Restart app
+
+    - name: Write production docker-compose file
+      ansible.builtin.template:
+        src: docker-compose.prod.yml.j2
+        dest: "{{ app_home }}/docker-compose.prod.yml"
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0640"
+      notify: Restart app
+
+    - name: Install systemd unit for the stack
+      ansible.builtin.template:
+        src: connect-the-dots.service.j2
+        dest: /etc/systemd/system/{{ app_name }}.service
+        mode: "0644"
+      notify:
+        - Reload systemd
+        - Restart app
+
+    - name: Apply pending handler (daemon-reload) before starting the service
+      ansible.builtin.meta: flush_handlers
+
+    # ---------- 4. Firewall (skipped on WSL, where Windows firewalls the host) ----------
+    - name: Allow required ports
+      community.general.ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop: "{{ open_ports }}"
+      when: enable_firewall | bool
+
+    - name: Enable firewall (default deny incoming)
+      community.general.ufw:
+        state: enabled
+        policy: deny
+        direction: incoming
+      when: enable_firewall | bool
+
+    # ---------- 5. Start & verify ----------
+    - name: Enable and start the application service
+      ansible.builtin.systemd_service:
+        name: "{{ app_name }}"
+        state: started
+        enabled: true
+
+    - name: Wait until the API health check passes
+      ansible.builtin.uri:
+        url: http://localhost/api/health
+        status_code: 200
+      register: health
+      retries: 30
+      delay: 10
+      until: health.status == 200
+
+    - name: Show health result
+      ansible.builtin.debug:
+        var: health.json

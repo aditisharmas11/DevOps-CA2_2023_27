@@ -1,0 +1,30 @@
+flowchart TB
+    U([User browser]) -->|HTTP :80 / NodePort 30080| NG
+
+    subgraph K8S["Kubernetes namespace: connect-the-dots"]
+        NG["frontend Deployment x2<br/>Nginx + React build<br/>/ -> SPA, /api -> backend, /storage -> object store"]
+        BE["backend Deployment x3<br/>Spring Boot 3.4 / Java 17<br/>RollingUpdate + probes"]
+        MG[("MongoDB 7<br/>PVC 1Gi")]
+        RD[("Redis 7<br/>cache, TTL 5 min")]
+        MN[("Object storage: RustFS<br/>(S3 / MinIO-compatible)<br/>PVC 1Gi")]
+        CM[/"ConfigMap + Secret"/]
+        NG --> BE
+        NG -->|/storage| MN
+        BE --> MG
+        BE --> RD
+        BE --> MN
+        CM -.->|env| BE
+    end
+
+    subgraph MON["Monitoring"]
+        PR["Prometheus<br/>scrapes /actuator/prometheus every 15s<br/>+ 3 alert rules"]
+        GF["Grafana<br/>uptime, latency, error rate"]
+        PR --> GF
+    end
+    PR -.->|pull metrics| BE
+
+    subgraph PIPE["Delivery"]
+        GA["GitHub Actions"] --> GHCR[("GHCR images")]
+        AN["Ansible playbook"] -->|provisions| VM["Ubuntu VM<br/>Docker + compose + systemd"]
+    end
+    GHCR -.->|image :sha| BE

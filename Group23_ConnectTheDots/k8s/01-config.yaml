@@ -1,0 +1,22 @@
+# Non-secret settings -> ConfigMap ; credentials -> Secret
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: connect-the-dots
+data:
+  SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/hackathon
+  SPRING_DATA_REDIS_HOST: redis
+  SPRING_DATA_REDIS_PORT: "6379"
+  MINIO_URL: http://minio:9000
+  MINIO_BUCKET: uploads
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: minio-credentials
+  namespace: connect-the-dots
+type: Opaque
+stringData:                     # demo values - change for anything real
+  MINIO_ACCESS_KEY: admin
+  MINIO_SECRET_KEY: password

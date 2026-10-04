@@ -1,0 +1,2 @@
+collections:
+  - name: community.general   # provides the ufw (firewall) module

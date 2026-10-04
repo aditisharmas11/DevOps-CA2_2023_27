@@ -1,0 +1,18 @@
+# {{ ansible_managed }}
+[Unit]
+Description=Connect-The-Dots stack (docker compose)
+Requires=docker.service
+After=docker.service network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User={{ app_user }}
+Group=docker
+WorkingDirectory={{ app_home }}
+ExecStart=/usr/bin/docker compose -f docker-compose.prod.yml up -d --build
+ExecStop=/usr/bin/docker compose -f docker-compose.prod.yml down
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target

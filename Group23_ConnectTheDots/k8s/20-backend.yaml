@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: connect-the-dots
+  labels: {app: backend}
+  annotations:
+    kubernetes.io/change-cause: "v1 - initial release"   # shows up in `kubectl rollout history`
+spec:
+  replicas: 3
+  revisionHistoryLimit: 5          # how many old ReplicaSets are kept for rollback
+  minReadySeconds: 10              # a new pod must stay healthy 10s before it counts as "available"
+  progressDeadlineSeconds: 300     # mark rollout failed if it makes no progress in 5 min
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1                  # at most 1 extra pod above 3 during an update
+      maxUnavailable: 0            # never drop below 3 ready pods -> zero downtime
+  selector:
+    matchLabels: {app: backend}
+  template:
+    metadata:
+      labels: {app: backend}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+    spec:
+      containers:
+        - name: backend
+          image: ghcr.io/riya54671/ctd-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports: [{containerPort: 8080, name: http}]
+          envFrom:
+            - configMapRef: {name: backend-config}
+            - secretRef: {name: minio-credentials}
+          env:
+            - {name: APP_VERSION, value: "v1"}
+          # Spring Boot takes ~20-40s to start; startupProbe stops liveness killing it early
+          startupProbe:
+            httpGet: {path: /actuator/health/liveness, port: http}
+            periodSeconds: 5
+            failureThreshold: 30
+          readinessProbe:            # "ready to receive traffic?" -> controls Service endpoints
+            httpGet: {path: /actuator/health/readiness, port: http}
+            periodSeconds: 5
+          livenessProbe:             # "is the JVM stuck?" -> restarts the container
+            httpGet: {path: /actuator/health/liveness, port: http}
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests: {cpu: 200m, memory: 384Mi}
+            limits: {memory: 768Mi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend                     # name must stay "backend" - nginx.conf proxies to backend:8080
+  namespace: connect-the-dots
+  labels: {app: backend}
+spec:
+  type: ClusterIP
+  selector: {app: backend}
+  ports: [{name: http, port: 8080, targetPort: http}]

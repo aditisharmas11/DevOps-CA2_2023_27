@@ -1,0 +1,40 @@
+flowchart TB
+    DEV([Developer<br/>git push / PR]) --> GH[(GitHub repo<br/>main branch)]
+    GH -->|trigger| CI
+
+    subgraph CI["Stage 1 - CI (parallel)"]
+        direction LR
+        BT["backend-test<br/>JDK 17 + Maven verify<br/>Mongo/Redis service containers"]
+        FB["frontend-build<br/>Node 20<br/>npm ci + vite build"]
+    end
+
+    CI -->|both pass| PKG
+
+    subgraph PKG["Stage 2 - Package"]
+        direction LR
+        DB["docker buildx<br/>multi-stage images<br/>GHA layer cache"]
+        REG[("GHCR<br/>ctd-backend:sha<br/>ctd-frontend:sha")]
+        DB -->|push - main only| REG
+    end
+
+    PKG --> CD
+
+    subgraph CD["Stage 3 - Deploy (main only)"]
+        direction LR
+        KIND["kind cluster<br/>(K8s in the runner)"]
+        APPLY["kubectl apply -f k8s/<br/>set image :sha"]
+        RO["rollout status<br/>(RollingUpdate,<br/>maxUnavailable=0)"]
+        SMOKE{"Smoke test<br/>GET / and /api/health"}
+        KIND --> APPLY --> RO --> SMOKE
+    end
+
+    SMOKE -->|pass| OK([Deployment green])
+    SMOKE -->|fail| DBG["Job fails: dump pods,<br/>describe + logs for debugging"]
+
+    PR([Pull request]) -.->|CI + image build only,<br/>no push, no deploy| CI
+
+    classDef stage fill:#eef4ff,stroke:#3b6fd8,color:#111
+    classDef ok fill:#e6f7ea,stroke:#2e9d4b,color:#111
+    classDef bad fill:#fdecea,stroke:#d33,color:#111
+    class OK ok
+    class DBG bad

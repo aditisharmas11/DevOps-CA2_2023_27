@@ -1,0 +1,175 @@
+name: CI-CD Connect-The-Dots
+
+# When does the pipeline run?
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}          # manual "Run workflow" button
+
+# Cancel an older run on the same branch if a newer commit arrives
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write                # needed to push images to GHCR
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  # ---------------- Stage 1: CI - build & test ----------------
+  backend-test:
+    name: Backend - build & unit test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend/backend
+    services:                     # throwaway DBs so @SpringBootTest can boot
+      mongodb:
+        image: mongo:7
+        ports: ["27017:27017"]
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Maven verify
+        env:
+          SPRING_DATA_MONGODB_URI: mongodb://localhost:27017/hackathon
+          SPRING_DATA_REDIS_HOST: localhost
+        run: chmod +x mvnw && ./mvnw -B verify
+
+  frontend-build:
+    name: Frontend - build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+  # ---------------- Stage 2: package - Docker images -> GHCR ----------------
+  docker:
+    name: Build & push images
+    needs: [backend-test, frontend-build]
+    runs-on: ubuntu-latest
+    outputs:
+      backend_image: ${{ steps.names.outputs.backend }}
+      frontend_image: ${{ steps.names.outputs.frontend }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute lowercase image names (GHCR requires lowercase)
+        id: names
+        run: |
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          echo "backend=${REGISTRY}/${OWNER}/ctd-backend" >> "$GITHUB_OUTPUT"
+          echo "frontend=${REGISTRY}/${OWNER}/ctd-frontend" >> "$GITHUB_OUTPUT"
+      - uses: docker/setup-buildx-action@v3
+      - name: Log in to GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: backend/backend
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ${{ steps.names.outputs.backend }}:${{ github.sha }}
+            ${{ steps.names.outputs.backend }}:latest
+          cache-from: type=gha,scope=backend
+          cache-to: type=gha,mode=max,scope=backend
+      - name: Frontend image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: frontend/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ${{ steps.names.outputs.frontend }}:${{ github.sha }}
+            ${{ steps.names.outputs.frontend }}:latest
+          cache-from: type=gha,scope=frontend
+          cache-to: type=gha,mode=max,scope=frontend
+
+  # ---------------- Stage 3: CD - deploy to Kubernetes + smoke test ----------------
+  deploy:
+    name: Deploy to Kubernetes (kind) & smoke test
+    needs: docker
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create kind cluster
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: ctd
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull images and load them into kind
+        env:
+          BE: ${{ needs.docker.outputs.backend_image }}:${{ github.sha }}
+          FE: ${{ needs.docker.outputs.frontend_image }}:${{ github.sha }}
+        run: |
+          docker pull "$BE" && docker pull "$FE"
+          kind load docker-image "$BE" --name ctd
+          kind load docker-image "$FE" --name ctd
+      - name: Apply manifests with this commit's image tags
+        env:
+          BE: ${{ needs.docker.outputs.backend_image }}:${{ github.sha }}
+          FE: ${{ needs.docker.outputs.frontend_image }}:${{ github.sha }}
+        run: |
+          kubectl apply -f k8s/00-namespace.yaml
+          kubectl apply -f k8s/
+          kubectl -n connect-the-dots set image deployment/backend backend="$BE"
+          kubectl -n connect-the-dots set image deployment/frontend frontend="$FE"
+          kubectl -n connect-the-dots set env deployment/backend APP_VERSION="${GITHUB_SHA::7}"
+      - name: Wait for rollout (every service, dependencies first)
+        run: |
+          for d in mongodb redis minio backend frontend; do
+            kubectl -n connect-the-dots rollout status deployment/$d --timeout=300s
+          done
+      - name: Smoke test through Nginx
+        run: |
+          kubectl -n connect-the-dots port-forward svc/frontend 8080:80 > /dev/null 2>&1 &
+          sleep 5
+          curl -fsS http://localhost:8080/ > /dev/null && echo "frontend OK"
+          # A pod being "Ready" doesn't mean everything it depends on is ready yet,
+          # so retry the dependency health check for up to 2 minutes instead of trying once.
+          for i in $(seq 1 24); do
+            code=$(curl -s -o health.json -w '%{http_code}' http://localhost:8080/api/health || echo 000)
+            echo "attempt $i: HTTP $code $(cat health.json 2>/dev/null)"
+            if [ "$code" = "200" ]; then echo "backend + MongoDB + Redis + MinIO OK"; exit 0; fi
+            sleep 5
+          done
+          echo "Health check never returned 200"; exit 1
+      - name: Debug info on failure
+        if: failure()
+        run: |
+          kubectl -n connect-the-dots get all
+          kubectl -n connect-the-dots describe deployment backend
+          kubectl -n connect-the-dots logs deployment/minio --tail=50 || true
+          kubectl -n connect-the-dots logs deployment/backend --tail=100 || true

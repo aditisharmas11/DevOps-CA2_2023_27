@@ -1,0 +1,5 @@
+# Keep shell scripts and YAML with LF endings even on Windows (CRLF breaks bash: $'\r': command not found)
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.j2   text eol=lf

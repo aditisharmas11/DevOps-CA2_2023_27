@@ -1,0 +1,27 @@
+# Add Prometheus + Grafana next to the existing stack (same network, so "backend" resolves):
+#   docker compose -f docker-compose.yml -f monitoring/docker-compose.monitoring.yml up -d --build
+# Paths are relative to the repo root (the directory of the first -f file).
+services:
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    volumes:
+      - ./monitoring/prometheus:/etc/prometheus:ro
+      - prometheus_data:/prometheus
+    ports: ["9090:9090"]
+    depends_on: [backend]
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana_data:/var/lib/grafana
+    ports: ["3001:3000"]
+    depends_on: [prometheus]
+
+volumes:
+  prometheus_data:
+  grafana_data:

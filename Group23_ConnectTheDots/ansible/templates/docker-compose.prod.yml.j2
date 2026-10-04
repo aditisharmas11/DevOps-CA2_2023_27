@@ -1,0 +1,71 @@
+# {{ ansible_managed }}
+# Production compose file: frontend is built into an image (no host-mounted dist/),
+# credentials come from .env, monitoring is optional.
+name: {{ app_name }}
+services:
+  frontend:
+    build:
+      context: ./app
+      dockerfile: frontend/Dockerfile
+    ports: ["80:80"]
+    depends_on: [backend, minio]
+    restart: unless-stopped
+
+  backend:
+    build: ./app/backend/backend
+    env_file: .env
+    depends_on:
+      mongodb: {condition: service_healthy}
+      redis: {condition: service_started}
+      minio: {condition: service_started}
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:7
+    volumes: [mongo_data:/data/db]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+  minio:                      # RustFS: S3/MinIO-compatible (MinIO images no longer published)
+    image: rustfs/rustfs:latest
+    command: ["/data"]
+    env_file: .env
+    volumes: [minio_data:/data]
+    restart: unless-stopped
+{% if enable_monitoring %}
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    volumes:
+      - ./app/monitoring/prometheus:/etc/prometheus:ro
+      - prometheus_data:/prometheus
+    ports: ["9090:9090"]
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    env_file: .env
+    volumes:
+      - ./app/monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./app/monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana_data:/var/lib/grafana
+    ports: ["3001:3000"]          # host 3001 -> Grafana 3000
+    depends_on: [prometheus]
+    restart: unless-stopped
+{% endif %}
+
+volumes:
+  mongo_data:
+  minio_data:
+{% if enable_monitoring %}
+  prometheus_data:
+  grafana_data:
+{% endif %}
