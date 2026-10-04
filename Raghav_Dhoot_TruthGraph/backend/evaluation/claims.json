@@ -1,0 +1,154 @@
+{
+  "benchmark_name": "TruthGraph curated binary benchmark v1",
+  "description": "Stable, non-time-sensitive factual claims used to measure end-to-end true/false verdict accuracy.",
+  "labels": [
+    "true",
+    "false"
+  ],
+  "claims": [
+    {
+      "id": "science-01",
+      "category": "science",
+      "claim": "The Earth orbits the Sun.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "science-02",
+      "category": "science",
+      "claim": "Light travels faster than sound in air.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "science-03",
+      "category": "science",
+      "claim": "Photosynthesis converts light energy into chemical energy.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "science-04",
+      "category": "science",
+      "claim": "The Moon has weaker surface gravity than Earth.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "science-05",
+      "category": "science",
+      "claim": "Water molecules contain hydrogen and oxygen atoms.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "health-01",
+      "category": "health",
+      "claim": "Antibiotics do not treat viral infections such as influenza.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "health-02",
+      "category": "health",
+      "claim": "A typical adult human skeleton has 206 bones.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "health-03",
+      "category": "health",
+      "claim": "The human heart has four chambers.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "biology-01",
+      "category": "biology",
+      "claim": "DNA carries genetic instructions in most living organisms.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "geography-01",
+      "category": "geography",
+      "claim": "The Pacific Ocean is the largest ocean on Earth.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "geography-02",
+      "category": "geography",
+      "claim": "Mount Everest has the highest elevation above sea level of any mountain on Earth.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "astronomy-01",
+      "category": "astronomy",
+      "claim": "Venus has a higher average surface temperature than Mercury.",
+      "expected_verdict": "true"
+    },
+    {
+      "id": "myth-01",
+      "category": "common_myth",
+      "claim": "Humans use only 10 percent of their brains.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "myth-02",
+      "category": "common_myth",
+      "claim": "The Great Wall of China is visible from the Moon with the naked eye.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "myth-03",
+      "category": "common_myth",
+      "claim": "Bats are blind.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "myth-04",
+      "category": "common_myth",
+      "claim": "A goldfish has a memory of only three seconds.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "myth-05",
+      "category": "common_myth",
+      "claim": "Lightning never strikes the same place twice.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "science-06",
+      "category": "science",
+      "claim": "Earth's seasons happen because Earth is much closer to the Sun in summer than in winter.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "health-04",
+      "category": "health",
+      "claim": "Antibiotics can cure influenza.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "health-05",
+      "category": "health",
+      "claim": "Swallowed chewing gum stays in the human stomach for seven years.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "health-06",
+      "category": "health",
+      "claim": "Vaccines contain tracking microchips.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "science-07",
+      "category": "science",
+      "claim": "Sound travels faster than light.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "science-08",
+      "category": "science",
+      "claim": "Water boils at exactly 100 degrees Celsius at every altitude on Earth.",
+      "expected_verdict": "false"
+    },
+    {
+      "id": "geography-03",
+      "category": "geography",
+      "claim": "All deserts on Earth are hot.",
+      "expected_verdict": "false"
+    }
+  ]
+}
