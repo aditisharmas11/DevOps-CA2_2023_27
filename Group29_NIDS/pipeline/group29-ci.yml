@@ -1,0 +1,57 @@
+name: Group29 NIDS CI-CD
+
+on:
+  push:
+    branches: [ci-run]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Group29_NIDS
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r app/requirements.txt
+      - run: python -m pytest app/tests -q
+
+  build-push:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: Group29_NIDS
+          push: true
+          tags: |
+            ghcr.io/chintnn/nids-api:latest
+            ghcr.io/chintnn/nids-api:${{ github.sha }}
+
+  smoke-test:
+    needs: build-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run container and check health
+        run: |
+          docker run -d -p 8000:8000 --name nids ghcr.io/chintnn/nids-api:${{ github.sha }}
+          sleep 15
+          curl -f http://localhost:8000/health

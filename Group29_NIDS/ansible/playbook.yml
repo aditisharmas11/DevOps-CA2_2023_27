@@ -1,0 +1,80 @@
+- name: Configure NIDS runtime environment
+  hosts: nids
+  gather_facts: false
+  vars:
+    app_user: nids
+    app_dir: /opt/nids
+    app_env: production
+  tasks:
+    - name: Install system packages
+      ansible.builtin.apt:
+        name: [curl, git, htop, libgomp1]
+        update_cache: true
+        state: present
+
+    - name: Create app group
+      ansible.builtin.group:
+        name: "{{ app_user }}"
+
+    - name: Create app user
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        group: "{{ app_user }}"
+        shell: /bin/bash
+        create_home: true
+
+    - name: Create app directories
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: "0755"
+      loop:
+        - "{{ app_dir }}"
+        - "{{ app_dir }}/app"
+        - "{{ app_dir }}/ml"
+
+    - name: Copy API code
+      ansible.builtin.copy:
+        src: ../app/
+        dest: "{{ app_dir }}/app/"
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+
+    - name: Copy model files
+      ansible.builtin.copy:
+        src: "../ml/{{ item }}"
+        dest: "{{ app_dir }}/ml/{{ item }}"
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+      loop:
+        - ids_xgboost_model.joblib
+        - ids_scaler.joblib
+        - ids_categorical_encoders.joblib
+        - ids_target_encoder.joblib
+
+    - name: Render app config
+      ansible.builtin.template:
+        src: app.env.j2
+        dest: "{{ app_dir }}/app.env"
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: "0640"
+
+    - name: Install Python dependencies in a virtualenv
+      ansible.builtin.pip:
+        requirements: "{{ app_dir }}/app/requirements.txt"
+        virtualenv: "{{ app_dir }}/venv"
+        virtualenv_command: python3 -m venv
+
+    - name: Verify the app imports
+      ansible.builtin.command:
+        cmd: "{{ app_dir }}/venv/bin/python -c \"import app.main; print('NIDS app imports OK')\""
+        chdir: "{{ app_dir }}"
+      register: check
+      changed_when: false
+
+    - name: Show result
+      ansible.builtin.debug:
+        var: check.stdout

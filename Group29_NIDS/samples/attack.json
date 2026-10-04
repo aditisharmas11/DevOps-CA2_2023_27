@@ -1,0 +1,1 @@
+{"features":{"duration":0,"protocol_type":"tcp","service":"private","flag":"S0","src_bytes":0,"dst_bytes":0,"count":123,"srv_count":6,"serror_rate":1.0,"srv_serror_rate":1.0,"same_srv_rate":0.05,"diff_srv_rate":0.07,"dst_host_count":255,"dst_host_srv_count":26,"dst_host_serror_rate":1.0,"dst_host_srv_serror_rate":1.0,"dst_host_same_srv_rate":0.1}}
