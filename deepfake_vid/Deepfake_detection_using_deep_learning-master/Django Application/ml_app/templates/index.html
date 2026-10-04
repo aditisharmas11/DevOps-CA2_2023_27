@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<div class="bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card-professional">
+                    {% if error %}
+                    <div class="alert alert-danger text-center mb-4">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="text-center mb-5">
+                        <h1 class="display-4 font-weight-bold mb-3" style="letter-spacing: -0.05em; color: var(--primary-color);">DeepShield AI</h1>
+                        <p class="lead text-muted">Enterprise-grade deepfake detection and identity recovery</p>
+                    </div>
+
+                    <div id="preview-container" class="mb-4 text-center" style="display:none;">
+                        <img width="100%" id="image_preview" class="img-thumbnail-modern shadow-lg">
+                    </div>
+
+                    <form method="POST" enctype="multipart/form-data" id="image-upload" class="px-md-4">
+                        {% csrf_token %}
+                        <div class="form-group mb-4">
+                            <label class="d-block text-center mb-3">Choose an Image</label>
+                            <div class="custom-file-container">
+                                {{ form.upload_image_file }}
+                            </div>
+                            {% if form.upload_image_file.errors %}
+                            {% for each_error in form.upload_image_file.errors %}
+                            <div class="alert alert-danger mt-2">
+                                {{ each_error }}
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        <button id="imageUpload" type="submit" class="btn btn-primary btn-block shadow-sm">
+                            Analyze Image
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card card-professional h-100 p-4">
+                    <div class="text-center mb-3"><i class="fas fa-search-nodes fa-2x text-primary"></i></div>
+                    <h5 class="text-center">Module 1: Detection <span class="badge badge-success small ml-1">Active</span></h5>
+                    <div class="mt-3 small text-muted">
+                        <div class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <b>ResNeXt50</b> Feature Maps</div>
+                        <div class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <b>LSTM</b> Temporal Analysis</div>
+                        <div><i class="fas fa-check-circle text-success mr-2"></i> <b>Grad-CAM</b> Heatmap Generation</div>
+                    </div>
+                    <hr>
+                    <p class="small text-muted mb-0">High-fidelity analysis of facial geometry and temporal inconsistencies to detect state-of-the-art deepfakes.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-professional h-100 p-4" style="opacity: 0.8; border: 1px dashed #ccc;">
+                    <div class="mb-3 text-center"><i class="fas fa-shield-virus fa-2x text-muted"></i></div>
+                    <h5 class="text-center text-muted">Module 2: Reconstruction <span class="badge badge-warning small ml-1">Coming Soon</span></h5>
+                    <div class="mt-3 small text-muted">
+                        <div class="mb-2"><i class="fas fa-tools text-warning mr-2"></i> <b>MAE</b> Architecture</div>
+                        <div class="mb-2"><i class="fas fa-tools text-warning mr-2"></i> <b>Identity</b> Preservation</div>
+                        <div><i class="fas fa-tools text-warning mr-2"></i> <b>Heatmap</b> Occlusion Mapping</div>
+                    </div>
+                    <hr>
+                    <p class="small text-muted mb-0">Recovering original identities from manipulated faces by treating detected deepfake regions as occlusions.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-professional h-100 p-4" style="opacity: 0.8; border: 1px dashed #ccc;">
+                    <div class="mb-3 text-center"><i class="fas fa-chart-line fa-2x text-muted"></i></div>
+                    <h5 class="text-center text-muted">Module 3: Verification <span class="badge badge-warning small ml-1">Coming Soon</span></h5>
+                    <div class="mt-3 small text-muted">
+                        <div class="mb-2"><i class="fas fa-tools text-warning mr-2"></i> <b>Face</b> Recognition</div>
+                        <div class="mb-2"><i class="fas fa-tools text-warning mr-2"></i> <b>Biometric</b> Alignment</div>
+                        <div><i class="fas fa-tools text-warning mr-2"></i> <b>DFREC</b> Verification</div>
+                    </div>
+                    <hr>
+                    <p class="small text-muted mb-0">Final identity cross-verification and structural analysis of reconstructed facial features.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{%block js_cripts%}
+<script src="{%static 'js/script.js'%}"></script>
+{%endblock%}

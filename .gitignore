@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+venv_django/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Uploaded user files (large, not for repo)
+deepfake_vid/**/uploaded_images/*
+deepfake_vid/**/uploaded_videos/*
+!deepfake_vid/**/uploaded_images/.gitkeep
+!deepfake_vid/**/uploaded_videos/.gitkeep
+
+# Large ML model weights (too large for GitHub)
+deepfake_vid/**/models/*.pt
+deepfake_vid/**/models/*.pth
+!deepfake_vid/**/models/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp

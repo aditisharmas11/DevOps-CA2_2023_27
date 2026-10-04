@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deepfake-detection-svc
+  namespace: deepfake-ns
+spec:
+  type: LoadBalancer
+  selector:
+    app: deepfake-detection
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000

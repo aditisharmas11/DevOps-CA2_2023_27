@@ -1,0 +1,73 @@
+﻿# ─────────────────────────────────────────────────────────────
+# Stage 1: Builder — install Python dependencies
+# ─────────────────────────────────────────────────────────────
+FROM python:3.10-slim AS builder
+
+WORKDIR /build
+
+# Install OS build tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential cmake git libgl1-mesa-glx libglib2.0-0 \
+    libboost-all-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir --prefix=/install \
+        torch==2.1.1+cpu torchvision==0.16.1+cpu \
+        --extra-index-url https://download.pytorch.org/whl/cpu && \
+    pip install --no-cache-dir --prefix=/install \
+        -r requirements.txt
+
+# ─────────────────────────────────────────────────────────────
+# Stage 2: Runtime — lean final image
+# ─────────────────────────────────────────────────────────────
+FROM python:3.10-slim AS runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    DJANGO_SETTINGS_MODULE=project_settings.settings \
+    PORT=8000
+
+# Install only runtime OS deps
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgl1-mesa-glx libglib2.0-0 libgomp1 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Create non-root user
+RUN groupadd -r deepfake && useradd -r -g deepfake deepfake
+
+# Copy Python packages from builder
+COPY --from=builder /install /usr/local
+
+WORKDIR /app
+
+# Copy app source
+COPY --chown=deepfake:deepfake . /app/
+# Copy reconstruction module from project root (one level up)
+COPY --chown=deepfake:deepfake ../../../reconstruction /app/../../../reconstruction/
+
+# Create required directories
+RUN mkdir -p uploaded_images uploaded_videos logs && \
+    chown -R deepfake:deepfake /app
+
+# Install gunicorn
+RUN pip install --no-cache-dir gunicorn==21.2.0 prometheus-client==0.20.0
+
+# Run Django migrations and collect static
+RUN python manage.py migrate --run-syncdb && \
+    python manage.py collectstatic --noinput || true
+
+USER deepfake
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000')" || exit 1
+
+CMD ["gunicorn", "project_settings.wsgi:application", \
+     "--bind", "0.0.0.0:8000", \
+     "--workers", "3", \
+     "--timeout", "300", \
+     "--log-level", "info", \
+     "--access-logfile", "-"]

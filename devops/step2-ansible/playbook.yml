@@ -1,0 +1,155 @@
+---
+- name: Configure runtime environment for Deepfake Detection App
+  hosts: webservers
+  become: true
+  vars:
+    app_user: deepfake
+    app_group: deepfake
+    app_dir: /opt/deepfake-detection
+    app_port: 8000
+    venv_dir: /opt/deepfake-detection/venv
+    django_settings: project_settings.settings
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install system dependencies
+      apt:
+        name:
+          - python3.10
+          - python3.10-venv
+          - python3-pip
+          - python3-dev
+          - build-essential
+          - cmake
+          - libopencv-dev
+          - libgl1-mesa-glx
+          - libglib2.0-0
+          - git
+          - nginx
+          - supervisor
+          - sqlite3
+        state: present
+
+    - name: Create application group
+      group:
+        name: "{{ app_group }}"
+        state: present
+
+    - name: Create application user
+      user:
+        name: "{{ app_user }}"
+        group: "{{ app_group }}"
+        home: "{{ app_dir }}"
+        shell: /bin/bash
+        system: yes
+        create_home: yes
+        state: present
+
+    - name: Create application directories
+      file:
+        path: "{{ item }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0755"
+      loop:
+        - "{{ app_dir }}"
+        - "{{ app_dir }}/uploaded_images"
+        - "{{ app_dir }}/uploaded_videos"
+        - "{{ app_dir }}/models"
+        - "{{ app_dir }}/static"
+        - "{{ app_dir }}/logs"
+        - /var/log/deepfake-detection
+
+    - name: Create Python virtualenv
+      command: python3.10 -m venv {{ venv_dir }}
+      args:
+        creates: "{{ venv_dir }}/bin/activate"
+      become_user: "{{ app_user }}"
+
+    - name: Install Python packages in venv
+      pip:
+        name:
+          - django==5.0.6
+          - gunicorn==21.2.0
+          - torch==2.1.1
+          - torchvision==0.16.1
+          - opencv-python-headless==4.10.0.84
+          - numpy==1.26.4
+          - Pillow==10.3.0
+          - face-recognition==1.3.0
+          - scikit-learn
+          - django-prometheus==2.5.0
+        virtualenv: "{{ venv_dir }}"
+      become_user: "{{ app_user }}"
+
+    - name: Write .env file
+      copy:
+        dest: "{{ app_dir }}/.env"
+        owner: "{{ app_user }}"
+        group: "{{ app_group }}"
+        mode: "0600"
+        content: |
+          DJANGO_SETTINGS_MODULE={{ django_settings }}
+          DEBUG=False
+          ALLOWED_HOSTS=*
+          SECRET_KEY=change-me-to-a-strong-random-key
+
+    - name: Configure Nginx reverse proxy
+      copy:
+        dest: /etc/nginx/sites-available/deepfake-detection
+        content: |
+          upstream deepfake_app { server 127.0.0.1:{{ app_port }}; }
+          server {
+              listen 80; server_name _;
+              client_max_body_size 200M;
+              location /static/ { alias {{ app_dir }}/static/; }
+              location / {
+                  proxy_pass http://deepfake_app;
+                  proxy_set_header Host $host;
+                  proxy_read_timeout 300s;
+              }
+          }
+
+    - name: Enable Nginx site
+      file:
+        src: /etc/nginx/sites-available/deepfake-detection
+        dest: /etc/nginx/sites-enabled/deepfake-detection
+        state: link
+
+    - name: Configure Supervisor for Gunicorn
+      copy:
+        dest: /etc/supervisor/conf.d/deepfake-detection.conf
+        content: |
+          [program:deepfake-detection]
+          command={{ venv_dir }}/bin/gunicorn project_settings.wsgi:application --bind 127.0.0.1:{{ app_port }} --workers 3 --timeout 300
+          directory={{ app_dir }}
+          user={{ app_user }}
+          autostart=true
+          autorestart=true
+          stdout_logfile=/var/log/deepfake-detection/gunicorn.log
+
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded
+        enabled: yes
+
+    - name: Restart Supervisor
+      service:
+        name: supervisor
+        state: restarted
+        enabled: yes
+
+    - name: Verify app health
+      uri:
+        url: "http://127.0.0.1:{{ app_port }}"
+        method: GET
+        status_code: 200
+      retries: 5
+      delay: 10
+      ignore_errors: yes

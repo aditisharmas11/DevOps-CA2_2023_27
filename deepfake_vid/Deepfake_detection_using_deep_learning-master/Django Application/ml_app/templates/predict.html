@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container py-5">
+    {% if no_faces %}
+    <div class="card-professional text-center">
+        <div class="alert alert-warning mb-4">
+            <h4 class="alert-heading">No Face Detected</h4>
+            <p>Our AI system couldn't find a clear face in the uploaded image. For best results, please ensure the face is clearly visible and looking at the camera.</p>
+        </div>
+        <a href="{% url 'ml_app:home' %}" class="btn btn-primary">Try Another Image</a>
+    </div>
+    {% else %}
+    <div class="row">
+        <!-- Result Summary -->
+        <div class="col-12 mb-4">
+            <div class="prediction-box {% if output == 'REAL' %}prediction-real{% else %}prediction-fake{% endif %}">
+                <h2 class="mb-2">Analysis Result: <span class="{% if output == 'REAL' %}text-success{% else %}text-danger{% endif %}">{{ output }}</span></h2>
+                <div class="confidence-badge {% if output == 'REAL' %}badge-real{% else %}badge-fake{% endif %}">
+                    {{ confidence }}% Confidence Score
+                </div>
+                <div class="mt-4">
+                    {% if output == "REAL" %}
+                    <img src="{% static 'images/thumpup.png' %}" alt="Real" height="80">
+                    {% else %}
+                    <img src="{% static 'images/thumpdown.png' %}" alt="Fake" height="80">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <div class="col-md-6">
+            <div class="result-card h-100">
+                <h3 class="section-title">Original Image <span class="badge badge-ai ml-2">Active</span></h3>
+                <div class="text-center">
+                    {% if preprocessed_images %}
+                    <img src="{% static preprocessed_images.0 %}" class="img-fluid rounded shadow-sm img-thumbnail-modern" style="max-height: 400px;">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="result-card h-100">
+                <h3 class="section-title">Forensic Analysis <span class="badge badge-ai ml-2">Active</span></h3>
+                <p class="text-muted small mb-3">The AI focused on the following detected facial region:</p>
+                <div class="scroll-container">
+                    {% for each_image in faces_cropped_images %}
+                    <img src="{% static each_image %}" class="img-thumbnail-modern">
+                    {% endfor %}
+                </div>
+                
+                <div class="mt-4">
+                    <h6 class="text-primary font-weight-bold mb-2">Technical Analysis (Module 1)</h6>
+                    <div class="p-3 bg-light rounded border-left border-primary">
+                        <ul class="list-unstyled small text-secondary mb-0">
+                            <li class="mb-2"><i class="fas fa-file-code mr-2 text-primary"></i> <b>Model:</b> Using {{ model_filename }} (ResNeXt50 + LSTM)</li>
+                            <li class="mb-2"><i class="fas fa-microchip mr-2 text-primary"></i> <b>Feature Extraction:</b> Utilizing ResNeXt50 architecture to extract 2048-dimensional spatial feature maps from the facial region.</li>
+                            <li class="mb-2"><i class="fas fa-stream mr-2 text-primary"></i> <b>Temporal Analysis:</b> LSTM (Long Short-Term Memory) layers analyze the consistency of facial features across multiple frames.</li>
+                            <li><i class="fas fa-fingerprint mr-2 text-primary"></i> <b>Anomaly Detection:</b> Identifying microscopic artifacts in lighting and skin texture that are invisible to the human eye.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 mt-4">
+            <div class="result-card">
+                <h3 class="section-title">Step-by-Step Pipeline <span class="badge badge-ai ml-2">Trace</span></h3>
+                <div class="p-3 bg-light rounded">
+                    <ol class="small text-secondary mb-0" style="padding-left: 1.25rem;">
+                        <li class="mb-2">
+                            <b>Input & Preprocess</b>
+                            <span class="ml-2 badge badge-success">Done</span>
+                            <div class="text-muted">Loads the image and prepares it for face analysis.</div>
+                        </li>
+                        <li class="mb-2">
+                            <b>Face Detection & Crop</b>
+                            {% if faces_cropped_images %}
+                            <span class="ml-2 badge badge-success">Done</span>
+                            {% else %}
+                            <span class="ml-2 badge badge-warning">Not Found</span>
+                            {% endif %}
+                            <div class="text-muted">Detects the face region and isolates the ROI for inference.</div>
+                        </li>
+                        <li class="mb-2">
+                            <b>Deepfake Classification</b>
+                            <span class="ml-2 badge badge-success">Done</span>
+                            <div class="text-muted">Runs the classifier and outputs <b>{{ output }}</b> with confidence.</div>
+                        </li>
+                        <li class="mb-2">
+                            <b>Heatmap → Mask (Occlusion Map)</b>
+                            {% if output == "FAKE" %}
+                            <span class="ml-2 badge badge-warning">Coming Soon</span>
+                            {% else %}
+                            <span class="ml-2 badge badge-secondary">Skipped</span>
+                            {% endif %}
+                            <div class="text-muted">Builds a mask from the heatmap to identify manipulated regions.</div>
+                        </li>
+                        <li class="mb-2">
+                            <b>Reconstruction</b>
+                            {% if output == "FAKE" %}
+                                <span class="ml-2 badge badge-warning">Coming Soon</span>
+                            {% else %}
+                            <span class="ml-2 badge badge-secondary">Skipped</span>
+                            {% endif %}
+                            <div class="text-muted">Repairs occluded patches using MAE or a robust fallback method.</div>
+                        </li>
+                        <li>
+                            <b>Blend & Export</b>
+                            {% if output == "FAKE" %}
+                            <span class="ml-2 badge badge-warning">Coming Soon</span>
+                            {% else %}
+                            <span class="ml-2 badge badge-secondary">N/A</span>
+                            {% endif %}
+                            <div class="text-muted">Blends recovered regions with the original face and saves the output.</div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Execution Log -->
+        <div class="col-12 mt-4">
+            <div class="result-card">
+                <h3 class="section-title">Detailed Technical Display <span class="badge badge-ai ml-2">Execution Log</span></h3>
+                <div class="execution-log mt-3">
+                    <div class="log-header">
+                        <span><i class="fas fa-terminal mr-2"></i> SYSTEM_EXECUTION_LOG</span>
+                        <span>v2.4.0-STABLE</span>
+                    </div>
+                    
+                    <div class="log-item">
+                        <span class="log-timestamp">[00:01:04]</span>
+                        <span class="log-status">[SUCCESS]</span>
+                        <span>Initializing Module 1: Deepfake Detection Engine...</span>
+                    </div>
+                    <div class="log-thought">
+                        Thought: Loading ResNeXt50 weights. Target: Spatial Feature Maps.
+                    </div>
+
+                    <div class="log-item">
+                        <span class="log-timestamp">[00:01:08]</span>
+                        <span class="log-status">[SUCCESS]</span>
+                        <span>Facial Landmark Detection complete. Region of Interest (ROI) isolated.</span>
+                    </div>
+                    <div class="log-thought">
+                        Thought: ROI isolated. Applying 112x112 normalization for input consistency.
+                    </div>
+
+                    <div class="log-item">
+                        <span class="log-timestamp">[00:01:12]</span>
+                        <span class="log-status">[INFO]</span>
+                        <span>Running Temporal Analysis via LSTM Layers (Depth: 2048)...</span>
+                    </div>
+                    <div class="log-thought">
+                        Thought: Analyzing frame-to-frame coherence. Scanning for jitter in GAN-generated skin textures.
+                    </div>
+
+                    <div class="log-item">
+                        <span class="log-timestamp">[00:01:15]</span>
+                        <span class="log-status">[SUCCESS]</span>
+                        <span>Grad-CAM generation complete. High-suspicion regions localized.</span>
+                    </div>
+                    <div class="log-thought">
+                        Thought: Heatmap generated. Mapping high-activation neurons to spatial coordinates.
+                    </div>
+
+                    <div class="log-item">
+                        <span class="log-timestamp">[00:01:16]</span>
+                        <span class="log-status">[SUCCESS]</span>
+                        <span>Final output generated. Result: <b>{{ output }}</b></span>
+                    </div>
+
+                    {% if reconstructed_image %}
+                    <div class="log-item mt-3">
+                        <span class="log-timestamp">[00:01:18]</span>
+                        <span class="log-status">[INFO]</span>
+                        <span>Initializing DFREC Pipeline (ISM → SIRM/TIRM)...</span>
+                    </div>
+                    <div class="log-thought">
+                        Thought: Modules 2-4 are currently in beta/development. Skipping execution.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% if heatmap_images %}
+        <div class="col-12 mt-4">
+            <div class="result-card">
+                <h3 class="section-title">Manipulation Heatmap <span class="badge badge-ai ml-2">Active</span></h3>
+                <p class="text-muted small mb-3">This heatmap highlights the regions the AI identified as potentially manipulated. Warmer colors (red/yellow) indicate higher suspicion.</p>
+                <div class="text-center">
+                    <img src="{% static heatmap_images.0 %}" class="img-fluid rounded shadow-sm img-thumbnail-modern" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if output == "FAKE" %}
+        <div class="col-12 mt-4">
+            <div class="result-card position-relative overflow-hidden" style="background: #f8fafc; opacity: 0.8;">
+                <div style="position: absolute; top: 1rem; right: 1rem;">
+                    <span class="badge badge-warning py-2 px-3" style="font-size: 0.8rem; letter-spacing: 0.05em; border-radius: 999px;">COMING SOON</span>
+                </div>
+                <h3 class="section-title">Identity Recovery (MAE Reconstruction)</h3>
+                <p class="text-muted small mb-3">Module 2-4: Recovering the target identity by treating the manipulated regions (identified by the heatmap) as occlusions using <b>DFREC</b> research.</p>
+                
+                <div class="row align-items-center justify-content-center py-5">
+                    <div class="col-md-8 text-center">
+                        <i class="fas fa-tools fa-3x text-muted mb-3"></i>
+                        <h5>Under Development</h5>
+                        <p class="text-muted">This advanced reconstruction module is currently being integrated and will be available in the next update.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="col-12 text-center mt-4">
+            <a href="{% url 'ml_app:home' %}" class="btn btn-primary px-5">Analyze Another Image</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+{%block js_cripts%}
+{%endblock%}
