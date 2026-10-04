@@ -1,0 +1,688 @@
+<title>ForgeFlow Hackathon Pitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
+<style>
+  /* One deliberate look (IBM Carbon-inspired): white and Gray 100 slides on a dark stage. */
+  :root {
+    --ink:#161616; --ink2:#525252; --ink3:#6f6f6f; --line:#e0e0e0; --line2:#c6c6c6;
+    --paper:#ffffff; --paper2:#f4f4f4;
+    --blue:#0f62fe; --blue-dk:#0043ce; --blue-10:#edf5ff; --blue-20:#d0e2ff; --blue-40:#78a9ff;
+    --night:#161616; --night2:#262626; --night-line:#393939;
+    --night-ink:#f4f4f4; --night-ink2:#c6c6c6; --night-ink3:#8d8d8d;
+    --green:#198038; --green-10:#defbe6; --red:#da1e28; --red-10:#fff1f1;
+    --fill-bg:#fcf4d6; --fill-ink:#684e00;
+    --stage:#0b0b0c;
+    --sans:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono:"IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    color-scheme: light;
+  }
+  html, body { height:100%; }
+  body { margin:0; background:var(--stage); overflow:hidden; font-family:var(--sans); }
+  * { box-sizing:border-box; }
+  p, h1, h2, h3, ul, ol { margin:0; }
+  ul, ol { padding:0; list-style:none; }
+  table { font:inherit; color:inherit; border-collapse:collapse; }
+  code, .mono { font-family:var(--mono); }
+
+  /* ---------- stage + slides ---------- */
+  #deck { position:absolute; left:50%; top:50%; width:1280px; height:720px; transform:translate(-50%,-50%); }
+  .slide {
+    position:absolute; inset:0; overflow:hidden;
+    background:var(--paper); color:var(--ink);
+    padding:56px 72px 76px; display:flex; flex-direction:column; gap:28px;
+    visibility:hidden; opacity:0; pointer-events:none;
+  }
+  .slide.active { visibility:visible; opacity:1; pointer-events:auto; }
+  @keyframes inR { from { opacity:0; transform:translateX(24px); } to { opacity:1; transform:none; } }
+  @keyframes inL { from { opacity:0; transform:translateX(-24px); } to { opacity:1; transform:none; } }
+  .slide.active.gonext { animation:inR .34s ease both; }
+  .slide.active.goprev { animation:inL .34s ease both; }
+  @media (prefers-reduced-motion: reduce) { .slide.active.gonext, .slide.active.goprev { animation:none; } }
+
+  .slide.dark { background:var(--night); color:var(--night-ink); }
+  .slide.gray { background:var(--paper2); }
+  .slide.blue { background:var(--blue); color:#ffffff; }
+
+  .eyebrow { font-family:var(--mono); font-size:13px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); }
+  .dark .eyebrow { color:var(--blue-40); }
+  .blue .eyebrow { color:var(--blue-10); }
+  h2 { font-weight:300; font-size:40px; line-height:1.15; letter-spacing:-.01em; margin-top:10px; max-width:1040px; text-wrap:balance; }
+  h3 { font-size:17px; font-weight:600; line-height:1.3; }
+  .muted { color:var(--ink2); }
+  .dark .muted { color:var(--night-ink2); }
+
+  .foot {
+    position:absolute; left:72px; right:72px; bottom:26px;
+    display:flex; justify-content:space-between;
+    font-family:var(--mono); font-size:12px; letter-spacing:.02em; color:var(--ink3);
+  }
+  .dark .foot { color:var(--night-ink3); }
+  .blue .foot { color:var(--blue-10); }
+
+  .src { font-family:var(--mono); font-size:12px; color:var(--ink3); line-height:1.5; }
+  .fill { font-family:var(--mono); font-size:.9em; background:var(--fill-bg); color:var(--fill-ink); padding:1px 6px; white-space:nowrap; }
+  .chip { display:inline-block; font-family:var(--mono); font-size:12px; font-weight:500; padding:3px 8px; letter-spacing:.03em; }
+  .chip.fail { background:var(--red-10); color:var(--red); }
+  .chip.pass { background:var(--green-10); color:var(--green); }
+  .tok { font-family:var(--mono); font-size:13px; background:var(--paper2); padding:1px 5px; }
+
+  /* three- and four-column point rows with Carbon-style top rules */
+  .cols { display:grid; gap:32px; }
+  .cols.c3 { grid-template-columns:repeat(3, 1fr); }
+  .cols.c2 { grid-template-columns:repeat(2, 1fr); gap:48px; }
+  .pt { border-top:1px solid var(--line2); padding-top:14px; display:flex; flex-direction:column; gap:6px; }
+  .pt p { font-size:16px; line-height:1.5; color:var(--ink2); }
+  .gray .pt { border-color:var(--line2); }
+
+  .band { background:var(--paper2); padding:18px 24px; font-size:17px; line-height:1.5; color:var(--ink2); }
+  .band.blue10 { background:var(--blue-10); color:var(--ink); }
+  .spacer { flex:1; }
+
+  /* ---------- 1 cover ---------- */
+  .cover { display:grid; grid-template-columns:1fr 408px; grid-template-rows:1fr auto; column-gap:72px; row-gap:24px; padding:64px 72px; }
+  .cover-main { align-self:center; }
+  .cover h1 { font-weight:300; font-size:104px; line-height:1; letter-spacing:-.025em; margin:20px 0 22px; }
+  .cover .lede { font-size:22px; font-weight:300; line-height:1.45; color:var(--night-ink2); max-width:600px; }
+  .tags { display:flex; gap:8px; margin-top:28px; flex-wrap:wrap; }
+  .tags li { font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--night-ink2); border:1px solid var(--night-line); padding:6px 10px; }
+  .cover-grid { grid-row:1 / span 2; grid-column:2; align-self:center; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .tile { height:148px; border:1px solid var(--night-line); padding:14px 16px; display:flex; flex-direction:column; justify-content:space-between; }
+  .tile .n { font-family:var(--mono); font-size:12px; color:var(--night-ink3); }
+  .tile .t { font-size:18px; color:var(--night-ink); }
+  .tile.on { background:var(--blue); border-color:var(--blue); }
+  .tile.on .n { color:var(--blue-10); }
+  .tile.on .t { color:#ffffff; }
+  .tile svg { width:30px; height:30px; }
+  .team { grid-column:1; font-size:15px; line-height:1.6; color:var(--night-ink); }
+  .team .muted { font-size:13px; color:var(--night-ink3); }
+
+  /* ---------- 2 problem ---------- */
+  .stats3 { display:grid; grid-template-columns:repeat(3, 1fr); flex:1; align-items:start; padding-top:8px; }
+  .stat { display:flex; flex-direction:column; gap:14px; padding:0 32px; border-left:1px solid var(--line); }
+  .stat:first-child { padding-left:0; border-left:none; }
+  .stat .big { font-size:52px; font-weight:300; line-height:1.05; color:var(--blue); letter-spacing:-.02em; white-space:nowrap; }
+  .stat p { font-size:17px; line-height:1.5; color:var(--ink); }
+
+  /* ---------- 3 compare ---------- */
+  .compare { display:grid; grid-template-columns:112px 1fr 1fr; column-gap:36px; }
+  .compare > span { padding:14px 0; border-top:1px solid var(--line); font-size:16px; line-height:1.45; }
+  .compare .hd { font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink3); border-top:none; padding-top:0; }
+  .compare .hd.ff { color:var(--blue); }
+  .compare .k { font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink3); padding-top:17px; }
+  .compare .was { color:var(--ink2); }
+  .compare .now { color:var(--ink); }
+
+  /* ---------- 5 loop (dark) ---------- */
+  .loop { display:grid; grid-template-columns:292px 1fr 300px; column-gap:36px; align-items:center; }
+  .side h3 { font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--night-ink3); margin-bottom:10px; }
+  .side li { font-size:16px; line-height:1.4; padding:9px 0; border-top:1px solid var(--night-line); color:var(--night-ink); }
+  .side li small { display:block; font-size:13px; color:var(--night-ink2); margin-top:2px; }
+  .side .out { margin-top:14px; font-size:15px; color:var(--blue-40); }
+  .stuck-label { font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--night-ink3); margin-bottom:8px; }
+  .stuck { background:var(--night2); padding:14px 18px; font-family:var(--mono); font-size:13px; line-height:1.65; color:var(--night-ink2); }
+  .stuck b { color:var(--night-ink); font-weight:500; }
+
+  /* ---------- 6 chain ---------- */
+  .chain { display:grid; grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr 28px 1fr; align-items:stretch; }
+  .link { border:1px solid var(--line2); padding:16px; display:flex; flex-direction:column; gap:10px; background:var(--paper); }
+  .link .lbl { font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink3); }
+  .link p { font-size:15px; line-height:1.45; }
+  .link code { font-size:12.5px; line-height:1.5; word-break:break-word; }
+  .link.hi { border-color:var(--blue); }
+  .arrow { display:flex; align-items:center; justify-content:center; color:var(--ink3); }
+  .arrow svg { width:20px; height:12px; }
+
+  /* ---------- 8 bob (blue) ---------- */
+  .bob-cols { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; }
+  .bob-cols h3 { font-size:19px; font-weight:600; margin-bottom:10px; }
+  .bob-cols p { font-size:17px; line-height:1.5; color:#ffffff; }
+  .handoff { background:var(--blue-dk); padding:16px 18px; margin:14px 0; display:flex; flex-direction:column; gap:10px; }
+  .handoff li { display:grid; grid-template-columns:230px 1fr; gap:12px; font-size:14px; line-height:1.45; }
+  .handoff code { font-size:13px; color:#ffffff; }
+  .handoff span { color:var(--blue-10); }
+  .stamp { position:absolute; top:56px; right:72px; font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:#ffffff; border:1px solid var(--blue-10); padding:5px 10px; }
+
+  /* ---------- 9 sessions table ---------- */
+  .sessions { width:100%; font-size:15px; }
+  .sessions th { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--ink3); text-align:left; padding:0 16px 10px 0; border-bottom:1px solid var(--ink); }
+  .sessions td { padding:12px 16px 12px 0; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.45; }
+  .sessions td:first-child { font-family:var(--mono); font-size:13px; color:var(--ink3); width:48px; }
+  .sessions td.feat { color:var(--blue-dk); }
+  .sessions td:last-child, .sessions th:last-child { text-align:right; padding-right:0; }
+
+  /* ---------- 11 numbers ---------- */
+  .nums { display:grid; grid-template-columns:repeat(4, 1fr); }
+  .num { padding:0 28px; border-left:1px solid var(--line); display:flex; flex-direction:column; gap:12px; }
+  .num:first-child { padding-left:0; border-left:none; }
+  .nums { margin-top:24px; }
+  .num .big { font-size:92px; font-weight:300; letter-spacing:-.03em; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .num p { font-size:17px; line-height:1.5; color:var(--ink2); }
+
+  /* ---------- 13 close (dark) ---------- */
+  .close { display:grid; grid-template-columns:1fr 420px; gap:64px; }
+  .steps { counter-reset:s; display:flex; flex-direction:column; }
+  .steps li { counter-increment:s; display:grid; grid-template-columns:40px 1fr; font-size:17px; line-height:1.4; padding:9px 0; border-top:1px solid var(--night-line); }
+  .steps li::before { content:counter(s, decimal-leading-zero); font-family:var(--mono); font-size:13px; color:var(--night-ink3); padding-top:3px; }
+  .steps li.bob { color:var(--blue-40); }
+  .links { display:flex; flex-direction:column; gap:18px; }
+  .links div { border-top:1px solid var(--night-line); padding-top:10px; }
+  .links .k { font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--night-ink3); margin-bottom:4px; }
+  .links .v { font-size:17px; color:var(--night-ink); }
+  .links a { color:var(--night-ink); text-decoration-color:var(--blue-40); text-underline-offset:3px; }
+
+  /* shared svg text */
+  svg text { font-family:var(--sans); }
+  svg .m { font-family:var(--mono); }
+
+  /* ---------- chrome: hover-only arrows ---------- */
+  .navzone { position:fixed; top:0; bottom:0; width:13%; z-index:50; display:flex; align-items:center; }
+  .navzone.left { left:0; justify-content:flex-start; padding-left:22px; }
+  .navzone.right { right:0; justify-content:flex-end; padding-right:22px; }
+  .navbtn {
+    width:46px; height:46px; border-radius:50%; border:1px solid rgba(0,0,0,.16);
+    background:rgba(255,255,255,.94); color:#262626; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; opacity:0; transform:scale(.9); transition:opacity .2s ease, transform .2s ease;
+    box-shadow:0 2px 10px rgba(0,0,0,.18);
+  }
+  .navzone:hover .navbtn, .navbtn:focus-visible { opacity:1; transform:scale(1); }
+  .navbtn:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+  .navbtn[hidden] { display:none; }
+  .navbtn svg { width:20px; height:20px; }
+  #progress { position:fixed; left:0; bottom:0; height:3px; background:var(--blue); width:0; z-index:60; transition:width .3s ease; }
+  #hint {
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:70; pointer-events:none;
+    background:rgba(22,22,22,.88); color:#f4f4f4; font-family:var(--mono); font-size:12px; letter-spacing:.04em;
+    padding:8px 16px; transition:opacity .8s ease;
+  }
+  #hint.gone { opacity:0; }
+
+  /* ---------- print: one slide per page (open the file in Chrome, Ctrl+P, Save as PDF) ---------- */
+  @page { size:1280px 720px; margin:0; }
+  @media print {
+    html, body { height:auto; overflow:visible; background:#ffffff; }
+    body { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    #deck { position:static; transform:none !important; width:1280px; height:auto; }
+    .slide { position:relative; visibility:visible; opacity:1; width:1280px; height:720px; break-after:page; animation:none !important; }
+    .navzone, #progress, #hint { display:none !important; }
+  }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-chevL" viewBox="0 0 20 20"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevR" viewBox="0 0 20 20"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 20 12"><path d="M0 6h17M12 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <marker id="mk-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#0f62fe"/></marker>
+    <marker id="mk-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8d8d8d"/></marker>
+    <marker id="mk-light" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#78a9ff"/></marker>
+  </defs>
+</svg>
+
+<div id="deck">
+
+<!-- 1 · Cover -->
+<section class="slide dark cover active" aria-label="Cover">
+  <div class="cover-main">
+    <p class="eyebrow">IBM Bob 2.0 Hackathon · lablab.ai · 25–27 Sep 2026</p>
+    <h1>ForgeFlow</h1>
+    <p class="lede">From a web-app idea to a verified live URL, with a self-healing repair loop that knows when to stop and hands the hard cases to IBM&nbsp;Bob.</p>
+    <ul class="tags"><li>Testing</li><li>Debugging</li><li>Release &amp; deployment</li></ul>
+  </div>
+  <div class="cover-grid" aria-hidden="true">
+    <div class="tile"><span class="n">01</span><span class="t">Requirements</span></div>
+    <div class="tile"><span class="n">02</span><span class="t">Design</span></div>
+    <div class="tile"><span class="n">03</span><span class="t">Build</span></div>
+    <div class="tile on"><span class="n">04</span>
+      <svg viewBox="0 0 30 30"><path d="M24 11a10 10 0 1 0 1.2 7" fill="none" stroke="#ffffff" stroke-width="1.8"/><path d="M25.5 4.5v7h-7" fill="none" stroke="#ffffff" stroke-width="1.8"/></svg>
+      <span class="t">Test + Repair</span></div>
+    <div class="tile"><span class="n">05</span><span class="t">Deploy</span></div>
+    <div class="tile"><span class="n">06</span><span class="t">Validate</span></div>
+  </div>
+  <div class="team">
+    <p>Faheemuddin Sayyed · Sanidhya Awasthi · Raghav Sonchhatra</p>
+    <p class="muted">Symbiosis Institute of Technology, Pune</p>
+  </div>
+</section>
+
+<!-- 2 · Problem -->
+<section class="slide" aria-label="The problem">
+  <div><p class="eyebrow">The problem</p><h2>Generating a web app is fast. Proving that it works is still manual.</h2></div>
+  <div class="stats3">
+    <div class="stat">
+      <p class="big">&lt; 1 in 3</p>
+      <p>Infrastructure generated by two frontier models deployed successfully on the first attempt: 30.2% and 26.8% of tasks.</p>
+      <p class="src">Zhang et al., arXiv:2506.05623 (2025)</p>
+    </div>
+    <div class="stat">
+      <p class="big">1–3</p>
+      <p>Repair iterations deliver most of the gain. After that, a fix loop mostly spends tokens.</p>
+      <p class="src">Kiecker et al., arXiv:2607.05197 (2026)<br>Arimbur, arXiv:2604.10508 (2026)</p>
+    </div>
+    <div class="stat">
+      <p class="big">Less secure</p>
+      <p>Repeated rounds of AI self-refinement made code less secure in a controlled study. An open-ended fix loop adds risk.</p>
+      <p class="src">Shukla et al., IEEE ISTAS (2025)</p>
+    </div>
+  </div>
+  <p class="band">Today developers close that gap by hand: tests written after the code, CI logs pasted into a chat, fixes retried with no stopping rule, and a manual click-through of the live site.</p>
+</section>
+
+<!-- 3 · Workflow -->
+<section class="slide" aria-label="The workflow we improve">
+  <div><p class="eyebrow">The workflow we improve</p><h2>Verify, repair, release: the part of the job that AI app builders leave to you</h2></div>
+  <div class="compare">
+    <span class="hd"></span><span class="hd">Today</span><span class="hd ff">With ForgeFlow</span>
+    <span class="k">Tests</span><span class="was">Written by hand after the code, if at all</span><span class="now">Generated from your acceptance criteria, each test tagged with its criterion ID</span>
+    <span class="k">Debug</span><span class="was">Paste failing output into a chat and guess which files matter</span><span class="now">The failure analyzer selects the failing tests, the sources they exercise and the diff since the last green run</span>
+    <span class="k">Retry</span><span class="was">Ask again until it works or the budget runs out</span><span class="now">Four guards stop the loop, and a stuck summary goes to a human</span>
+    <span class="k">Release</span><span class="was">Set up hosting, environment variables and a database by hand</span><span class="now">The infra analyzer picks targets: SPA and API to Vercel, data to MongoDB Atlas</span>
+    <span class="k">Validate</span><span class="was">Click through the live site and hope</span><span class="now">The same generated suite re-runs against the live URL</span>
+  </div>
+</section>
+
+<!-- 4 · Six stages -->
+<section class="slide" aria-label="Six stages">
+  <div><p class="eyebrow">How it works</p><h2>Six stages. Enter, skip or revisit any of them.</h2></div>
+  <svg viewBox="0 0 1136 196" width="1136" height="196" role="img" aria-label="Six stages in product order: Requirements, Design, Build, Test and Repair, Deploy, Validate. Deploy requires Build; Validate requires Deploy.">
+    <g stroke="#c6c6c6" stroke-width="1">
+      <line x1="164" y1="66" x2="194" y2="66"/><line x1="358" y1="66" x2="388" y2="66"/><line x1="552" y1="66" x2="582" y2="66"/><line x1="746" y1="66" x2="776" y2="66"/><line x1="940" y1="66" x2="970" y2="66"/>
+    </g>
+    <g font-size="12" class="m">
+      <rect x="0" y="20" width="164" height="92" fill="#ffffff" stroke="#c6c6c6"/>
+      <rect x="194" y="20" width="164" height="92" fill="#ffffff" stroke="#c6c6c6"/>
+      <rect x="388" y="20" width="164" height="92" fill="#ffffff" stroke="#c6c6c6"/>
+      <rect x="582" y="20" width="164" height="92" fill="#0f62fe" stroke="#0f62fe"/>
+      <rect x="776" y="20" width="164" height="92" fill="#ffffff" stroke="#c6c6c6"/>
+      <rect x="970" y="20" width="164" height="92" fill="#ffffff" stroke="#c6c6c6"/>
+    </g>
+    <g class="m" font-size="12" fill="#6f6f6f">
+      <text x="14" y="42">01</text><text x="208" y="42">02</text><text x="402" y="42">03</text>
+      <text x="596" y="42" fill="#edf5ff">04</text><text x="790" y="42">05</text><text x="984" y="42">06</text>
+    </g>
+    <g font-size="16" font-weight="600" fill="#161616">
+      <text x="14" y="70">Requirements</text><text x="208" y="70">Design</text><text x="402" y="70">Build</text>
+      <text x="596" y="70" fill="#ffffff">Test + Repair</text><text x="790" y="70">Deploy</text><text x="984" y="70">Validate</text>
+    </g>
+    <g font-size="13" fill="#525252">
+      <text x="14" y="94">features + criteria</text><text x="208" y="94">Stitch or Figma</text><text x="402" y="94">code in a sandbox</text>
+      <text x="596" y="94" fill="#edf5ff">bounded self-healing</text><text x="790" y="94">Vercel + Atlas</text><text x="984" y="94">suite vs live URL</text>
+    </g>
+    <g fill="none" stroke="#0f62fe" stroke-width="1.6">
+      <path d="M846 112 C846 172, 470 172, 470 114" marker-end="url(#mk-blue)"/>
+      <path d="M1052 112 C1052 164, 870 164, 870 114" marker-end="url(#mk-blue)"/>
+    </g>
+    <g class="m" font-size="12" fill="#0f62fe" text-anchor="middle">
+      <text x="658" y="182">deploy requires build</text>
+      <text x="961" y="176">validate requires deploy</text>
+    </g>
+  </svg>
+  <div class="cols c3">
+    <div class="pt"><h3>Each stage keeps its own state</h3><p>Status and versioned artifacts per stage. Nothing is overwritten.</p></div>
+    <div class="pt"><h3>Stale, never deleted</h3><p>Refining requirements marks downstream work stale, and you decide what to redo.</p></div>
+    <div class="pt"><h3>Only two hard rules</h3><p>Start from screenshots, a structured spec, or go straight to Build. The blue arcs are the only prerequisites.</p></div>
+  </div>
+</section>
+
+<!-- 5 · Repair loop -->
+<section class="slide dark" aria-label="The bounded repair loop">
+  <div><p class="eyebrow">The core contribution</p><h2>A repair loop that knows when to stop</h2></div>
+  <div class="loop">
+    <div class="side">
+      <h3>What the repair agent sees</h3>
+      <ul>
+        <li>The failing tests</li>
+        <li>Only the sources those tests exercise</li>
+        <li>The git diff since the last green run</li>
+        <li>The acceptance criterion each test checks</li>
+      </ul>
+    </div>
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="Loop: run tests, analyze failure, diff-aware patch, check guards, then run tests again.">
+      <g fill="none" stroke="#78a9ff" stroke-width="1.5">
+        <path d="M275 28 C319 28, 319 60, 319 101" marker-end="url(#mk-light)"/>
+        <path d="M319 145 C319 190, 305 222, 279 222" marker-end="url(#mk-light)"/>
+        <path d="M125 222 C81 222, 81 190, 81 149" marker-end="url(#mk-light)"/>
+        <path d="M81 105 C81 60, 90 28, 121 28" marker-end="url(#mk-light)"/>
+      </g>
+      <g stroke="#393939">
+        <rect x="125" y="8" width="150" height="40" fill="#262626"/>
+        <rect x="244" y="105" width="150" height="40" fill="#262626"/>
+        <rect x="125" y="202" width="150" height="40" fill="#0f62fe" stroke="#0f62fe"/>
+        <rect x="6" y="105" width="150" height="40" fill="#262626"/>
+      </g>
+      <g font-size="14" fill="#f4f4f4" text-anchor="middle">
+        <text x="200" y="33">Run tests</text>
+        <text x="319" y="130">Analyze failure</text>
+        <text x="200" y="227" fill="#ffffff">Diff-aware patch</text>
+        <text x="81" y="130">Check guards</text>
+      </g>
+      <text x="200" y="130" class="m" font-size="12" fill="#8d8d8d" text-anchor="middle">bounded</text>
+    </svg>
+    <div class="side">
+      <h3>Stops at the first of</h3>
+      <ul>
+        <li>Regression guard<small>a patch breaks a passing test</small></li>
+        <li>No-progress guard<small>the failing count stops shrinking</small></li>
+        <li>Iteration cap</li>
+        <li>Budget cap<small>tokens and cost, per project</small></li>
+      </ul>
+      <p class="out">Then it escalates to a human.</p>
+    </div>
+  </div>
+  <div>
+    <p class="stuck-label">Escalation summary · the controller's real format, example values</p>
+    <p class="stuck"><b>I stopped after 3 attempt(s) because the failing tests stopped shrinking.</b> 1 test(s) are still failing: clear completed keeps open tasks [ac-3f9a1c2e7b04]. I patched: backend/src/routes/todos.ts, frontend/src/App.tsx. Failing count per attempt: 4 → 1 → 1. Tell me what to change and I'll rebuild from your guidance.</p>
+  </div>
+</section>
+
+<!-- 6 · Traceability -->
+<section class="slide" aria-label="Traceability">
+  <div><p class="eyebrow">Traceability</p><h2>One criterion ID links the requirement, the test, the failure and the fix</h2></div>
+  <div class="chain">
+    <div class="link"><span class="lbl">Acceptance criterion</span><code>ac-3f9a1c2e7b04</code><p>Clear completed removes only finished tasks.</p></div>
+    <div class="arrow"><svg><use href="#i-arrow"/></svg></div>
+    <div class="link"><span class="lbl">Generated test · Playwright</span><code>clear completed keeps open tasks [ac-3f9a1c2e7b04]</code></div>
+    <div class="arrow"><svg><use href="#i-arrow"/></svg></div>
+    <div class="link"><span class="lbl">Test run</span><span><span class="chip fail">FAIL</span></span><p>Expected 2 open tasks, found 0.</p></div>
+    <div class="arrow"><svg><use href="#i-arrow"/></svg></div>
+    <div class="link"><span class="lbl">Failure analysis</span><p>Selects the sources this test exercises and the diff since the last green run.</p></div>
+    <div class="arrow"><svg><use href="#i-arrow"/></svg></div>
+    <div class="link hi"><span class="lbl">Repair context</span><p>Criterion text, failing test, 2 source files, the diff.</p><span><span class="chip pass">PASS · attempt 2</span></span></div>
+  </div>
+  <div class="cols c2">
+    <div class="pt"><h3>The ID follows the app into production</h3><p>Live-validation results carry the same criterion ID, so a failure on the deployed URL points back to the requirement it breaks.</p></div>
+    <div class="pt"><h3>How the link is made</h3><p>Criteria are minted as <span class="tok">ac-&lt;12 hex&gt;</span>. Tests carry the ID in their title, and the result parser reads it back from each run.</p></div>
+  </div>
+  <p class="src">Example values from the Todo demo.</p>
+</section>
+
+<!-- 7 · Deploy and validate -->
+<section class="slide gray" aria-label="Release and validation">
+  <div><p class="eyebrow">Release and validation</p><h2>Deployed, then tested again where users will see it</h2></div>
+  <svg viewBox="0 0 1136 214" width="1136" height="214" role="img" aria-label="Sandbox, infra analyzer, Vercel and MongoDB Atlas, live URL, live validation. Live failures return to the repair loop in the sandbox.">
+    <g stroke="#8d8d8d" stroke-width="1.2" fill="none">
+      <line x1="196" y1="70" x2="233" y2="70" marker-end="url(#mk-grey)"/>
+      <line x1="431" y1="70" x2="468" y2="70" marker-end="url(#mk-grey)"/>
+      <line x1="666" y1="70" x2="703" y2="70" marker-end="url(#mk-grey)"/>
+      <line x1="901" y1="70" x2="938" y2="70" marker-end="url(#mk-grey)"/>
+    </g>
+    <g fill="#ffffff" stroke="#c6c6c6">
+      <rect x="0" y="20" width="196" height="100"/><rect x="235" y="20" width="196" height="100"/>
+      <rect x="470" y="20" width="196" height="100"/><rect x="705" y="20" width="196" height="100"/>
+      <rect x="940" y="20" width="196" height="100" stroke="#0f62fe" stroke-width="1.5"/>
+    </g>
+    <g font-size="16" font-weight="600" fill="#161616">
+      <text x="14" y="50">Sandbox</text><text x="249" y="50">Infra analyzer</text><text x="484" y="50">Vercel + Atlas</text>
+      <text x="719" y="50">Live URL</text><text x="954" y="50">Live validation</text>
+    </g>
+    <g font-size="13" fill="#525252">
+      <text x="14" y="76">Docker, one per project</text><text x="14" y="96">git-backed workspace</text>
+      <text x="249" y="76">classifies the app</text><text x="249" y="96">and picks targets</text>
+      <text x="484" y="76">SPA + Node API function</text><text x="484" y="96">per-project MongoDB</text>
+      <text x="719" y="76">the app your users</text><text x="719" y="96">will actually open</text>
+      <text x="954" y="76">Playwright suite re-runs</text><text x="954" y="96">against the live URL</text>
+    </g>
+    <path d="M1038 120 C1038 188, 98 188, 98 124" fill="none" stroke="#0f62fe" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#mk-blue)"/>
+    <text x="568" y="206" class="m" font-size="12" fill="#0043ce" text-anchor="middle">live failures re-enter the same bounded repair loop</text>
+  </svg>
+  <div class="cols c3">
+    <div class="pt"><h3>No git host in the path</h3><p>The API ships as a Vercel function built from an inline source upload.</p></div>
+    <div class="pt"><h3>Secrets stay server-side</h3><p>Provider tokens are encrypted at rest, decrypted only at call time, and never returned to the browser.</p></div>
+    <div class="pt"><h3>Host choice by setting</h3><p>Render stays available as the backend host behind one configuration value.</p></div>
+  </div>
+</section>
+
+<!-- 8 · Where IBM Bob fits -->
+<section class="slide blue" aria-label="Where IBM Bob fits">
+  <p class="stamp">Built with IBM Bob · 27.86 Bobcoins</p>
+  <div><p class="eyebrow">Where IBM Bob fits</p><h2>ForgeFlow automates the bounded part. IBM Bob takes over where it stops.</h2></div>
+  <div class="bob-cols">
+    <div>
+      <h3>IBM Bob as our development partner</h3>
+      <p>ForgeFlow is a real, multi-service codebase of about 800 files: a FastAPI control plane, a React PWA, Docker sandboxes and deploy adapters. During the hackathon we worked on it in IBM Bob IDE, using Bob 2.0's full-repository context to onboard, review and extend it. The repo ships <code>AGENTS.md</code> and <code>.bob/rules/</code> so Bob loads our conventions in every session.</p>
+    </div>
+    <div>
+      <h3>Continue in IBM Bob <span style="font-family:var(--mono);font-size:12px;font-weight:400;border:1px solid var(--blue-10);padding:2px 6px;margin-left:6px;vertical-align:middle">built with Bob</span></h3>
+      <p>When the repair loop escalates, ForgeFlow exports the workspace ready for Bob:</p>
+      <ul class="handoff">
+        <li><code>AGENTS.md</code><span>stack, commands and conventions</span></li>
+        <li><code>.bob/rules/forgeflow-stack.md</code><span>the fixed generated-app stack</span></li>
+        <li><code>BOB_HANDOFF.md</code><span>failing tests, criteria, patches tried, failing-count trail</span></li>
+      </ul>
+      <p>Open the folder in IBM Bob IDE, start in Plan mode, and keep going with everything ForgeFlow learned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · IBM Bob sessions -->
+<section class="slide" aria-label="IBM Bob sessions">
+  <div><p class="eyebrow">IBM Bob session</p><h2>One agent task in IBM Bob IDE, five steps, 27.86 Bobcoins</h2></div>
+  <table class="sessions">
+    <thead><tr><th>#</th><th>Step</th><th>IBM Bob 2.0 feature</th><th>Result in the repo</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td>Trace how a failing test becomes a repair attempt</td><td class="feat">2 explore subagents in parallel, guided by AGENTS.md and .bob/rules</td><td>Hop-by-hop map with file and function references</td></tr>
+      <tr><td>02</td><td>Review the repair loop, sandbox and deploy code</td><td class="feat">Agent mode review with a verdict per finding</td><td>6 findings, 2 real bugs fixed, 8 regression tests</td></tr>
+      <tr><td>03</td><td>Plan Continue in IBM Bob from the codebase</td><td class="feat">Repository-wide reading and a to-do plan</td><td><span class="tok">plans/bob-handoff.md</span></td></tr>
+      <tr><td>04</td><td>Build the handoff end to end</td><td class="feat">Parallel tool calls, diffs across backend and PWA</td><td><span class="tok">handoff.py</span>, export endpoint, Continue in IBM Bob button</td></tr>
+      <tr><td>05</td><td>Test the handoff</td><td class="feat">Bob runs the suites in the terminal</td><td>37 pytest + 4 Vitest cases; backend suite 1,790 passed</td></tr>
+    </tbody>
+  </table>
+  <div class="spacer"></div>
+  <p class="band">Evidence: exported task history and consumption summary in <span class="tok">bob_sessions/sanidhya/</span>. Task e974963b063af54c60573c71ade2d7e4.</p>
+</section>
+
+<!-- 10 · Who it's for -->
+<section class="slide" aria-label="Who it's for">
+  <div><p class="eyebrow">Who it's for</p><h2>For people who ship web apps faster than they can verify them</h2></div>
+  <div class="cols c3">
+    <div class="pt"><h3>Student and indie builders</h3><p>Go from screenshots or a short spec to a tested, deployed full-stack app without building a test harness or a deploy pipeline.</p></div>
+    <div class="pt"><h3>Agencies and small product teams</h3><p>Every client prototype ships with a test suite traced to its acceptance criteria and a live-validation report.</p></div>
+    <div class="pt"><h3>Teams adopting AI coding tools</h3><p>Generated code is verified with a stopping rule, a cost record per project, and a human decision at the end.</p></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="band blue10">
+    <h3 style="margin-bottom:6px">Cost discipline is built in</h3>
+    <p>Models are routed by role. A small model classifies and summarizes; the code model runs only for code, tests and repair. Token use and cost are recorded per project against a budget cap. When money is tight, ForgeFlow skips planning before it skips verification.</p>
+  </div>
+</section>
+
+<!-- 11 · Built and measured -->
+<section class="slide" aria-label="Built and measured">
+  <div><p class="eyebrow">Built and measured</p><h2>Working today, with the evidence in the repository</h2></div>
+  <div class="nums">
+    <div class="num"><p class="big">2,000+</p><p>automated tests across the control plane, PWA, sandbox and deploy code</p></div>
+    <div class="num"><p class="big">49</p><p>new tests written by IBM Bob for the two bug fixes and the Continue in IBM Bob handoff</p></div>
+    <div class="num"><p class="big">6</p><p>quality gates before every commit: backend lint, frontend lint, backend tests, frontend tests, app-skeleton verify and config check</p></div>
+    <div class="num"><p class="big">10</p><p>benchmark apps. Each run records first-pass and post-repair pass rate, iterations, regressions and cost.</p></div>
+  </div>
+  <div class="spacer"></div>
+  <p class="band">Every change clears the same gate: ruff, black and mypy on the backend; ESLint, Prettier and Vitest on the PWA; pytest against a disposable MongoDB.</p>
+</section>
+
+<!-- 12 · Architecture -->
+<section class="slide" aria-label="Architecture">
+  <div><p class="eyebrow">Architecture</p><h2>Untrusted code only ever runs inside a sandbox</h2></div>
+  <svg viewBox="0 0 1136 290" width="1136" height="290" role="img" aria-label="The PWA talks to the FastAPI control plane over REST and WebSocket. The control plane drives the per-project sandbox, the LLM transport, deploy providers and design providers.">
+    <g fill="none" stroke="#8d8d8d" stroke-width="1.2">
+      <line x1="220" y1="145" x2="298" y2="145" marker-start="url(#mk-grey)" marker-end="url(#mk-grey)"/>
+      <line x1="700" y1="42" x2="778" y2="42" marker-end="url(#mk-grey)"/>
+      <line x1="700" y1="110" x2="778" y2="110" marker-end="url(#mk-grey)"/>
+      <line x1="700" y1="178" x2="778" y2="178" marker-end="url(#mk-grey)"/>
+      <line x1="700" y1="246" x2="778" y2="246" marker-end="url(#mk-grey)"/>
+    </g>
+    <text x="259" y="135" class="m" font-size="11" fill="#6f6f6f" text-anchor="middle">REST + WS</text>
+    <rect x="0" y="85" width="220" height="120" fill="#ffffff" stroke="#c6c6c6"/>
+    <text x="16" y="116" font-size="16" font-weight="600" fill="#161616">PWA</text>
+    <text x="16" y="142" font-size="13" fill="#525252">React 18 · Vite · TS</text>
+    <text x="16" y="162" font-size="13" fill="#525252">Monaco · xterm.js</text>
+    <text x="16" y="182" font-size="13" fill="#525252">React Flow · Tailwind</text>
+
+    <rect x="300" y="14" width="400" height="262" fill="#f4f4f4" stroke="#c6c6c6"/>
+    <text x="318" y="44" font-size="16" font-weight="600" fill="#161616">Control plane · FastAPI</text>
+    <g fill="#ffffff" stroke="#e0e0e0">
+      <rect x="318" y="60" width="364" height="34"/><rect x="318" y="100" width="364" height="34" stroke="#0f62fe"/>
+      <rect x="318" y="140" width="364" height="34"/><rect x="318" y="180" width="364" height="34"/><rect x="318" y="220" width="364" height="34"/>
+    </g>
+    <g font-size="13" fill="#161616">
+      <text x="332" y="82">Conductor and stage handlers</text>
+      <text x="332" y="122" fill="#0043ce">Bounded repair-loop controller</text>
+      <text x="332" y="162">Realtime hub · typed WebSocket events</text>
+      <text x="332" y="202">Cost and budget tracking per project</text>
+      <text x="332" y="242">MongoDB (Beanie) · versioned artifacts</text>
+    </g>
+
+    <g fill="#ffffff" stroke="#c6c6c6">
+      <rect x="780" y="14" width="356" height="56" stroke="#161616"/><rect x="780" y="82" width="356" height="56"/>
+      <rect x="780" y="150" width="356" height="56"/><rect x="780" y="218" width="356" height="56"/>
+    </g>
+    <g font-size="14" font-weight="600" fill="#161616">
+      <text x="796" y="37">Sandbox, one per project</text><text x="796" y="105">LLM transport</text>
+      <text x="796" y="173">Deploy providers</text><text x="796" y="241">Design providers</text>
+    </g>
+    <g font-size="12" fill="#525252">
+      <text x="796" y="57">no host network · dropped caps · CPU, memory, pid limits</text>
+      <text x="796" y="125">Anthropic or any OpenAI-compatible API · models by role</text>
+      <text x="796" y="193">Vercel (SPA + API) · MongoDB Atlas · Render</text>
+      <text x="796" y="261">Stitch (default) · Figma</text>
+    </g>
+  </svg>
+  <p class="band">Every generated app uses one stack: React + Vite + TS · Express + TS · MongoDB (Mongoose) · Zod · Vitest · Jest + supertest · Playwright.</p>
+</section>
+
+<!-- 13 · Demo and links -->
+<section class="slide dark" aria-label="Demo and links">
+  <div><p class="eyebrow">Demo</p><h2>Screenshots in, a verified live URL out</h2></div>
+  <div class="close">
+    <ol class="steps">
+      <li>Describe a todo app, or drop in screenshots</li>
+      <li>Refine the design with one sentence</li>
+      <li>Build full-stack code in the sandbox, with live preview</li>
+      <li>Generate tests from the acceptance criteria</li>
+      <li>Watch the repair loop fix Clear completed</li>
+      <li>Deploy the SPA and API to Vercel, data to MongoDB Atlas</li>
+      <li>Re-run the suite against the live URL</li>
+      <li class="bob">Escalate a hard case and continue it in IBM Bob</li>
+    </ol>
+    <div class="links">
+      <div><p class="k">Live app</p><p class="v"><a href="https://forgeflow-ecru.vercel.app" target="_blank" rel="noopener">forgeflow-ecru.vercel.app</a></p></div>
+      <div><p class="k">Video demo</p><p class="v"><a href="https://youtu.be/cjVYj87INMo" target="_blank" rel="noopener">youtu.be/cjVYj87INMo</a></p></div>
+      <div><p class="k">Code</p><p class="v"><a href="https://github.com/Islinger19/ForgeFlow-IBM-BOB" target="_blank" rel="noopener">github.com/Islinger19/ForgeFlow-IBM-BOB</a></p></div>
+      <div><p class="k">IBM Bob evidence</p><p class="v"><code>bob_sessions/</code> in the repository</p></div>
+      <div><p class="k">Team</p><p class="v">Faheemuddin Sayyed, Sanidhya Awasthi, Raghav Sonchhatra</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · Thank you -->
+<section class="slide dark cover" aria-label="Thank you">
+  <div class="cover-main">
+    <p class="eyebrow">IBM Bob 2.0 Hackathon · lablab.ai</p>
+    <h1>Thank you</h1>
+    <p class="lede">ForgeFlow verifies, repairs and ships. IBM&nbsp;Bob takes over when the loop stops.</p>
+    <ul class="tags"><li>forgeflow-ecru.vercel.app</li><li>github.com/Islinger19/ForgeFlow-IBM-BOB</li></ul>
+  </div>
+  <div class="cover-grid" aria-hidden="true">
+    <div class="tile"><span class="n">01</span><span class="t">Requirements</span></div>
+    <div class="tile"><span class="n">02</span><span class="t">Design</span></div>
+    <div class="tile"><span class="n">03</span><span class="t">Build</span></div>
+    <div class="tile"><span class="n">04</span><span class="t">Test + Repair</span></div>
+    <div class="tile"><span class="n">05</span><span class="t">Deploy</span></div>
+    <div class="tile on"><span class="n">06</span><span class="t">Validate</span></div>
+  </div>
+  <div class="team">
+    <p>Faheemuddin Sayyed · Sanidhya Awasthi · Raghav Sonchhatra</p>
+    <p class="muted">Questions welcome</p>
+  </div>
+</section>
+
+
+</div>
+
+<div class="navzone left"><button class="navbtn" id="btnPrev" type="button" aria-label="Previous slide"><svg><use href="#i-chevL"/></svg></button></div>
+<div class="navzone right"><button class="navbtn" id="btnNext" type="button" aria-label="Next slide"><svg><use href="#i-chevR"/></svg></button></div>
+<div id="progress"></div>
+<div id="hint">← → to move · F for full screen</div>
+
+<script>
+(function () {
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  var total = slides.length;
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var progress = document.getElementById('progress');
+  var cur = 0;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  // Page footer on every slide except the cover.
+  slides.forEach(function (s, i) {
+    if (i === 0) return;
+    var f = document.createElement('div');
+    f.className = 'foot';
+    f.innerHTML = '<span>ForgeFlow · IBM Bob 2.0 Hackathon</span><span>' + pad(i + 1) + ' / ' + pad(total) + '</span>';
+    s.appendChild(f);
+  });
+
+  function fit() {
+    var s = Math.min(window.innerWidth / 1280, window.innerHeight / 720) * 0.97;
+    deck.style.transform = 'translate(-50%,-50%) scale(' + s + ')';
+  }
+
+  function show(n, dir) {
+    if (n < 0 || n >= total) return;
+    slides[cur].classList.remove('active', 'gonext', 'goprev');
+    slides[cur].setAttribute('aria-hidden', 'true');
+    cur = n;
+    var s = slides[cur];
+    s.classList.remove('gonext', 'goprev');
+    void s.offsetWidth;
+    s.classList.add('active');
+    if (dir) s.classList.add(dir > 0 ? 'gonext' : 'goprev');
+    s.removeAttribute('aria-hidden');
+    prevBtn.hidden = cur === 0;
+    nextBtn.hidden = cur === total - 1;
+    progress.style.width = ((cur + 1) / total * 100) + '%';
+    try { history.replaceState(null, '', '#' + (cur + 1)); } catch (e) {}
+  }
+  function next() { show(cur + 1, 1); }
+  function prev() { show(cur - 1, -1); }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ' || k === 'Enter') { e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp' || k === 'Backspace') { e.preventDefault(); prev(); }
+    else if (k === 'Home') { show(0, -1); }
+    else if (k === 'End') { show(total - 1, 1); }
+    else if (k === 'f' || k === 'F') {
+      try {
+        if (!document.fullscreenElement) { document.documentElement.requestFullscreen().catch(function () {}); }
+        else { document.exitFullscreen().catch(function () {}); }
+      } catch (err) {}
+    }
+  });
+
+  // Swipe on touch screens.
+  var tx = null;
+  document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+    tx = null;
+  });
+
+  window.addEventListener('resize', fit);
+  fit();
+
+  slides.forEach(function (s, i) { if (i !== 0) s.setAttribute('aria-hidden', 'true'); });
+  var start = parseInt((location.hash || '').replace('#', ''), 10);
+  show(start >= 1 && start <= total ? start - 1 : 0, 0);
+
+  var hint = document.getElementById('hint');
+  setTimeout(function () { hint.classList.add('gone'); }, 3200);
+})();
+</script>
