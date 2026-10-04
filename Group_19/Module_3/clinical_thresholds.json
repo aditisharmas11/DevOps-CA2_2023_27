@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "purpose": "Coarse HIGH/LOW/NORMAL flagging thresholds for Module 1's 29 supported observations. General adult reference ranges only -- NOT personalized, NOT a diagnostic threshold, and NOT a substitute for clinical guidelines or a clinician's judgement. Module 3 uses these only to describe *direction* (e.g. 'elevated'), never to diagnose.",
+    "version": "1.0"
+  },
+  "Body Mass Index": {
+    "unit": "kg/m2",
+    "low": 18.5,
+    "high": 25.0,
+    "very_high": 30.0,
+    "direction_of_concern": "higher_worse"
+  },
+  "Body Weight": {
+    "unit": "kg",
+    "direction_of_concern": "neutral",
+    "note": "No fixed normal range; evaluated via trend/rate of change only."
+  },
+  "Systolic Blood Pressure": {
+    "unit": "mmHg",
+    "low": 90,
+    "high": 130,
+    "very_high": 140,
+    "direction_of_concern": "higher_worse"
+  },
+  "Diastolic Blood Pressure": {
+    "unit": "mmHg",
+    "low": 60,
+    "high": 80,
+    "very_high": 90,
+    "direction_of_concern": "higher_worse"
+  },
+  "Heart rate": {
+    "unit": "bpm",
+    "low": 60,
+    "high": 100,
+    "very_high": 120,
+    "direction_of_concern": "neutral"
+  },
+  "Respiratory rate": {
+    "unit": "breaths/min",
+    "low": 12,
+    "high": 20,
+    "very_high": 24,
+    "direction_of_concern": "neutral"
+  },
+  "High Density Lipoprotein Cholesterol": {
+    "unit": "mg/dL",
+    "low": 40,
+    "high": 60,
+    "direction_of_concern": "lower_worse"
+  },
+  "Low Density Lipoprotein Cholesterol": {
+    "unit": "mg/dL",
+    "high": 100,
+    "very_high": 160,
+    "direction_of_concern": "higher_worse"
+  },
+  "Triglycerides": {
+    "unit": "mg/dL",
+    "high": 150,
+    "very_high": 200,
+    "direction_of_concern": "higher_worse"
+  },
+  "Total Cholesterol": {
+    "unit": "mg/dL",
+    "high": 200,
+    "very_high": 240,
+    "direction_of_concern": "higher_worse"
+  },
+  "Glucose": {
+    "unit": "mg/dL",
+    "low": 70,
+    "high": 100,
+    "very_high": 126,
+    "direction_of_concern": "higher_worse"
+  },
+  "Hemoglobin A1c/Hemoglobin.total in Blood": {
+    "unit": "%",
+    "high": 5.7,
+    "very_high": 6.5,
+    "direction_of_concern": "higher_worse"
+  },
+  "Potassium": {
+    "unit": "mmol/L",
+    "low": 3.5,
+    "high": 5.0,
+    "very_high": 5.5,
+    "direction_of_concern": "neutral"
+  },
+  "Calcium": {
+    "unit": "mg/dL",
+    "low": 8.5,
+    "high": 10.5,
+    "direction_of_concern": "neutral"
+  },
+  "Sodium": {
+    "unit": "mmol/L",
+    "low": 135,
+    "high": 145,
+    "direction_of_concern": "neutral"
+  },
+  "Carbon Dioxide": {
+    "unit": "mmol/L",
+    "low": 23,
+    "high": 29,
+    "direction_of_concern": "neutral"
+  },
+  "Chloride": {
+    "unit": "mmol/L",
+    "low": 96,
+    "high": 106,
+    "direction_of_concern": "neutral"
+  },
+  "Creatinine": {
+    "unit": "mg/dL",
+    "low": 0.6,
+    "high": 1.3,
+    "very_high": 1.5,
+    "direction_of_concern": "higher_worse"
+  },
+  "Urea Nitrogen": {
+    "unit": "mg/dL",
+    "low": 7,
+    "high": 20,
+    "very_high": 25,
+    "direction_of_concern": "higher_worse"
+  },
+  "Glomerular filtration rate/1.73 sq M.predicted": {
+    "unit": "mL/min/1.73m2",
+    "low": 60,
+    "very_low": 30,
+    "direction_of_concern": "lower_worse"
+  },
+  "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma": {
+    "unit": "U/L",
+    "high": 40,
+    "very_high": 80,
+    "direction_of_concern": "higher_worse"
+  },
+  "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma": {
+    "unit": "U/L",
+    "high": 41,
+    "very_high": 82,
+    "direction_of_concern": "higher_worse"
+  },
+  "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma": {
+    "unit": "U/L",
+    "low": 44,
+    "high": 147,
+    "direction_of_concern": "higher_worse"
+  },
+  "Bilirubin.total [Mass/volume] in Serum or Plasma": {
+    "unit": "mg/dL",
+    "high": 1.2,
+    "very_high": 2.0,
+    "direction_of_concern": "higher_worse"
+  },
+  "Albumin [Mass/volume] in Serum or Plasma": {
+    "unit": "g/dL",
+    "low": 3.4,
+    "high": 5.4,
+    "direction_of_concern": "lower_worse"
+  },
+  "Hemoglobin [Mass/volume] in Blood": {
+    "unit": "g/dL",
+    "low": 12.0,
+    "high": 17.5,
+    "very_low": 10.0,
+    "direction_of_concern": "neutral"
+  },
+  "Hematocrit [Volume Fraction] of Blood by Automated count": {
+    "unit": "%",
+    "low": 36,
+    "high": 52,
+    "very_low": 30,
+    "direction_of_concern": "neutral"
+  },
+  "Leukocytes [#/volume] in Blood by Automated count": {
+    "unit": "10^3/uL",
+    "low": 4.0,
+    "high": 11.0,
+    "very_high": 15.0,
+    "direction_of_concern": "neutral"
+  },
+  "Platelets [#/volume] in Blood by Automated count": {
+    "unit": "10^3/uL",
+    "low": 150,
+    "high": 450,
+    "very_low": 100,
+    "direction_of_concern": "neutral"
+  },
+  "_trend_settings": {
+    "relative_change_worsening_threshold": 0.05,
+    "note": "A percent_change (from Module 1's observation_progression) beyond this magnitude, in the 'worse' direction for that observation, is treated as a clinically-noteworthy trend rather than noise."
+  }
+}

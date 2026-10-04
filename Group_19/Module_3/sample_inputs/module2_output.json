@@ -1,0 +1,59 @@
+{
+  "status": "prediction_generated",
+  "evidence_atoms": [
+    "E_56",
+    "E_55_@_V_88",
+    "E_204_@_V_1",
+    "E_144",
+    "E_181"
+  ],
+  "positive_evidence_text": [
+    "chest pain on exertion",
+    "pain located in the chest",
+    "pain is a pressure-like sensation",
+    "shortness of breath with activity",
+    "reports high cholesterol history"
+  ],
+  "age": 58.0,
+  "sex": "M",
+  "predictions": [
+    {
+      "class_id": 43,
+      "pathology": "Stable angina",
+      "condition": "Stable angina",
+      "probability": 0.7132,
+      "probability_percent": 71.32
+    },
+    {
+      "class_id": 46,
+      "pathology": "Unstable angina",
+      "condition": "Unstable angina",
+      "probability": 0.1284,
+      "probability_percent": 12.84
+    },
+    {
+      "class_id": 35,
+      "pathology": "Possible NSTEMI / STEMI",
+      "condition": "Possible NSTEMI / STEMI",
+      "probability": 0.0611,
+      "probability_percent": 6.11
+    },
+    {
+      "class_id": 33,
+      "pathology": "Pericarditis",
+      "condition": "Pericarditis",
+      "probability": 0.0402,
+      "probability_percent": 4.02
+    },
+    {
+      "class_id": 9,
+      "pathology": "Atrial fibrillation",
+      "condition": "Atrial fibrillation",
+      "probability": 0.0219,
+      "probability_percent": 2.19
+    }
+  ],
+  "_comment": "This mirrors the real return shape of Module_2/inference/inference_pipeline.py's predict_from_evidence() / conversation_engine.py's process() prediction payload. patient_id below is added by this sample only -- Module 2 itself is not patient-ID-aware, so Module 3's adapter treats it as optional."
+  ,
+  "patient_id": "SAMPLE_PATIENT_001"
+}

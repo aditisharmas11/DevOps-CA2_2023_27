@@ -1,0 +1,519 @@
+{
+  "cases_evaluated": 1000,
+  "top1_accuracy": 0.99,
+  "top3_accuracy": 1.0,
+  "checkpoint_epoch": 4,
+  "examples": [
+    {
+      "case_index": 0,
+      "age": 49.0,
+      "sex": 1,
+      "evidence_atoms": [
+        "E_45",
+        "E_53",
+        "E_54_@_V_179",
+        "E_54_@_V_198",
+        "E_55_@_V_171",
+        "E_56_@_4",
+        "E_57_@_V_123",
+        "E_58_@_5",
+        "E_59_@_1",
+        "E_79",
+        "E_162",
+        "E_191",
+        "E_201",
+        "E_204_@_V_10"
+      ],
+      "ground_truth": {
+        "class_id": 37,
+        "condition": "Pulmonary neoplasm"
+      },
+      "predictions": [
+        {
+          "class_id": 37,
+          "condition": "Pulmonary neoplasm",
+          "probability": 0.999953031539917
+        },
+        {
+          "class_id": 44,
+          "condition": "Tuberculosis",
+          "probability": 3.520087921060622e-05
+        },
+        {
+          "class_id": 31,
+          "condition": "Pancreatic neoplasm",
+          "probability": 3.80762321583461e-06
+        }
+      ]
+    },
+    {
+      "case_index": 1,
+      "age": 14.0,
+      "sex": 0,
+      "evidence_atoms": [
+        "E_16",
+        "E_29",
+        "E_53",
+        "E_54_@_V_182",
+        "E_54_@_V_192",
+        "E_55_@_V_56",
+        "E_55_@_V_88",
+        "E_55_@_V_103",
+        "E_55_@_V_153",
+        "E_55_@_V_187",
+        "E_56_@_3",
+        "E_57_@_V_123",
+        "E_58_@_10",
+        "E_59_@_7",
+        "E_66",
+        "E_78",
+        "E_111",
+        "E_124",
+        "E_138",
+        "E_157",
+        "E_177",
+        "E_204_@_V_10"
+      ],
+      "ground_truth": {
+        "class_id": 32,
+        "condition": "Panic attack"
+      },
+      "predictions": [
+        {
+          "class_id": 32,
+          "condition": "Panic attack",
+          "probability": 0.9999974966049194
+        },
+        {
+          "class_id": 25,
+          "condition": "Inguinal hernia",
+          "probability": 8.927157750804326e-07
+        },
+        {
+          "class_id": 40,
+          "condition": "Scombroid food poisoning",
+          "probability": 6.843500841569039e-07
+        }
+      ]
+    },
+    {
+      "case_index": 2,
+      "age": 56.0,
+      "sex": 1,
+      "evidence_atoms": [
+        "E_12",
+        "E_42",
+        "E_51",
+        "E_53",
+        "E_54_@_V_179",
+        "E_55_@_V_84",
+        "E_55_@_V_85",
+        "E_55_@_V_87",
+        "E_55_@_V_88",
+        "E_55_@_V_153",
+        "E_56_@_4",
+        "E_57_@_V_123",
+        "E_58_@_0",
+        "E_59_@_6",
+        "E_66",
+        "E_82",
+        "E_129",
+        "E_130_@_V_156",
+        "E_131_@_V_10",
+        "E_132_@_4",
+        "E_133_@_V_26",
+        "E_133_@_V_30",
+        "E_133_@_V_31",
+        "E_133_@_V_32",
+        "E_133_@_V_33",
+        "E_134_@_0",
+        "E_135_@_V_12",
+        "E_136_@_9",
+        "E_148",
+        "E_151",
+        "E_152_@_V_89",
+        "E_152_@_V_108",
+        "E_152_@_V_109",
+        "E_159",
+        "E_204_@_V_10",
+        "E_214",
+        "E_226"
+      ],
+      "ground_truth": {
+        "class_id": 7,
+        "condition": "Anaphylaxis"
+      },
+      "predictions": [
+        {
+          "class_id": 7,
+          "condition": "Anaphylaxis",
+          "probability": 0.9999998807907104
+        },
+        {
+          "class_id": 35,
+          "condition": "Possible NSTEMI / STEMI",
+          "probability": 3.6409602444109623e-08
+        },
+        {
+          "class_id": 41,
+          "condition": "Spontaneous pneumothorax",
+          "probability": 3.040778651097753e-08
+        }
+      ]
+    },
+    {
+      "case_index": 3,
+      "age": 55.0,
+      "sex": 1,
+      "evidence_atoms": [
+        "E_7",
+        "E_24",
+        "E_26",
+        "E_53",
+        "E_54_@_V_161",
+        "E_54_@_V_180",
+        "E_54_@_V_182",
+        "E_54_@_V_198",
+        "E_55_@_V_166",
+        "E_55_@_V_167",
+        "E_56_@_5",
+        "E_57_@_V_123",
+        "E_58_@_8",
+        "E_59_@_4",
+        "E_66",
+        "E_76",
+        "E_82",
+        "E_88",
+        "E_89",
+        "E_113",
+        "E_154",
+        "E_179",
+        "E_204_@_V_10",
+        "E_208"
+      ],
+      "ground_truth": {
+        "class_id": 8,
+        "condition": "Anemia"
+      },
+      "predictions": [
+        {
+          "class_id": 8,
+          "condition": "Anemia",
+          "probability": 0.9999998807907104
+        },
+        {
+          "class_id": 25,
+          "condition": "Inguinal hernia",
+          "probability": 3.600697340289116e-08
+        },
+        {
+          "class_id": 30,
+          "condition": "PSVT",
+          "probability": 1.637404167809109e-08
+        }
+      ]
+    },
+    {
+      "case_index": 4,
+      "age": 56.0,
+      "sex": 0,
+      "evidence_atoms": [
+        "E_7",
+        "E_24",
+        "E_53",
+        "E_54_@_V_161",
+        "E_54_@_V_182",
+        "E_55_@_V_62",
+        "E_55_@_V_89",
+        "E_55_@_V_167",
+        "E_56_@_1",
+        "E_57_@_V_123",
+        "E_58_@_7",
+        "E_59_@_2",
+        "E_66",
+        "E_76",
+        "E_82",
+        "E_88",
+        "E_89",
+        "E_113",
+        "E_146",
+        "E_167",
+        "E_204_@_V_10",
+        "E_208"
+      ],
+      "ground_truth": {
+        "class_id": 8,
+        "condition": "Anemia"
+      },
+      "predictions": [
+        {
+          "class_id": 8,
+          "condition": "Anemia",
+          "probability": 0.9999998807907104
+        },
+        {
+          "class_id": 25,
+          "condition": "Inguinal hernia",
+          "probability": 5.2995467569871835e-08
+        },
+        {
+          "class_id": 15,
+          "condition": "Chagas",
+          "probability": 1.698181151255085e-08
+        }
+      ]
+    },
+    {
+      "case_index": 5,
+      "age": 40.0,
+      "sex": 0,
+      "evidence_atoms": [
+        "E_41",
+        "E_48",
+        "E_49",
+        "E_50",
+        "E_53",
+        "E_54_@_V_183",
+        "E_55_@_V_62",
+        "E_55_@_V_89",
+        "E_55_@_V_109",
+        "E_55_@_V_124",
+        "E_55_@_V_167",
+        "E_56_@_3",
+        "E_57_@_V_123",
+        "E_58_@_3",
+        "E_59_@_1",
+        "E_97",
+        "E_144",
+        "E_181",
+        "E_201",
+        "E_204_@_V_10",
+        "E_222"
+      ],
+      "ground_truth": {
+        "class_id": 45,
+        "condition": "URTI"
+      },
+      "predictions": [
+        {
+          "class_id": 45,
+          "condition": "URTI",
+          "probability": 0.9999998807907104
+        },
+        {
+          "class_id": 28,
+          "condition": "Myasthenia gravis",
+          "probability": 1.795577730945297e-08
+        },
+        {
+          "class_id": 11,
+          "condition": "Bronchiectasis",
+          "probability": 1.6945993053241182e-08
+        }
+      ]
+    },
+    {
+      "case_index": 6,
+      "age": 14.0,
+      "sex": 1,
+      "evidence_atoms": [
+        "E_9",
+        "E_53",
+        "E_54_@_V_184",
+        "E_54_@_V_192",
+        "E_54_@_V_198",
+        "E_55_@_V_25",
+        "E_55_@_V_38",
+        "E_55_@_V_89",
+        "E_55_@_V_124",
+        "E_55_@_V_167",
+        "E_56_@_2",
+        "E_57_@_V_123",
+        "E_58_@_3",
+        "E_59_@_4",
+        "E_66",
+        "E_152_@_V_123",
+        "E_175",
+        "E_204_@_V_10"
+      ],
+      "ground_truth": {
+        "class_id": 15,
+        "condition": "Chagas"
+      },
+      "predictions": [
+        {
+          "class_id": 15,
+          "condition": "Chagas",
+          "probability": 0.9999998807907104
+        },
+        {
+          "class_id": 19,
+          "condition": "Ebola",
+          "probability": 4.7400742886338776e-08
+        },
+        {
+          "class_id": 30,
+          "condition": "PSVT",
+          "probability": 3.879531718098406e-08
+        }
+      ]
+    },
+    {
+      "case_index": 7,
+      "age": 63.0,
+      "sex": 0,
+      "evidence_atoms": [
+        "E_34",
+        "E_53",
+        "E_54_@_V_192",
+        "E_55_@_V_55",
+        "E_55_@_V_56",
+        "E_55_@_V_128",
+        "E_55_@_V_170",
+        "E_55_@_V_171",
+        "E_56_@_6",
+        "E_57_@_V_55",
+        "E_57_@_V_127",
+        "E_57_@_V_128",
+        "E_57_@_V_170",
+        "E_57_@_V_171",
+        "E_58_@_2",
+        "E_59_@_6",
+        "E_66",
+        "E_100",
+        "E_110",
+        "E_151",
+        "E_152_@_V_24",
+        "E_159",
+        "E_196",
+        "E_204_@_V_4",
+        "E_220"
+      ],
+      "ground_truth": {
+        "class_id": 36,
+        "condition": "Pulmonary embolism"
+      },
+      "predictions": [
+        {
+          "class_id": 36,
+          "condition": "Pulmonary embolism",
+          "probability": 0.9999997615814209
+        },
+        {
+          "class_id": 26,
+          "condition": "Larygospasm",
+          "probability": 7.555108538781496e-08
+        },
+        {
+          "class_id": 10,
+          "condition": "Boerhaave",
+          "probability": 4.489164595611328e-08
+        }
+      ]
+    },
+    {
+      "case_index": 8,
+      "age": 1.0,
+      "sex": 0,
+      "evidence_atoms": [
+        "E_30",
+        "E_53",
+        "E_54_@_V_183",
+        "E_55_@_V_87",
+        "E_55_@_V_99",
+        "E_55_@_V_100",
+        "E_55_@_V_168",
+        "E_55_@_V_169",
+        "E_56_@_5",
+        "E_57_@_V_123",
+        "E_58_@_5",
+        "E_59_@_1",
+        "E_130_@_V_11",
+        "E_131_@_V_10",
+        "E_132_@_0",
+        "E_133_@_V_123",
+        "E_134_@_0",
+        "E_135_@_V_10",
+        "E_136_@_0",
+        "E_150",
+        "E_160",
+        "E_204_@_V_10",
+        "E_221"
+      ],
+      "ground_truth": {
+        "class_id": 25,
+        "condition": "Inguinal hernia"
+      },
+      "predictions": [
+        {
+          "class_id": 25,
+          "condition": "Inguinal hernia",
+          "probability": 0.9999996423721313
+        },
+        {
+          "class_id": 8,
+          "condition": "Anemia",
+          "probability": 4.608832071539837e-08
+        },
+        {
+          "class_id": 32,
+          "condition": "Panic attack",
+          "probability": 3.616396071493e-08
+        }
+      ]
+    },
+    {
+      "case_index": 9,
+      "age": 14.0,
+      "sex": 1,
+      "evidence_atoms": [
+        "E_53",
+        "E_54_@_V_181",
+        "E_54_@_V_192",
+        "E_55_@_V_32",
+        "E_55_@_V_89",
+        "E_55_@_V_108",
+        "E_55_@_V_122",
+        "E_55_@_V_125",
+        "E_56_@_6",
+        "E_57_@_V_25",
+        "E_57_@_V_89",
+        "E_57_@_V_122",
+        "E_58_@_6",
+        "E_59_@_6",
+        "E_79",
+        "E_116",
+        "E_118",
+        "E_120",
+        "E_121",
+        "E_124",
+        "E_125",
+        "E_182",
+        "E_204_@_V_10",
+        "E_209",
+        "E_226"
+      ],
+      "ground_truth": {
+        "class_id": 5,
+        "condition": "Acute rhinosinusitis"
+      },
+      "predictions": [
+        {
+          "class_id": 5,
+          "condition": "Acute rhinosinusitis",
+          "probability": 0.9998824596405029
+        },
+        {
+          "class_id": 16,
+          "condition": "Chronic rhinosinusitis",
+          "probability": 6.608491094084457e-05
+        },
+        {
+          "class_id": 20,
+          "condition": "Epiglottitis",
+          "probability": 6.1201403696031775e-06
+        }
+      ]
+    }
+  ]
+}

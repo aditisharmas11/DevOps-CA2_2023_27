@@ -1,0 +1,24 @@
+# MediTwin Python Runtime Requirements
+# Used by backend child processes (Module 1, Module 2, Module 3, and PDF extraction)
+
+# Core ML & Numerics
+xgboost
+torch
+pandas
+numpy
+scikit-learn
+joblib
+
+# NLP & Matching (Module 2)
+rapidfuzz
+spacy
+
+# Visualization & Reporting (Module 3)
+matplotlib
+
+# PDF & Document Extraction / OCR
+pymupdf
+
+# Note for spaCy pipeline:
+# After installing spacy, download the required language model:
+# python -m spacy download en_core_web_sm

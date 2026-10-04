@@ -1,0 +1,311 @@
+{
+  "patient_id": "SAMPLE_PATIENT_002",
+  "reference_date": "2025-08-20T00:00:00+00:00",
+  "observations": [
+    {
+      "name": "Body Mass Index",
+      "value": 24.8,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Body Weight",
+      "value": 72.0,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Systolic Blood Pressure",
+      "value": 118,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Diastolic Blood Pressure",
+      "value": 76,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Heart rate",
+      "value": 72,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Respiratory rate",
+      "value": 16,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "value": 5.4,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Creatinine",
+      "value": 0.9,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": 14,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+    {
+      "name": "Potassium",
+      "value": 4.2,
+      "date": "2024-12-15T09:00:00+00:00"
+    },
+
+    {
+      "name": "Body Mass Index",
+      "value": 25.2,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Body Weight",
+      "value": 73.1,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Systolic Blood Pressure",
+      "value": 124,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Diastolic Blood Pressure",
+      "value": 79,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Heart rate",
+      "value": 76,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Respiratory rate",
+      "value": 17,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "value": 5.6,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Creatinine",
+      "value": 0.9,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": 15,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+    {
+      "name": "Potassium",
+      "value": 4.3,
+      "date": "2025-02-20T09:00:00+00:00"
+    },
+
+    {
+      "name": "Body Mass Index",
+      "value": 25.8,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Body Weight",
+      "value": 74.5,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Systolic Blood Pressure",
+      "value": 130,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Diastolic Blood Pressure",
+      "value": 82,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Heart rate",
+      "value": 80,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Respiratory rate",
+      "value": 17,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "value": 5.9,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Creatinine",
+      "value": 1.0,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": 16,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+    {
+      "name": "Potassium",
+      "value": 4.4,
+      "date": "2025-04-10T09:00:00+00:00"
+    },
+
+    {
+      "name": "Body Mass Index",
+      "value": 26.4,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Body Weight",
+      "value": 76.0,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Systolic Blood Pressure",
+      "value": 138,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Diastolic Blood Pressure",
+      "value": 87,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Heart rate",
+      "value": 84,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Respiratory rate",
+      "value": 18,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "value": 6.2,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Creatinine",
+      "value": 1.0,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": 18,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+    {
+      "name": "Potassium",
+      "value": 4.5,
+      "date": "2025-06-05T09:00:00+00:00"
+    },
+
+    {
+      "name": "Body Mass Index",
+      "value": 27.0,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Body Weight",
+      "value": 77.8,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Systolic Blood Pressure",
+      "value": 145,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Diastolic Blood Pressure",
+      "value": 91,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Heart rate",
+      "value": 88,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Respiratory rate",
+      "value": 18,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "value": 6.5,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Creatinine",
+      "value": 1.1,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": 20,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+    {
+      "name": "Potassium",
+      "value": 4.6,
+      "date": "2025-07-10T09:00:00+00:00"
+    },
+
+    {
+      "name": "Body Mass Index",
+      "value": 27.4,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Body Weight",
+      "value": 79.0,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Systolic Blood Pressure",
+      "value": 152,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Diastolic Blood Pressure",
+      "value": 95,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Heart rate",
+      "value": 92,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Respiratory rate",
+      "value": 19,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "value": 6.8,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Creatinine",
+      "value": 1.2,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": 22,
+      "date": "2025-08-15T09:00:00+00:00"
+    },
+    {
+      "name": "Potassium",
+      "value": 4.7,
+      "date": "2025-08-15T09:00:00+00:00"
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+feature,importance
+Hemoglobin A1c/Hemoglobin.total in Blood__latest,0.042027026070595906
+Hemoglobin A1c/Hemoglobin.total in Blood__mean_365d,0.040642495658011486
+Hemoglobin A1c/Hemoglobin.total in Blood__max_365d,0.034133806625693555
+Hemoglobin A1c/Hemoglobin.total in Blood__min_365d,0.03205270979834887
+Heart rate__std_365d,0.027750870925102943
+Systolic Blood Pressure__std_365d,0.02626852053741526
+Respiratory rate__std_365d,0.024800976244381413
+Potassium__std_365d,0.02437514581183398
+Total Cholesterol__std_365d,0.023767832976381117
+Calcium__std_365d,0.02223707187359257
+Diastolic Blood Pressure__std_365d,0.021209633346999778
+Triglycerides__std_365d,0.020488438727752654
+High Density Lipoprotein Cholesterol__std_365d,0.019609263119307236
+Creatinine__std_365d,0.018546635074221756
+Chloride__std_365d,0.018308437406424568
+Systolic Blood Pressure__days_since_latest,0.014731365157173609
+Respiratory rate__days_since_latest,0.01452385848347056
+Body Weight__days_since_latest,0.014523382368000487
+Body Mass Index__days_since_latest,0.014451100122319843
+Urea Nitrogen__std_365d,0.014399263846779368
+Low Density Lipoprotein Cholesterol__std_365d,0.014326162206845265
+Sodium__std_365d,0.014130813451776768
+Heart rate__days_since_latest,0.013166826260961804
+Diastolic Blood Pressure__days_since_latest,0.011796390382113726
+Hemoglobin A1c/Hemoglobin.total in Blood__mean_90d,0.01176575901535703
+Carbon Dioxide__std_365d,0.010363240669451901
+Glucose__std_365d,0.009923492635299565
+Calcium__days_since_latest,0.009769327555517042
+Chloride__days_since_latest,0.009352843066811306
+Urea Nitrogen__days_since_latest,0.008984735897731579
+Low Density Lipoprotein Cholesterol__days_since_latest,0.008525046894303246
+Sodium__days_since_latest,0.007561574934133501
+Carbon Dioxide__days_since_latest,0.007536960389110636
+High Density Lipoprotein Cholesterol__days_since_latest,0.006587700708938859
+Hemoglobin A1c/Hemoglobin.total in Blood__days_since_latest,0.006586910225114381
+Total Cholesterol__days_since_latest,0.006553651120930755
+Triglycerides__days_since_latest,0.006468854363692809
+Creatinine__days_since_latest,0.00640416757017696
+Glucose__days_since_latest,0.005217430013352411
+Creatinine__latest,0.005169711431797688
+Potassium__days_since_latest,0.005139671439828137
+Glucose__max_365d,0.004501502975560475
+Carbon Dioxide__max_365d,0.004311055344695906
+Chloride__min_365d,0.004198670019567112
+Total Cholesterol__mean_365d,0.004054817484812746
+Sodium__max_365d,0.0036315703232701222
+Sodium__min_365d,0.003598933556990672
+High Density Lipoprotein Cholesterol__min_365d,0.0035875560564308955
+Potassium__min_365d,0.003581217639088115
+Total Cholesterol__max_365d,0.0035552105921236327
+Creatinine__max_365d,0.003505978718588699
+Carbon Dioxide__min_365d,0.003422968308936737
+Heart rate__max_365d,0.0033892420752561596
+Glucose__mean_365d,0.0033710423640022896
+Heart rate__min_365d,0.0033173004799184527
+Creatinine__mean_365d,0.0031645441490088097
+Body Weight__max_365d,0.0031559933088644264
+Body Weight__mean_365d,0.003132501571211604
+Body Weight__latest,0.0031057254351563503
+Glucose__min_365d,0.003105665485450595
+Body Weight__min_365d,0.0030376450456541873
+Body Mass Index__slope_365d,0.003035184021741204
+Systolic Blood Pressure__max_365d,0.002980084447084856
+Urea Nitrogen__max_365d,0.002903034069882293
+Systolic Blood Pressure__mean_365d,0.0028615892161035117
+Creatinine__min_365d,0.0028607887318877153
+Heart rate__mean_365d,0.002825006092667408
+Body Weight__slope_365d,0.0027748148301527105
+Potassium__max_365d,0.002724840240460482
+Systolic Blood Pressure__min_365d,0.0027068095318827454
+Triglycerides__max_365d,0.002676549150351365
+Diastolic Blood Pressure__max_365d,0.0026519065316229066
+Chloride__max_365d,0.002549782514736827
+Systolic Blood Pressure__latest,0.002530375883754543
+Body Mass Index__mean_365d,0.002529640160016891
+Glucose__latest,0.0024789173400504277
+Chloride__mean_365d,0.002476082889492514
+Calcium__max_365d,0.0024702710589058446
+Diastolic Blood Pressure__mean_365d,0.0024667122622617525
+Body Mass Index__latest,0.002444300727342592
+Heart rate__latest,0.0024386272543541476
+Body Mass Index__max_365d,0.0024350024252374845
+Sodium__mean_365d,0.0024314628588336927
+Urea Nitrogen__mean_365d,0.002423469113885027
+Body Mass Index__min_365d,0.0024049037566572914
+Carbon Dioxide__mean_365d,0.0023942866848068603
+Triglycerides__mean_365d,0.002391624776462286
+Low Density Lipoprotein Cholesterol__max_365d,0.0023887840656162756
+Triglycerides__latest,0.0023563899172149593
+Creatinine__mean_90d,0.002352582693636206
+Low Density Lipoprotein Cholesterol__mean_365d,0.0023507948733831083
+Triglycerides__min_365d,0.0023206820315488322
+Low Density Lipoprotein Cholesterol__min_365d,0.002308688658961341
+High Density Lipoprotein Cholesterol__mean_365d,0.002307176131618177
+Urea Nitrogen__min_365d,0.002278766290527929
+High Density Lipoprotein Cholesterol__max_365d,0.002273675899555404
+Total Cholesterol__min_365d,0.002256112388377721
+Diastolic Blood Pressure__latest,0.002231625104616219
+Diastolic Blood Pressure__min_365d,0.002223542731230184
+High Density Lipoprotein Cholesterol__latest,0.0022131817181506416
+Low Density Lipoprotein Cholesterol__latest,0.002210506076570243
+Urea Nitrogen__latest,0.002206368334251928
+Carbon Dioxide__latest,0.0021704711148059232
+Chloride__latest,0.0021580757933988416
+Total Cholesterol__latest,0.0021255616145985103
+Sodium__latest,0.0021185535914150606
+Body Weight__mean_90d,0.002075882550602578
+Hemoglobin [Mass/volume] in Blood__days_since_latest,0.0019717366188685215
+Platelets [#/volume] in Blood by Automated count__days_since_latest,0.0019370472053662046
+Calcium__mean_365d,0.0019230587969094493
+Body Mass Index__mean_90d,0.0018915189585550895
+Potassium__mean_365d,0.0018536233906111088
+Respiratory rate__min_365d,0.0018240443802291387
+Low Density Lipoprotein Cholesterol__slope_365d,0.001794034339218417
+Respiratory rate__max_365d,0.0017728488674640984
+Total Cholesterol__mean_90d,0.001733622485756418
+Calcium__min_365d,0.0016835372089242621
+Hematocrit [Volume Fraction] of Blood by Automated count__days_since_latest,0.0016445697795471478
+Triglycerides__slope_365d,0.0016300605994806988
+Systolic Blood Pressure__mean_90d,0.001597631475543543
+Glomerular filtration rate/1.73 sq M.predicted__mean_365d,0.0015345182637044985
+Leukocytes [#/volume] in Blood by Automated count__days_since_latest,0.001526996319626185
+Albumin [Mass/volume] in Serum or Plasma__days_since_latest,0.001516730486554982
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__days_since_latest,0.0015065528782353848
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__days_since_latest,0.0015036087065162028
+Creatinine__slope_365d,0.0015009452799255836
+Calcium__latest,0.001495896182947634
+Glucose__mean_90d,0.0014881345868693406
+Low Density Lipoprotein Cholesterol__absolute_change_365d,0.001485406978296966
+Urea Nitrogen__relative_change_365d,0.0014823451771414713
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__days_since_latest,0.0014819712613164224
+Potassium__latest,0.0014726837857001872
+Diastolic Blood Pressure__mean_90d,0.0014707733382631006
+Glomerular filtration rate/1.73 sq M.predicted__latest,0.0014505445745279658
+Respiratory rate__mean_365d,0.001442371647003781
+Bilirubin.total [Mass/volume] in Serum or Plasma__days_since_latest,0.001436245514082502
+Glomerular filtration rate/1.73 sq M.predicted__max_365d,0.0014306043228234
+Heart rate__mean_90d,0.0013786737607268673
+Respiratory rate__slope_365d,0.0013680940427240541
+Glomerular filtration rate/1.73 sq M.predicted__days_since_latest,0.0013534252221865943
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__min_365d,0.0013481480652843502
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__mean_365d,0.001303399029481861
+Glomerular filtration rate/1.73 sq M.predicted__min_365d,0.001284944710658665
+Hemoglobin [Mass/volume] in Blood__mean_365d,0.0012849147993782286
+Urea Nitrogen__slope_365d,0.0012773106501344647
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__latest,0.0012757513953123498
+Chloride__slope_365d,0.0012646290140981603
+Low Density Lipoprotein Cholesterol__mean_90d,0.0012491099396347623
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__max_365d,0.0012449929994958696
+Sodium__slope_365d,0.0012400324040208156
+Glucose__slope_365d,0.0011959424949700836
+Sodium__mean_90d,0.0011887773385981547
+Hemoglobin [Mass/volume] in Blood__max_365d,0.0011870469422465097
+Calcium__slope_365d,0.0011865710931089268
+Hemoglobin [Mass/volume] in Blood__latest,0.0011816645159298527
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__max_365d,0.0011735475895169822
+Triglycerides__mean_90d,0.0011719028138633281
+High Density Lipoprotein Cholesterol__mean_90d,0.0011657951495557938
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__mean_365d,0.0011596346506636136
+Carbon Dioxide__slope_365d,0.0011515671022113935
+Carbon Dioxide__mean_90d,0.0011429191750827608
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__min_365d,0.0011322732492103425
+Systolic Blood Pressure__slope_365d,0.0011315991716639429
+Creatinine__relative_change_365d,0.0011308154788210322
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__latest,0.0011268616100367618
+Potassium__slope_365d,0.0011246656065564164
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__max_365d,0.0011221458620671544
+Chloride__mean_90d,0.001118139897950436
+Urea Nitrogen__mean_90d,0.0011131196750562584
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__min_365d,0.0011079462285945732
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__mean_365d,0.0011045113745618397
+Platelets [#/volume] in Blood by Automated count__min_365d,0.0010907717105293722
+Total Cholesterol__slope_365d,0.0010845723138221373
+High Density Lipoprotein Cholesterol__slope_365d,0.0010843311631966379
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__latest,0.0010769334067986089
+Glucose__absolute_change_365d,0.001073106076996048
+Hemoglobin A1c/Hemoglobin.total in Blood__slope_365d,0.0010712659714495843
+Hemoglobin [Mass/volume] in Blood__min_365d,0.0010703069160148196
+Platelets [#/volume] in Blood by Automated count__latest,0.0010668591405508896
+Carbon Dioxide__relative_change_365d,0.0010500315277527528
+Hematocrit [Volume Fraction] of Blood by Automated count__max_365d,0.00104603754572356
+Hemoglobin A1c/Hemoglobin.total in Blood__missing,0.0010452846832758836
+Diastolic Blood Pressure__slope_365d,0.0010388649891213565
+Hematocrit [Volume Fraction] of Blood by Automated count__latest,0.0010338143209141836
+Platelets [#/volume] in Blood by Automated count__mean_365d,0.0010282412157018124
+Sodium__relative_change_365d,0.0010237318819738737
+Chloride__relative_change_365d,0.0010199941455670306
+Platelets [#/volume] in Blood by Automated count__max_365d,0.0010156471984292489
+Urea Nitrogen__absolute_change_365d,0.0009984295098540467
+Sodium__absolute_change_365d,0.000996285798412735
+Potassium__relative_change_365d,0.0009959538967601025
+Hematocrit [Volume Fraction] of Blood by Automated count__mean_365d,0.000980477691765987
+Calcium__relative_change_365d,0.0009803164810631587
+Heart rate__slope_365d,0.0009617905550453688
+Respiratory rate__latest,0.0009595712797844621
+Glucose__relative_change_365d,0.0009584569294256288
+Hematocrit [Volume Fraction] of Blood by Automated count__min_365d,0.0009471995818849341
+Chloride__absolute_change_365d,0.0009449903715152097
+Carbon Dioxide__absolute_change_365d,0.0009344079077821037
+Leukocytes [#/volume] in Blood by Automated count__mean_365d,0.0009230426959445941
+Leukocytes [#/volume] in Blood by Automated count__min_365d,0.0009178638299877043
+Leukocytes [#/volume] in Blood by Automated count__latest,0.0009158566618183748
+Triglycerides__relative_change_365d,0.000912180632524752
+Creatinine__absolute_change_365d,0.0008977105755718064
+Leukocytes [#/volume] in Blood by Automated count__max_365d,0.0008906300364611679
+Systolic Blood Pressure__relative_change_365d,0.0008885827168595101
+Calcium__mean_90d,0.0008856834635585577
+Diastolic Blood Pressure__relative_change_365d,0.0008780852773197459
+High Density Lipoprotein Cholesterol__relative_change_365d,0.0008671220737448412
+High Density Lipoprotein Cholesterol__absolute_change_365d,0.0008477854055690394
+Potassium__mean_90d,0.0008235017779213064
+Total Cholesterol__relative_change_365d,0.0008234280035673246
+Heart rate__relative_change_365d,0.0008185428141549543
+Albumin [Mass/volume] in Serum or Plasma__mean_365d,0.000774860400217182
+Albumin [Mass/volume] in Serum or Plasma__max_365d,0.0007688753091327384
+Heart rate__absolute_change_365d,0.0007656206369445566
+Systolic Blood Pressure__absolute_change_365d,0.000765587143836702
+Total Cholesterol__absolute_change_365d,0.0007628373567748774
+Low Density Lipoprotein Cholesterol__relative_change_365d,0.0007608944040716426
+Triglycerides__absolute_change_365d,0.000757427918720062
+Albumin [Mass/volume] in Serum or Plasma__latest,0.0007419983598102727
+Calcium__absolute_change_365d,0.0007346390674518164
+Albumin [Mass/volume] in Serum or Plasma__min_365d,0.0007215847428349779
+Respiratory rate__mean_90d,0.0006981212587124409
+Bilirubin.total [Mass/volume] in Serum or Plasma__latest,0.0006456056117172742
+Potassium__absolute_change_365d,0.0006385292596631188
+Diastolic Blood Pressure__absolute_change_365d,0.0006319359449752801
+Bilirubin.total [Mass/volume] in Serum or Plasma__mean_365d,0.000629699417290468
+Bilirubin.total [Mass/volume] in Serum or Plasma__min_365d,0.0005899802065483851
+Bilirubin.total [Mass/volume] in Serum or Plasma__max_365d,0.0005784055561102622
+Respiratory rate__relative_change_365d,0.0004939273153190051
+Glomerular filtration rate/1.73 sq M.predicted__mean_90d,0.0004675768629273606
+Platelets [#/volume] in Blood by Automated count__mean_90d,0.0004587177931528444
+Hemoglobin [Mass/volume] in Blood__mean_90d,0.00045115143398733246
+High Density Lipoprotein Cholesterol__missing,0.0004507652064784318
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__mean_90d,0.00043006994672072573
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__mean_90d,0.00042722435603768363
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__mean_90d,0.0004222885165054956
+Leukocytes [#/volume] in Blood by Automated count__mean_90d,0.000408926822719568
+Hematocrit [Volume Fraction] of Blood by Automated count__mean_90d,0.0004024644993990533
+Respiratory rate__absolute_change_365d,0.0003700571735198346
+Hemoglobin A1c/Hemoglobin.total in Blood__std_365d,0.00032427825981232254
+Bilirubin.total [Mass/volume] in Serum or Plasma__mean_90d,0.000319536943341898
+Albumin [Mass/volume] in Serum or Plasma__mean_90d,0.0003112070703976466
+Total Cholesterol__missing,0.0002925089172710401
+Hemoglobin A1c/Hemoglobin.total in Blood__relative_change_365d,0.00027009893624790795
+Urea Nitrogen__slope_90d,0.0002692210247368722
+Glucose__slope_90d,0.0002677973202084701
+Glomerular filtration rate/1.73 sq M.predicted__missing,0.0002523739025089246
+Body Weight__std_365d,0.00024534412903363023
+Creatinine__slope_90d,0.00023971835737335819
+Potassium__slope_90d,0.00023915640799313174
+Low Density Lipoprotein Cholesterol__missing,0.00023834783441804218
+Glucose__missing,0.000235385062065278
+Carbon Dioxide__slope_90d,0.0002325528351605989
+Calcium__missing,0.00023201456436234706
+Carbon Dioxide__missing,0.00023110485900813688
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__missing,0.00021723428406233278
+Chloride__slope_90d,0.0002160197760142
+Calcium__slope_90d,0.00021397284381990869
+Bilirubin.total [Mass/volume] in Serum or Plasma__missing,0.00021378926635993607
+Sodium__slope_90d,0.0002109011371087404
+Hemoglobin [Mass/volume] in Blood__missing,0.00020182702418291125
+Albumin [Mass/volume] in Serum or Plasma__missing,0.00020168403042431735
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__missing,0.00019715964376225417
+Hemoglobin A1c/Hemoglobin.total in Blood__absolute_change_365d,0.00019493443378234415
+Body Mass Index__std_365d,0.0001875649477336437
+Low Density Lipoprotein Cholesterol__slope_90d,0.00018165477648701648
+Diastolic Blood Pressure__slope_90d,0.0001810645158286498
+Platelets [#/volume] in Blood by Automated count__missing,0.00017962492650662134
+Triglycerides__slope_90d,0.00017689567123916169
+Diastolic Blood Pressure__missing,0.00017643346464517887
+Body Weight__relative_change_365d,0.00017340666652466678
+Body Weight__slope_90d,0.0001655012722308045
+Leukocytes [#/volume] in Blood by Automated count__missing,0.00015840699439677005
+Body Weight__missing,0.0001582936413619632
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__missing,0.00015729061059319382
+Total Cholesterol__slope_90d,0.00015616311806542147
+Body Mass Index__missing,0.00015426856188755075
+Systolic Blood Pressure__slope_90d,0.00015077652084147345
+Triglycerides__missing,0.0001487765324636822
+Hematocrit [Volume Fraction] of Blood by Automated count__missing,0.00014848065293732716
+Body Mass Index__slope_90d,0.00014698548219036793
+High Density Lipoprotein Cholesterol__slope_90d,0.00014687466438940177
+Heart rate__slope_90d,0.00014290682869016186
+Body Weight__absolute_change_365d,0.00014212699525224177
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__std_365d,0.0001396091414111138
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__absolute_change_365d,0.00013827825559088047
+Hemoglobin [Mass/volume] in Blood__relative_change_365d,0.00013775492067074987
+Chloride__missing,0.00013628701625933328
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__slope_365d,0.00013554120028595767
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__std_365d,0.0001321800512933097
+Hemoglobin [Mass/volume] in Blood__std_365d,0.00013031496330374146
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__relative_change_365d,0.0001297779696878538
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__absolute_change_365d,0.000128256806538962
+Hemoglobin A1c/Hemoglobin.total in Blood__slope_90d,0.00012807209431039184
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__relative_change_365d,0.0001276480966581541
+Glomerular filtration rate/1.73 sq M.predicted__std_365d,0.00012526831851808695
+Hemoglobin [Mass/volume] in Blood__slope_365d,0.0001238779218243678
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__std_365d,0.0001229873741950315
+Systolic Blood Pressure__missing,0.00011943249534226076
+Respiratory rate__slope_90d,0.00011883945158170888
+Respiratory rate__missing,0.00011861304708090779
+Body Mass Index__relative_change_365d,0.00011712337625333221
+Hemoglobin [Mass/volume] in Blood__absolute_change_365d,0.0001159107938832984
+Albumin [Mass/volume] in Serum or Plasma__slope_365d,0.00011493171615085405
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__relative_change_365d,0.00011434808744782686
+Bilirubin.total [Mass/volume] in Serum or Plasma__std_365d,0.00011371253278071878
+Heart rate__missing,0.00011129155222176506
+Platelets [#/volume] in Blood by Automated count__absolute_change_365d,0.00010953297929077031
+Bilirubin.total [Mass/volume] in Serum or Plasma__slope_365d,0.00010931078570104007
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__slope_365d,0.00010920772978948115
+Albumin [Mass/volume] in Serum or Plasma__std_365d,0.00010795954244584428
+Potassium__missing,0.00010795374526565153
+Leukocytes [#/volume] in Blood by Automated count__std_365d,0.00010424695009401537
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__slope_365d,0.0001033942729904767
+Glomerular filtration rate/1.73 sq M.predicted__slope_365d,0.00010333032314533761
+Urea Nitrogen__missing,0.00010080953782874742
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__absolute_change_365d,9.861095504334071e-05
+Leukocytes [#/volume] in Blood by Automated count__slope_365d,9.785590725761382e-05
+Platelets [#/volume] in Blood by Automated count__std_365d,9.32654911973701e-05
+Hematocrit [Volume Fraction] of Blood by Automated count__std_365d,9.324931275000855e-05
+Albumin [Mass/volume] in Serum or Plasma__relative_change_365d,9.291553215070145e-05
+Hematocrit [Volume Fraction] of Blood by Automated count__absolute_change_365d,9.211780835218422e-05
+Hematocrit [Volume Fraction] of Blood by Automated count__relative_change_365d,9.125565738897578e-05
+Body Mass Index__absolute_change_365d,8.982696981368199e-05
+Sodium__missing,8.980409488588497e-05
+Leukocytes [#/volume] in Blood by Automated count__absolute_change_365d,8.952206313333865e-05
+Creatinine__missing,8.742463297211124e-05
+Platelets [#/volume] in Blood by Automated count__slope_365d,8.384659414145501e-05
+Bilirubin.total [Mass/volume] in Serum or Plasma__relative_change_365d,8.19858132700001e-05
+Hematocrit [Volume Fraction] of Blood by Automated count__slope_365d,7.860211412935877e-05
+Glomerular filtration rate/1.73 sq M.predicted__absolute_change_365d,7.610005599098094e-05
+Platelets [#/volume] in Blood by Automated count__relative_change_365d,7.582132033305833e-05
+Leukocytes [#/volume] in Blood by Automated count__relative_change_365d,7.276006614725982e-05
+Glomerular filtration rate/1.73 sq M.predicted__relative_change_365d,6.933335617312555e-05
+Albumin [Mass/volume] in Serum or Plasma__absolute_change_365d,6.739648989528936e-05
+Bilirubin.total [Mass/volume] in Serum or Plasma__absolute_change_365d,6.21481906637559e-05
+Albumin [Mass/volume] in Serum or Plasma__slope_90d,5.8852844906632266e-05
+Bilirubin.total [Mass/volume] in Serum or Plasma__slope_90d,4.365753034336166e-05
+Glomerular filtration rate/1.73 sq M.predicted__slope_90d,4.074065359250812e-05
+Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma__slope_90d,4.064670085735465e-05
+Hematocrit [Volume Fraction] of Blood by Automated count__slope_90d,3.904174362039318e-05
+Platelets [#/volume] in Blood by Automated count__slope_90d,3.6137857203160115e-05
+Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma__slope_90d,3.3482900597242054e-05
+Leukocytes [#/volume] in Blood by Automated count__slope_90d,3.1925377150205465e-05
+Hemoglobin [Mass/volume] in Blood__slope_90d,3.162136547413431e-05
+Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma__slope_90d,2.8849189538403918e-05

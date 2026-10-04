@@ -1,0 +1,445 @@
+{
+  "module": "Module 1 - Future Risk Prediction",
+  "patient_id": "SAMPLE_PATIENT_001",
+  "generated_at": "2026-08-25T11:01:44.695332+00:00",
+  "prediction_horizon_days": 90,
+  "reference_date": "2025-08-20T00:00:00+00:00",
+  "prediction": {
+    "acute_event_probability": 0.2555665671825409,
+    "acute_event_probability_percent": 25.55665671825409,
+    "recommended_threshold": 0.45,
+    "predicted_positive": false,
+    "risk_category": "MODERATE",
+    "interpretation": "The model estimates a moderate future risk. The probability is below the trained positive-risk threshold but should be interpreted with the available history."
+  },
+  "history_summary": {
+    "total_records": 30,
+    "observation_types": 10,
+    "unique_dates": 3,
+    "history_days": 222.0,
+    "first_record_date": "2025-01-10T00:00:00+00:00",
+    "latest_record_date": "2025-08-20T00:00:00+00:00"
+  },
+  "data_confidence": {
+    "score": 0.8216438356164385,
+    "percent": 82.16438356164385,
+    "category": "HIGH",
+    "feature_coverage_percent": 100.0,
+    "explanation": "The prediction has relatively strong historical coverage for this input."
+  },
+  "feature_coverage": {
+    "total_features": 348,
+    "available_features": 129,
+    "missing_features": 219,
+    "available_percent": 37.06896551724138,
+    "missing_percent": 62.93103448275862
+  },
+  "feature_contract": {
+    "original_feature_count": 348,
+    "safe_model_feature_count": 348,
+    "feature_order_validated": true,
+    "feature_engine_validated": true,
+    "xgboost_contract_validated": true
+  },
+  "observation_progression": [
+    {
+      "observation": "Body Mass Index",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 24.8,
+      "latest_value": 26.1,
+      "minimum": 24.8,
+      "maximum": 26.1,
+      "mean": 25.400000000000002,
+      "std": 0.6557438524302004,
+      "absolute_change": 1.3000000000000007,
+      "percent_change": 5.241935483870971,
+      "slope_per_day": 0.005880061259034425,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Body Weight",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 72.0,
+      "latest_value": 75.8,
+      "minimum": 72.0,
+      "maximum": 75.8,
+      "mean": 73.76666666666667,
+      "std": 1.9139836293274108,
+      "absolute_change": 3.799999999999997,
+      "percent_change": 5.277777777777773,
+      "slope_per_day": 0.01717133722023715,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Creatinine",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 0.9,
+      "latest_value": 1.1,
+      "minimum": 0.9,
+      "maximum": 1.1,
+      "mean": 1.0,
+      "std": 0.10000000000000003,
+      "absolute_change": 0.20000000000000007,
+      "percent_change": 22.22222222222223,
+      "slope_per_day": 0.0008947043176872065,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Diastolic Blood Pressure",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 80.0,
+      "latest_value": 88.0,
+      "minimum": 80.0,
+      "maximum": 88.0,
+      "mean": 84.0,
+      "std": 4.0,
+      "absolute_change": 8.0,
+      "percent_change": 10.0,
+      "slope_per_day": 0.035788172707488256,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Heart rate",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 76.0,
+      "latest_value": 86.0,
+      "minimum": 76.0,
+      "maximum": 86.0,
+      "mean": 80.66666666666667,
+      "std": 5.033222956847166,
+      "absolute_change": 10.0,
+      "percent_change": 13.157894736842104,
+      "slope_per_day": 0.04516510384481059,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 5.8,
+      "latest_value": 6.5,
+      "minimum": 5.8,
+      "maximum": 6.5,
+      "mean": 6.133333333333333,
+      "std": 0.3511884584284247,
+      "absolute_change": 0.7000000000000002,
+      "percent_change": 12.068965517241383,
+      "slope_per_day": 0.003152959509927738,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Potassium",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 4.2,
+      "latest_value": 4.6,
+      "minimum": 4.2,
+      "maximum": 4.6,
+      "mean": 4.4,
+      "std": 0.19999999999999973,
+      "absolute_change": 0.39999999999999947,
+      "percent_change": 9.523809523809511,
+      "slope_per_day": 0.0017894086353744058,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Respiratory rate",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 16.0,
+      "latest_value": 18.0,
+      "minimum": 16.0,
+      "maximum": 18.0,
+      "mean": 17.0,
+      "std": 1.0,
+      "absolute_change": 2.0,
+      "percent_change": 12.5,
+      "slope_per_day": 0.008947043176872086,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Systolic Blood Pressure",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 122.0,
+      "latest_value": 138.0,
+      "minimum": 122.0,
+      "maximum": 138.0,
+      "mean": 129.33333333333334,
+      "std": 8.082903768654761,
+      "absolute_change": 16.0,
+      "percent_change": 13.114754098360656,
+      "slope_per_day": 0.0724361213358771,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    },
+    {
+      "observation": "Total Cholesterol",
+      "records": 3,
+      "first_date": "2025-01-10T00:00:00+00:00",
+      "latest_date": "2025-08-20T00:00:00+00:00",
+      "first_value": 185.0,
+      "latest_value": 215.0,
+      "minimum": 185.0,
+      "maximum": 215.0,
+      "mean": 199.33333333333334,
+      "std": 15.044378795195676,
+      "absolute_change": 30.0,
+      "percent_change": 16.216216216216218,
+      "slope_per_day": 0.13506542357398135,
+      "trend": "INCREASING",
+      "history_days": 222.0,
+      "days_since_latest": 0.0,
+      "records_last_90_days": 1,
+      "records_last_365_days": 3
+    }
+  ],
+  "risk_progression": [
+    {
+      "reference_date": "2025-01-10T00:00:00+00:00",
+      "records_available": 10,
+      "observation_types_available": 10,
+      "risk_probability": 0.37196123600006104,
+      "risk_percent": 37.1961236000061,
+      "risk_category": "MODERATE"
+    },
+    {
+      "reference_date": "2025-04-15T00:00:00+00:00",
+      "records_available": 20,
+      "observation_types_available": 10,
+      "risk_probability": 0.18382911384105682,
+      "risk_percent": 18.382911384105682,
+      "risk_category": "LOW"
+    },
+    {
+      "reference_date": "2025-08-20T00:00:00+00:00",
+      "records_available": 30,
+      "observation_types_available": 10,
+      "risk_probability": 0.2555665671825409,
+      "risk_percent": 25.55665671825409,
+      "risk_category": "MODERATE"
+    }
+  ],
+  "top_risk_increasing_factors": [
+    {
+      "original_feature": "Body Mass Index__days_since_latest",
+      "safe_feature": "Body_Mass_Index_days_since_latest",
+      "feature_value": 0.0,
+      "contribution": 0.11858663707971573,
+      "absolute_contribution": 0.11858663707971573,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Systolic Blood Pressure__days_since_latest",
+      "safe_feature": "Systolic_Blood_Pressure_days_since_latest",
+      "feature_value": 0.0,
+      "contribution": 0.11706101894378662,
+      "absolute_contribution": 0.11706101894378662,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Body Weight__days_since_latest",
+      "safe_feature": "Body_Weight_days_since_latest",
+      "feature_value": 0.0,
+      "contribution": 0.07358399778604507,
+      "absolute_contribution": 0.07358399778604507,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Body Weight__slope_365d",
+      "safe_feature": "Body_Weight_slope_365d",
+      "feature_value": 0.01717133722023715,
+      "contribution": 0.06690307706594467,
+      "absolute_contribution": 0.06690307706594467,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Heart rate__days_since_latest",
+      "safe_feature": "Heart_rate_days_since_latest",
+      "feature_value": 0.0,
+      "contribution": 0.05847175419330597,
+      "absolute_contribution": 0.05847175419330597,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Total Cholesterol__mean_90d",
+      "safe_feature": "Total_Cholesterol_mean_90d",
+      "feature_value": 215.0,
+      "contribution": 0.04805340617895126,
+      "absolute_contribution": 0.04805340617895126,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Systolic Blood Pressure__relative_change_365d",
+      "safe_feature": "Systolic_Blood_Pressure_relative_change_365d",
+      "feature_value": 0.13114754098360656,
+      "contribution": 0.04176640138030052,
+      "absolute_contribution": 0.04176640138030052,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Diastolic Blood Pressure__days_since_latest",
+      "safe_feature": "Diastolic_Blood_Pressure_days_since_latest",
+      "feature_value": 0.0,
+      "contribution": 0.035972960293293,
+      "absolute_contribution": 0.035972960293293,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Creatinine__relative_change_365d",
+      "safe_feature": "Creatinine_relative_change_365d",
+      "feature_value": 0.2222222222222223,
+      "contribution": 0.032231610268354416,
+      "absolute_contribution": 0.032231610268354416,
+      "direction": "INCREASES_RISK"
+    },
+    {
+      "original_feature": "Total Cholesterol__max_365d",
+      "safe_feature": "Total_Cholesterol_max_365d",
+      "feature_value": 215.0,
+      "contribution": 0.02900073304772377,
+      "absolute_contribution": 0.02900073304772377,
+      "direction": "INCREASES_RISK"
+    }
+  ],
+  "top_risk_reducing_factors": [
+    {
+      "original_feature": "Hemoglobin A1c/Hemoglobin.total in Blood__relative_change_365d",
+      "safe_feature": "Hemoglobin_A1c_Hemoglobin_total_in_Blood_relative_change_365d",
+      "feature_value": 0.12068965517241383,
+      "contribution": -0.2099212259054184,
+      "absolute_contribution": 0.2099212259054184,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Creatinine__mean_90d",
+      "safe_feature": "Creatinine_mean_90d",
+      "feature_value": 1.1,
+      "contribution": -0.1642986536026001,
+      "absolute_contribution": 0.1642986536026001,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Hemoglobin A1c/Hemoglobin.total in Blood__min_365d",
+      "safe_feature": "Hemoglobin_A1c_Hemoglobin_total_in_Blood_min_365d",
+      "feature_value": 5.8,
+      "contribution": -0.11309041827917099,
+      "absolute_contribution": 0.11309041827917099,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Body Mass Index__slope_365d",
+      "safe_feature": "Body_Mass_Index_slope_365d",
+      "feature_value": 0.005880061259034425,
+      "contribution": -0.09860603511333466,
+      "absolute_contribution": 0.09860603511333466,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Hemoglobin A1c/Hemoglobin.total in Blood__mean_365d",
+      "safe_feature": "Hemoglobin_A1c_Hemoglobin_total_in_Blood_mean_365d",
+      "feature_value": 6.133333333333333,
+      "contribution": -0.0911339670419693,
+      "absolute_contribution": 0.0911339670419693,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Body Weight__mean_90d",
+      "safe_feature": "Body_Weight_mean_90d",
+      "feature_value": 75.8,
+      "contribution": -0.08886656910181046,
+      "absolute_contribution": 0.08886656910181046,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Body Weight__relative_change_365d",
+      "safe_feature": "Body_Weight_relative_change_365d",
+      "feature_value": 0.052777777777777736,
+      "contribution": -0.0867873802781105,
+      "absolute_contribution": 0.0867873802781105,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Body Mass Index__relative_change_365d",
+      "safe_feature": "Body_Mass_Index_relative_change_365d",
+      "feature_value": 0.05241935483870971,
+      "contribution": -0.06941594183444977,
+      "absolute_contribution": 0.06941594183444977,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Hemoglobin A1c/Hemoglobin.total in Blood__mean_90d",
+      "safe_feature": "Hemoglobin_A1c_Hemoglobin_total_in_Blood_mean_90d",
+      "feature_value": 6.5,
+      "contribution": -0.06384803354740143,
+      "absolute_contribution": 0.06384803354740143,
+      "direction": "REDUCES_RISK"
+    },
+    {
+      "original_feature": "Glucose__days_since_latest",
+      "safe_feature": "Glucose_days_since_latest",
+      "feature_value": null,
+      "contribution": -0.06354524195194244,
+      "absolute_contribution": 0.06354524195194244,
+      "direction": "REDUCES_RISK"
+    }
+  ],
+  "output_files": {
+    "current_risk_chart": "outputs\\SAMPLE_PATIENT_001\\current_risk.png",
+    "risk_progression_chart": "outputs\\SAMPLE_PATIENT_001\\risk_progression.png",
+    "observation_progression_chart": "outputs\\SAMPLE_PATIENT_001\\observation_progression.png",
+    "data_coverage_chart": "outputs\\SAMPLE_PATIENT_001\\data_coverage.png",
+    "feature_contribution_chart": "outputs\\SAMPLE_PATIENT_001\\feature_contributions.png",
+    "observation_progression_csv": "outputs\\SAMPLE_PATIENT_001\\observation_progression.csv",
+    "risk_progression_csv": "outputs\\SAMPLE_PATIENT_001\\risk_progression.csv"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "checkpoint": "C:\\Users\\yadav\\Desktop\\SEM 7\\B-Tech Project\\datasets\\Module_2\\runs\\checkpoints\\best_model.pt",
+  "checkpoint_epoch": 4,
+  "test_samples": 103182,
+  "test_loss": 0.009239739762446254,
+  "top1_accuracy": 0.9969277587176057,
+  "top3_accuracy": 1.0,
+  "macro_f1": 0.9967526136908604,
+  "weighted_f1": 0.9968964163099995
+}

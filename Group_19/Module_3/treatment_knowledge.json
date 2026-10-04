@@ -1,0 +1,1580 @@
+{
+  "Acute COPD exacerbation / infection": {
+    "category": "Respiratory",
+    "description": "Acute worsening of chronic obstructive pulmonary disease symptoms, often infection-triggered.",
+    "first_line_approach": [
+      "Bronchodilator escalation",
+      "Short course systemic corticosteroids",
+      "Antibiotics if infective exacerbation criteria are met"
+    ],
+    "medication_classes": [
+      "Short-acting beta-2 agonists",
+      "Short-acting anticholinergics",
+      "Oral corticosteroids",
+      "Antibiotics (if indicated)"
+    ],
+    "common_examples": [
+      "Albuterol/Salbutamol",
+      "Ipratropium",
+      "Prednisone",
+      "Azithromycin (if bacterial features)"
+    ],
+    "monitoring": [
+      "Oxygen saturation",
+      "Respiratory rate",
+      "Symptom severity"
+    ],
+    "red_flags": [
+      "Severe respiratory distress",
+      "Oxygen saturation <90%",
+      "Altered mental status"
+    ],
+    "clinical_considerations": [
+      "Confirm smoking status and prior COPD diagnosis before treatment escalation.",
+      "Chronic steroid use has long-term risks -- courses should be short."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Acute dystonic reactions": {
+    "category": "Neurological / Drug-induced",
+    "description": "Sudden abnormal, sustained muscle contractions, usually from antipsychotic or antiemetic medication exposure.",
+    "first_line_approach": [
+      "Identify and stop the causative medication",
+      "Anticholinergic reversal agent"
+    ],
+    "medication_classes": [
+      "Anticholinergics (reversal)",
+      "Antihistamines (reversal)"
+    ],
+    "common_examples": [
+      "Benztropine",
+      "Diphenhydramine"
+    ],
+    "monitoring": [
+      "Symptom resolution after reversal agent"
+    ],
+    "red_flags": [
+      "Airway compromise from laryngeal/pharyngeal dystonia"
+    ],
+    "clinical_considerations": [
+      "Medication history is essential -- this is drug-induced, not a primary illness."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Acute laryngitis": {
+    "category": "Respiratory / ENT",
+    "description": "Inflammation of the larynx, usually viral, causing hoarseness.",
+    "first_line_approach": [
+      "Voice rest",
+      "Hydration",
+      "Symptomatic care"
+    ],
+    "medication_classes": [
+      "Analgesics/antipyretics (symptomatic)"
+    ],
+    "common_examples": [
+      "Acetaminophen",
+      "Ibuprofen"
+    ],
+    "monitoring": [
+      "Symptom duration beyond 2-3 weeks warrants ENT referral"
+    ],
+    "red_flags": [
+      "Stridor or airway compromise"
+    ],
+    "clinical_considerations": [
+      "Antibiotics are not indicated for typical viral laryngitis."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Acute otitis media": {
+    "category": "ENT / Infectious",
+    "description": "Middle ear infection, common in children, causing ear pain and possible fever.",
+    "first_line_approach": [
+      "Analgesia",
+      "Watchful waiting or antibiotics depending on age/severity per guideline"
+    ],
+    "medication_classes": [
+      "Analgesics",
+      "Antibiotics (if criteria met)"
+    ],
+    "common_examples": [
+      "Acetaminophen",
+      "Ibuprofen",
+      "Amoxicillin (if antibiotics indicated)"
+    ],
+    "monitoring": [
+      "Symptom resolution at 48-72 hours"
+    ],
+    "red_flags": [
+      "High fever with systemic illness",
+      "Signs of mastoiditis"
+    ],
+    "clinical_considerations": [
+      "Antibiotic decision depends on age and severity criteria not captured here -- clinical evaluation required."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Acute pulmonary edema": {
+    "category": "Cardiovascular / Emergency",
+    "description": "Fluid accumulation in the lungs, typically from acute heart failure -- a medical emergency.",
+    "first_line_approach": [
+      "Emergency stabilization",
+      "Oxygen support",
+      "Diuresis",
+      "Treat underlying cardiac cause"
+    ],
+    "medication_classes": [
+      "Loop diuretics",
+      "Vasodilators (in-hospital)",
+      "Oxygen therapy"
+    ],
+    "common_examples": [
+      "Furosemide",
+      "Nitroglycerin (in-hospital)"
+    ],
+    "monitoring": [
+      "Oxygen saturation",
+      "Blood pressure",
+      "Fluid balance"
+    ],
+    "red_flags": [
+      "Severe respiratory distress",
+      "Hypoxia",
+      "Hemodynamic instability"
+    ],
+    "clinical_considerations": [
+      "This is an emergency presentation -- Module 3 does not recommend outpatient medication management."
+    ],
+    "relevant_module1_observations": [
+      "Systolic Blood Pressure",
+      "Diastolic Blood Pressure",
+      "Heart rate",
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": true
+  },
+  "Acute rhinosinusitis": {
+    "category": "ENT / Infectious",
+    "description": "Short-duration sinus inflammation, usually viral, sometimes bacterial.",
+    "first_line_approach": [
+      "Symptomatic treatment",
+      "Antibiotics only if bacterial criteria (severe/persistent/worsening) are met"
+    ],
+    "medication_classes": [
+      "Intranasal corticosteroids",
+      "Analgesics",
+      "Antibiotics (selected cases only)"
+    ],
+    "common_examples": [
+      "Fluticasone nasal spray",
+      "Acetaminophen",
+      "Amoxicillin-clavulanate (if bacterial)"
+    ],
+    "monitoring": [
+      "Symptom duration and severity trend"
+    ],
+    "red_flags": [
+      "Periorbital swelling",
+      "Severe headache with neurological signs"
+    ],
+    "clinical_considerations": [
+      "Most cases are viral and self-limited; antibiotics are frequently over-used for this condition."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Allergic sinusitis": {
+    "category": "ENT / Allergic",
+    "description": "Sinus inflammation driven by allergic response.",
+    "first_line_approach": [
+      "Allergen avoidance",
+      "Intranasal corticosteroids",
+      "Antihistamines"
+    ],
+    "medication_classes": [
+      "Intranasal corticosteroids",
+      "Second-generation antihistamines",
+      "Leukotriene receptor antagonists"
+    ],
+    "common_examples": [
+      "Fluticasone nasal spray",
+      "Cetirizine",
+      "Montelukast"
+    ],
+    "monitoring": [
+      "Symptom frequency and trigger pattern"
+    ],
+    "red_flags": [
+      "Signs of secondary bacterial infection"
+    ],
+    "clinical_considerations": [
+      "Consider allergy testing if recurrent or seasonal pattern is reported."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Anaphylaxis": {
+    "category": "Immunologic / Emergency",
+    "description": "Severe, rapid-onset systemic allergic reaction -- a life-threatening emergency.",
+    "first_line_approach": [
+      "Immediate epinephrine",
+      "Emergency services",
+      "Airway/circulation support"
+    ],
+    "medication_classes": [
+      "Epinephrine (first-line, immediate)",
+      "Antihistamines (adjunct)",
+      "Corticosteroids (adjunct)"
+    ],
+    "common_examples": [
+      "Epinephrine auto-injector",
+      "Diphenhydramine (adjunct only)"
+    ],
+    "monitoring": [
+      "Airway",
+      "Blood pressure",
+      "Recurrence (biphasic reaction risk)"
+    ],
+    "red_flags": [
+      "Any suspected anaphylaxis is itself the red flag"
+    ],
+    "clinical_considerations": [
+      "Module 3 cannot substitute for emergency epinephrine administration -- this profile exists for post-emergency education/follow-up only."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": true
+  },
+  "Anemia": {
+    "category": "Hematologic",
+    "description": "Reduced red blood cell mass/hemoglobin, with many possible underlying causes.",
+    "first_line_approach": [
+      "Identify underlying cause (iron/B12/folate deficiency, chronic disease, bleeding, etc.)",
+      "Treat the cause",
+      "Supplementation if deficiency confirmed"
+    ],
+    "medication_classes": [
+      "Iron supplementation (if iron-deficient)",
+      "Vitamin B12/folate supplementation (if deficient)",
+      "Erythropoiesis-stimulating agents (select chronic-disease cases)"
+    ],
+    "common_examples": [
+      "Ferrous sulfate",
+      "Cyanocobalamin",
+      "Folic acid"
+    ],
+    "monitoring": [
+      "Hemoglobin/hematocrit trend",
+      "Iron studies",
+      "Symptom of fatigue/dyspnea"
+    ],
+    "red_flags": [
+      "Signs of active bleeding",
+      "Severe symptomatic anemia",
+      "Hemodynamic instability"
+    ],
+    "clinical_considerations": [
+      "Treatment is entirely dependent on the underlying cause -- supplementation without a confirmed deficiency is not appropriate."
+    ],
+    "relevant_module1_observations": [
+      "Hemoglobin [Mass/volume] in Blood",
+      "Hematocrit [Volume Fraction] of Blood by Automated count"
+    ],
+    "is_medical_emergency": false
+  },
+  "Atrial fibrillation": {
+    "category": "Cardiovascular",
+    "description": "Irregular, often rapid heart rhythm originating in the atria.",
+    "first_line_approach": [
+      "Rate or rhythm control",
+      "Stroke risk assessment and anticoagulation if indicated"
+    ],
+    "medication_classes": [
+      "Beta-blockers",
+      "Calcium channel blockers (rate control)",
+      "Anticoagulants (stroke prevention)"
+    ],
+    "common_examples": [
+      "Metoprolol",
+      "Diltiazem",
+      "Apixaban/Warfarin (per stroke risk score)"
+    ],
+    "monitoring": [
+      "Heart rate",
+      "Blood pressure",
+      "Anticoagulation-related bleeding risk"
+    ],
+    "red_flags": [
+      "Hemodynamic instability",
+      "Chest pain with new-onset AFib",
+      "Signs of stroke"
+    ],
+    "clinical_considerations": [
+      "Anticoagulation decisions require a formal stroke-risk score (e.g. CHA2DS2-VASc) -- not automated here."
+    ],
+    "relevant_module1_observations": [
+      "Heart rate",
+      "Systolic Blood Pressure",
+      "Diastolic Blood Pressure"
+    ],
+    "is_medical_emergency": false
+  },
+  "Boerhaave": {
+    "category": "Gastrointestinal / Emergency",
+    "description": "Spontaneous esophageal rupture, usually from forceful vomiting -- a surgical emergency.",
+    "first_line_approach": [
+      "Emergency surgical/GI consultation",
+      "NPO",
+      "Broad-spectrum antibiotics"
+    ],
+    "medication_classes": [
+      "Broad-spectrum antibiotics (supportive, pre-surgical)"
+    ],
+    "common_examples": [
+      "Piperacillin-tazobactam (in-hospital)"
+    ],
+    "monitoring": [
+      "Vital sign stability",
+      "Signs of mediastinitis/sepsis"
+    ],
+    "red_flags": [
+      "Any suspected case is itself the red flag"
+    ],
+    "clinical_considerations": [
+      "This condition requires emergency surgical evaluation -- outpatient management is not appropriate."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": true
+  },
+  "Bronchiectasis": {
+    "category": "Respiratory / Chronic",
+    "description": "Chronic, irreversible dilation of the bronchi leading to recurrent infection and mucus production.",
+    "first_line_approach": [
+      "Airway clearance therapy",
+      "Treat acute exacerbations with antibiotics",
+      "Manage underlying cause if identifiable"
+    ],
+    "medication_classes": [
+      "Antibiotics (for exacerbations)",
+      "Mucolytics",
+      "Bronchodilators (if airflow obstruction present)"
+    ],
+    "common_examples": [
+      "Azithromycin (chronic suppressive, select cases)",
+      "Hypertonic saline",
+      "Albuterol/Salbutamol"
+    ],
+    "monitoring": [
+      "Sputum volume/color",
+      "Exacerbation frequency",
+      "Respiratory rate"
+    ],
+    "red_flags": [
+      "Hemoptysis",
+      "Severe respiratory distress"
+    ],
+    "clinical_considerations": [
+      "Long-term pulmonology follow-up is standard for this chronic condition."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Bronchiolitis": {
+    "category": "Respiratory / Pediatric",
+    "description": "Viral lower respiratory infection, primarily affecting infants.",
+    "first_line_approach": [
+      "Supportive care",
+      "Hydration",
+      "Monitor respiratory status"
+    ],
+    "medication_classes": [
+      "Supportive care only (no proven specific medication in most cases)"
+    ],
+    "common_examples": [
+      "Saline nasal drops",
+      "Antipyretics if febrile"
+    ],
+    "monitoring": [
+      "Oxygen saturation",
+      "Feeding/hydration status",
+      "Respiratory effort"
+    ],
+    "red_flags": [
+      "Apnea",
+      "Poor feeding",
+      "Marked respiratory distress"
+    ],
+    "clinical_considerations": [
+      "Bronchodilators and antibiotics are generally not indicated for typical viral bronchiolitis."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Bronchitis": {
+    "category": "Respiratory",
+    "description": "Inflammation of the bronchial tubes, usually viral.",
+    "first_line_approach": [
+      "Symptomatic care",
+      "Hydration",
+      "Avoid unnecessary antibiotics"
+    ],
+    "medication_classes": [
+      "Antitussives (symptomatic)",
+      "Bronchodilators (if wheezing present)"
+    ],
+    "common_examples": [
+      "Dextromethorphan",
+      "Albuterol/Salbutamol (if wheeze)"
+    ],
+    "monitoring": [
+      "Cough duration",
+      "Fever trend"
+    ],
+    "red_flags": [
+      "Symptoms beyond 3 weeks",
+      "High fever with chest pain"
+    ],
+    "clinical_considerations": [
+      "Most acute bronchitis is viral; antibiotics do not shorten typical courses."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Bronchospasm / acute asthma exacerbation": {
+    "category": "Respiratory",
+    "description": "Acute narrowing of the airways causing wheeze and breathlessness.",
+    "first_line_approach": [
+      "Short-acting bronchodilator",
+      "Systemic corticosteroids for moderate-severe episodes",
+      "Reassess response"
+    ],
+    "medication_classes": [
+      "Short-acting beta-2 agonists",
+      "Oral corticosteroids",
+      "Inhaled corticosteroids (maintenance)"
+    ],
+    "common_examples": [
+      "Albuterol/Salbutamol",
+      "Prednisone",
+      "Fluticasone (maintenance)"
+    ],
+    "monitoring": [
+      "Peak flow / symptom severity",
+      "Oxygen saturation",
+      "Respiratory rate"
+    ],
+    "red_flags": [
+      "Inability to speak full sentences",
+      "Silent chest",
+      "Oxygen saturation <90%"
+    ],
+    "clinical_considerations": [
+      "Severe exacerbations require urgent in-person evaluation, not remote guidance alone."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Chagas": {
+    "category": "Infectious / Parasitic",
+    "description": "Chronic infection with Trypanosoma cruzi, which can cause cardiac and GI complications over years.",
+    "first_line_approach": [
+      "Antiparasitic treatment in acute/early chronic phase",
+      "Cardiac monitoring in chronic phase"
+    ],
+    "medication_classes": [
+      "Antitrypanosomal agents"
+    ],
+    "common_examples": [
+      "Benznidazole",
+      "Nifurtimox"
+    ],
+    "monitoring": [
+      "Cardiac function (ECG/echo)",
+      "GI symptoms"
+    ],
+    "red_flags": [
+      "Signs of heart failure",
+      "Arrhythmia"
+    ],
+    "clinical_considerations": [
+      "Specialist infectious-disease and cardiology involvement is standard."
+    ],
+    "relevant_module1_observations": [
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Chronic rhinosinusitis": {
+    "category": "ENT / Chronic",
+    "description": "Sinus inflammation persisting beyond 12 weeks.",
+    "first_line_approach": [
+      "Intranasal corticosteroids",
+      "Saline irrigation",
+      "Identify and treat contributing allergy/structural causes"
+    ],
+    "medication_classes": [
+      "Intranasal corticosteroids",
+      "Saline nasal irrigation",
+      "Short antibiotic course for acute-on-chronic flares"
+    ],
+    "common_examples": [
+      "Fluticasone nasal spray",
+      "Saline rinse",
+      "Amoxicillin-clavulanate (flare only)"
+    ],
+    "monitoring": [
+      "Symptom persistence beyond treatment course"
+    ],
+    "red_flags": [
+      "Severe facial pain with neurological signs"
+    ],
+    "clinical_considerations": [
+      "ENT referral is appropriate for persistent or recurrent cases."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Cluster headache": {
+    "category": "Neurological",
+    "description": "Severe, recurrent unilateral headaches occurring in clusters.",
+    "first_line_approach": [
+      "High-flow oxygen for acute attacks",
+      "Triptans for acute attacks",
+      "Preventive therapy for frequent clusters"
+    ],
+    "medication_classes": [
+      "Triptans (acute)",
+      "Verapamil (preventive)",
+      "Oxygen therapy (acute)"
+    ],
+    "common_examples": [
+      "Sumatriptan",
+      "Verapamil"
+    ],
+    "monitoring": [
+      "Attack frequency",
+      "Response to acute therapy"
+    ],
+    "red_flags": [
+      "Sudden 'worst headache of life'",
+      "Neurological deficits",
+      "Headache with fever/neck stiffness"
+    ],
+    "clinical_considerations": [
+      "New-onset severe headache patterns should be evaluated to exclude secondary causes before assuming cluster headache."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Croup": {
+    "category": "Respiratory / Pediatric",
+    "description": "Viral upper airway infection in young children causing a barking cough and stridor.",
+    "first_line_approach": [
+      "Corticosteroids",
+      "Cool/humidified air",
+      "Nebulized epinephrine for moderate-severe cases"
+    ],
+    "medication_classes": [
+      "Corticosteroids",
+      "Nebulized epinephrine (moderate-severe)"
+    ],
+    "common_examples": [
+      "Dexamethasone",
+      "Racemic epinephrine (in-clinic)"
+    ],
+    "monitoring": [
+      "Stridor at rest",
+      "Respiratory effort"
+    ],
+    "red_flags": [
+      "Stridor at rest",
+      "Cyanosis",
+      "Severe respiratory distress"
+    ],
+    "clinical_considerations": [
+      "Moderate-to-severe croup needs in-person urgent evaluation."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Ebola": {
+    "category": "Infectious / Emergency",
+    "description": "Severe viral hemorrhagic fever requiring immediate isolation and specialized care.",
+    "first_line_approach": [
+      "Immediate isolation",
+      "Emergency infectious-disease notification",
+      "Supportive critical care"
+    ],
+    "medication_classes": [
+      "Supportive care (no first-line outpatient medication)"
+    ],
+    "common_examples": [],
+    "monitoring": [
+      "Vital sign stability",
+      "Bleeding",
+      "Hydration status"
+    ],
+    "red_flags": [
+      "Any suspected case is itself the red flag -- public-health emergency"
+    ],
+    "clinical_considerations": [
+      "Suspected cases require immediate isolation and public-health notification -- this is entirely outside outpatient/self-management scope."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": true
+  },
+  "Epiglottitis": {
+    "category": "ENT / Emergency",
+    "description": "Life-threatening inflammation/infection of the epiglottis that can rapidly obstruct the airway.",
+    "first_line_approach": [
+      "Emergency airway management",
+      "IV antibiotics",
+      "ICU-level monitoring"
+    ],
+    "medication_classes": [
+      "IV antibiotics (in-hospital)"
+    ],
+    "common_examples": [
+      "Ceftriaxone (in-hospital)"
+    ],
+    "monitoring": [
+      "Airway patency",
+      "Vital signs"
+    ],
+    "red_flags": [
+      "Any suspected case is itself the red flag"
+    ],
+    "clinical_considerations": [
+      "Suspected epiglottitis requires emergency in-person airway management -- never manage remotely."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": true
+  },
+  "GERD": {
+    "category": "Gastrointestinal",
+    "description": "Gastroesophageal reflux disease -- backward flow of stomach acid causing heartburn/regurgitation.",
+    "first_line_approach": [
+      "Lifestyle modification",
+      "Acid suppression therapy",
+      "Weight management if elevated BMI"
+    ],
+    "medication_classes": [
+      "Proton pump inhibitors",
+      "H2 receptor antagonists",
+      "Antacids (symptomatic)"
+    ],
+    "common_examples": [
+      "Omeprazole",
+      "Famotidine",
+      "Calcium carbonate"
+    ],
+    "monitoring": [
+      "Symptom frequency",
+      "Weight/BMI trend"
+    ],
+    "red_flags": [
+      "Dysphagia",
+      "Unintentional weight loss",
+      "GI bleeding signs"
+    ],
+    "clinical_considerations": [
+      "Elevated or rising BMI is a relevant, modifiable contributing factor worth highlighting."
+    ],
+    "relevant_module1_observations": [
+      "Body Mass Index",
+      "Body Weight"
+    ],
+    "is_medical_emergency": false
+  },
+  "Guillain-Barré syndrome": {
+    "category": "Neurological / Emergency",
+    "description": "Autoimmune condition causing rapidly progressive muscle weakness -- can be life-threatening.",
+    "first_line_approach": [
+      "Immediate neurological evaluation",
+      "IVIG or plasma exchange (in-hospital)",
+      "Monitor respiratory function closely"
+    ],
+    "medication_classes": [
+      "Intravenous immunoglobulin (IVIG)",
+      "Plasma exchange"
+    ],
+    "common_examples": [
+      "IVIG (in-hospital)"
+    ],
+    "monitoring": [
+      "Respiratory function (vital capacity)",
+      "Progression of weakness"
+    ],
+    "red_flags": [
+      "Rapidly progressive weakness",
+      "Breathing difficulty",
+      "Swallowing difficulty"
+    ],
+    "clinical_considerations": [
+      "This condition can progress to respiratory failure within days -- urgent in-person evaluation is required, not outpatient management."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": true
+  },
+  "HIV (initial infection)": {
+    "category": "Infectious",
+    "description": "Acute retroviral syndrome following initial HIV infection.",
+    "first_line_approach": [
+      "Confirmatory testing",
+      "Prompt linkage to HIV specialist care",
+      "Early antiretroviral therapy per current guidelines"
+    ],
+    "medication_classes": [
+      "Antiretroviral therapy (specialist-initiated)"
+    ],
+    "common_examples": [
+      "Combination ART regimens (specialist-prescribed)"
+    ],
+    "monitoring": [
+      "Viral load and CD4 count (specialist-managed)"
+    ],
+    "red_flags": [
+      "Signs of opportunistic infection"
+    ],
+    "clinical_considerations": [
+      "Diagnosis and ART initiation must be confirmed and managed by a specialist -- not appropriate for local knowledge-base guidance alone."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Influenza": {
+    "category": "Infectious / Respiratory",
+    "description": "Viral respiratory infection with systemic symptoms (fever, myalgia, cough).",
+    "first_line_approach": [
+      "Supportive care",
+      "Antiviral therapy if within treatment window and indicated",
+      "Rest and hydration"
+    ],
+    "medication_classes": [
+      "Neuraminidase inhibitors (if early and indicated)",
+      "Antipyretics/analgesics"
+    ],
+    "common_examples": [
+      "Oseltamivir",
+      "Acetaminophen"
+    ],
+    "monitoring": [
+      "Fever trend",
+      "Respiratory symptoms",
+      "Hydration"
+    ],
+    "red_flags": [
+      "Difficulty breathing",
+      "Persistent high fever",
+      "Signs of secondary bacterial pneumonia"
+    ],
+    "clinical_considerations": [
+      "Antivirals are most effective when started within 48 hours of symptom onset."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Inguinal hernia": {
+    "category": "Surgical / GI",
+    "description": "Protrusion of abdominal contents through the inguinal canal.",
+    "first_line_approach": [
+      "Surgical evaluation",
+      "Watchful waiting for small, asymptomatic, reducible hernias in select cases"
+    ],
+    "medication_classes": [
+      "Analgesics (symptomatic, pre-evaluation only)"
+    ],
+    "common_examples": [
+      "Acetaminophen"
+    ],
+    "monitoring": [
+      "Size/symptom progression",
+      "Reducibility"
+    ],
+    "red_flags": [
+      "Sudden severe pain",
+      "Inability to reduce hernia",
+      "Signs of strangulation/obstruction"
+    ],
+    "clinical_considerations": [
+      "Definitive treatment is surgical -- medication is not a substitute for surgical evaluation."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Larygospasm": {
+    "category": "Respiratory / Emergency",
+    "description": "Sudden, involuntary spasm of the vocal cords causing temporary airway obstruction.",
+    "first_line_approach": [
+      "Stay calm, position upright",
+      "Address triggering cause (e.g. reflux, irritant exposure)",
+      "Emergency care if not rapidly self-resolving"
+    ],
+    "medication_classes": [
+      "Address underlying trigger (e.g. reflux therapy if GERD-related)"
+    ],
+    "common_examples": [
+      "Omeprazole (if reflux-related trigger suspected)"
+    ],
+    "monitoring": [
+      "Episode frequency and triggers"
+    ],
+    "red_flags": [
+      "Episode not resolving within a minute",
+      "Cyanosis"
+    ],
+    "clinical_considerations": [
+      "Recurrent laryngospasm warrants ENT evaluation for underlying cause."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Localized edema": {
+    "category": "Cardiovascular / Renal / General",
+    "description": "Localized fluid accumulation, with causes ranging from venous insufficiency to renal, hepatic, or cardiac disease.",
+    "first_line_approach": [
+      "Identify underlying cause",
+      "Compression/elevation for venous causes",
+      "Treat underlying organ system disease"
+    ],
+    "medication_classes": [
+      "Diuretics (if fluid-overload cause confirmed)",
+      "Compression therapy (venous cause)"
+    ],
+    "common_examples": [
+      "Furosemide (cause-dependent)"
+    ],
+    "monitoring": [
+      "Kidney function",
+      "Liver function",
+      "Cardiac status",
+      "Extent of edema"
+    ],
+    "red_flags": [
+      "Sudden unilateral leg swelling with pain (possible DVT)",
+      "Shortness of breath"
+    ],
+    "clinical_considerations": [
+      "Edema has many distinct causes -- kidney/liver/cardiac markers from Module 1 are relevant context, not a diagnosis."
+    ],
+    "relevant_module1_observations": [
+      "Glomerular filtration rate/1.73 sq M.predicted",
+      "Creatinine",
+      "Albumin [Mass/volume] in Serum or Plasma",
+      "Systolic Blood Pressure"
+    ],
+    "is_medical_emergency": false
+  },
+  "Myasthenia gravis": {
+    "category": "Neurological / Autoimmune",
+    "description": "Autoimmune neuromuscular condition causing fluctuating muscle weakness.",
+    "first_line_approach": [
+      "Neurology referral",
+      "Acetylcholinesterase inhibitors",
+      "Immunosuppressive therapy for refractory cases"
+    ],
+    "medication_classes": [
+      "Acetylcholinesterase inhibitors",
+      "Immunosuppressants (specialist-managed)"
+    ],
+    "common_examples": [
+      "Pyridostigmine"
+    ],
+    "monitoring": [
+      "Muscle strength trend",
+      "Respiratory function"
+    ],
+    "red_flags": [
+      "Difficulty breathing or swallowing (myasthenic crisis)"
+    ],
+    "clinical_considerations": [
+      "Myasthenic crisis is a medical emergency requiring immediate care."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Myocarditis": {
+    "category": "Cardiovascular",
+    "description": "Inflammation of the heart muscle, often viral, which can impair cardiac function.",
+    "first_line_approach": [
+      "Cardiology evaluation",
+      "Activity restriction",
+      "Supportive heart-failure-directed therapy if function impaired"
+    ],
+    "medication_classes": [
+      "Beta-blockers / ACE inhibitors (if reduced function)",
+      "Diuretics (if volume overload)"
+    ],
+    "common_examples": [
+      "Metoprolol",
+      "Lisinopril",
+      "Furosemide"
+    ],
+    "monitoring": [
+      "Cardiac function (echo/troponin)",
+      "Heart rate",
+      "Blood pressure"
+    ],
+    "red_flags": [
+      "Chest pain",
+      "Syncope",
+      "Signs of heart failure or arrhythmia"
+    ],
+    "clinical_considerations": [
+      "Requires cardiology evaluation -- outpatient medication alone is not sufficient for active myocarditis."
+    ],
+    "relevant_module1_observations": [
+      "Heart rate",
+      "Systolic Blood Pressure",
+      "Diastolic Blood Pressure"
+    ],
+    "is_medical_emergency": false
+  },
+  "PSVT": {
+    "category": "Cardiovascular",
+    "description": "Paroxysmal supraventricular tachycardia -- episodes of rapid, regular heart rate.",
+    "first_line_approach": [
+      "Vagal maneuvers for acute episodes",
+      "Rate-control or antiarrhythmic medication for recurrent episodes",
+      "Consider ablation for frequent/refractory cases"
+    ],
+    "medication_classes": [
+      "Beta-blockers",
+      "Calcium channel blockers",
+      "Antiarrhythmics (select cases)"
+    ],
+    "common_examples": [
+      "Metoprolol",
+      "Diltiazem"
+    ],
+    "monitoring": [
+      "Episode frequency/duration",
+      "Heart rate"
+    ],
+    "red_flags": [
+      "Chest pain, fainting, or hemodynamic instability during an episode"
+    ],
+    "clinical_considerations": [
+      "Recurrent episodes warrant cardiology/electrophysiology referral."
+    ],
+    "relevant_module1_observations": [
+      "Heart rate",
+      "Systolic Blood Pressure"
+    ],
+    "is_medical_emergency": false
+  },
+  "Pancreatic neoplasm": {
+    "category": "Oncologic",
+    "description": "Mass/tumor of the pancreas requiring oncologic evaluation.",
+    "first_line_approach": [
+      "Prompt oncologic/surgical referral",
+      "Diagnostic imaging and biopsy",
+      "Staging-directed treatment"
+    ],
+    "medication_classes": [
+      "Managed entirely by oncology/surgery -- not appropriate for a general medication-class list"
+    ],
+    "common_examples": [],
+    "monitoring": [
+      "Weight trend",
+      "Glucose/HbA1c (new-onset diabetes can be an early sign)"
+    ],
+    "red_flags": [
+      "Unexplained weight loss",
+      "Jaundice",
+      "New-onset diabetes in an older adult"
+    ],
+    "clinical_considerations": [
+      "Suspected neoplasm requires urgent specialist referral, not primary-care medication management."
+    ],
+    "relevant_module1_observations": [
+      "Body Weight",
+      "Glucose",
+      "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "Bilirubin.total [Mass/volume] in Serum or Plasma"
+    ],
+    "is_medical_emergency": false
+  },
+  "Panic attack": {
+    "category": "Psychiatric / Neurological",
+    "description": "Sudden episode of intense fear with physical symptoms (palpitations, dyspnea, dizziness).",
+    "first_line_approach": [
+      "Reassurance and grounding techniques",
+      "Evaluate for underlying anxiety disorder",
+      "Short-term or maintenance medication if recurrent/disabling"
+    ],
+    "medication_classes": [
+      "SSRIs (maintenance, if recurrent)",
+      "Short-term benzodiazepines (selected, short-term use only)"
+    ],
+    "common_examples": [
+      "Sertraline",
+      "Lorazepam (short-term only)"
+    ],
+    "monitoring": [
+      "Frequency of episodes",
+      "Functional impact"
+    ],
+    "red_flags": [
+      "Chest pain not clearly explained by panic (must exclude cardiac cause)"
+    ],
+    "clinical_considerations": [
+      "Cardiac causes of similar symptoms should be excluded before attributing chest symptoms to panic alone."
+    ],
+    "relevant_module1_observations": [
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Pericarditis": {
+    "category": "Cardiovascular",
+    "description": "Inflammation of the pericardium (sac around the heart), typically causing sharp chest pain.",
+    "first_line_approach": [
+      "NSAIDs as first-line",
+      "Colchicine as adjunct to reduce recurrence",
+      "Cardiology evaluation to exclude complications"
+    ],
+    "medication_classes": [
+      "NSAIDs",
+      "Colchicine"
+    ],
+    "common_examples": [
+      "Ibuprofen",
+      "Colchicine"
+    ],
+    "monitoring": [
+      "Symptom response",
+      "Signs of effusion/tamponade"
+    ],
+    "red_flags": [
+      "Shortness of breath",
+      "Hypotension",
+      "Signs of cardiac tamponade"
+    ],
+    "clinical_considerations": [
+      "Complicated or recurrent pericarditis requires cardiology involvement."
+    ],
+    "relevant_module1_observations": [
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Pneumonia": {
+    "category": "Respiratory / Infectious",
+    "description": "Infection of the lung parenchyma, bacterial or viral.",
+    "first_line_approach": [
+      "Antibiotics for bacterial pneumonia per severity/setting",
+      "Supportive care",
+      "Reassess response in 48-72 hours"
+    ],
+    "medication_classes": [
+      "Antibiotics (bacterial)",
+      "Antipyretics/analgesics (symptomatic)"
+    ],
+    "common_examples": [
+      "Amoxicillin",
+      "Azithromycin",
+      "Acetaminophen"
+    ],
+    "monitoring": [
+      "Oxygen saturation",
+      "Respiratory rate",
+      "Fever trend"
+    ],
+    "red_flags": [
+      "Oxygen saturation <92%",
+      "Confusion",
+      "Hypotension"
+    ],
+    "clinical_considerations": [
+      "Severity assessment (e.g. CURB-65-type criteria) determines outpatient vs. inpatient management -- not automated here."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Heart rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "Possible NSTEMI / STEMI": {
+    "category": "Cardiovascular / Emergency",
+    "description": "Suspected acute myocardial infarction -- a time-critical medical emergency.",
+    "first_line_approach": [
+      "Call emergency services immediately",
+      "Aspirin if not contraindicated",
+      "Emergency cardiology evaluation and reperfusion therapy"
+    ],
+    "medication_classes": [
+      "Antiplatelet therapy (emergency)",
+      "Anticoagulation (in-hospital)",
+      "Reperfusion therapy (in-hospital)"
+    ],
+    "common_examples": [
+      "Aspirin (emergency)",
+      "Heparin (in-hospital)"
+    ],
+    "monitoring": [
+      "Cardiac enzymes/troponin",
+      "ECG changes",
+      "Blood pressure/heart rate"
+    ],
+    "red_flags": [
+      "Any suspected case is itself the red flag"
+    ],
+    "clinical_considerations": [
+      "This is a time-critical emergency -- Module 3 should never delay emergency care with outpatient-style guidance."
+    ],
+    "relevant_module1_observations": [
+      "Systolic Blood Pressure",
+      "Diastolic Blood Pressure",
+      "Heart rate",
+      "Total Cholesterol",
+      "Low Density Lipoprotein Cholesterol",
+      "High Density Lipoprotein Cholesterol",
+      "Glucose"
+    ],
+    "is_medical_emergency": true
+  },
+  "Pulmonary embolism": {
+    "category": "Cardiovascular / Respiratory / Emergency",
+    "description": "Blockage of a pulmonary artery, usually by a blood clot -- a life-threatening emergency.",
+    "first_line_approach": [
+      "Emergency evaluation",
+      "Anticoagulation (in-hospital)",
+      "Thrombolysis for high-risk cases"
+    ],
+    "medication_classes": [
+      "Anticoagulants (in-hospital initiation)"
+    ],
+    "common_examples": [
+      "Heparin",
+      "Apixaban (post-stabilization)"
+    ],
+    "monitoring": [
+      "Oxygen saturation",
+      "Heart rate",
+      "Blood pressure"
+    ],
+    "red_flags": [
+      "Any suspected case is itself the red flag"
+    ],
+    "clinical_considerations": [
+      "Requires emergency evaluation and imaging -- not manageable through outpatient guidance."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Heart rate",
+      "Systolic Blood Pressure"
+    ],
+    "is_medical_emergency": true
+  },
+  "Pulmonary neoplasm": {
+    "category": "Oncologic",
+    "description": "Mass/tumor of the lung requiring oncologic evaluation.",
+    "first_line_approach": [
+      "Prompt pulmonology/oncology referral",
+      "Diagnostic imaging and tissue diagnosis",
+      "Staging-directed treatment"
+    ],
+    "medication_classes": [
+      "Managed entirely by oncology/pulmonology -- not appropriate for a general medication-class list"
+    ],
+    "common_examples": [],
+    "monitoring": [
+      "Respiratory rate",
+      "Weight trend"
+    ],
+    "red_flags": [
+      "Hemoptysis",
+      "Unexplained weight loss",
+      "Persistent cough beyond several weeks"
+    ],
+    "clinical_considerations": [
+      "Suspected neoplasm requires urgent specialist referral."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Body Weight"
+    ],
+    "is_medical_emergency": false
+  },
+  "SLE": {
+    "category": "Autoimmune / Rheumatologic",
+    "description": "Systemic lupus erythematosus -- a chronic autoimmune disease affecting multiple organ systems.",
+    "first_line_approach": [
+      "Rheumatology referral",
+      "Hydroxychloroquine as a foundational therapy",
+      "Immunosuppression per organ involvement/severity"
+    ],
+    "medication_classes": [
+      "Antimalarials",
+      "NSAIDs (mild symptoms)",
+      "Immunosuppressants (organ involvement)"
+    ],
+    "common_examples": [
+      "Hydroxychloroquine",
+      "Prednisone (flare)"
+    ],
+    "monitoring": [
+      "Kidney function (renal involvement is common)",
+      "Blood counts"
+    ],
+    "red_flags": [
+      "Signs of organ involvement (renal, cardiac, neurological)"
+    ],
+    "clinical_considerations": [
+      "Rheumatology management is standard; kidney markers from Module 1 are particularly relevant given common renal involvement."
+    ],
+    "relevant_module1_observations": [
+      "Creatinine",
+      "Glomerular filtration rate/1.73 sq M.predicted",
+      "Albumin [Mass/volume] in Serum or Plasma",
+      "Leukocytes [#/volume] in Blood by Automated count",
+      "Platelets [#/volume] in Blood by Automated count"
+    ],
+    "is_medical_emergency": false
+  },
+  "Sarcoidosis": {
+    "category": "Immunologic / Multisystem",
+    "description": "Inflammatory condition causing granuloma formation, most often affecting the lungs.",
+    "first_line_approach": [
+      "Pulmonology/rheumatology referral",
+      "Observation for mild/asymptomatic cases",
+      "Corticosteroids for significant organ involvement"
+    ],
+    "medication_classes": [
+      "Corticosteroids (significant disease)",
+      "Immunosuppressants (refractory disease)"
+    ],
+    "common_examples": [
+      "Prednisone"
+    ],
+    "monitoring": [
+      "Respiratory symptoms",
+      "Organ-specific involvement markers"
+    ],
+    "red_flags": [
+      "Cardiac or neurological involvement",
+      "Significant respiratory decline"
+    ],
+    "clinical_considerations": [
+      "Many cases are mild and self-limited; treatment intensity depends on organ involvement."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate",
+      "Calcium"
+    ],
+    "is_medical_emergency": false
+  },
+  "Scombroid food poisoning": {
+    "category": "Toxicologic / GI",
+    "description": "Histamine-toxin reaction from improperly stored fish, mimicking an allergic reaction.",
+    "first_line_approach": [
+      "Antihistamines",
+      "Supportive care",
+      "Usually self-limited within 24 hours"
+    ],
+    "medication_classes": [
+      "Antihistamines"
+    ],
+    "common_examples": [
+      "Diphenhydramine"
+    ],
+    "monitoring": [
+      "Symptom resolution"
+    ],
+    "red_flags": [
+      "Signs mimicking true anaphylaxis (airway/breathing involvement)"
+    ],
+    "clinical_considerations": [
+      "Distinguishing this from true food allergy/anaphylaxis matters for future exposure counseling."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Spontaneous pneumothorax": {
+    "category": "Respiratory / Emergency",
+    "description": "Collapse of part of the lung due to air in the pleural space without trauma.",
+    "first_line_approach": [
+      "Emergency evaluation",
+      "Observation or chest tube depending on size/severity",
+      "Avoid air travel/diving until cleared"
+    ],
+    "medication_classes": [
+      "No first-line medication -- procedural/surgical management"
+    ],
+    "common_examples": [],
+    "monitoring": [
+      "Respiratory rate",
+      "Oxygen saturation"
+    ],
+    "red_flags": [
+      "Sudden chest pain with shortness of breath",
+      "Any suspected case is itself a red flag"
+    ],
+    "clinical_considerations": [
+      "Requires emergency imaging and possible procedural intervention -- not medication-managed."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": true
+  },
+  "Spontaneous rib fracture": {
+    "category": "Musculoskeletal",
+    "description": "Rib fracture occurring without significant trauma, often from an underlying bone-weakening process.",
+    "first_line_approach": [
+      "Pain control",
+      "Evaluate for underlying cause (e.g. osteoporosis, bone lesion)",
+      "Encourage deep breathing to prevent pneumonia"
+    ],
+    "medication_classes": [
+      "Analgesics"
+    ],
+    "common_examples": [
+      "Acetaminophen",
+      "Ibuprofen (if no contraindication)"
+    ],
+    "monitoring": [
+      "Pain control adequacy",
+      "Respiratory function (to prevent splinting-related pneumonia)"
+    ],
+    "red_flags": [
+      "Signs of pneumothorax or significant respiratory compromise"
+    ],
+    "clinical_considerations": [
+      "'Spontaneous' fracture should prompt investigation for an underlying bone-weakening cause."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Stable angina": {
+    "category": "Cardiovascular",
+    "description": "Predictable exertional chest discomfort from reduced blood flow to the heart muscle.",
+    "first_line_approach": [
+      "Risk factor modification",
+      "Antianginal medication",
+      "Cardiology evaluation for further risk stratification"
+    ],
+    "medication_classes": [
+      "Beta-blockers",
+      "Nitrates (as needed)",
+      "Antiplatelet therapy",
+      "Statins"
+    ],
+    "common_examples": [
+      "Metoprolol",
+      "Sublingual nitroglycerin",
+      "Aspirin",
+      "Atorvastatin"
+    ],
+    "monitoring": [
+      "Lipid panel",
+      "Blood pressure",
+      "Glucose/HbA1c"
+    ],
+    "red_flags": [
+      "Chest pain at rest or with minimal exertion (possible unstable angina)",
+      "Prolonged/severe chest pain"
+    ],
+    "clinical_considerations": [
+      "Lipid, glucose, and blood-pressure trends from Module 1 are directly relevant to cardiovascular risk modification here."
+    ],
+    "relevant_module1_observations": [
+      "Total Cholesterol",
+      "Low Density Lipoprotein Cholesterol",
+      "High Density Lipoprotein Cholesterol",
+      "Triglycerides",
+      "Systolic Blood Pressure",
+      "Diastolic Blood Pressure",
+      "Glucose",
+      "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "Body Mass Index"
+    ],
+    "is_medical_emergency": false
+  },
+  "Tuberculosis": {
+    "category": "Infectious",
+    "description": "Mycobacterial infection, most often pulmonary, requiring prolonged multi-drug therapy.",
+    "first_line_approach": [
+      "Public-health notification and confirmatory testing",
+      "Multi-drug antitubercular therapy per protocol",
+      "Directly observed therapy where applicable"
+    ],
+    "medication_classes": [
+      "Antitubercular combination therapy (specialist-managed)"
+    ],
+    "common_examples": [
+      "Isoniazid",
+      "Rifampin",
+      "Ethambutol",
+      "Pyrazinamide (combination, specialist-prescribed)"
+    ],
+    "monitoring": [
+      "Liver function (hepatotoxicity risk with therapy)",
+      "Symptom/sputum response"
+    ],
+    "red_flags": [
+      "Hemoptysis",
+      "Significant respiratory decline"
+    ],
+    "clinical_considerations": [
+      "Requires specialist/public-health management -- not appropriate for local knowledge-base-only guidance."
+    ],
+    "relevant_module1_observations": [
+      "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": false
+  },
+  "URTI": {
+    "category": "Respiratory / Infectious",
+    "description": "Upper respiratory tract infection -- the common cold, almost always viral.",
+    "first_line_approach": [
+      "Supportive care",
+      "Hydration and rest",
+      "Avoid unnecessary antibiotics"
+    ],
+    "medication_classes": [
+      "Antipyretics/analgesics (symptomatic)",
+      "Decongestants (symptomatic)"
+    ],
+    "common_examples": [
+      "Acetaminophen",
+      "Pseudoephedrine"
+    ],
+    "monitoring": [
+      "Symptom duration"
+    ],
+    "red_flags": [
+      "Symptoms beyond 10 days",
+      "High fever with focal findings"
+    ],
+    "clinical_considerations": [
+      "Antibiotics are not indicated for typical viral URTI."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Unstable angina": {
+    "category": "Cardiovascular / Emergency",
+    "description": "Chest pain at rest or with minimal exertion, representing acute coronary syndrome risk.",
+    "first_line_approach": [
+      "Emergency evaluation",
+      "Aspirin and antiplatelet therapy",
+      "Urgent cardiology assessment"
+    ],
+    "medication_classes": [
+      "Antiplatelet therapy (emergency)",
+      "Anticoagulation (in-hospital)",
+      "Beta-blockers/statins (post-stabilization)"
+    ],
+    "common_examples": [
+      "Aspirin (emergency)",
+      "Atorvastatin (post-stabilization)"
+    ],
+    "monitoring": [
+      "Cardiac enzymes",
+      "ECG changes",
+      "Blood pressure/heart rate"
+    ],
+    "red_flags": [
+      "Any suspected case is itself the red flag"
+    ],
+    "clinical_considerations": [
+      "Requires emergency evaluation -- do not delay care with outpatient-style guidance."
+    ],
+    "relevant_module1_observations": [
+      "Systolic Blood Pressure",
+      "Diastolic Blood Pressure",
+      "Heart rate",
+      "Total Cholesterol",
+      "Low Density Lipoprotein Cholesterol",
+      "High Density Lipoprotein Cholesterol",
+      "Glucose"
+    ],
+    "is_medical_emergency": true
+  },
+  "Viral pharyngitis": {
+    "category": "ENT / Infectious",
+    "description": "Viral throat infection causing sore throat, usually self-limited.",
+    "first_line_approach": [
+      "Symptomatic care",
+      "Hydration",
+      "Avoid unnecessary antibiotics (not strep)"
+    ],
+    "medication_classes": [
+      "Analgesics/antipyretics"
+    ],
+    "common_examples": [
+      "Acetaminophen",
+      "Ibuprofen"
+    ],
+    "monitoring": [
+      "Symptom duration"
+    ],
+    "red_flags": [
+      "Difficulty swallowing/breathing",
+      "High fever with drooling (possible epiglottitis)"
+    ],
+    "clinical_considerations": [
+      "Rapid strep testing should guide antibiotic decisions rather than empiric treatment."
+    ],
+    "relevant_module1_observations": [],
+    "is_medical_emergency": false
+  },
+  "Whooping cough": {
+    "category": "Respiratory / Infectious",
+    "description": "Pertussis -- a bacterial respiratory infection causing paroxysmal coughing fits.",
+    "first_line_approach": [
+      "Antibiotics (most effective early)",
+      "Supportive care",
+      "Isolate from vulnerable contacts (infants, pregnant individuals)"
+    ],
+    "medication_classes": [
+      "Macrolide antibiotics"
+    ],
+    "common_examples": [
+      "Azithromycin"
+    ],
+    "monitoring": [
+      "Cough pattern/frequency",
+      "Respiratory status in infants"
+    ],
+    "red_flags": [
+      "Apnea or cyanosis in infants",
+      "Severe respiratory distress"
+    ],
+    "clinical_considerations": [
+      "Post-exposure prophylaxis for close contacts should be considered -- this is a public-health-relevant infection."
+    ],
+    "relevant_module1_observations": [
+      "Respiratory rate"
+    ],
+    "is_medical_emergency": false
+  }
+}

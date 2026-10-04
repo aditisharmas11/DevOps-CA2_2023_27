@@ -1,0 +1,95 @@
+# ==============================================================================
+# MediTwin — Root .gitignore
+# ==============================================================================
+# Strategy: commit source code + the small trained models/vocab files that the
+# app loads at runtime, but exclude secrets, dependencies, build output, large
+# regenerable training datasets, audit dumps, and runtime-generated artifacts.
+# ==============================================================================
+
+# ── Secrets & Environment ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.local
+backend/.env
+frontend/.env
+
+# ── Node / JavaScript ─────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+dist/
+dist-ssr/
+frontend/dist/
+.vite/
+*.tsbuildinfo
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+ENV/
+
+# ── User Uploads (PII — never commit) ─────────────────────────────────────────
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# ==============================================================================
+# Machine Learning — large / regenerable artifacts
+# ==============================================================================
+
+# ── Module 1: raw & processed training data, eval outputs, runtime reports ────
+Module_1/data/
+Module_1/outputs/
+Module_1/predictions/
+Module_1/evaluation_results/
+# Oversized baseline model (NOT used at inference — xgboost_model.json is) and
+# large prediction dumps:
+Module_1/models/baseline_random_forest.pkl
+Module_1/models/*_test_predictions.parquet
+
+# ── Module 2: tokenized training tensors, leakage audits, resume checkpoint ───
+Module_2/module2_data_clean/train/
+Module_2/module2_data_clean/validation/
+Module_2/module2_data_clean/test/
+Module_2/runs/leakage_audit/
+Module_2/runs/checkpoints/last_model.pt
+
+# ── Module 3: runtime-generated recommendation outputs ────────────────────────
+Module_3/outputs/
+
+# NOTE: large .npy training tensors live under the Module_* data folders above and
+# are already excluded by those directory rules. We deliberately do NOT use a global
+# "*.npy" ignore, so any small .npy artifact the app may need at runtime is tracked.
+
+# ==============================================================================
+# Editors / OS / Tooling
+# ==============================================================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.qodo/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

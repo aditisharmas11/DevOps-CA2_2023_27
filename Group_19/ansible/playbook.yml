@@ -1,0 +1,142 @@
+---
+- name: Configure MediTwin Runtime Environment
+
+  hosts: meditwin
+
+  tasks:
+
+    # ==========================================================
+    # 1. Update package repository
+    # ==========================================================
+    - name: Update apt package cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+
+    # ==========================================================
+    # 2. Install required runtime packages
+    # ==========================================================
+    - name: Install MediTwin runtime packages
+      ansible.builtin.apt:
+        name:
+          - python3
+          - python3-pip
+          - python3-venv
+          - git
+          - curl
+          - ca-certificates
+          - unzip
+        state: present
+
+
+    # ==========================================================
+    # 3. Create dedicated deployment user
+    # ==========================================================
+    - name: Create MediTwin deployment user
+      ansible.builtin.user:
+        name: meditwin
+        shell: /bin/bash
+        create_home: true
+        state: present
+
+
+    # ==========================================================
+    # 4. Create application directories
+    # ==========================================================
+    - name: Create MediTwin application directory
+      ansible.builtin.file:
+        path: /opt/meditwin
+        state: directory
+        owner: meditwin
+        group: meditwin
+        mode: "0755"
+
+
+    - name: Create MediTwin configuration directory
+      ansible.builtin.file:
+        path: /opt/meditwin/config
+        state: directory
+        owner: meditwin
+        group: meditwin
+        mode: "0755"
+
+
+    - name: Create MediTwin logs directory
+      ansible.builtin.file:
+        path: /opt/meditwin/logs
+        state: directory
+        owner: meditwin
+        group: meditwin
+        mode: "0755"
+
+
+    # ==========================================================
+    # 5. Manage application configuration
+    # ==========================================================
+    - name: Create MediTwin environment configuration
+      ansible.builtin.copy:
+        dest: /opt/meditwin/config/app.env
+        owner: meditwin
+        group: meditwin
+        mode: "0644"
+        content: |
+          APP_NAME=MediTwin
+          APP_ENV=production
+          FRONTEND_PORT=8080
+          BACKEND_PORT=5000
+          PYTHON_EXEC=python
+          DEPLOYMENT_PLATFORM=container
+
+
+    # ==========================================================
+    # 6. Manage deployment information file
+    # ==========================================================
+    - name: Create deployment information file
+      ansible.builtin.copy:
+        dest: /opt/meditwin/DEPLOYMENT_INFO.txt
+        owner: meditwin
+        group: meditwin
+        mode: "0644"
+        content: |
+          MediTwin Deployment Environment
+          ===============================
+
+          Managed using Ansible
+
+          Application: MediTwin
+          Environment: Production
+          Platform: Docker / Kubernetes
+
+          Configuration managed by:
+          Ansible
+
+
+    # ==========================================================
+    # 7. Create a basic health-check script
+    # ==========================================================
+    - name: Create MediTwin health-check script
+      ansible.builtin.copy:
+        dest: /opt/meditwin/health_check.sh
+        owner: meditwin
+        group: meditwin
+        mode: "0755"
+        content: |
+          #!/bin/bash
+
+          echo "MediTwin deployment environment"
+          echo "Checking required commands..."
+
+          command -v python3 >/dev/null 2>&1 \
+            && echo "Python3: OK" \
+            || echo "Python3: MISSING"
+
+          command -v git >/dev/null 2>&1 \
+            && echo "Git: OK" \
+            || echo "Git: MISSING"
+
+          command -v curl >/dev/null 2>&1 \
+            && echo "Curl: OK" \
+            || echo "Curl: MISSING"
+
+          echo "Environment check completed."

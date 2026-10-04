@@ -1,0 +1,205 @@
+name: MediTwin CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - devops-deployment
+
+  pull_request:
+    branches:
+      - main
+
+
+permissions:
+  contents: read
+
+
+jobs:
+
+  # ============================================================
+  # JOB 1 — Validate the MediTwin application
+  # ============================================================
+  validate:
+
+    name: Validate MediTwin
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # --------------------------------------------------------
+      # Checkout source code
+      # --------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+
+      # --------------------------------------------------------
+      # Frontend
+      # React + Vite
+      # --------------------------------------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+
+      # --------------------------------------------------------
+      # Backend
+      # Node.js + Express
+      # --------------------------------------------------------
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci
+
+      - name: Validate backend JavaScript
+        run: node --check backend/server.js
+
+
+      # --------------------------------------------------------
+      # Python AI Modules
+      # Module 1 + Module 2 + Module 3
+      # --------------------------------------------------------
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Validate Python syntax
+        run: |
+          python -m compileall -q Module_1
+          python -m compileall -q Module_2
+          python -m compileall -q Module_3
+
+
+  # ============================================================
+  # JOB 2 — Build and publish Docker images
+  # ============================================================
+  docker:
+
+    name: Build and Push Docker Images
+
+    needs: validate
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # --------------------------------------------------------
+      # Checkout source code
+      # --------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+
+      # --------------------------------------------------------
+      # Setup Docker Buildx
+      # --------------------------------------------------------
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+
+      # --------------------------------------------------------
+      # Login to Docker Hub
+      # Only authenticate for push events
+      # --------------------------------------------------------
+      - name: Login to Docker Hub
+        if: github.event_name == 'push'
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+
+      # ========================================================
+      # FRONTEND IMAGE METADATA
+      # ========================================================
+      - name: Generate frontend image metadata
+        id: frontend-meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ vars.DOCKERHUB_USERNAME }}/meditwin-frontend
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix=sha-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+
+      # ========================================================
+      # BACKEND IMAGE METADATA
+      # ========================================================
+      - name: Generate backend image metadata
+        id: backend-meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ vars.DOCKERHUB_USERNAME }}/meditwin-backend
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix=sha-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+
+      # ========================================================
+      # BUILD + PUSH FRONTEND
+      # ========================================================
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v7
+        with:
+
+          # IMPORTANT:
+          # Root context allows the Dockerfile to use
+          # frontend/nginx.conf explicitly.
+          context: .
+
+          file: ./frontend/Dockerfile
+
+          push: ${{ github.event_name == 'push' }}
+
+          tags: ${{ steps.frontend-meta.outputs.tags }}
+
+          labels: ${{ steps.frontend-meta.outputs.labels }}
+
+          build-args: |
+            VITE_GOOGLE_CLIENT_ID=${{ vars.VITE_GOOGLE_CLIENT_ID }}
+
+          cache-from: type=gha,scope=meditwin-frontend
+          cache-to: type=gha,mode=max,scope=meditwin-frontend
+
+
+      # ========================================================
+      # BUILD + PUSH BACKEND
+      # ========================================================
+      - name: Build and push backend image
+        uses: docker/build-push-action@v7
+        with:
+
+          # IMPORTANT:
+          # Backend Dockerfile needs the complete MediTwin
+          # repository because it copies:
+          #   backend
+          #   Module_1
+          #   Module_2
+          #   Module_3
+          context: .
+
+          file: ./backend/Dockerfile
+
+          push: ${{ github.event_name == 'push' }}
+
+          tags: ${{ steps.backend-meta.outputs.tags }}
+
+          labels: ${{ steps.backend-meta.outputs.labels }}
+
+          cache-from: type=gha,scope=meditwin-backend
+          cache-to: type=gha,mode=max,scope=meditwin-backend

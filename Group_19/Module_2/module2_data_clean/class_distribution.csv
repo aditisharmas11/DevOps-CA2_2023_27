@@ -1,0 +1,148 @@
+split,pathology,count
+train,Acute COPD exacerbation / infection,1534
+train,Acute dystonic reactions,2126
+train,Acute laryngitis,24502
+train,Acute otitis media,22228
+train,Acute pulmonary edema,19236
+train,Acute rhinosinusitis,13868
+train,Allergic sinusitis,371
+train,Anaphylaxis,28166
+train,Anemia,51454
+train,Atrial fibrillation,3775
+train,Boerhaave,15399
+train,Bronchiectasis,1988
+train,Bronchiolitis,174
+train,Bronchitis,26767
+train,Bronchospasm / acute asthma exacerbation,1248
+train,Chagas,9144
+train,Chronic rhinosinusitis,20789
+train,Cluster headache,19807
+train,Croup,423
+train,Ebola,443
+train,Epiglottitis,17402
+train,GERD,26317
+train,Guillain-Barré syndrome,672
+train,HIV (initial infection),29505
+train,Influenza,27211
+train,Inguinal hernia,20496
+train,Larygospasm,49
+train,Localized edema,28171
+train,Myasthenia gravis,886
+train,Myocarditis,11307
+train,PSVT,12724
+train,Pancreatic neoplasm,19256
+train,Panic attack,25398
+train,Pericarditis,22911
+train,Pneumonia,26209
+train,Possible NSTEMI / STEMI,21768
+train,Pulmonary embolism,27941
+train,Pulmonary neoplasm,12589
+train,SLE,12005
+train,Sarcoidosis,21877
+train,Scombroid food poisoning,17923
+train,Spontaneous pneumothorax,10367
+train,Spontaneous rib fracture,5823
+train,Stable angina,17417
+train,Tuberculosis,1031
+train,URTI,65445
+train,Unstable angina,21410
+train,Viral pharyngitis,60581
+train,Whooping cough,106
+validation,Acute COPD exacerbation / infection,193
+validation,Acute dystonic reactions,229
+validation,Acute laryngitis,3029
+validation,Acute otitis media,2667
+validation,Acute pulmonary edema,2435
+validation,Acute rhinosinusitis,1681
+validation,Allergic sinusitis,37
+validation,Anaphylaxis,3535
+validation,Anemia,6554
+validation,Atrial fibrillation,518
+validation,Boerhaave,1832
+validation,Bronchiectasis,249
+validation,Bronchiolitis,29
+validation,Bronchitis,3378
+validation,Bronchospasm / acute asthma exacerbation,155
+validation,Chagas,1131
+validation,Chronic rhinosinusitis,2677
+validation,Cluster headache,2444
+validation,Croup,47
+validation,Ebola,57
+validation,Epiglottitis,2168
+validation,GERD,3330
+validation,Guillain-Barré syndrome,78
+validation,HIV (initial infection),3658
+validation,Influenza,3346
+validation,Inguinal hernia,2572
+validation,Larygospasm,8
+validation,Localized edema,3535
+validation,Myasthenia gravis,103
+validation,Myocarditis,1374
+validation,PSVT,1595
+validation,Pancreatic neoplasm,2340
+validation,Panic attack,3107
+validation,Pericarditis,2820
+validation,Pneumonia,3273
+validation,Possible NSTEMI / STEMI,2662
+validation,Pulmonary embolism,3404
+validation,Pulmonary neoplasm,1606
+validation,SLE,1498
+validation,Sarcoidosis,2605
+validation,Scombroid food poisoning,2206
+validation,Spontaneous pneumothorax,1277
+validation,Spontaneous rib fracture,727
+validation,Stable angina,2151
+validation,Tuberculosis,135
+validation,URTI,8159
+validation,Unstable angina,2740
+validation,Viral pharyngitis,7727
+validation,Whooping cough,5
+test,Acute COPD exacerbation / infection,201
+test,Acute dystonic reactions,237
+test,Acute laryngitis,2965
+test,Acute otitis media,2715
+test,Acute pulmonary edema,2445
+test,Acute rhinosinusitis,1723
+test,Allergic sinusitis,44
+test,Anaphylaxis,3570
+test,Anemia,6391
+test,Atrial fibrillation,466
+test,Boerhaave,1910
+test,Bronchiectasis,236
+test,Bronchiolitis,22
+test,Bronchitis,3361
+test,Bronchospasm / acute asthma exacerbation,162
+test,Chagas,1178
+test,Chronic rhinosinusitis,2565
+test,Cluster headache,2529
+test,Croup,56
+test,Ebola,53
+test,Epiglottitis,2216
+test,GERD,3286
+test,Guillain-Barré syndrome,68
+test,HIV (initial infection),3621
+test,Influenza,3398
+test,Inguinal hernia,2534
+test,Larygospasm,7
+test,Localized edema,3547
+test,Myasthenia gravis,133
+test,Myocarditis,1358
+test,PSVT,1627
+test,Pancreatic neoplasm,2400
+test,Panic attack,3138
+test,Pericarditis,2908
+test,Pneumonia,3305
+test,Possible NSTEMI / STEMI,2684
+test,Pulmonary embolism,3527
+test,Pulmonary neoplasm,1555
+test,SLE,1507
+test,Sarcoidosis,2717
+test,Scombroid food poisoning,2280
+test,Spontaneous pneumothorax,1211
+test,Spontaneous rib fracture,708
+test,Stable angina,2153
+test,Tuberculosis,143
+test,URTI,8117
+test,Unstable angina,2722
+test,Viral pharyngitis,7474
+test,Whooping cough,9

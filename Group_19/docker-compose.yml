@@ -1,0 +1,85 @@
+services:
+
+  # ============================================================
+  # MongoDB
+  # ============================================================
+  mongodb:
+    image: mongo:8
+
+    container_name: meditwin-mongodb
+
+    restart: unless-stopped
+
+    volumes:
+      - mongodb_data:/data/db
+
+    ports:
+      - "27017:27017"
+
+
+  # ============================================================
+  # MediTwin Backend
+  # Node.js + Express + Python ML Modules
+  # ============================================================
+  backend-service:
+
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+
+    container_name: meditwin-backend
+
+    restart: unless-stopped
+
+    # Use your existing backend/.env
+    env_file:
+      - ./backend/.env
+
+    environment:
+
+      # IMPORTANT:
+      # Inside Docker, MongoDB is reached using the service name.
+      MONGO_URI: mongodb://mongodb:27017/meditwin_db
+
+      PORT: 5000
+
+      # Linux container uses "python"
+      PYTHON_EXEC: python
+
+      # Browser origin in our local Docker deployment
+      CLIENT_ORIGIN: http://localhost:8080
+
+    depends_on:
+      - mongodb
+
+    ports:
+      - "5000:5000"
+
+
+  # ============================================================
+  # MediTwin Frontend
+  # React production build + Nginx
+  # ============================================================
+  frontend:
+
+    build:
+      context: ./frontend
+      dockerfile: ./frontend/Dockerfile
+
+    container_name: meditwin-frontend
+
+    restart: unless-stopped
+
+    depends_on:
+      - backend-service
+
+    ports:
+      - "8080:80"
+
+
+# ==============================================================
+# Persistent MongoDB storage
+# ==============================================================
+volumes:
+
+  mongodb_data:

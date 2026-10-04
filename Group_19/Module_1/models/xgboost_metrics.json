@@ -1,0 +1,23 @@
+{
+  "dataset_rows": 95890,
+  "dataset_columns": 351,
+  "feature_count": 348,
+  "patient_count": 11981,
+  "train_rows": 76747,
+  "test_rows": 19143,
+  "train_patients": 9584,
+  "test_patients": 2397,
+  "roc_auc": 0.8162469927287481,
+  "pr_auc": 0.7582239490117828,
+  "accuracy_threshold_0_50": 0.7843075797941806,
+  "precision_threshold_0_50": 0.7841046277665996,
+  "recall_threshold_0_50": 0.5604774917301885,
+  "f1_threshold_0_50": 0.653694539964774,
+  "specificity_threshold_0_50": 0.9119770303527481,
+  "recommended_threshold": 0.45,
+  "recommended_precision": 0.6978083506638938,
+  "recommended_recall": 0.627355098518625,
+  "recommended_f1": 0.6607088760981521,
+  "recommended_specificity": 0.8450369155045119,
+  "scale_pos_weight": 1.7391056069095971
+}

@@ -1,0 +1,6035 @@
+{
+  "E_91": {
+    "name": "E_91",
+    "code_question": "E_91",
+    "question_en": "Do you have a fever (either felt or measured with a thermometer)?",
+    "question_fr": "Avez-vous objectivé ou ressenti de la fièvre?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_55": {
+    "name": "E_55",
+    "code_question": "E_53",
+    "question_en": "Do you feel pain somewhere?",
+    "question_fr": "Avez-vous de la douleur quelque part?",
+    "is_antecedent": false,
+    "data_type": "M",
+    "default_value": "V_123",
+    "possible_values": [
+      "V_123",
+      "V_14",
+      "V_15",
+      "V_16",
+      "V_17",
+      "V_18",
+      "V_19",
+      "V_20",
+      "V_21",
+      "V_22",
+      "V_23",
+      "V_24",
+      "V_25",
+      "V_26",
+      "V_27",
+      "V_28",
+      "V_29",
+      "V_30",
+      "V_31",
+      "V_32",
+      "V_33",
+      "V_34",
+      "V_35",
+      "V_36",
+      "V_37",
+      "V_38",
+      "V_39",
+      "V_40",
+      "V_41",
+      "V_42",
+      "V_43",
+      "V_44",
+      "V_45",
+      "V_46",
+      "V_47",
+      "V_48",
+      "V_49",
+      "V_50",
+      "V_51",
+      "V_52",
+      "V_53",
+      "V_54",
+      "V_55",
+      "V_56",
+      "V_57",
+      "V_58",
+      "V_59",
+      "V_60",
+      "V_61",
+      "V_62",
+      "V_63",
+      "V_64",
+      "V_65",
+      "V_66",
+      "V_67",
+      "V_68",
+      "V_69",
+      "V_70",
+      "V_72",
+      "V_73",
+      "V_74",
+      "V_75",
+      "V_76",
+      "V_77",
+      "V_78",
+      "V_79",
+      "V_80",
+      "V_81",
+      "V_82",
+      "V_83",
+      "V_84",
+      "V_85",
+      "V_87",
+      "V_88",
+      "V_89",
+      "V_90",
+      "V_91",
+      "V_92",
+      "V_93",
+      "V_94",
+      "V_95",
+      "V_96",
+      "V_97",
+      "V_98",
+      "V_99",
+      "V_100",
+      "V_101",
+      "V_102",
+      "V_103",
+      "V_104",
+      "V_105",
+      "V_106",
+      "V_108",
+      "V_109",
+      "V_110",
+      "V_111",
+      "V_113",
+      "V_114",
+      "V_115",
+      "V_116",
+      "V_117",
+      "V_118",
+      "V_119",
+      "V_120",
+      "V_121",
+      "V_122",
+      "V_124",
+      "V_125",
+      "V_126",
+      "V_127",
+      "V_128",
+      "V_129",
+      "V_130",
+      "V_131",
+      "V_132",
+      "V_133",
+      "V_134",
+      "V_135",
+      "V_136",
+      "V_137",
+      "V_139",
+      "V_140",
+      "V_141",
+      "V_142",
+      "V_143",
+      "V_144",
+      "V_145",
+      "V_146",
+      "V_147",
+      "V_148",
+      "V_149",
+      "V_150",
+      "V_151",
+      "V_152",
+      "V_153",
+      "V_155",
+      "V_158",
+      "V_159",
+      "V_160",
+      "V_162",
+      "V_163",
+      "V_164",
+      "V_165",
+      "V_166",
+      "V_167",
+      "V_168",
+      "V_169",
+      "V_170",
+      "V_171",
+      "V_172",
+      "V_173",
+      "V_174",
+      "V_175",
+      "V_176",
+      "V_177",
+      "V_178",
+      "V_185",
+      "V_186",
+      "V_187",
+      "V_188",
+      "V_189",
+      "V_190",
+      "V_194",
+      "V_195",
+      "V_197"
+    ],
+    "value_meaning": {
+      "V_123": {
+        "fr": "nulle part",
+        "en": "nowhere"
+      },
+      "V_14": {
+        "fr": "aile iliaque(D)",
+        "en": "iliac wing(R)"
+      },
+      "V_15": {
+        "fr": "aile iliaque(G)",
+        "en": "iliac wing(L)"
+      },
+      "V_16": {
+        "fr": "aine(D)",
+        "en": "groin(R)"
+      },
+      "V_17": {
+        "fr": "aine(G)",
+        "en": "groin(L)"
+      },
+      "V_19": {
+        "fr": "aisselle(G)",
+        "en": "axilla(L)"
+      },
+      "V_18": {
+        "fr": "aisselle(D)",
+        "en": "axilla(R)"
+      },
+      "V_20": {
+        "fr": "amygdale(D)",
+        "en": "tonsil(R)"
+      },
+      "V_21": {
+        "fr": "amygdale(G)",
+        "en": "tonsil(L)"
+      },
+      "V_22": {
+        "fr": "anus",
+        "en": "anus"
+      },
+      "V_26": {
+        "fr": "arrière du cou",
+        "en": "back of the neck"
+      },
+      "V_25": {
+        "fr": "arrière de tête",
+        "en": "back of head"
+      },
+      "V_30": {
+        "fr": "biceps(D)",
+        "en": "biceps(R)"
+      },
+      "V_31": {
+        "fr": "biceps(G)",
+        "en": "biceps(L)"
+      },
+      "V_32": {
+        "fr": "bouche",
+        "en": "mouth"
+      },
+      "V_33": {
+        "fr": "cartilage thyroidien",
+        "en": "thyroid cartilage"
+      },
+      "V_34": {
+        "fr": "cheville(D)",
+        "en": "ankle(R)"
+      },
+      "V_35": {
+        "fr": "cheville(G)",
+        "en": "ankle(L)"
+      },
+      "V_36": {
+        "fr": "clitoris",
+        "en": "clitoris"
+      },
+      "V_37": {
+        "fr": "coccyx",
+        "en": "coccyx"
+      },
+      "V_38": {
+        "fr": "colonne cervicale",
+        "en": "cervical spine"
+      },
+      "V_39": {
+        "fr": "colonne dorsale",
+        "en": "thoracic spine"
+      },
+      "V_40": {
+        "fr": "colonne lombaire",
+        "en": "lumbar spine"
+      },
+      "V_41": {
+        "fr": "commissure(D)",
+        "en": "commissure(R)"
+      },
+      "V_42": {
+        "fr": "commissure(G)",
+        "en": "commissure(L)"
+      },
+      "V_49": {
+        "fr": "crête iliaque(D)",
+        "en": "iliac crest(R)"
+      },
+      "V_50": {
+        "fr": "crête iliaque(G)",
+        "en": "iliac crest(L)"
+      },
+      "V_51": {
+        "fr": "cuisse(D)",
+        "en": "thigh(R)"
+      },
+      "V_52": {
+        "fr": "cuisse(G)",
+        "en": "thigh(L)"
+      },
+      "V_57": {
+        "fr": "dents inférieures(D)",
+        "en": "lower teeth(R)"
+      },
+      "V_58": {
+        "fr": "dents inférieures(G)",
+        "en": "lower teeth(L)"
+      },
+      "V_59": {
+        "fr": "dents supérieures(D)",
+        "en": "upper teeth(R)"
+      },
+      "V_60": {
+        "fr": "dents supérieures(G)",
+        "en": "upper teeth(L)"
+      },
+      "V_67": {
+        "fr": "doigt(index)(D)",
+        "en": "finger (index)(R)"
+      },
+      "V_68": {
+        "fr": "doigt(index)(G)",
+        "en": "finger (index)(L)"
+      },
+      "V_69": {
+        "fr": "doigt(majeur)(D)",
+        "en": "finger (middle)(R)"
+      },
+      "V_70": {
+        "fr": "doigt(majeur)(G)",
+        "en": "finger (middle)(L)"
+      },
+      "V_63": {
+        "fr": "doigt(annulaire)(D)",
+        "en": "finger (ring finger)(R)"
+      },
+      "V_64": {
+        "fr": "doigt(annulaire)(G)",
+        "en": "finger (ring finger)(L)"
+      },
+      "V_65": {
+        "fr": "doigt(auriculaire)(D)",
+        "en": "finger (little finger)(R)"
+      },
+      "V_66": {
+        "fr": "doigt(auriculaire)(G)",
+        "en": "finger (little finger)(L)"
+      },
+      "V_62": {
+        "fr": "dessus de tête",
+        "en": "top of the head"
+      },
+      "V_194": {
+        "fr": "épaule(D)",
+        "en": "shoulder(R)"
+      },
+      "V_195": {
+        "fr": "épaule(G)",
+        "en": "shoulder(L)"
+      },
+      "V_197": {
+        "fr": "épigastre",
+        "en": "epigastric"
+      },
+      "V_27": {
+        "fr": "avant-bras(D)",
+        "en": "forearm(R)"
+      },
+      "V_28": {
+        "fr": "avant-bras(G)",
+        "en": "forearm(L)"
+      },
+      "V_76": {
+        "fr": "face dorsale main(D)",
+        "en": "dorsal aspect of the hand(R)"
+      },
+      "V_77": {
+        "fr": "face dorsale main(G)",
+        "en": "dorsal aspect of the hand(L)"
+      },
+      "V_72": {
+        "fr": "face dorsale du pied(D)",
+        "en": "dorsal aspect of the foot(R)"
+      },
+      "V_73": {
+        "fr": "face dorsale du pied(G)",
+        "en": "dorsal aspect of the foot(L)"
+      },
+      "V_74": {
+        "fr": "face dorsale du poignet(D)",
+        "en": "dorsal aspect of the wrist(R)"
+      },
+      "V_75": {
+        "fr": "face dorsale du poignet(G)",
+        "en": "dorsal aspect of the wrist(L)"
+      },
+      "V_149": {
+        "fr": "plante du pied(D)",
+        "en": "sole(R)"
+      },
+      "V_150": {
+        "fr": "plante du pied(G)",
+        "en": "sole(L)"
+      },
+      "V_80": {
+        "fr": "face palmaire du poignet(D)",
+        "en": "palmar face of the wrist(R)"
+      },
+      "V_81": {
+        "fr": "face palmaire du poignet(G)",
+        "en": "palmar face of the wrist(L)"
+      },
+      "V_43": {
+        "fr": "coté lateral du pied(D)",
+        "en": "lateral side of the foot(R)"
+      },
+      "V_44": {
+        "fr": "coté lateral du pied(G)",
+        "en": "lateral side of the foot(L)"
+      },
+      "V_82": {
+        "fr": "fesse(D)",
+        "en": "buttock(R)"
+      },
+      "V_83": {
+        "fr": "fesse(G)",
+        "en": "buttock(L)"
+      },
+      "V_84": {
+        "fr": "flanc(D)",
+        "en": "flank(R)"
+      },
+      "V_85": {
+        "fr": "flanc(G)",
+        "en": "flank(L)"
+      },
+      "V_78": {
+        "fr": "face palmaire de l'avant-bras(D)",
+        "en": "palmar side of the forearm(R)"
+      },
+      "V_79": {
+        "fr": "face palmaire de l'avant-bras(G)",
+        "en": "palmar side of the forearm(L)"
+      },
+      "V_87": {
+        "fr": "fosse iliaque(D)",
+        "en": "iliac fossa(R)"
+      },
+      "V_88": {
+        "fr": "fosse iliaque(G)",
+        "en": "iliac fossa(L)"
+      },
+      "V_89": {
+        "fr": "front",
+        "en": "forehead"
+      },
+      "V_92": {
+        "fr": "genou(D)",
+        "en": "knee(R)"
+      },
+      "V_93": {
+        "fr": "genou(G)",
+        "en": "knee(L)"
+      },
+      "V_90": {
+        "fr": "gencive inférieure",
+        "en": "lower gum"
+      },
+      "V_47": {
+        "fr": "creux poplité(D)",
+        "en": "popliteal fossa(R)"
+      },
+      "V_48": {
+        "fr": "creux poplité(G)",
+        "en": "popliteal fossa(L)"
+      },
+      "V_91": {
+        "fr": "gencive supérieure",
+        "en": "upper gum"
+      },
+      "V_94": {
+        "fr": "gland",
+        "en": "glans"
+      },
+      "V_95": {
+        "fr": "grande lèvre(D)",
+        "en": "labia majora(R)"
+      },
+      "V_96": {
+        "fr": "grande lèvre(G)",
+        "en": "labia majora(L)"
+      },
+      "V_97": {
+        "fr": "gros orteil(D)",
+        "en": "big toe(R)"
+      },
+      "V_98": {
+        "fr": "gros orteil(G)",
+        "en": "big toe(L)"
+      },
+      "V_99": {
+        "fr": "hanche(D)",
+        "en": "hip(R)"
+      },
+      "V_100": {
+        "fr": "hanche(G)",
+        "en": "hip(L)"
+      },
+      "V_102": {
+        "fr": "hymen",
+        "en": "hymen"
+      },
+      "V_103": {
+        "fr": "hypochondre(D)",
+        "en": "hypochondrium(R)"
+      },
+      "V_104": {
+        "fr": "hypochondre(G)",
+        "en": "hypochondrium(L)"
+      },
+      "V_105": {
+        "fr": "ischio(D)",
+        "en": "ischio jambier(R)"
+      },
+      "V_106": {
+        "fr": "ischio(G)",
+        "en": "ischio jambier(L)"
+      },
+      "V_108": {
+        "fr": "joue(D)",
+        "en": "cheek(R)"
+      },
+      "V_109": {
+        "fr": "joue(G)",
+        "en": "cheek(L)"
+      },
+      "V_110": {
+        "fr": "joue interne(D)",
+        "en": "internal cheek(R)"
+      },
+      "V_111": {
+        "fr": "joue interne(G)",
+        "en": "internal cheek(L)"
+      },
+      "V_53": {
+        "fr": "côté du cou(D)",
+        "en": "side of the neck(R)"
+      },
+      "V_54": {
+        "fr": "côté du cou(G)",
+        "en": "side of the neck(L)"
+      },
+      "V_55": {
+        "fr": "côté du thorax(D)",
+        "en": "side of the chest(R)"
+      },
+      "V_56": {
+        "fr": "côté du thorax(G)",
+        "en": "side of the chest(L)"
+      },
+      "V_116": {
+        "fr": "lèvre inferieure(D)",
+        "en": "bottom lip(R)"
+      },
+      "V_117": {
+        "fr": "lèvre supérieure(D)",
+        "en": "upper lip(R)"
+      },
+      "V_113": {
+        "fr": "loge renale(D)",
+        "en": "renal fossa(R)"
+      },
+      "V_114": {
+        "fr": "loge renale(G)",
+        "en": "renal fossa(L)"
+      },
+      "V_115": {
+        "fr": "luette",
+        "en": "uvula"
+      },
+      "V_121": {
+        "fr": "mâchoire",
+        "en": "jaw"
+      },
+      "V_118": {
+        "fr": "menton",
+        "en": "chin"
+      },
+      "V_29": {
+        "fr": "bas du thorax",
+        "en": "lower chest"
+      },
+      "V_119": {
+        "fr": "mollet(D)",
+        "en": "calf(R)"
+      },
+      "V_120": {
+        "fr": "mollet(G)",
+        "en": "calf(L)"
+      },
+      "V_122": {
+        "fr": "nez",
+        "en": "nose"
+      },
+      "V_124": {
+        "fr": "occiput",
+        "en": "occiput"
+      },
+      "V_125": {
+        "fr": "oeil(D)",
+        "en": "eye(R)"
+      },
+      "V_126": {
+        "fr": "oeil(G)",
+        "en": "eye(L)"
+      },
+      "V_127": {
+        "fr": "omoplate(D)",
+        "en": "scapula(R)"
+      },
+      "V_128": {
+        "fr": "omoplate(G)",
+        "en": "scapula(L)"
+      },
+      "V_129": {
+        "fr": "oreille(D)",
+        "en": "ear(R)"
+      },
+      "V_130": {
+        "fr": "oreille(G)",
+        "en": "ear(L)"
+      },
+      "V_131": {
+        "fr": "orteil (1)(D)",
+        "en": "toe (1)(R)"
+      },
+      "V_132": {
+        "fr": "orteil (1)(G)",
+        "en": "toe (1)(L)"
+      },
+      "V_133": {
+        "fr": "orteil (2)(D)",
+        "en": "toe (2)(R)"
+      },
+      "V_134": {
+        "fr": "orteil (2)(G)",
+        "en": "toe (2)(L)"
+      },
+      "V_135": {
+        "fr": "orteil (3)(D)",
+        "en": "toe (3)(R)"
+      },
+      "V_136": {
+        "fr": "orteil (3)(G)",
+        "en": "toe (3)(L)"
+      },
+      "V_144": {
+        "fr": "petit orteil (4)(D)",
+        "en": "little toe (4)(R)"
+      },
+      "V_145": {
+        "fr": "petit orteil (4)(G)",
+        "en": "little toe (4)(L)"
+      },
+      "V_45": {
+        "fr": "coude(D)",
+        "en": "elbow(R)"
+      },
+      "V_46": {
+        "fr": "coude(G)",
+        "en": "elbow(L)"
+      },
+      "V_137": {
+        "fr": "palais",
+        "en": "palace"
+      },
+      "V_170": {
+        "fr": "thorax postérieur(D)",
+        "en": "posterior chest wall(R)"
+      },
+      "V_171": {
+        "fr": "thorax postérieur(G)",
+        "en": "posterior chest wall(L)"
+      },
+      "V_139": {
+        "fr": "paroi vaginale",
+        "en": "vaginal wall"
+      },
+      "V_140": {
+        "fr": "paroi vaginale(D)",
+        "en": "vaginal wall(R)"
+      },
+      "V_141": {
+        "fr": "paroi vaginale(G)",
+        "en": "vaginal wall(L)"
+      },
+      "V_142": {
+        "fr": "paume(D)",
+        "en": "palm(R)"
+      },
+      "V_143": {
+        "fr": "paume(G)",
+        "en": "palm(L)"
+      },
+      "V_155": {
+        "fr": "pénis",
+        "en": "penis"
+      },
+      "V_187": {
+        "fr": "ventre",
+        "en": "belly"
+      },
+      "V_146": {
+        "fr": "petite lèvre(D)",
+        "en": "labia minora(R)"
+      },
+      "V_147": {
+        "fr": "petite lèvre(G)",
+        "en": "labia minora(L)"
+      },
+      "V_148": {
+        "fr": "pharynx",
+        "en": "pharynx"
+      },
+      "V_23": {
+        "fr": "arrière de la cheville(D)",
+        "en": "posterior aspect of the ankle(R)"
+      },
+      "V_24": {
+        "fr": "arrière de la cheville(G)",
+        "en": "posterior aspect of the ankle(L)"
+      },
+      "V_151": {
+        "fr": "pouce(D)",
+        "en": "thumb(R)"
+      },
+      "V_152": {
+        "fr": "pouce(G)",
+        "en": "thumb(L)"
+      },
+      "V_158": {
+        "fr": "scrotum",
+        "en": "scrotum"
+      },
+      "V_159": {
+        "fr": "sein(D)",
+        "en": "breast(R)"
+      },
+      "V_160": {
+        "fr": "sein(G)",
+        "en": "breast(L)"
+      },
+      "V_162": {
+        "fr": "sous la langue",
+        "en": "under the tongue"
+      },
+      "V_163": {
+        "fr": "sous la machoire",
+        "en": "under the jaw"
+      },
+      "V_101": {
+        "fr": "haut du thorax",
+        "en": "upper chest"
+      },
+      "V_61": {
+        "fr": "dessus de la langue",
+        "en": "above the tongue"
+      },
+      "V_153": {
+        "fr": "pubis",
+        "en": "pubis"
+      },
+      "V_164": {
+        "fr": "talon(D)",
+        "en": "heel(R)"
+      },
+      "V_165": {
+        "fr": "talon(G)",
+        "en": "heel(L)"
+      },
+      "V_166": {
+        "fr": "tempe(D)",
+        "en": "temple(R)"
+      },
+      "V_167": {
+        "fr": "tempe(G)",
+        "en": "temple(L)"
+      },
+      "V_168": {
+        "fr": "testicule(D)",
+        "en": "testicle(R)"
+      },
+      "V_169": {
+        "fr": "testicule(G)",
+        "en": "testicle(L)"
+      },
+      "V_172": {
+        "fr": "tibia(D)",
+        "en": "tibia(R)"
+      },
+      "V_173": {
+        "fr": "tibia(G)",
+        "en": "tibia(L)"
+      },
+      "V_175": {
+        "fr": "trapèze(D)",
+        "en": "trapezius(R)"
+      },
+      "V_176": {
+        "fr": "trapèze(G)",
+        "en": "trapezius(L)"
+      },
+      "V_174": {
+        "fr": "trachée",
+        "en": "trachea"
+      },
+      "V_177": {
+        "fr": "triceps(D)",
+        "en": "triceps(R)"
+      },
+      "V_178": {
+        "fr": "triceps(G)",
+        "en": "triceps(L)"
+      },
+      "V_185": {
+        "fr": "urètre",
+        "en": "urethra"
+      },
+      "V_186": {
+        "fr": "vagin",
+        "en": "vagina"
+      },
+      "V_188": {
+        "fr": "vermillon(D)",
+        "en": "vermilion(R)"
+      },
+      "V_189": {
+        "fr": "vermillon(G)",
+        "en": "vermilion(L)"
+      },
+      "V_190": {
+        "fr": "vestibule",
+        "en": "vulval vestibule"
+      }
+    }
+  },
+  "E_53": {
+    "name": "E_53",
+    "code_question": "E_53",
+    "question_en": "Do you have pain somewhere, related to your reason for consulting?",
+    "question_fr": "Avez-vous de la douleur à quelque part en lien avec votre raison de consultation?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_57": {
+    "name": "E_57",
+    "code_question": "E_53",
+    "question_en": "Does the pain radiate to another location?",
+    "question_fr": "Est-ce que la douleur se propage vers un autre endroit?",
+    "is_antecedent": false,
+    "data_type": "M",
+    "default_value": "V_123",
+    "possible_values": [
+      "V_123",
+      "V_14",
+      "V_15",
+      "V_16",
+      "V_17",
+      "V_18",
+      "V_19",
+      "V_20",
+      "V_21",
+      "V_22",
+      "V_23",
+      "V_24",
+      "V_25",
+      "V_26",
+      "V_27",
+      "V_28",
+      "V_29",
+      "V_30",
+      "V_31",
+      "V_32",
+      "V_33",
+      "V_34",
+      "V_35",
+      "V_36",
+      "V_37",
+      "V_38",
+      "V_39",
+      "V_40",
+      "V_41",
+      "V_42",
+      "V_43",
+      "V_44",
+      "V_45",
+      "V_46",
+      "V_47",
+      "V_48",
+      "V_49",
+      "V_50",
+      "V_51",
+      "V_52",
+      "V_53",
+      "V_54",
+      "V_55",
+      "V_56",
+      "V_57",
+      "V_58",
+      "V_59",
+      "V_60",
+      "V_61",
+      "V_62",
+      "V_63",
+      "V_64",
+      "V_65",
+      "V_66",
+      "V_67",
+      "V_68",
+      "V_69",
+      "V_70",
+      "V_72",
+      "V_73",
+      "V_74",
+      "V_75",
+      "V_76",
+      "V_77",
+      "V_78",
+      "V_79",
+      "V_80",
+      "V_81",
+      "V_82",
+      "V_83",
+      "V_84",
+      "V_85",
+      "V_87",
+      "V_88",
+      "V_89",
+      "V_90",
+      "V_91",
+      "V_92",
+      "V_93",
+      "V_94",
+      "V_95",
+      "V_96",
+      "V_97",
+      "V_98",
+      "V_99",
+      "V_100",
+      "V_101",
+      "V_102",
+      "V_103",
+      "V_104",
+      "V_105",
+      "V_106",
+      "V_108",
+      "V_109",
+      "V_110",
+      "V_111",
+      "V_113",
+      "V_114",
+      "V_115",
+      "V_116",
+      "V_117",
+      "V_118",
+      "V_119",
+      "V_120",
+      "V_121",
+      "V_122",
+      "V_124",
+      "V_125",
+      "V_126",
+      "V_127",
+      "V_128",
+      "V_129",
+      "V_130",
+      "V_131",
+      "V_132",
+      "V_133",
+      "V_134",
+      "V_135",
+      "V_136",
+      "V_137",
+      "V_139",
+      "V_140",
+      "V_141",
+      "V_142",
+      "V_143",
+      "V_144",
+      "V_145",
+      "V_146",
+      "V_147",
+      "V_148",
+      "V_149",
+      "V_150",
+      "V_151",
+      "V_152",
+      "V_153",
+      "V_155",
+      "V_158",
+      "V_159",
+      "V_160",
+      "V_162",
+      "V_163",
+      "V_164",
+      "V_165",
+      "V_166",
+      "V_167",
+      "V_168",
+      "V_169",
+      "V_170",
+      "V_171",
+      "V_172",
+      "V_173",
+      "V_174",
+      "V_175",
+      "V_176",
+      "V_177",
+      "V_178",
+      "V_185",
+      "V_186",
+      "V_187",
+      "V_188",
+      "V_189",
+      "V_190",
+      "V_194",
+      "V_195",
+      "V_197"
+    ],
+    "value_meaning": {
+      "V_123": {
+        "fr": "nulle part",
+        "en": "nowhere"
+      },
+      "V_14": {
+        "fr": "aile iliaque(D)",
+        "en": "iliac wing(R)"
+      },
+      "V_15": {
+        "fr": "aile iliaque(G)",
+        "en": "iliac wing(L)"
+      },
+      "V_16": {
+        "fr": "aine(D)",
+        "en": "groin(R)"
+      },
+      "V_17": {
+        "fr": "aine(G)",
+        "en": "groin(L)"
+      },
+      "V_19": {
+        "fr": "aisselle(G)",
+        "en": "axilla(L)"
+      },
+      "V_18": {
+        "fr": "aisselle(D)",
+        "en": "axilla(R)"
+      },
+      "V_20": {
+        "fr": "amygdale(D)",
+        "en": "tonsil(R)"
+      },
+      "V_21": {
+        "fr": "amygdale(G)",
+        "en": "tonsil(L)"
+      },
+      "V_22": {
+        "fr": "anus",
+        "en": "anus"
+      },
+      "V_26": {
+        "fr": "arrière du cou",
+        "en": "back of the neck"
+      },
+      "V_25": {
+        "fr": "arrière de tête",
+        "en": "back of head"
+      },
+      "V_30": {
+        "fr": "biceps(D)",
+        "en": "biceps(R)"
+      },
+      "V_31": {
+        "fr": "biceps(G)",
+        "en": "biceps(L)"
+      },
+      "V_32": {
+        "fr": "bouche",
+        "en": "mouth"
+      },
+      "V_33": {
+        "fr": "cartilage thyroidien",
+        "en": "thyroid cartilage"
+      },
+      "V_34": {
+        "fr": "cheville(D)",
+        "en": "ankle(R)"
+      },
+      "V_35": {
+        "fr": "cheville(G)",
+        "en": "ankle(L)"
+      },
+      "V_36": {
+        "fr": "clitoris",
+        "en": "clitoris"
+      },
+      "V_37": {
+        "fr": "coccyx",
+        "en": "coccyx"
+      },
+      "V_38": {
+        "fr": "colonne cervicale",
+        "en": "cervical spine"
+      },
+      "V_39": {
+        "fr": "colonne dorsale",
+        "en": "thoracic spine"
+      },
+      "V_40": {
+        "fr": "colonne lombaire",
+        "en": "lumbar spine"
+      },
+      "V_41": {
+        "fr": "commissure(D)",
+        "en": "commissure(R)"
+      },
+      "V_42": {
+        "fr": "commissure(G)",
+        "en": "commissure(L)"
+      },
+      "V_49": {
+        "fr": "crête iliaque(D)",
+        "en": "iliac crest(R)"
+      },
+      "V_50": {
+        "fr": "crête iliaque(G)",
+        "en": "iliac crest(L)"
+      },
+      "V_51": {
+        "fr": "cuisse(D)",
+        "en": "thigh(R)"
+      },
+      "V_52": {
+        "fr": "cuisse(G)",
+        "en": "thigh(L)"
+      },
+      "V_57": {
+        "fr": "dents inférieures(D)",
+        "en": "lower teeth(R)"
+      },
+      "V_58": {
+        "fr": "dents inférieures(G)",
+        "en": "lower teeth(L)"
+      },
+      "V_59": {
+        "fr": "dents supérieures(D)",
+        "en": "upper teeth(R)"
+      },
+      "V_60": {
+        "fr": "dents supérieures(G)",
+        "en": "upper teeth(L)"
+      },
+      "V_67": {
+        "fr": "doigt(index)(D)",
+        "en": "finger (index)(R)"
+      },
+      "V_68": {
+        "fr": "doigt(index)(G)",
+        "en": "finger (index)(L)"
+      },
+      "V_69": {
+        "fr": "doigt(majeur)(D)",
+        "en": "finger (middle)(R)"
+      },
+      "V_70": {
+        "fr": "doigt(majeur)(G)",
+        "en": "finger (middle)(L)"
+      },
+      "V_63": {
+        "fr": "doigt(annulaire)(D)",
+        "en": "finger (ring finger)(R)"
+      },
+      "V_64": {
+        "fr": "doigt(annulaire)(G)",
+        "en": "finger (ring finger)(L)"
+      },
+      "V_65": {
+        "fr": "doigt(auriculaire)(D)",
+        "en": "finger (little finger)(R)"
+      },
+      "V_66": {
+        "fr": "doigt(auriculaire)(G)",
+        "en": "finger (little finger)(L)"
+      },
+      "V_62": {
+        "fr": "dessus de tête",
+        "en": "top of the head"
+      },
+      "V_194": {
+        "fr": "épaule(D)",
+        "en": "shoulder(R)"
+      },
+      "V_195": {
+        "fr": "épaule(G)",
+        "en": "shoulder(L)"
+      },
+      "V_197": {
+        "fr": "épigastre",
+        "en": "epigastric"
+      },
+      "V_27": {
+        "fr": "avant-bras(D)",
+        "en": "forearm(R)"
+      },
+      "V_28": {
+        "fr": "avant-bras(G)",
+        "en": "forearm(L)"
+      },
+      "V_76": {
+        "fr": "face dorsale main(D)",
+        "en": "dorsal aspect of the hand(R)"
+      },
+      "V_77": {
+        "fr": "face dorsale main(G)",
+        "en": "dorsal aspect of the hand(L)"
+      },
+      "V_72": {
+        "fr": "face dorsale du pied(D)",
+        "en": "dorsal aspect of the foot(R)"
+      },
+      "V_73": {
+        "fr": "face dorsale du pied(G)",
+        "en": "dorsal aspect of the foot(L)"
+      },
+      "V_74": {
+        "fr": "face dorsale du poignet(D)",
+        "en": "dorsal aspect of the wrist(R)"
+      },
+      "V_75": {
+        "fr": "face dorsale du poignet(G)",
+        "en": "dorsal aspect of the wrist(L)"
+      },
+      "V_149": {
+        "fr": "plante du pied(D)",
+        "en": "sole(R)"
+      },
+      "V_150": {
+        "fr": "plante du pied(G)",
+        "en": "sole(L)"
+      },
+      "V_80": {
+        "fr": "face palmaire du poignet(D)",
+        "en": "palmar face of the wrist(R)"
+      },
+      "V_81": {
+        "fr": "face palmaire du poignet(G)",
+        "en": "palmar face of the wrist(L)"
+      },
+      "V_43": {
+        "fr": "coté lateral du pied(D)",
+        "en": "lateral side of the foot(R)"
+      },
+      "V_44": {
+        "fr": "coté lateral du pied(G)",
+        "en": "lateral side of the foot(L)"
+      },
+      "V_82": {
+        "fr": "fesse(D)",
+        "en": "buttock(R)"
+      },
+      "V_83": {
+        "fr": "fesse(G)",
+        "en": "buttock(L)"
+      },
+      "V_84": {
+        "fr": "flanc(D)",
+        "en": "flank(R)"
+      },
+      "V_85": {
+        "fr": "flanc(G)",
+        "en": "flank(L)"
+      },
+      "V_78": {
+        "fr": "face palmaire de l'avant-bras(D)",
+        "en": "palmar side of the forearm(R)"
+      },
+      "V_79": {
+        "fr": "face palmaire de l'avant-bras(G)",
+        "en": "palmar side of the forearm(L)"
+      },
+      "V_87": {
+        "fr": "fosse iliaque(D)",
+        "en": "iliac fossa(R)"
+      },
+      "V_88": {
+        "fr": "fosse iliaque(G)",
+        "en": "iliac fossa(L)"
+      },
+      "V_89": {
+        "fr": "front",
+        "en": "forehead"
+      },
+      "V_92": {
+        "fr": "genou(D)",
+        "en": "knee(R)"
+      },
+      "V_93": {
+        "fr": "genou(G)",
+        "en": "knee(L)"
+      },
+      "V_90": {
+        "fr": "gencive inférieure",
+        "en": "lower gum"
+      },
+      "V_47": {
+        "fr": "creux poplité(D)",
+        "en": "popliteal fossa(R)"
+      },
+      "V_48": {
+        "fr": "creux poplité(G)",
+        "en": "popliteal fossa(L)"
+      },
+      "V_91": {
+        "fr": "gencive supérieure",
+        "en": "upper gum"
+      },
+      "V_94": {
+        "fr": "gland",
+        "en": "glans"
+      },
+      "V_95": {
+        "fr": "grande lèvre(D)",
+        "en": "labia majora(R)"
+      },
+      "V_96": {
+        "fr": "grande lèvre(G)",
+        "en": "labia majora(L)"
+      },
+      "V_97": {
+        "fr": "gros orteil(D)",
+        "en": "big toe(R)"
+      },
+      "V_98": {
+        "fr": "gros orteil(G)",
+        "en": "big toe(L)"
+      },
+      "V_99": {
+        "fr": "hanche(D)",
+        "en": "hip(R)"
+      },
+      "V_100": {
+        "fr": "hanche(G)",
+        "en": "hip(L)"
+      },
+      "V_102": {
+        "fr": "hymen",
+        "en": "hymen"
+      },
+      "V_103": {
+        "fr": "hypochondre(D)",
+        "en": "hypochondrium(R)"
+      },
+      "V_104": {
+        "fr": "hypochondre(G)",
+        "en": "hypochondrium(L)"
+      },
+      "V_105": {
+        "fr": "ischio(D)",
+        "en": "ischio jambier(R)"
+      },
+      "V_106": {
+        "fr": "ischio(G)",
+        "en": "ischio jambier(L)"
+      },
+      "V_108": {
+        "fr": "joue(D)",
+        "en": "cheek(R)"
+      },
+      "V_109": {
+        "fr": "joue(G)",
+        "en": "cheek(L)"
+      },
+      "V_110": {
+        "fr": "joue interne(D)",
+        "en": "internal cheek(R)"
+      },
+      "V_111": {
+        "fr": "joue interne(G)",
+        "en": "internal cheek(L)"
+      },
+      "V_53": {
+        "fr": "côté du cou(D)",
+        "en": "side of the neck(R)"
+      },
+      "V_54": {
+        "fr": "côté du cou(G)",
+        "en": "side of the neck(L)"
+      },
+      "V_55": {
+        "fr": "côté du thorax(D)",
+        "en": "side of the chest(R)"
+      },
+      "V_56": {
+        "fr": "côté du thorax(G)",
+        "en": "side of the chest(L)"
+      },
+      "V_116": {
+        "fr": "lèvre inferieure(D)",
+        "en": "bottom lip(R)"
+      },
+      "V_117": {
+        "fr": "lèvre supérieure(D)",
+        "en": "upper lip(R)"
+      },
+      "V_113": {
+        "fr": "loge renale(D)",
+        "en": "renal fossa(R)"
+      },
+      "V_114": {
+        "fr": "loge renale(G)",
+        "en": "renal fossa(L)"
+      },
+      "V_115": {
+        "fr": "luette",
+        "en": "uvula"
+      },
+      "V_121": {
+        "fr": "mâchoire",
+        "en": "jaw"
+      },
+      "V_118": {
+        "fr": "menton",
+        "en": "chin"
+      },
+      "V_29": {
+        "fr": "bas du thorax",
+        "en": "lower chest"
+      },
+      "V_119": {
+        "fr": "mollet(D)",
+        "en": "calf(R)"
+      },
+      "V_120": {
+        "fr": "mollet(G)",
+        "en": "calf(L)"
+      },
+      "V_122": {
+        "fr": "nez",
+        "en": "nose"
+      },
+      "V_124": {
+        "fr": "occiput",
+        "en": "occiput"
+      },
+      "V_125": {
+        "fr": "oeil(D)",
+        "en": "eye(R)"
+      },
+      "V_126": {
+        "fr": "oeil(G)",
+        "en": "eye(L)"
+      },
+      "V_127": {
+        "fr": "omoplate(D)",
+        "en": "scapula(R)"
+      },
+      "V_128": {
+        "fr": "omoplate(G)",
+        "en": "scapula(L)"
+      },
+      "V_129": {
+        "fr": "oreille(D)",
+        "en": "ear(R)"
+      },
+      "V_130": {
+        "fr": "oreille(G)",
+        "en": "ear(L)"
+      },
+      "V_131": {
+        "fr": "orteil (1)(D)",
+        "en": "toe (1)(R)"
+      },
+      "V_132": {
+        "fr": "orteil (1)(G)",
+        "en": "toe (1)(L)"
+      },
+      "V_133": {
+        "fr": "orteil (2)(D)",
+        "en": "toe (2)(R)"
+      },
+      "V_134": {
+        "fr": "orteil (2)(G)",
+        "en": "toe (2)(L)"
+      },
+      "V_135": {
+        "fr": "orteil (3)(D)",
+        "en": "toe (3)(R)"
+      },
+      "V_136": {
+        "fr": "orteil (3)(G)",
+        "en": "toe (3)(L)"
+      },
+      "V_144": {
+        "fr": "petit orteil (4)(D)",
+        "en": "little toe (4)(R)"
+      },
+      "V_145": {
+        "fr": "petit orteil (4)(G)",
+        "en": "little toe (4)(L)"
+      },
+      "V_45": {
+        "fr": "coude(D)",
+        "en": "elbow(R)"
+      },
+      "V_46": {
+        "fr": "coude(G)",
+        "en": "elbow(L)"
+      },
+      "V_137": {
+        "fr": "palais",
+        "en": "palace"
+      },
+      "V_170": {
+        "fr": "thorax postérieur(D)",
+        "en": "posterior chest wall(R)"
+      },
+      "V_171": {
+        "fr": "thorax postérieur(G)",
+        "en": "posterior chest wall(L)"
+      },
+      "V_139": {
+        "fr": "paroi vaginale",
+        "en": "vaginal wall"
+      },
+      "V_140": {
+        "fr": "paroi vaginale(D)",
+        "en": "vaginal wall(R)"
+      },
+      "V_141": {
+        "fr": "paroi vaginale(G)",
+        "en": "vaginal wall(L)"
+      },
+      "V_142": {
+        "fr": "paume(D)",
+        "en": "palm(R)"
+      },
+      "V_143": {
+        "fr": "paume(G)",
+        "en": "palm(L)"
+      },
+      "V_155": {
+        "fr": "pénis",
+        "en": "penis"
+      },
+      "V_187": {
+        "fr": "ventre",
+        "en": "belly"
+      },
+      "V_146": {
+        "fr": "petite lèvre(D)",
+        "en": "labia minora(R)"
+      },
+      "V_147": {
+        "fr": "petite lèvre(G)",
+        "en": "labia minora(L)"
+      },
+      "V_148": {
+        "fr": "pharynx",
+        "en": "pharynx"
+      },
+      "V_23": {
+        "fr": "arrière de la cheville(D)",
+        "en": "posterior aspect of the ankle(R)"
+      },
+      "V_24": {
+        "fr": "arrière de la cheville(G)",
+        "en": "posterior aspect of the ankle(L)"
+      },
+      "V_151": {
+        "fr": "pouce(D)",
+        "en": "thumb(R)"
+      },
+      "V_152": {
+        "fr": "pouce(G)",
+        "en": "thumb(L)"
+      },
+      "V_158": {
+        "fr": "scrotum",
+        "en": "scrotum"
+      },
+      "V_159": {
+        "fr": "sein(D)",
+        "en": "breast(R)"
+      },
+      "V_160": {
+        "fr": "sein(G)",
+        "en": "breast(L)"
+      },
+      "V_162": {
+        "fr": "sous la langue",
+        "en": "under the tongue"
+      },
+      "V_163": {
+        "fr": "sous la machoire",
+        "en": "under the jaw"
+      },
+      "V_101": {
+        "fr": "haut du thorax",
+        "en": "upper chest"
+      },
+      "V_61": {
+        "fr": "dessus de la langue",
+        "en": "above the tongue"
+      },
+      "V_153": {
+        "fr": "pubis",
+        "en": "pubis"
+      },
+      "V_164": {
+        "fr": "talon(D)",
+        "en": "heel(R)"
+      },
+      "V_165": {
+        "fr": "talon(G)",
+        "en": "heel(L)"
+      },
+      "V_166": {
+        "fr": "tempe(D)",
+        "en": "temple(R)"
+      },
+      "V_167": {
+        "fr": "tempe(G)",
+        "en": "temple(L)"
+      },
+      "V_168": {
+        "fr": "testicule(D)",
+        "en": "testicle(R)"
+      },
+      "V_169": {
+        "fr": "testicule(G)",
+        "en": "testicle(L)"
+      },
+      "V_172": {
+        "fr": "tibia(D)",
+        "en": "tibia(R)"
+      },
+      "V_173": {
+        "fr": "tibia(G)",
+        "en": "tibia(L)"
+      },
+      "V_175": {
+        "fr": "trapèze(D)",
+        "en": "trapezius(R)"
+      },
+      "V_176": {
+        "fr": "trapèze(G)",
+        "en": "trapezius(L)"
+      },
+      "V_174": {
+        "fr": "trachée",
+        "en": "trachea"
+      },
+      "V_177": {
+        "fr": "triceps(D)",
+        "en": "triceps(R)"
+      },
+      "V_178": {
+        "fr": "triceps(G)",
+        "en": "triceps(L)"
+      },
+      "V_185": {
+        "fr": "urètre",
+        "en": "urethra"
+      },
+      "V_186": {
+        "fr": "vagin",
+        "en": "vagina"
+      },
+      "V_188": {
+        "fr": "vermillon(D)",
+        "en": "vermilion(R)"
+      },
+      "V_189": {
+        "fr": "vermillon(G)",
+        "en": "vermilion(L)"
+      },
+      "V_190": {
+        "fr": "vestibule",
+        "en": "vulval vestibule"
+      }
+    }
+  },
+  "E_54": {
+    "name": "E_54",
+    "code_question": "E_53",
+    "question_en": "Characterize your pain:",
+    "question_fr": "Caractérisez votre douleur:",
+    "is_antecedent": false,
+    "data_type": "M",
+    "default_value": "V_11",
+    "possible_values": [
+      "V_11",
+      "V_71",
+      "V_112",
+      "V_154",
+      "V_161",
+      "V_179",
+      "V_180",
+      "V_181",
+      "V_182",
+      "V_183",
+      "V_184",
+      "V_191",
+      "V_192",
+      "V_193",
+      "V_196",
+      "V_198"
+    ],
+    "value_meaning": {
+      "V_11": {
+        "fr": "NA",
+        "en": "NA"
+      },
+      "V_71": {
+        "fr": "déchirante",
+        "en": "heartbreaking"
+      },
+      "V_112": {
+        "fr": "lancinante",
+        "en": "haunting"
+      },
+      "V_154": {
+        "fr": "pénible",
+        "en": "tedious"
+      },
+      "V_161": {
+        "fr": "sensible",
+        "en": "sensitive"
+      },
+      "V_179": {
+        "fr": "un coup de couteau",
+        "en": "a knife stroke"
+      },
+      "V_180": {
+        "fr": "un tiraillement",
+        "en": "tugging"
+      },
+      "V_181": {
+        "fr": "une brûlure",
+        "en": "burning"
+      },
+      "V_182": {
+        "fr": "une crampe",
+        "en": "a cramp"
+      },
+      "V_183": {
+        "fr": "une lourdeur",
+        "en": "heavy"
+      },
+      "V_184": {
+        "fr": "une pulsation",
+        "en": "a pulse"
+      },
+      "V_191": {
+        "fr": "violente",
+        "en": "violent"
+      },
+      "V_192": {
+        "fr": "vive",
+        "en": "sharp"
+      },
+      "V_193": {
+        "fr": "écoeurante",
+        "en": "sickening"
+      },
+      "V_196": {
+        "fr": "épeurante",
+        "en": "scary"
+      },
+      "V_198": {
+        "fr": "épuisante",
+        "en": "exhausting"
+      }
+    }
+  },
+  "E_59": {
+    "name": "E_59",
+    "code_question": "E_53",
+    "question_en": "How fast did the pain appear?",
+    "question_fr": "À quelle vitesse la douleur est-elle apparue ?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": 0,
+    "possible_values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "value_meaning": {}
+  },
+  "E_56": {
+    "name": "E_56",
+    "code_question": "E_53",
+    "question_en": "How intense is the pain?",
+    "question_fr": "Quelle est l’intensité de la douleur?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": 0,
+    "possible_values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "value_meaning": {}
+  },
+  "E_58": {
+    "name": "E_58",
+    "code_question": "E_53",
+    "question_en": "How precisely is the pain located?",
+    "question_fr": "À quel point la douleur est-elle précisément localisée?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": 0,
+    "possible_values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "value_meaning": {}
+  },
+  "E_159": {
+    "name": "E_159",
+    "code_question": "E_159",
+    "question_en": "Did you lose consciousness?",
+    "question_fr": "Avez-vous perdu conscience?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_133": {
+    "name": "E_133",
+    "code_question": "E_129",
+    "question_en": "Where is the affected region located?",
+    "question_fr": "À quel endroit est situé chaque lésion?",
+    "is_antecedent": false,
+    "data_type": "M",
+    "default_value": "V_123",
+    "possible_values": [
+      "V_123",
+      "V_14",
+      "V_15",
+      "V_16",
+      "V_17",
+      "V_18",
+      "V_19",
+      "V_20",
+      "V_21",
+      "V_22",
+      "V_23",
+      "V_24",
+      "V_25",
+      "V_26",
+      "V_27",
+      "V_28",
+      "V_29",
+      "V_30",
+      "V_31",
+      "V_32",
+      "V_33",
+      "V_34",
+      "V_35",
+      "V_36",
+      "V_37",
+      "V_38",
+      "V_39",
+      "V_40",
+      "V_41",
+      "V_42",
+      "V_43",
+      "V_44",
+      "V_45",
+      "V_46",
+      "V_47",
+      "V_48",
+      "V_49",
+      "V_50",
+      "V_51",
+      "V_52",
+      "V_53",
+      "V_54",
+      "V_55",
+      "V_56",
+      "V_57",
+      "V_58",
+      "V_59",
+      "V_60",
+      "V_61",
+      "V_62",
+      "V_63",
+      "V_64",
+      "V_65",
+      "V_66",
+      "V_67",
+      "V_68",
+      "V_69",
+      "V_70",
+      "V_72",
+      "V_73",
+      "V_74",
+      "V_75",
+      "V_76",
+      "V_77",
+      "V_78",
+      "V_79",
+      "V_80",
+      "V_81",
+      "V_82",
+      "V_83",
+      "V_84",
+      "V_85",
+      "V_87",
+      "V_88",
+      "V_89",
+      "V_90",
+      "V_91",
+      "V_92",
+      "V_93",
+      "V_94",
+      "V_95",
+      "V_96",
+      "V_97",
+      "V_98",
+      "V_99",
+      "V_100",
+      "V_101",
+      "V_102",
+      "V_103",
+      "V_104",
+      "V_105",
+      "V_106",
+      "V_108",
+      "V_109",
+      "V_110",
+      "V_111",
+      "V_113",
+      "V_114",
+      "V_115",
+      "V_116",
+      "V_117",
+      "V_118",
+      "V_119",
+      "V_120",
+      "V_121",
+      "V_122",
+      "V_124",
+      "V_125",
+      "V_126",
+      "V_127",
+      "V_128",
+      "V_129",
+      "V_130",
+      "V_131",
+      "V_132",
+      "V_133",
+      "V_134",
+      "V_135",
+      "V_136",
+      "V_137",
+      "V_139",
+      "V_140",
+      "V_141",
+      "V_142",
+      "V_143",
+      "V_144",
+      "V_145",
+      "V_146",
+      "V_147",
+      "V_148",
+      "V_149",
+      "V_150",
+      "V_151",
+      "V_152",
+      "V_153",
+      "V_155",
+      "V_158",
+      "V_159",
+      "V_160",
+      "V_162",
+      "V_163",
+      "V_164",
+      "V_165",
+      "V_166",
+      "V_167",
+      "V_168",
+      "V_169",
+      "V_170",
+      "V_171",
+      "V_172",
+      "V_173",
+      "V_174",
+      "V_175",
+      "V_176",
+      "V_177",
+      "V_178",
+      "V_185",
+      "V_186",
+      "V_187",
+      "V_188",
+      "V_189",
+      "V_190",
+      "V_194",
+      "V_195",
+      "V_197"
+    ],
+    "value_meaning": {
+      "V_123": {
+        "fr": "nulle part",
+        "en": "nowhere"
+      },
+      "V_14": {
+        "fr": "aile iliaque(D)",
+        "en": "iliac wing(R)"
+      },
+      "V_15": {
+        "fr": "aile iliaque(G)",
+        "en": "iliac wing(L)"
+      },
+      "V_16": {
+        "fr": "aine(D)",
+        "en": "groin(R)"
+      },
+      "V_17": {
+        "fr": "aine(G)",
+        "en": "groin(L)"
+      },
+      "V_19": {
+        "fr": "aisselle(G)",
+        "en": "axilla(L)"
+      },
+      "V_18": {
+        "fr": "aisselle(D)",
+        "en": "axilla(R)"
+      },
+      "V_20": {
+        "fr": "amygdale(D)",
+        "en": "tonsil(R)"
+      },
+      "V_21": {
+        "fr": "amygdale(G)",
+        "en": "tonsil(L)"
+      },
+      "V_22": {
+        "fr": "anus",
+        "en": "anus"
+      },
+      "V_26": {
+        "fr": "arrière du cou",
+        "en": "back of the neck"
+      },
+      "V_25": {
+        "fr": "arrière de tête",
+        "en": "back of head"
+      },
+      "V_30": {
+        "fr": "biceps(D)",
+        "en": "biceps(R)"
+      },
+      "V_31": {
+        "fr": "biceps(G)",
+        "en": "biceps(L)"
+      },
+      "V_32": {
+        "fr": "bouche",
+        "en": "mouth"
+      },
+      "V_33": {
+        "fr": "cartilage thyroidien",
+        "en": "thyroid cartilage"
+      },
+      "V_34": {
+        "fr": "cheville(D)",
+        "en": "ankle(R)"
+      },
+      "V_35": {
+        "fr": "cheville(G)",
+        "en": "ankle(L)"
+      },
+      "V_36": {
+        "fr": "clitoris",
+        "en": "clitoris"
+      },
+      "V_37": {
+        "fr": "coccyx",
+        "en": "coccyx"
+      },
+      "V_38": {
+        "fr": "colonne cervicale",
+        "en": "cervical spine"
+      },
+      "V_39": {
+        "fr": "colonne dorsale",
+        "en": "thoracic spine"
+      },
+      "V_40": {
+        "fr": "colonne lombaire",
+        "en": "lumbar spine"
+      },
+      "V_41": {
+        "fr": "commissure(D)",
+        "en": "commissure(R)"
+      },
+      "V_42": {
+        "fr": "commissure(G)",
+        "en": "commissure(L)"
+      },
+      "V_49": {
+        "fr": "crête iliaque(D)",
+        "en": "iliac crest(R)"
+      },
+      "V_50": {
+        "fr": "crête iliaque(G)",
+        "en": "iliac crest(L)"
+      },
+      "V_51": {
+        "fr": "cuisse(D)",
+        "en": "thigh(R)"
+      },
+      "V_52": {
+        "fr": "cuisse(G)",
+        "en": "thigh(L)"
+      },
+      "V_57": {
+        "fr": "dents inférieures(D)",
+        "en": "lower teeth(R)"
+      },
+      "V_58": {
+        "fr": "dents inférieures(G)",
+        "en": "lower teeth(L)"
+      },
+      "V_59": {
+        "fr": "dents supérieures(D)",
+        "en": "upper teeth(R)"
+      },
+      "V_60": {
+        "fr": "dents supérieures(G)",
+        "en": "upper teeth(L)"
+      },
+      "V_67": {
+        "fr": "doigt(index)(D)",
+        "en": "finger (index)(R)"
+      },
+      "V_68": {
+        "fr": "doigt(index)(G)",
+        "en": "finger (index)(L)"
+      },
+      "V_69": {
+        "fr": "doigt(majeur)(D)",
+        "en": "finger (middle)(R)"
+      },
+      "V_70": {
+        "fr": "doigt(majeur)(G)",
+        "en": "finger (middle)(L)"
+      },
+      "V_63": {
+        "fr": "doigt(annulaire)(D)",
+        "en": "finger (ring finger)(R)"
+      },
+      "V_64": {
+        "fr": "doigt(annulaire)(G)",
+        "en": "finger (ring finger)(L)"
+      },
+      "V_65": {
+        "fr": "doigt(auriculaire)(D)",
+        "en": "finger (little finger)(R)"
+      },
+      "V_66": {
+        "fr": "doigt(auriculaire)(G)",
+        "en": "finger (little finger)(L)"
+      },
+      "V_62": {
+        "fr": "dessus de tête",
+        "en": "top of the head"
+      },
+      "V_194": {
+        "fr": "épaule(D)",
+        "en": "shoulder(R)"
+      },
+      "V_195": {
+        "fr": "épaule(G)",
+        "en": "shoulder(L)"
+      },
+      "V_197": {
+        "fr": "épigastre",
+        "en": "epigastric"
+      },
+      "V_27": {
+        "fr": "avant-bras(D)",
+        "en": "forearm(R)"
+      },
+      "V_28": {
+        "fr": "avant-bras(G)",
+        "en": "forearm(L)"
+      },
+      "V_76": {
+        "fr": "face dorsale main(D)",
+        "en": "dorsal aspect of the hand(R)"
+      },
+      "V_77": {
+        "fr": "face dorsale main(G)",
+        "en": "dorsal aspect of the hand(L)"
+      },
+      "V_72": {
+        "fr": "face dorsale du pied(D)",
+        "en": "dorsal aspect of the foot(R)"
+      },
+      "V_73": {
+        "fr": "face dorsale du pied(G)",
+        "en": "dorsal aspect of the foot(L)"
+      },
+      "V_74": {
+        "fr": "face dorsale du poignet(D)",
+        "en": "dorsal aspect of the wrist(R)"
+      },
+      "V_75": {
+        "fr": "face dorsale du poignet(G)",
+        "en": "dorsal aspect of the wrist(L)"
+      },
+      "V_149": {
+        "fr": "plante du pied(D)",
+        "en": "sole(R)"
+      },
+      "V_150": {
+        "fr": "plante du pied(G)",
+        "en": "sole(L)"
+      },
+      "V_80": {
+        "fr": "face palmaire du poignet(D)",
+        "en": "palmar face of the wrist(R)"
+      },
+      "V_81": {
+        "fr": "face palmaire du poignet(G)",
+        "en": "palmar face of the wrist(L)"
+      },
+      "V_43": {
+        "fr": "coté lateral du pied(D)",
+        "en": "lateral side of the foot(R)"
+      },
+      "V_44": {
+        "fr": "coté lateral du pied(G)",
+        "en": "lateral side of the foot(L)"
+      },
+      "V_82": {
+        "fr": "fesse(D)",
+        "en": "buttock(R)"
+      },
+      "V_83": {
+        "fr": "fesse(G)",
+        "en": "buttock(L)"
+      },
+      "V_84": {
+        "fr": "flanc(D)",
+        "en": "flank(R)"
+      },
+      "V_85": {
+        "fr": "flanc(G)",
+        "en": "flank(L)"
+      },
+      "V_78": {
+        "fr": "face palmaire de l'avant-bras(D)",
+        "en": "palmar side of the forearm(R)"
+      },
+      "V_79": {
+        "fr": "face palmaire de l'avant-bras(G)",
+        "en": "palmar side of the forearm(L)"
+      },
+      "V_87": {
+        "fr": "fosse iliaque(D)",
+        "en": "iliac fossa(R)"
+      },
+      "V_88": {
+        "fr": "fosse iliaque(G)",
+        "en": "iliac fossa(L)"
+      },
+      "V_89": {
+        "fr": "front",
+        "en": "forehead"
+      },
+      "V_92": {
+        "fr": "genou(D)",
+        "en": "knee(R)"
+      },
+      "V_93": {
+        "fr": "genou(G)",
+        "en": "knee(L)"
+      },
+      "V_90": {
+        "fr": "gencive inférieure",
+        "en": "lower gum"
+      },
+      "V_47": {
+        "fr": "creux poplité(D)",
+        "en": "popliteal fossa(R)"
+      },
+      "V_48": {
+        "fr": "creux poplité(G)",
+        "en": "popliteal fossa(L)"
+      },
+      "V_91": {
+        "fr": "gencive supérieure",
+        "en": "upper gum"
+      },
+      "V_94": {
+        "fr": "gland",
+        "en": "glans"
+      },
+      "V_95": {
+        "fr": "grande lèvre(D)",
+        "en": "labia majora(R)"
+      },
+      "V_96": {
+        "fr": "grande lèvre(G)",
+        "en": "labia majora(L)"
+      },
+      "V_97": {
+        "fr": "gros orteil(D)",
+        "en": "big toe(R)"
+      },
+      "V_98": {
+        "fr": "gros orteil(G)",
+        "en": "big toe(L)"
+      },
+      "V_99": {
+        "fr": "hanche(D)",
+        "en": "hip(R)"
+      },
+      "V_100": {
+        "fr": "hanche(G)",
+        "en": "hip(L)"
+      },
+      "V_102": {
+        "fr": "hymen",
+        "en": "hymen"
+      },
+      "V_103": {
+        "fr": "hypochondre(D)",
+        "en": "hypochondrium(R)"
+      },
+      "V_104": {
+        "fr": "hypochondre(G)",
+        "en": "hypochondrium(L)"
+      },
+      "V_105": {
+        "fr": "ischio(D)",
+        "en": "ischio jambier(R)"
+      },
+      "V_106": {
+        "fr": "ischio(G)",
+        "en": "ischio jambier(L)"
+      },
+      "V_108": {
+        "fr": "joue(D)",
+        "en": "cheek(R)"
+      },
+      "V_109": {
+        "fr": "joue(G)",
+        "en": "cheek(L)"
+      },
+      "V_110": {
+        "fr": "joue interne(D)",
+        "en": "internal cheek(R)"
+      },
+      "V_111": {
+        "fr": "joue interne(G)",
+        "en": "internal cheek(L)"
+      },
+      "V_53": {
+        "fr": "côté du cou(D)",
+        "en": "side of the neck(R)"
+      },
+      "V_54": {
+        "fr": "côté du cou(G)",
+        "en": "side of the neck(L)"
+      },
+      "V_55": {
+        "fr": "côté du thorax(D)",
+        "en": "side of the chest(R)"
+      },
+      "V_56": {
+        "fr": "côté du thorax(G)",
+        "en": "side of the chest(L)"
+      },
+      "V_116": {
+        "fr": "lèvre inferieure(D)",
+        "en": "bottom lip(R)"
+      },
+      "V_117": {
+        "fr": "lèvre supérieure(D)",
+        "en": "upper lip(R)"
+      },
+      "V_113": {
+        "fr": "loge renale(D)",
+        "en": "renal fossa(R)"
+      },
+      "V_114": {
+        "fr": "loge renale(G)",
+        "en": "renal fossa(L)"
+      },
+      "V_115": {
+        "fr": "luette",
+        "en": "uvula"
+      },
+      "V_121": {
+        "fr": "mâchoire",
+        "en": "jaw"
+      },
+      "V_118": {
+        "fr": "menton",
+        "en": "chin"
+      },
+      "V_29": {
+        "fr": "bas du thorax",
+        "en": "lower chest"
+      },
+      "V_119": {
+        "fr": "mollet(D)",
+        "en": "calf(R)"
+      },
+      "V_120": {
+        "fr": "mollet(G)",
+        "en": "calf(L)"
+      },
+      "V_122": {
+        "fr": "nez",
+        "en": "nose"
+      },
+      "V_124": {
+        "fr": "occiput",
+        "en": "occiput"
+      },
+      "V_125": {
+        "fr": "oeil(D)",
+        "en": "eye(R)"
+      },
+      "V_126": {
+        "fr": "oeil(G)",
+        "en": "eye(L)"
+      },
+      "V_127": {
+        "fr": "omoplate(D)",
+        "en": "scapula(R)"
+      },
+      "V_128": {
+        "fr": "omoplate(G)",
+        "en": "scapula(L)"
+      },
+      "V_129": {
+        "fr": "oreille(D)",
+        "en": "ear(R)"
+      },
+      "V_130": {
+        "fr": "oreille(G)",
+        "en": "ear(L)"
+      },
+      "V_131": {
+        "fr": "orteil (1)(D)",
+        "en": "toe (1)(R)"
+      },
+      "V_132": {
+        "fr": "orteil (1)(G)",
+        "en": "toe (1)(L)"
+      },
+      "V_133": {
+        "fr": "orteil (2)(D)",
+        "en": "toe (2)(R)"
+      },
+      "V_134": {
+        "fr": "orteil (2)(G)",
+        "en": "toe (2)(L)"
+      },
+      "V_135": {
+        "fr": "orteil (3)(D)",
+        "en": "toe (3)(R)"
+      },
+      "V_136": {
+        "fr": "orteil (3)(G)",
+        "en": "toe (3)(L)"
+      },
+      "V_144": {
+        "fr": "petit orteil (4)(D)",
+        "en": "little toe (4)(R)"
+      },
+      "V_145": {
+        "fr": "petit orteil (4)(G)",
+        "en": "little toe (4)(L)"
+      },
+      "V_45": {
+        "fr": "coude(D)",
+        "en": "elbow(R)"
+      },
+      "V_46": {
+        "fr": "coude(G)",
+        "en": "elbow(L)"
+      },
+      "V_137": {
+        "fr": "palais",
+        "en": "palace"
+      },
+      "V_170": {
+        "fr": "thorax postérieur(D)",
+        "en": "posterior chest wall(R)"
+      },
+      "V_171": {
+        "fr": "thorax postérieur(G)",
+        "en": "posterior chest wall(L)"
+      },
+      "V_139": {
+        "fr": "paroi vaginale",
+        "en": "vaginal wall"
+      },
+      "V_140": {
+        "fr": "paroi vaginale(D)",
+        "en": "vaginal wall(R)"
+      },
+      "V_141": {
+        "fr": "paroi vaginale(G)",
+        "en": "vaginal wall(L)"
+      },
+      "V_142": {
+        "fr": "paume(D)",
+        "en": "palm(R)"
+      },
+      "V_143": {
+        "fr": "paume(G)",
+        "en": "palm(L)"
+      },
+      "V_155": {
+        "fr": "pénis",
+        "en": "penis"
+      },
+      "V_187": {
+        "fr": "ventre",
+        "en": "belly"
+      },
+      "V_146": {
+        "fr": "petite lèvre(D)",
+        "en": "labia minora(R)"
+      },
+      "V_147": {
+        "fr": "petite lèvre(G)",
+        "en": "labia minora(L)"
+      },
+      "V_148": {
+        "fr": "pharynx",
+        "en": "pharynx"
+      },
+      "V_23": {
+        "fr": "arrière de la cheville(D)",
+        "en": "posterior aspect of the ankle(R)"
+      },
+      "V_24": {
+        "fr": "arrière de la cheville(G)",
+        "en": "posterior aspect of the ankle(L)"
+      },
+      "V_151": {
+        "fr": "pouce(D)",
+        "en": "thumb(R)"
+      },
+      "V_152": {
+        "fr": "pouce(G)",
+        "en": "thumb(L)"
+      },
+      "V_158": {
+        "fr": "scrotum",
+        "en": "scrotum"
+      },
+      "V_159": {
+        "fr": "sein(D)",
+        "en": "breast(R)"
+      },
+      "V_160": {
+        "fr": "sein(G)",
+        "en": "breast(L)"
+      },
+      "V_162": {
+        "fr": "sous la langue",
+        "en": "under the tongue"
+      },
+      "V_163": {
+        "fr": "sous la machoire",
+        "en": "under the jaw"
+      },
+      "V_101": {
+        "fr": "haut du thorax",
+        "en": "upper chest"
+      },
+      "V_61": {
+        "fr": "dessus de la langue",
+        "en": "above the tongue"
+      },
+      "V_153": {
+        "fr": "pubis",
+        "en": "pubis"
+      },
+      "V_164": {
+        "fr": "talon(D)",
+        "en": "heel(R)"
+      },
+      "V_165": {
+        "fr": "talon(G)",
+        "en": "heel(L)"
+      },
+      "V_166": {
+        "fr": "tempe(D)",
+        "en": "temple(R)"
+      },
+      "V_167": {
+        "fr": "tempe(G)",
+        "en": "temple(L)"
+      },
+      "V_168": {
+        "fr": "testicule(D)",
+        "en": "testicle(R)"
+      },
+      "V_169": {
+        "fr": "testicule(G)",
+        "en": "testicle(L)"
+      },
+      "V_172": {
+        "fr": "tibia(D)",
+        "en": "tibia(R)"
+      },
+      "V_173": {
+        "fr": "tibia(G)",
+        "en": "tibia(L)"
+      },
+      "V_175": {
+        "fr": "trapèze(D)",
+        "en": "trapezius(R)"
+      },
+      "V_176": {
+        "fr": "trapèze(G)",
+        "en": "trapezius(L)"
+      },
+      "V_174": {
+        "fr": "trachée",
+        "en": "trachea"
+      },
+      "V_177": {
+        "fr": "triceps(D)",
+        "en": "triceps(R)"
+      },
+      "V_178": {
+        "fr": "triceps(G)",
+        "en": "triceps(L)"
+      },
+      "V_185": {
+        "fr": "urètre",
+        "en": "urethra"
+      },
+      "V_186": {
+        "fr": "vagin",
+        "en": "vagina"
+      },
+      "V_188": {
+        "fr": "vermillon(D)",
+        "en": "vermilion(R)"
+      },
+      "V_189": {
+        "fr": "vermillon(G)",
+        "en": "vermilion(L)"
+      },
+      "V_190": {
+        "fr": "vestibule",
+        "en": "vulval vestibule"
+      }
+    }
+  },
+  "E_129": {
+    "name": "E_129",
+    "code_question": "E_129",
+    "question_en": "Do you have any lesions, redness or problems on your skin that you believe are related to the condition you are consulting for?",
+    "question_fr": "Avez vous des lésions, rougeurs ou problèmes au niveau de votre peau que vous croyez être reliés à la condition pour laquelle vous consultez?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_130": {
+    "name": "E_130",
+    "code_question": "E_129",
+    "question_en": "What color is the rash?",
+    "question_fr": "De quelle couleur sont les lésions?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": "V_11",
+    "possible_values": [
+      "V_11",
+      "V_86",
+      "V_107",
+      "V_138",
+      "V_156",
+      "V_157"
+    ],
+    "value_meaning": {
+      "V_11": {
+        "fr": "NA",
+        "en": "NA"
+      },
+      "V_86": {
+        "fr": "foncée",
+        "en": "dark"
+      },
+      "V_107": {
+        "fr": "jaune",
+        "en": "yellow"
+      },
+      "V_138": {
+        "fr": "pâle",
+        "en": "pale"
+      },
+      "V_156": {
+        "fr": "rose",
+        "en": "pink"
+      },
+      "V_157": {
+        "fr": "rouge",
+        "en": "red"
+      }
+    }
+  },
+  "E_134": {
+    "name": "E_134",
+    "code_question": "E_129",
+    "question_en": "How intense is the pain caused by the rash?",
+    "question_fr": "Quelle est l’intensité de la douleur causée par les lésions?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": 0,
+    "possible_values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "value_meaning": {}
+  },
+  "E_132": {
+    "name": "E_132",
+    "code_question": "E_129",
+    "question_en": "Is the rash swollen?",
+    "question_fr": "La ou les lésions sont-elles surélevées?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": 0,
+    "possible_values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "value_meaning": {}
+  },
+  "E_136": {
+    "name": "E_136",
+    "code_question": "E_129",
+    "question_en": "How severe is the itching?",
+    "question_fr": "Quel est le niveau de la démangeaisons?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": 0,
+    "possible_values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "value_meaning": {}
+  },
+  "E_135": {
+    "name": "E_135",
+    "code_question": "E_129",
+    "question_en": "Is the lesion (or are the lesions) larger than 1cm?",
+    "question_fr": "Est-ce que la ou les lésions sont plus grande que 1 cm?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": "V_10",
+    "possible_values": [
+      "V_10",
+      "V_12"
+    ],
+    "value_meaning": {
+      "V_10": {
+        "fr": "N",
+        "en": "N"
+      },
+      "V_12": {
+        "fr": "O",
+        "en": "Y"
+      }
+    }
+  },
+  "E_131": {
+    "name": "E_131",
+    "code_question": "E_129",
+    "question_en": "Do your lesions peel off?",
+    "question_fr": "Est-ce que vos lésions pèlent (morceaux de peau qui se détachent)?",
+    "is_antecedent": false,
+    "data_type": "C",
+    "default_value": "V_10",
+    "possible_values": [
+      "V_10",
+      "V_12"
+    ],
+    "value_meaning": {
+      "V_10": {
+        "fr": "N",
+        "en": "N"
+      },
+      "V_12": {
+        "fr": "O",
+        "en": "Y"
+      }
+    }
+  },
+  "E_154": {
+    "name": "E_154",
+    "code_question": "E_154",
+    "question_en": "Is your skin much paler than usual?",
+    "question_fr": "Avez-vous un teint beaucoup plus pâle que d’habitude?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_155": {
+    "name": "E_155",
+    "code_question": "E_155",
+    "question_en": "Do you feel your heart is beating fast (racing), irregularly (missing a beat) or do you feel palpitations?",
+    "question_fr": "Avez-vous l’impression que votre coeur bat vite, de façon irrégulière ou ressentez-vous des palpitations?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_210": {
+    "name": "E_210",
+    "code_question": "E_210",
+    "question_en": "Have you recently thrown up blood or something resembling coffee beans?",
+    "question_fr": "Avez-vous récemment remarqué du sang dans vos vomissements ou quelque chose qui ressemble à des grains de café?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_140": {
+    "name": "E_140",
+    "code_question": "E_140",
+    "question_en": "Have you recently had stools that were black (like coal)?",
+    "question_fr": "Avez-vous eu récemment des selles noires comme du charbon?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_51": {
+    "name": "E_51",
+    "code_question": "E_51",
+    "question_en": "Have you had diarrhea or an increase in stool frequency?",
+    "question_fr": "Avez-vous eu des diarrhées ou une augmentation de la fréquence de vos selles?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_75": {
+    "name": "E_75",
+    "code_question": "E_75",
+    "question_en": "Do you feel like you are (or were) choking or suffocating?",
+    "question_fr": "Avez-vous l’impression que vous étouffez ou avez-vous eu l’impression que vous étouffiez?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_89": {
+    "name": "E_89",
+    "code_question": "E_89",
+    "question_en": "Do you constantly feel fatigued or do you have non-restful sleep?",
+    "question_fr": "Ressentez-vous une fatigue constante ou avez-vous un sommeil non réparateur?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_114": {
+    "name": "E_114",
+    "code_question": "E_114",
+    "question_en": "Are you more irritable or has your mood been very unstable recently?",
+    "question_fr": "Êtes-vous plus irritable dernièrement ou avez-vous une humeur très changeante?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_82": {
+    "name": "E_82",
+    "code_question": "E_82",
+    "question_en": "Do you feel lightheaded and dizzy or do you feel like you are about to faint?",
+    "question_fr": "Vous sentez-vous faible et étourdi ou avez vous l’impression que vous allez perdre conscience?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_148": {
+    "name": "E_148",
+    "code_question": "E_148",
+    "question_en": "Are you feeling nauseous or do you feel like vomiting?",
+    "question_fr": "Avez-vous des nausées ou envie de vomir?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_94": {
+    "name": "E_94",
+    "code_question": "E_94",
+    "question_en": "Have you had chills or shivers?",
+    "question_fr": "Avez-vous eu des frissons?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_220": {
+    "name": "E_220",
+    "code_question": "E_220",
+    "question_en": "Do you have pain that is increased when you breathe in deeply?",
+    "question_fr": "Avez-vous une douleur qui est pire à l’inspiration profonde?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_161": {
+    "name": "E_161",
+    "code_question": "E_161",
+    "question_en": "Have you recently had a loss of appetite or do you get full more quickly then usually?",
+    "question_fr": "Avez-vous une perte d’appétit ou êtes-vous rassasié rapidement?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_179": {
+    "name": "E_179",
+    "code_question": "E_179",
+    "question_en": "Have you noticed light red blood or blood clots in your stool?",
+    "question_fr": "Avez-vous noté du sang rouge clair ou des caillots de sang dans vos selles?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_162": {
+    "name": "E_162",
+    "code_question": "E_162",
+    "question_en": "Have you had an involuntary weight loss over the last 3 months?",
+    "question_fr": "Avez-vous eu une perte de poids involontaire dans les 3 derniers mois?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_173": {
+    "name": "E_173",
+    "code_question": "E_173",
+    "question_en": "Do you have a burning sensation that starts in your stomach then goes up into your throat, and can be associated with a bitter taste in your mouth?",
+    "question_fr": "Avez-vous une sensation de brûlure partant du creux de l’estomac et remontant vers la bouche avec même parfois un goût amer associé?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_33": {
+    "name": "E_33",
+    "code_question": "E_33",
+    "question_en": "Do you have pain that improves when you lean forward?",
+    "question_fr": "Avez-vous une douleur qui s’améliore lorsque vous penchez votre corps vers l’avant?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_218": {
+    "name": "E_218",
+    "code_question": "E_218",
+    "question_en": "Do you have symptoms that are increased with physical exertion but alleviated with rest?",
+    "question_fr": "Avez-vous des symptômes qui sont pires lors de l’effort physique et soulagés par le repos?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_93": {
+    "name": "E_93",
+    "code_question": "E_93",
+    "question_en": "Do you have numbness, loss of sensation or tingling in the feet?",
+    "question_fr": "Avez-vous des engourdissements, une perte de sensibilité ou des fourmillements dans les pieds?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_66": {
+    "name": "E_66",
+    "code_question": "E_66",
+    "question_en": "Are you experiencing shortness of breath or difficulty breathing in a significant way?",
+    "question_fr": "Vous sentez-vous essoufflé ou avez vous de la difficulté à respirer de façon importante?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_163": {
+    "name": "E_163",
+    "code_question": "E_163",
+    "question_en": "Have you had any vaginal discharge?",
+    "question_fr": "Avez-vous des pertes vaginales?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_30": {
+    "name": "E_30",
+    "code_question": "E_30",
+    "question_en": "Do you feel your abdomen is bloated or distended (swollen due to pressure from inside)?",
+    "question_fr": "Ressentez-vous un ballonnement abdominal ou un gonflement de votre ventre?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_127": {
+    "name": "E_127",
+    "code_question": "E_127",
+    "question_en": "Do you feel that your eyes produce excessive tears?",
+    "question_fr": "Avez-vous l’impression que votre oeil produit des larmes de façon excessive?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_181": {
+    "name": "E_181",
+    "code_question": "E_181",
+    "question_en": "Do you have nasal congestion or a clear runny nose?",
+    "question_fr": "Avez-vous de la congestion nasale ou le nez qui coule clair?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_88": {
+    "name": "E_88",
+    "code_question": "E_88",
+    "question_en": "Do you feel so tired that you are unable to do your usual activities or are you stuck in your bed all day long?",
+    "question_fr": "Vous sentez-vous incapable de faire vos activités ou êtes-vous cloué au lit toute la journée?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_43": {
+    "name": "E_43",
+    "code_question": "E_43",
+    "question_en": "Have you lost consciousness associated with violent and sustained muscle contractions or had an absence episode?",
+    "question_fr": "Avez-vous eu une épisode de perte de conscience avec des contractions violentes et soutenues d’un ou de plusieurs muscles de votre corps ou une période d'absence?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_156": {
+    "name": "E_156",
+    "code_question": "E_156",
+    "question_en": "Have you had weakness or paralysis on one side of the face, which may still be present or completely resolved?",
+    "question_fr": "Avez-vous une faiblesse ou une paralysie d’un côté du visage, qui peut être encore présente ou complètement résolue?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_144": {
+    "name": "E_144",
+    "code_question": "E_144",
+    "question_en": "Do you have diffuse (widespread) muscle pain?",
+    "question_fr": "Avez-vous des douleurs musculaires diffuses?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_216": {
+    "name": "E_216",
+    "code_question": "E_216",
+    "question_en": "Do you have pain that is increased with movement?",
+    "question_fr": "Avez-vous une douleur qui est pire lors des mouvements?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_201": {
+    "name": "E_201",
+    "code_question": "E_201",
+    "question_en": "Do you have a cough?",
+    "question_fr": "Avez-vous de la toux?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_217": {
+    "name": "E_217",
+    "code_question": "E_217",
+    "question_en": "Are your symptoms worse when lying down and alleviated while sitting up?",
+    "question_fr": "Vos symptômes sont-ils pire en position couchée et améliorés en position assise?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_215": {
+    "name": "E_215",
+    "code_question": "E_215",
+    "question_en": "Do you have symptoms that get worse after eating?",
+    "question_fr": "Avez-vous des symptômes qui sont pires après les repas?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_64": {
+    "name": "E_64",
+    "code_question": "E_64",
+    "question_en": "Do you feel out of breath with minimal physical effort?",
+    "question_fr": "Vous sentez-vous facilement essoufflé à l’effort?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_96": {
+    "name": "E_96",
+    "code_question": "E_96",
+    "question_en": "Have you gained weight recently?",
+    "question_fr": "Avez-vous pris du poids récemment?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_16": {
+    "name": "E_16",
+    "code_question": "E_16",
+    "question_en": "Do you feel anxious?",
+    "question_fr": "Ressentez-vous une certaine anxiété, une fébrilité?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_50": {
+    "name": "E_50",
+    "code_question": "E_50",
+    "question_en": "Have you had significantly increased sweating?",
+    "question_fr": "Avez-vous eu des sueurs importantes?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_97": {
+    "name": "E_97",
+    "code_question": "E_97",
+    "question_en": "Do you have a sore throat?",
+    "question_fr": "Avez-vous mal à la gorge?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_9": {
+    "name": "E_9",
+    "code_question": "E_9",
+    "question_en": "Do you have swollen or painful lymph nodes?",
+    "question_fr": "Avez-vous des ganglions enflés ou douloureux?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_76": {
+    "name": "E_76",
+    "code_question": "E_76",
+    "question_en": "Do you feel slightly dizzy or lightheaded?",
+    "question_fr": "Avez-vous l’impression de vous sentir légèrement étourdi ou d’avoir une impression de déséquilibre léger?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_102": {
+    "name": "E_102",
+    "code_question": "E_102",
+    "question_en": "Are you consulting because you have high blood pressure?",
+    "question_fr": "Consultez-vous ou avez-vous été référé car votre tension artérielle est élevée?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_65": {
+    "name": "E_65",
+    "code_question": "E_65",
+    "question_en": "Do you have difficulty swallowing, or have a feeling of discomfort/blockage when swallowing?",
+    "question_fr": "Avez-vous des de la difficulté à avaler ou une sensation de gêne ou de blocage lors de la déglutition?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_74": {
+    "name": "E_74",
+    "code_question": "E_74",
+    "question_en": "Have you noticed a diffuse (widespread) redness in one or both eyes?",
+    "question_fr": "Avez-vous remarqué une rougeur diffuse à un oeil ou aux 2 yeux?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_205": {
+    "name": "E_205",
+    "code_question": "E_205",
+    "question_en": "Do you suddenly have difficulty or an inability to open your mouth or have jaw pain when opening it?",
+    "question_fr": "Avez-vous soudainement de la difficulté ou une incapacité à ouvrir la bouche ou même de la douleur au niveau de la mâchoire lors de l’ouverture de celle-ci?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_63": {
+    "name": "E_63",
+    "code_question": "E_63",
+    "question_en": "Do you have difficulty articulating words/speaking?",
+    "question_fr": "Avez-vous de la difficulté à articuler les mots?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_128": {
+    "name": "E_128",
+    "code_question": "E_128",
+    "question_en": "Have you ever felt like you were suffocating for a very short time associated with inability to breathe or speak?",
+    "question_fr": "Avez-vous eu l’impression que vous étouffiez pendant un court instant et que vous étiez incapable de respirer ou parler?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_190": {
+    "name": "E_190",
+    "code_question": "E_190",
+    "question_en": "Have you noticed that you produce more saliva than usual?",
+    "question_fr": "Avez-vous noté que vous produisez plus de salive que d’habitude?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_39": {
+    "name": "E_39",
+    "code_question": "E_39",
+    "question_en": "Have you felt confused or disorientated lately?",
+    "question_fr": "Vous sentez-vous confus ou mélangé?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_212": {
+    "name": "E_212",
+    "code_question": "E_212",
+    "question_en": "Have you noticed that the tone of your voice has become deeper, softer or hoarse?",
+    "question_fr": "Avez-vous remarqué que votre ton de voix a changé, soit diminué, s’est éteint ou est devenu plus grave?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_206": {
+    "name": "E_206",
+    "code_question": "E_206",
+    "question_en": "Do you have painful mouth ulcers or sores?",
+    "question_fr": "Avez-vous des ulcères ou des lésions ulcérées et douloureuses dans la bouche?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_52": {
+    "name": "E_52",
+    "code_question": "E_52",
+    "question_en": "Do you have the perception of seeing two images of a single object seen overlapping or adjacent to each other (double vision)?",
+    "question_fr": "Avez-vous l’impression de voir double ou de voir simultanément 2 images semblables?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_203": {
+    "name": "E_203",
+    "code_question": "E_203",
+    "question_en": "Do you have intense coughing fits?",
+    "question_fr": "Avez-vous des quintes de toux intenses et dérangeantes?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_38": {
+    "name": "E_38",
+    "code_question": "E_38",
+    "question_en": "Do you have pain or weakness in your jaw?",
+    "question_fr": "Avez-vous des douleurs ou une faiblesse au niveau de la mâchoire?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_172": {
+    "name": "E_172",
+    "code_question": "E_172",
+    "question_en": "Do you have a hard time opening/raising one or both eyelids?",
+    "question_fr": "Avez-vous de la misère à ouvrir/relever une ou les deux paupières?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_84": {
+    "name": "E_84",
+    "code_question": "E_84",
+    "question_en": "Do you feel weakness in both arms and/or both legs?",
+    "question_fr": "Avez-vous présentement une faiblesse des 2 bras et/ou des 2 jambes?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_90": {
+    "name": "E_90",
+    "code_question": "E_90",
+    "question_en": "Do your symptoms of muscle weakness increase with fatigue and/or stress?",
+    "question_fr": "Est-ce que vos symptômes de faiblesse musculaire augmente avec la fatigue et/ou le stress?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_211": {
+    "name": "E_211",
+    "code_question": "E_211",
+    "question_en": "Have you vomited several times or have you made several efforts to vomit?",
+    "question_fr": "Avez-vous eu plusieurs vomissements ou fait plusieurs efforts pour vomir?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_166": {
+    "name": "E_166",
+    "code_question": "E_166",
+    "question_en": "Did you vomit after coughing?",
+    "question_fr": "Avez-vous eu des vomissements après des quintes de toux?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_112": {
+    "name": "E_112",
+    "code_question": "E_112",
+    "question_en": "Do you wheeze while inhaling or is your breathing noisy after coughing spells?",
+    "question_fr": "Avez-vous une inspiration sifflante après vos quintes de toux?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_178": {
+    "name": "E_178",
+    "code_question": "E_178",
+    "question_en": "Have you noticed any unusual bleeding or bruising related to your consultation today?",
+    "question_fr": "Avez-vous remarqué des saignement ou des bleus inhabituels en lien avec votre consultation aujourd’hui?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_152": {
+    "name": "E_152",
+    "code_question": "E_151",
+    "question_en": "Where is the swelling located?",
+    "question_fr": "À quel endroit est situé l’enflure?",
+    "is_antecedent": false,
+    "data_type": "M",
+    "default_value": "V_123",
+    "possible_values": [
+      "V_123",
+      "V_14",
+      "V_15",
+      "V_16",
+      "V_17",
+      "V_18",
+      "V_19",
+      "V_20",
+      "V_21",
+      "V_22",
+      "V_23",
+      "V_24",
+      "V_25",
+      "V_26",
+      "V_27",
+      "V_28",
+      "V_29",
+      "V_30",
+      "V_31",
+      "V_32",
+      "V_33",
+      "V_34",
+      "V_35",
+      "V_36",
+      "V_37",
+      "V_38",
+      "V_39",
+      "V_40",
+      "V_41",
+      "V_42",
+      "V_43",
+      "V_44",
+      "V_45",
+      "V_46",
+      "V_47",
+      "V_48",
+      "V_49",
+      "V_50",
+      "V_51",
+      "V_52",
+      "V_53",
+      "V_54",
+      "V_55",
+      "V_56",
+      "V_57",
+      "V_58",
+      "V_59",
+      "V_60",
+      "V_61",
+      "V_62",
+      "V_63",
+      "V_64",
+      "V_65",
+      "V_66",
+      "V_67",
+      "V_68",
+      "V_69",
+      "V_70",
+      "V_72",
+      "V_73",
+      "V_74",
+      "V_75",
+      "V_76",
+      "V_77",
+      "V_78",
+      "V_79",
+      "V_80",
+      "V_81",
+      "V_82",
+      "V_83",
+      "V_84",
+      "V_85",
+      "V_87",
+      "V_88",
+      "V_89",
+      "V_90",
+      "V_91",
+      "V_92",
+      "V_93",
+      "V_94",
+      "V_95",
+      "V_96",
+      "V_97",
+      "V_98",
+      "V_99",
+      "V_100",
+      "V_101",
+      "V_102",
+      "V_103",
+      "V_104",
+      "V_105",
+      "V_106",
+      "V_108",
+      "V_109",
+      "V_110",
+      "V_111",
+      "V_113",
+      "V_114",
+      "V_115",
+      "V_116",
+      "V_117",
+      "V_118",
+      "V_119",
+      "V_120",
+      "V_121",
+      "V_122",
+      "V_124",
+      "V_125",
+      "V_126",
+      "V_127",
+      "V_128",
+      "V_129",
+      "V_130",
+      "V_131",
+      "V_132",
+      "V_133",
+      "V_134",
+      "V_135",
+      "V_136",
+      "V_137",
+      "V_139",
+      "V_140",
+      "V_141",
+      "V_142",
+      "V_143",
+      "V_144",
+      "V_145",
+      "V_146",
+      "V_147",
+      "V_148",
+      "V_149",
+      "V_150",
+      "V_151",
+      "V_152",
+      "V_153",
+      "V_155",
+      "V_158",
+      "V_159",
+      "V_160",
+      "V_162",
+      "V_163",
+      "V_164",
+      "V_165",
+      "V_166",
+      "V_167",
+      "V_168",
+      "V_169",
+      "V_170",
+      "V_171",
+      "V_172",
+      "V_173",
+      "V_174",
+      "V_175",
+      "V_176",
+      "V_177",
+      "V_178",
+      "V_185",
+      "V_186",
+      "V_187",
+      "V_188",
+      "V_189",
+      "V_190",
+      "V_194",
+      "V_195",
+      "V_197"
+    ],
+    "value_meaning": {
+      "V_123": {
+        "fr": "nulle part",
+        "en": "nowhere"
+      },
+      "V_14": {
+        "fr": "aile iliaque(D)",
+        "en": "iliac wing(R)"
+      },
+      "V_15": {
+        "fr": "aile iliaque(G)",
+        "en": "iliac wing(L)"
+      },
+      "V_16": {
+        "fr": "aine(D)",
+        "en": "groin(R)"
+      },
+      "V_17": {
+        "fr": "aine(G)",
+        "en": "groin(L)"
+      },
+      "V_19": {
+        "fr": "aisselle(G)",
+        "en": "axilla(L)"
+      },
+      "V_18": {
+        "fr": "aisselle(D)",
+        "en": "axilla(R)"
+      },
+      "V_20": {
+        "fr": "amygdale(D)",
+        "en": "tonsil(R)"
+      },
+      "V_21": {
+        "fr": "amygdale(G)",
+        "en": "tonsil(L)"
+      },
+      "V_22": {
+        "fr": "anus",
+        "en": "anus"
+      },
+      "V_26": {
+        "fr": "arrière du cou",
+        "en": "back of the neck"
+      },
+      "V_25": {
+        "fr": "arrière de tête",
+        "en": "back of head"
+      },
+      "V_30": {
+        "fr": "biceps(D)",
+        "en": "biceps(R)"
+      },
+      "V_31": {
+        "fr": "biceps(G)",
+        "en": "biceps(L)"
+      },
+      "V_32": {
+        "fr": "bouche",
+        "en": "mouth"
+      },
+      "V_33": {
+        "fr": "cartilage thyroidien",
+        "en": "thyroid cartilage"
+      },
+      "V_34": {
+        "fr": "cheville(D)",
+        "en": "ankle(R)"
+      },
+      "V_35": {
+        "fr": "cheville(G)",
+        "en": "ankle(L)"
+      },
+      "V_36": {
+        "fr": "clitoris",
+        "en": "clitoris"
+      },
+      "V_37": {
+        "fr": "coccyx",
+        "en": "coccyx"
+      },
+      "V_38": {
+        "fr": "colonne cervicale",
+        "en": "cervical spine"
+      },
+      "V_39": {
+        "fr": "colonne dorsale",
+        "en": "thoracic spine"
+      },
+      "V_40": {
+        "fr": "colonne lombaire",
+        "en": "lumbar spine"
+      },
+      "V_41": {
+        "fr": "commissure(D)",
+        "en": "commissure(R)"
+      },
+      "V_42": {
+        "fr": "commissure(G)",
+        "en": "commissure(L)"
+      },
+      "V_49": {
+        "fr": "crête iliaque(D)",
+        "en": "iliac crest(R)"
+      },
+      "V_50": {
+        "fr": "crête iliaque(G)",
+        "en": "iliac crest(L)"
+      },
+      "V_51": {
+        "fr": "cuisse(D)",
+        "en": "thigh(R)"
+      },
+      "V_52": {
+        "fr": "cuisse(G)",
+        "en": "thigh(L)"
+      },
+      "V_57": {
+        "fr": "dents inférieures(D)",
+        "en": "lower teeth(R)"
+      },
+      "V_58": {
+        "fr": "dents inférieures(G)",
+        "en": "lower teeth(L)"
+      },
+      "V_59": {
+        "fr": "dents supérieures(D)",
+        "en": "upper teeth(R)"
+      },
+      "V_60": {
+        "fr": "dents supérieures(G)",
+        "en": "upper teeth(L)"
+      },
+      "V_67": {
+        "fr": "doigt(index)(D)",
+        "en": "finger (index)(R)"
+      },
+      "V_68": {
+        "fr": "doigt(index)(G)",
+        "en": "finger (index)(L)"
+      },
+      "V_69": {
+        "fr": "doigt(majeur)(D)",
+        "en": "finger (middle)(R)"
+      },
+      "V_70": {
+        "fr": "doigt(majeur)(G)",
+        "en": "finger (middle)(L)"
+      },
+      "V_63": {
+        "fr": "doigt(annulaire)(D)",
+        "en": "finger (ring finger)(R)"
+      },
+      "V_64": {
+        "fr": "doigt(annulaire)(G)",
+        "en": "finger (ring finger)(L)"
+      },
+      "V_65": {
+        "fr": "doigt(auriculaire)(D)",
+        "en": "finger (little finger)(R)"
+      },
+      "V_66": {
+        "fr": "doigt(auriculaire)(G)",
+        "en": "finger (little finger)(L)"
+      },
+      "V_62": {
+        "fr": "dessus de tête",
+        "en": "top of the head"
+      },
+      "V_194": {
+        "fr": "épaule(D)",
+        "en": "shoulder(R)"
+      },
+      "V_195": {
+        "fr": "épaule(G)",
+        "en": "shoulder(L)"
+      },
+      "V_197": {
+        "fr": "épigastre",
+        "en": "epigastric"
+      },
+      "V_27": {
+        "fr": "avant-bras(D)",
+        "en": "forearm(R)"
+      },
+      "V_28": {
+        "fr": "avant-bras(G)",
+        "en": "forearm(L)"
+      },
+      "V_76": {
+        "fr": "face dorsale main(D)",
+        "en": "dorsal aspect of the hand(R)"
+      },
+      "V_77": {
+        "fr": "face dorsale main(G)",
+        "en": "dorsal aspect of the hand(L)"
+      },
+      "V_72": {
+        "fr": "face dorsale du pied(D)",
+        "en": "dorsal aspect of the foot(R)"
+      },
+      "V_73": {
+        "fr": "face dorsale du pied(G)",
+        "en": "dorsal aspect of the foot(L)"
+      },
+      "V_74": {
+        "fr": "face dorsale du poignet(D)",
+        "en": "dorsal aspect of the wrist(R)"
+      },
+      "V_75": {
+        "fr": "face dorsale du poignet(G)",
+        "en": "dorsal aspect of the wrist(L)"
+      },
+      "V_149": {
+        "fr": "plante du pied(D)",
+        "en": "sole(R)"
+      },
+      "V_150": {
+        "fr": "plante du pied(G)",
+        "en": "sole(L)"
+      },
+      "V_80": {
+        "fr": "face palmaire du poignet(D)",
+        "en": "palmar face of the wrist(R)"
+      },
+      "V_81": {
+        "fr": "face palmaire du poignet(G)",
+        "en": "palmar face of the wrist(L)"
+      },
+      "V_43": {
+        "fr": "coté lateral du pied(D)",
+        "en": "lateral side of the foot(R)"
+      },
+      "V_44": {
+        "fr": "coté lateral du pied(G)",
+        "en": "lateral side of the foot(L)"
+      },
+      "V_82": {
+        "fr": "fesse(D)",
+        "en": "buttock(R)"
+      },
+      "V_83": {
+        "fr": "fesse(G)",
+        "en": "buttock(L)"
+      },
+      "V_84": {
+        "fr": "flanc(D)",
+        "en": "flank(R)"
+      },
+      "V_85": {
+        "fr": "flanc(G)",
+        "en": "flank(L)"
+      },
+      "V_78": {
+        "fr": "face palmaire de l'avant-bras(D)",
+        "en": "palmar side of the forearm(R)"
+      },
+      "V_79": {
+        "fr": "face palmaire de l'avant-bras(G)",
+        "en": "palmar side of the forearm(L)"
+      },
+      "V_87": {
+        "fr": "fosse iliaque(D)",
+        "en": "iliac fossa(R)"
+      },
+      "V_88": {
+        "fr": "fosse iliaque(G)",
+        "en": "iliac fossa(L)"
+      },
+      "V_89": {
+        "fr": "front",
+        "en": "forehead"
+      },
+      "V_92": {
+        "fr": "genou(D)",
+        "en": "knee(R)"
+      },
+      "V_93": {
+        "fr": "genou(G)",
+        "en": "knee(L)"
+      },
+      "V_90": {
+        "fr": "gencive inférieure",
+        "en": "lower gum"
+      },
+      "V_47": {
+        "fr": "creux poplité(D)",
+        "en": "popliteal fossa(R)"
+      },
+      "V_48": {
+        "fr": "creux poplité(G)",
+        "en": "popliteal fossa(L)"
+      },
+      "V_91": {
+        "fr": "gencive supérieure",
+        "en": "upper gum"
+      },
+      "V_94": {
+        "fr": "gland",
+        "en": "glans"
+      },
+      "V_95": {
+        "fr": "grande lèvre(D)",
+        "en": "labia majora(R)"
+      },
+      "V_96": {
+        "fr": "grande lèvre(G)",
+        "en": "labia majora(L)"
+      },
+      "V_97": {
+        "fr": "gros orteil(D)",
+        "en": "big toe(R)"
+      },
+      "V_98": {
+        "fr": "gros orteil(G)",
+        "en": "big toe(L)"
+      },
+      "V_99": {
+        "fr": "hanche(D)",
+        "en": "hip(R)"
+      },
+      "V_100": {
+        "fr": "hanche(G)",
+        "en": "hip(L)"
+      },
+      "V_102": {
+        "fr": "hymen",
+        "en": "hymen"
+      },
+      "V_103": {
+        "fr": "hypochondre(D)",
+        "en": "hypochondrium(R)"
+      },
+      "V_104": {
+        "fr": "hypochondre(G)",
+        "en": "hypochondrium(L)"
+      },
+      "V_105": {
+        "fr": "ischio(D)",
+        "en": "ischio jambier(R)"
+      },
+      "V_106": {
+        "fr": "ischio(G)",
+        "en": "ischio jambier(L)"
+      },
+      "V_108": {
+        "fr": "joue(D)",
+        "en": "cheek(R)"
+      },
+      "V_109": {
+        "fr": "joue(G)",
+        "en": "cheek(L)"
+      },
+      "V_110": {
+        "fr": "joue interne(D)",
+        "en": "internal cheek(R)"
+      },
+      "V_111": {
+        "fr": "joue interne(G)",
+        "en": "internal cheek(L)"
+      },
+      "V_53": {
+        "fr": "côté du cou(D)",
+        "en": "side of the neck(R)"
+      },
+      "V_54": {
+        "fr": "côté du cou(G)",
+        "en": "side of the neck(L)"
+      },
+      "V_55": {
+        "fr": "côté du thorax(D)",
+        "en": "side of the chest(R)"
+      },
+      "V_56": {
+        "fr": "côté du thorax(G)",
+        "en": "side of the chest(L)"
+      },
+      "V_116": {
+        "fr": "lèvre inferieure(D)",
+        "en": "bottom lip(R)"
+      },
+      "V_117": {
+        "fr": "lèvre supérieure(D)",
+        "en": "upper lip(R)"
+      },
+      "V_113": {
+        "fr": "loge renale(D)",
+        "en": "renal fossa(R)"
+      },
+      "V_114": {
+        "fr": "loge renale(G)",
+        "en": "renal fossa(L)"
+      },
+      "V_115": {
+        "fr": "luette",
+        "en": "uvula"
+      },
+      "V_121": {
+        "fr": "mâchoire",
+        "en": "jaw"
+      },
+      "V_118": {
+        "fr": "menton",
+        "en": "chin"
+      },
+      "V_29": {
+        "fr": "bas du thorax",
+        "en": "lower chest"
+      },
+      "V_119": {
+        "fr": "mollet(D)",
+        "en": "calf(R)"
+      },
+      "V_120": {
+        "fr": "mollet(G)",
+        "en": "calf(L)"
+      },
+      "V_122": {
+        "fr": "nez",
+        "en": "nose"
+      },
+      "V_124": {
+        "fr": "occiput",
+        "en": "occiput"
+      },
+      "V_125": {
+        "fr": "oeil(D)",
+        "en": "eye(R)"
+      },
+      "V_126": {
+        "fr": "oeil(G)",
+        "en": "eye(L)"
+      },
+      "V_127": {
+        "fr": "omoplate(D)",
+        "en": "scapula(R)"
+      },
+      "V_128": {
+        "fr": "omoplate(G)",
+        "en": "scapula(L)"
+      },
+      "V_129": {
+        "fr": "oreille(D)",
+        "en": "ear(R)"
+      },
+      "V_130": {
+        "fr": "oreille(G)",
+        "en": "ear(L)"
+      },
+      "V_131": {
+        "fr": "orteil (1)(D)",
+        "en": "toe (1)(R)"
+      },
+      "V_132": {
+        "fr": "orteil (1)(G)",
+        "en": "toe (1)(L)"
+      },
+      "V_133": {
+        "fr": "orteil (2)(D)",
+        "en": "toe (2)(R)"
+      },
+      "V_134": {
+        "fr": "orteil (2)(G)",
+        "en": "toe (2)(L)"
+      },
+      "V_135": {
+        "fr": "orteil (3)(D)",
+        "en": "toe (3)(R)"
+      },
+      "V_136": {
+        "fr": "orteil (3)(G)",
+        "en": "toe (3)(L)"
+      },
+      "V_144": {
+        "fr": "petit orteil (4)(D)",
+        "en": "little toe (4)(R)"
+      },
+      "V_145": {
+        "fr": "petit orteil (4)(G)",
+        "en": "little toe (4)(L)"
+      },
+      "V_45": {
+        "fr": "coude(D)",
+        "en": "elbow(R)"
+      },
+      "V_46": {
+        "fr": "coude(G)",
+        "en": "elbow(L)"
+      },
+      "V_137": {
+        "fr": "palais",
+        "en": "palace"
+      },
+      "V_170": {
+        "fr": "thorax postérieur(D)",
+        "en": "posterior chest wall(R)"
+      },
+      "V_171": {
+        "fr": "thorax postérieur(G)",
+        "en": "posterior chest wall(L)"
+      },
+      "V_139": {
+        "fr": "paroi vaginale",
+        "en": "vaginal wall"
+      },
+      "V_140": {
+        "fr": "paroi vaginale(D)",
+        "en": "vaginal wall(R)"
+      },
+      "V_141": {
+        "fr": "paroi vaginale(G)",
+        "en": "vaginal wall(L)"
+      },
+      "V_142": {
+        "fr": "paume(D)",
+        "en": "palm(R)"
+      },
+      "V_143": {
+        "fr": "paume(G)",
+        "en": "palm(L)"
+      },
+      "V_155": {
+        "fr": "pénis",
+        "en": "penis"
+      },
+      "V_187": {
+        "fr": "ventre",
+        "en": "belly"
+      },
+      "V_146": {
+        "fr": "petite lèvre(D)",
+        "en": "labia minora(R)"
+      },
+      "V_147": {
+        "fr": "petite lèvre(G)",
+        "en": "labia minora(L)"
+      },
+      "V_148": {
+        "fr": "pharynx",
+        "en": "pharynx"
+      },
+      "V_23": {
+        "fr": "arrière de la cheville(D)",
+        "en": "posterior aspect of the ankle(R)"
+      },
+      "V_24": {
+        "fr": "arrière de la cheville(G)",
+        "en": "posterior aspect of the ankle(L)"
+      },
+      "V_151": {
+        "fr": "pouce(D)",
+        "en": "thumb(R)"
+      },
+      "V_152": {
+        "fr": "pouce(G)",
+        "en": "thumb(L)"
+      },
+      "V_158": {
+        "fr": "scrotum",
+        "en": "scrotum"
+      },
+      "V_159": {
+        "fr": "sein(D)",
+        "en": "breast(R)"
+      },
+      "V_160": {
+        "fr": "sein(G)",
+        "en": "breast(L)"
+      },
+      "V_162": {
+        "fr": "sous la langue",
+        "en": "under the tongue"
+      },
+      "V_163": {
+        "fr": "sous la machoire",
+        "en": "under the jaw"
+      },
+      "V_101": {
+        "fr": "haut du thorax",
+        "en": "upper chest"
+      },
+      "V_61": {
+        "fr": "dessus de la langue",
+        "en": "above the tongue"
+      },
+      "V_153": {
+        "fr": "pubis",
+        "en": "pubis"
+      },
+      "V_164": {
+        "fr": "talon(D)",
+        "en": "heel(R)"
+      },
+      "V_165": {
+        "fr": "talon(G)",
+        "en": "heel(L)"
+      },
+      "V_166": {
+        "fr": "tempe(D)",
+        "en": "temple(R)"
+      },
+      "V_167": {
+        "fr": "tempe(G)",
+        "en": "temple(L)"
+      },
+      "V_168": {
+        "fr": "testicule(D)",
+        "en": "testicle(R)"
+      },
+      "V_169": {
+        "fr": "testicule(G)",
+        "en": "testicle(L)"
+      },
+      "V_172": {
+        "fr": "tibia(D)",
+        "en": "tibia(R)"
+      },
+      "V_173": {
+        "fr": "tibia(G)",
+        "en": "tibia(L)"
+      },
+      "V_175": {
+        "fr": "trapèze(D)",
+        "en": "trapezius(R)"
+      },
+      "V_176": {
+        "fr": "trapèze(G)",
+        "en": "trapezius(L)"
+      },
+      "V_174": {
+        "fr": "trachée",
+        "en": "trachea"
+      },
+      "V_177": {
+        "fr": "triceps(D)",
+        "en": "triceps(R)"
+      },
+      "V_178": {
+        "fr": "triceps(G)",
+        "en": "triceps(L)"
+      },
+      "V_185": {
+        "fr": "urètre",
+        "en": "urethra"
+      },
+      "V_186": {
+        "fr": "vagin",
+        "en": "vagina"
+      },
+      "V_188": {
+        "fr": "vermillon(D)",
+        "en": "vermilion(R)"
+      },
+      "V_189": {
+        "fr": "vermillon(G)",
+        "en": "vermilion(L)"
+      },
+      "V_190": {
+        "fr": "vestibule",
+        "en": "vulval vestibule"
+      }
+    }
+  },
+  "E_151": {
+    "name": "E_151",
+    "code_question": "E_151",
+    "question_en": "Do you have swelling in one or more areas of your body?",
+    "question_fr": "Avez-vous de l’enflure à un ou plusieurs endroits sur votre corps?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_45": {
+    "name": "E_45",
+    "code_question": "E_45",
+    "question_en": "Have you been coughing up blood?",
+    "question_fr": "Avez-vous visualisé du sang dans vos crachats?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_194": {
+    "name": "E_194",
+    "code_question": "E_194",
+    "question_en": "Have you noticed a high pitched sound when breathing in?",
+    "question_fr": "Avez-vous noté un bruit respiratoire aigu surtout à l’inspiration?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_83": {
+    "name": "E_83",
+    "code_question": "E_83",
+    "question_en": "Have you noticed weakness in your facial muscles and/or eyes?",
+    "question_fr": "Avez-vous noté une faiblesse au niveau des muscles du visage et/ou des yeux?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_157": {
+    "name": "E_157",
+    "code_question": "E_157",
+    "question_en": "Have you recently had numbness, loss of sensation or tingling, in both arms and legs and around your mouth?",
+    "question_fr": "Avez-vous présentement ou avez-vous eu récemment des engourdissements, une perte de sensibilité ou des fourmillements, dans les mains, les pieds et autour de la bouche?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_176": {
+    "name": "E_176",
+    "code_question": "E_176",
+    "question_en": "Did you previously, or do you currently, have any weakness/paralysis in one or more of your limbs or in your face?",
+    "question_fr": "Avez-vous noté une faiblesse ou paralysie d’un ou plusieurs de vos membres ou au niveau du visage, encore présentes ou résolues?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_42": {
+    "name": "E_42",
+    "code_question": "E_42",
+    "question_en": "Have you been in contact with or ate something that you have an allergy to?",
+    "question_fr": "Avez-vous été en contact ou mangé une chose à laquelle vous avez une allergie?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_214": {
+    "name": "E_214",
+    "code_question": "E_214",
+    "question_en": "Have you noticed a wheezing sound when you exhale?",
+    "question_fr": "Avez-vous noté un un son aigu lorsque vous sortez l’air de vos poumons?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_150": {
+    "name": "E_150",
+    "code_question": "E_150",
+    "question_en": "Have you been able to pass stools or gas since your symptoms increased?",
+    "question_fr": "Passez-vous des selles ou des gaz depuis que vos symptômes sont pires?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_32": {
+    "name": "E_32",
+    "code_question": "E_32",
+    "question_en": "Do you have a decrease in appetite?",
+    "question_fr": "Avez-vous une diminution de l’appétit ou des boires?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_221": {
+    "name": "E_221",
+    "code_question": "E_221",
+    "question_en": "Are the symptoms or pain increased with coughing, with an effort like lifting a weight or from forcing a bowel movement?",
+    "question_fr": "Les symptômes ou la douleur sont-ils augmentés avec la toux, un effort comme lever un poids ou quand vous forcez pour aller à la selle?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_202": {
+    "name": "E_202",
+    "code_question": "E_202",
+    "question_en": "Does the person have a whooping cough?",
+    "question_fr": "Avez-vous une toux aboyante?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_219": {
+    "name": "E_219",
+    "code_question": "E_219",
+    "question_en": "Are your symptoms more prominent at night?",
+    "question_fr": "Ressentez vous davantage vos symptômes la nuit?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_196": {
+    "name": "E_196",
+    "code_question": "E_196",
+    "question_en": "Have you had surgery within the last month?",
+    "question_fr": "Avez-vous subi une intervention chirurgicale dans le dernier mois?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_170": {
+    "name": "E_170",
+    "code_question": "E_170",
+    "question_en": "Do you have severe itching in one or both eyes?",
+    "question_fr": "Avez-vous des démangeaisons importantes au niveau d’un oeil ou des 2 yeux simultanément?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_77": {
+    "name": "E_77",
+    "code_question": "E_77",
+    "question_en": "Do you have a cough that produces colored or more abundant sputum than usual?",
+    "question_fr": "Avez-vous une toux produisant des crachats colorés ou plus abondants qu’habituellement?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_13": {
+    "name": "E_13",
+    "code_question": "E_13",
+    "question_en": "Do you find that your symptoms have worsened over the last 2 weeks and that progressively less effort is required to cause the symptoms?",
+    "question_fr": "Trouvez-vous que vos symptômes sont pires depuis environ 2 semaines et que de moins en moins d’effort provoquent les symptômes?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_14": {
+    "name": "E_14",
+    "code_question": "E_14",
+    "question_en": "Do you have chest pain even at rest?",
+    "question_fr": "Avez-vous des douleurs au thorax même au repos?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_169": {
+    "name": "E_169",
+    "code_question": "E_169",
+    "question_en": "Is your nose or the back of your throat itchy?",
+    "question_fr": "Avez-vous le nez et/ou le palais qui pique?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_177": {
+    "name": "E_177",
+    "code_question": "E_177",
+    "question_en": "Do you currently, or did you ever, have numbness, loss of sensitivity or tingling anywhere on your body?",
+    "question_fr": "Avez-vous présentement ou avez-vous eu récemment des engourdissements, une perte de sensibilité ou des fourmillements, n’importe où sur votre le corps?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_175": {
+    "name": "E_175",
+    "code_question": "E_175",
+    "question_en": "Have you noticed any new fatigue, generalized and vague discomfort, diffuse (widespread) muscle aches or a change in your general well-being related to your consultation today?",
+    "question_fr": "Avez-vous de la fatigue, un malaise généralisé, un inconfort vague, des douleurs musculaires diffuses ou une atteinte de votre état général en lien avec votre consultation aujourd’hui?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_174": {
+    "name": "E_174",
+    "code_question": "E_174",
+    "question_en": "Have you been unintentionally losing weight or have you lost your appetite?",
+    "question_fr": "Avez-vous remarqué une perte de poids involontaire ou une perte d’appétit qui semble en lien avec votre consultation aujourd’hui?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_145": {
+    "name": "E_145",
+    "code_question": "E_145",
+    "question_en": "Do you have very abundant or very long menstruation periods?",
+    "question_fr": "Avez-vous des menstruations très abondantes ou très longues?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_92": {
+    "name": "E_92",
+    "code_question": "E_92",
+    "question_en": "Did your cheeks suddenly turn red?",
+    "question_fr": "Est-ce que vos joues sont devenues rouges soudainement?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_192": {
+    "name": "E_192",
+    "code_question": "E_192",
+    "question_en": "Do you feel that muscle spasms or soreness in your neck are keeping you from turning your head to one side?",
+    "question_fr": "Avez-vous l’impression qu’il y a des muscles spasmés ou endoloris, dans votre cou, qui vous empêchent de tourner votre tête d’un bord ou de l’autre?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_188": {
+    "name": "E_188",
+    "code_question": "E_188",
+    "question_en": "Do you have pale stools and dark urine?",
+    "question_fr": "Avez-vous les selles pâles et les urines foncées?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_164": {
+    "name": "E_164",
+    "code_question": "E_164",
+    "question_en": "Do you feel your heart is beating very irregularly or in a disorganized pattern?",
+    "question_fr": "Sentez-vous que votre cœur bat de façon très irrégulière ou désorganisée?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_193": {
+    "name": "E_193",
+    "code_question": "E_193",
+    "question_en": "Do you have annoying muscle spasms in your face, neck or any other part of your body?",
+    "question_fr": "Avez-vous des spasmes musculaires très incommodants au niveau du visage, du cou ou de tout autre endroit de votre corps?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_168": {
+    "name": "E_168",
+    "code_question": "E_168",
+    "question_en": "Do you have trouble keeping your tongue in your mouth?",
+    "question_fr": "Avez-vous de la difficulté à garder votre langue dans votre bouche?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_180": {
+    "name": "E_180",
+    "code_question": "E_180",
+    "question_en": "Are you unable to control the direction of your eyes?",
+    "question_fr": "Êtes-vous incapable de contrôler la direction de votre regard?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_67": {
+    "name": "E_67",
+    "code_question": "E_67",
+    "question_en": "Do you have bouts of choking or shortness of breath that wake you up at night?",
+    "question_fr": "Avez-vous des crises de suffocation qui vous réveille la nuit?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_78": {
+    "name": "E_78",
+    "code_question": "E_78",
+    "question_en": "Do you drink alcohol excessively or do you have an addiction to alcohol?",
+    "question_fr": "Prenez-vous de l’alcool de façon excessive ou avez-vous une dépendance à l’alcool?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_146": {
+    "name": "E_146",
+    "code_question": "E_146",
+    "question_en": "Are you taking any new oral anticoagulants ((NOACs)?",
+    "question_fr": "Prenez-vous des nouveaux anticoagulants oraux?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_171": {
+    "name": "E_171",
+    "code_question": "E_171",
+    "question_en": "Do you feel like you are detached from your own body or your surroundings?",
+    "question_fr": "Avez-vous l’impression que vous êtes détaché de votre propre corps ou de l’environnement qui vous entoure?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_111": {
+    "name": "E_111",
+    "code_question": "E_111",
+    "question_en": "Do you feel like you are dying or were you afraid that you were about do die?",
+    "question_fr": "Avez-vous l’impression que vous pourriez mourir ou que vous alliez mourir?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_182": {
+    "name": "E_182",
+    "code_question": "E_182",
+    "question_en": "Do you have greenish or yellowish nasal discharge?",
+    "question_fr": "Avez-vous un écoulement nasal coloré?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_103": {
+    "name": "E_103",
+    "code_question": "E_103",
+    "question_en": "Have you lost your sense of smell?",
+    "question_fr": "Avez-vous une perte d’odorat accompagnant vos symptômes?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_23": {
+    "name": "E_23",
+    "code_question": "E_23",
+    "question_en": "Do you ever temporarily stop breathing while you’re asleep?",
+    "question_fr": "Faites-vous des pauses respiratoires durant votre sommeil?",
+    "is_antecedent": false,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_105": {
+    "name": "E_105",
+    "code_question": "E_105",
+    "question_en": "Have you ever had a heart attack or do you have angina (chest pain)?",
+    "question_fr": "Avez-vous déjà fait une crise de coeur ou faites-vous de l’angine?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_108": {
+    "name": "E_108",
+    "code_question": "E_108",
+    "question_en": "Do you have a problem with poor circulation?",
+    "question_fr": "Avez-vous un problème de mauvaise circulation sanguine?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_104": {
+    "name": "E_104",
+    "code_question": "E_104",
+    "question_en": "Do you have high blood pressure or do you take medications to treat high blood pressure?",
+    "question_fr": "Souffrez-vous d’hypertension ou prenez-vous des médicaments pour traiter la haute pression?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_79": {
+    "name": "E_79",
+    "code_question": "E_79",
+    "question_en": "Do you smoke cigarettes?",
+    "question_fr": "Fumez-vous la cigarette quotidiennement?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_71": {
+    "name": "E_71",
+    "code_question": "E_71",
+    "question_en": "Do you have high cholesterol or do you take medications to treat high cholesterol?",
+    "question_fr": "Souffrez-vous d’hypercholestérolémie ou prenez-vous des médicaments pour traiter un taux de cholestérol élevé?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_41": {
+    "name": "E_41",
+    "code_question": "E_41",
+    "question_en": "Have you been in contact with a person with similar symptoms in the past 2 weeks?",
+    "question_fr": "Avez-vous été en contact avec une autre personne qui présentait des symptômes similaires, dans les 2 dernières semaines?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_100": {
+    "name": "E_100",
+    "code_question": "E_100",
+    "question_en": "Do you currently take hormones?",
+    "question_fr": "Prenez-vous des hormones?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_69": {
+    "name": "E_69",
+    "code_question": "E_68",
+    "question_en": "Do you have diabetes?",
+    "question_fr": "Souffrez-vous de diabète?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_167": {
+    "name": "E_167",
+    "code_question": "E_167",
+    "question_en": "Do you think you are pregnant or are you currently pregnant?",
+    "question_fr": "Croyez-vous être enceinte ou êtes vous présentement enceinte?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_115": {
+    "name": "E_115",
+    "code_question": "E_115",
+    "question_en": "Have you had unprotected sex with more than one partner in the last 6 months?",
+    "question_fr": "Avez-vous eu des relations sexuelles non-protégées avec plus d’un partenaire dans les derniers 6 mois?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_70": {
+    "name": "E_70",
+    "code_question": "E_70",
+    "question_en": "Are you significantly overweight compared to people of the same height as you?",
+    "question_fr": "Avez-vous un surpoids important par rapport aux personnes de la même taille que vous?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_10": {
+    "name": "E_10",
+    "code_question": "E_10",
+    "question_en": "Are you currently taking or have you recently taken anti-inflammatory drugs (NSAIDs)?",
+    "question_fr": "Prenez-vous ou avez-vous pris des anti-inflammatoires récemment?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_165": {
+    "name": "E_165",
+    "code_question": "E_165",
+    "question_en": "Have any of your family members ever had a pneumothorax?",
+    "question_fr": "Avez-vous des membres de votre famille qui ont déjà fait un pneumothorax?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_8": {
+    "name": "E_8",
+    "code_question": "E_8",
+    "question_en": "Do you currently undergo dialysis?",
+    "question_fr": "Êtes-vous dialysé?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_25": {
+    "name": "E_25",
+    "code_question": "E_25",
+    "question_en": "Have any of your family members been diagnosed with cluster headaches?",
+    "question_fr": "Avez-vous des membres de votre famille qui ont déjà été diagnostiqué avec des céphalée en grappes?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_184": {
+    "name": "E_184",
+    "code_question": "E_184",
+    "question_en": "Do you take medication that dilates your blood vessels?",
+    "question_fr": "Prenez-vous un médicament qui vasodilate vos vaisseaux sanguins?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_185": {
+    "name": "E_185",
+    "code_question": "E_185",
+    "question_en": "Have you ever had a head trauma?",
+    "question_fr": "Avez-vous déjà eu un trauma crânien?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_99": {
+    "name": "E_99",
+    "code_question": "E_99",
+    "question_en": "Have you ever had a migraine or is a member of your family known to have migraines?",
+    "question_fr": "Avez-vous déjà fait une migraine ou est-ce qu’un membre de votre famille est connu pour faire des migraines?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_107": {
+    "name": "E_107",
+    "code_question": "E_107",
+    "question_en": "Have you ever had a stroke?",
+    "question_fr": "Avez-vous déjà fait un accident vasculaire cérébral ou AVC?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_226": {
+    "name": "E_226",
+    "code_question": "E_226",
+    "question_en": "Are you more likely to develop common allergies than the general population?",
+    "question_fr": "Êtes-vous susceptible de développer plus facilement que la population générale des allergies courantes?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_62": {
+    "name": "E_62",
+    "code_question": "E_62",
+    "question_en": "Do you regularly take stimulant drugs?",
+    "question_fr": "Prenez-vous régulièrement des substances illicites stimulantes?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_49": {
+    "name": "E_49",
+    "code_question": "E_49",
+    "question_en": "Do you attend or work in a daycare?",
+    "question_fr": "Fréquentez-vous ou travaillez-vous dans une garderie?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_95": {
+    "name": "E_95",
+    "code_question": "E_95",
+    "question_en": "Do you have Parkinson’s disease?",
+    "question_fr": "Souffrez-vous de la maladie de parkinson?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_204": {
+    "name": "E_204",
+    "code_question": "E_204",
+    "question_en": "Have you traveled out of the country in the last 4 weeks?",
+    "question_fr": "Avez-vous voyagé dans les 4 dernières semaines?",
+    "is_antecedent": true,
+    "data_type": "C",
+    "default_value": "V_10",
+    "possible_values": [
+      "V_10",
+      "V_0",
+      "V_1",
+      "V_2",
+      "V_3",
+      "V_4",
+      "V_5",
+      "V_6",
+      "V_7",
+      "V_8",
+      "V_9",
+      "V_13"
+    ],
+    "value_meaning": {
+      "V_10": {
+        "fr": "N",
+        "en": "N"
+      },
+      "V_0": {
+        "fr": "Afrique du Nord",
+        "en": "North Africa"
+      },
+      "V_1": {
+        "fr": "Afrique de l'Ouest",
+        "en": "West Africa"
+      },
+      "V_2": {
+        "fr": "Afrique du Sud",
+        "en": "South Africa"
+      },
+      "V_3": {
+        "fr": "Amérique Centrale",
+        "en": "Central America"
+      },
+      "V_4": {
+        "fr": "Amérique du Nord",
+        "en": "North America"
+      },
+      "V_5": {
+        "fr": "Amérique du Sud",
+        "en": "South America"
+      },
+      "V_6": {
+        "fr": "Asie",
+        "en": "Asia"
+      },
+      "V_7": {
+        "fr": "Asie Sud-Sud-Est",
+        "en": "South East Asia"
+      },
+      "V_8": {
+        "fr": "Caraibes",
+        "en": "Caraibes"
+      },
+      "V_9": {
+        "fr": "Europe",
+        "en": "Europe"
+      },
+      "V_13": {
+        "fr": "Océeanie",
+        "en": "Oceania"
+      }
+    }
+  },
+  "E_37": {
+    "name": "E_37",
+    "code_question": "E_36",
+    "question_en": "Do you have metastatic cancer?",
+    "question_fr": "Avez-vous un cancer métastatique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_153": {
+    "name": "E_153",
+    "code_question": "E_153",
+    "question_en": "Are you being treated for osteoporosis?",
+    "question_fr": "Êtes-vous traité pour de l’ostéoporose?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_124": {
+    "name": "E_124",
+    "code_question": "E_124",
+    "question_en": "Do you have asthma or have you ever had to use a bronchodilator in the past?",
+    "question_fr": "Souffrez-vous d’asthme ou avez vous déjà eu une prescription de bronchodilatateurs dans le passé?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_98": {
+    "name": "E_98",
+    "code_question": "E_98",
+    "question_en": "Do you have a hiatal hernia?",
+    "question_fr": "Avez-vous une hernie hiatale?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_116": {
+    "name": "E_116",
+    "code_question": "E_116",
+    "question_en": "Have you had a cold in the last 2 weeks?",
+    "question_fr": "Avez-vous eu un rhume, au cours des 2 dernières semaines?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_48": {
+    "name": "E_48",
+    "code_question": "E_48",
+    "question_en": "Do you live with 4 or more people?",
+    "question_fr": "Habitez-vous avec 4 personnes ou plus?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_2": {
+    "name": "E_2",
+    "code_question": "E_2",
+    "question_en": "Are you infected with the human immunodeficiency virus (HIV)?",
+    "question_fr": "Êtes-vous infecté par le virus de l’immunodéficience humaine ou êtes-vous séropositif?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_227": {
+    "name": "E_227",
+    "code_question": "E_227",
+    "question_en": "Are you immunosuppressed?",
+    "question_fr": "Êtes-vous immunosupprimé?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_61": {
+    "name": "E_61",
+    "code_question": "E_61",
+    "question_en": "Are you currently using intravenous drugs?",
+    "question_fr": "Faites-vous actuellement usage de drogues intraveineuses?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_47": {
+    "name": "E_47",
+    "code_question": "E_47",
+    "question_en": "Do you suffer from Crohn’s disease or ulcerative colitis (UC)?",
+    "question_fr": "Souffrez-vous de la maladie de Crohn ou de la colite ulcéreuse?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_27": {
+    "name": "E_27",
+    "code_question": "E_27",
+    "question_en": "Have you ever had a sexually transmitted infection?",
+    "question_fr": "Avez-vous déjà eu une infection transmise sexuellement?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_143": {
+    "name": "E_143",
+    "code_question": "E_143",
+    "question_en": "Do you exercise regularly, 4 times per week or more?",
+    "question_fr": "Faites-vous de l’activité physique régulièrement, soit 4 fois par semaine ou plus?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_191": {
+    "name": "E_191",
+    "code_question": "E_191",
+    "question_en": "Are you a former smoker?",
+    "question_fr": "Dans le passé, fumiez-vous la cigarette quotidiennement?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_208": {
+    "name": "E_208",
+    "code_question": "E_208",
+    "question_en": "Is your BMI less than 18.5, or are you underweight?",
+    "question_fr": "Avez-vous un IMC plus petit que 18.5, soit un poids plus petit que la normal?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_126": {
+    "name": "E_126",
+    "code_question": "E_126",
+    "question_en": "Do you have liver cirrhosis?",
+    "question_fr": "Souffrez-vous de cirrhose hépatique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_189": {
+    "name": "E_189",
+    "code_question": "E_189",
+    "question_en": "Have you had sexual intercourse with an HIV-positive partner in the past 12 months?",
+    "question_fr": "Avez-vous eu des relations sexuelles avec une partenaire séropositif dans les 12 derniers mois?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_7": {
+    "name": "E_7",
+    "code_question": "E_7",
+    "question_en": "Do you have a poor diet?",
+    "question_fr": "Avez-vous une mauvaise alimentation?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_24": {
+    "name": "E_24",
+    "code_question": "E_24",
+    "question_en": "Have you ever had a diagnosis of anemia?",
+    "question_fr": "Avez-vous déjà eu un diagnostic d’anémie?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_26": {
+    "name": "E_26",
+    "code_question": "E_26",
+    "question_en": "Do you have any family members who have been diagnosed with anemia?",
+    "question_fr": "Avez-vous des membres de votre famille qui ont déjà eu un diagnostic d’anémie?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_113": {
+    "name": "E_113",
+    "code_question": "E_113",
+    "question_en": "Do you have chronic kidney failure?",
+    "question_fr": "Souffrez-vous d’insuffisance rénale chronique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_160": {
+    "name": "E_160",
+    "code_question": "E_160",
+    "question_en": "Were you born prematurely or did you suffer any complication at birth?",
+    "question_fr": "Êtes-vous né de façon prématuré ou avez vous souffert de complications à la naissance?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_28": {
+    "name": "E_28",
+    "code_question": "E_28",
+    "question_en": "Are there any members of your family who have been diagnosed myasthenia gravis?",
+    "question_fr": "Avez-vous des membres de votre famille qui ont la myasthénie grave?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_20": {
+    "name": "E_20",
+    "code_question": "E_20",
+    "question_en": "Do you have Rheumatoid Arthritis?",
+    "question_fr": "Souffrez-vous d’arthrite rhumatoïde?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_80": {
+    "name": "E_80",
+    "code_question": "E_80",
+    "question_en": "Have you ever been diagnosed with depression?",
+    "question_fr": "Avez-vous déjà fait une dépression diagnostiqué par un médecin?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_40": {
+    "name": "E_40",
+    "code_question": "E_40",
+    "question_en": "Have you been in contact with someone who has had pertussis (whoooping cough)?",
+    "question_fr": "Avez-vous été en contact avec quelqu’un qui a eu la coqueluche?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_0": {
+    "name": "E_0",
+    "code_question": "E_0",
+    "question_en": "Have you recently had a viral infection?",
+    "question_fr": "Avez-vous été infecté par un virus récemment?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_1": {
+    "name": "E_1",
+    "code_question": "E_1",
+    "question_en": "Are you currently being treated or have you recently been treated with an oral antibiotic for an ear infection?",
+    "question_fr": "Êtes-vous actuellement traité ou avez-vous été récemment traité avec un antibiotique pris par la bouche pour une infection de l’oreille ou une otite?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_34": {
+    "name": "E_34",
+    "code_question": "E_34",
+    "question_en": "Do you have an active cancer?",
+    "question_fr": "Avez-vous un cancer actif?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_209": {
+    "name": "E_209",
+    "code_question": "E_209",
+    "question_en": "Are your vaccinations up to date?",
+    "question_fr": "Vos vaccins sont-ils à jour?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_139": {
+    "name": "E_139",
+    "code_question": "E_139",
+    "question_en": "Do you have a known heart defect?",
+    "question_fr": "Êtes-vous connu pour une malformation cardiaque?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_19": {
+    "name": "E_19",
+    "code_question": "E_19",
+    "question_en": "Have you been diagnosed with hyperthyroidism?",
+    "question_fr": "Êtes-vous connu pour de l’hyperthyroïdie?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_31": {
+    "name": "E_31",
+    "code_question": "E_31",
+    "question_en": "Do you have severe Chronic Obstructive Pulmonary Disease (COPD)?",
+    "question_fr": "Êtes-vous considéré comme une personne ayant une maladie pulmonaire obstructive chronique sévère?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_22": {
+    "name": "E_22",
+    "code_question": "E_22",
+    "question_en": "Do you have a known issue with one of your heart valves?",
+    "question_fr": "Êtes-vous connu pour un problème au niveau d’une valve cardiaque?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_60": {
+    "name": "E_60",
+    "code_question": "E_60",
+    "question_en": "Do you consume energy drinks regularly?",
+    "question_fr": "Prenez-vous des boissons énergisantes régulièrement?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_35": {
+    "name": "E_35",
+    "code_question": "E_35",
+    "question_en": "Do you regularly drink coffee or tea?",
+    "question_fr": "Buvez-vous régulièrement du café ou du thé?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_213": {
+    "name": "E_213",
+    "code_question": "E_213",
+    "question_en": "Have you recently taken decongestants or other substances that may have stimulant effects?",
+    "question_fr": "Avez-vous pris récemment, en vente libre, des décongestionnant ou autres substances pouvant avoir des effets stimulants ?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_12": {
+    "name": "E_12",
+    "code_question": "E_12",
+    "question_en": "Do you have a known severe food allergy?",
+    "question_fr": "Avez-vous un allergie alimentaire connue et sévère?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_44": {
+    "name": "E_44",
+    "code_question": "E_44",
+    "question_en": "Do you take corticosteroids?",
+    "question_fr": "Prenez-vous des corticostéroïdes?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_4": {
+    "name": "E_4",
+    "code_question": "E_4",
+    "question_en": "Have you or any member of your family ever had croup?",
+    "question_fr": "Est-ce que vous ou un membre de votre famille a déjà eu le croup?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_81": {
+    "name": "E_81",
+    "code_question": "E_81",
+    "question_en": "Do you suffer from chronic anxiety?",
+    "question_fr": "Souffrez-vous d’anxiété chronique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_109": {
+    "name": "E_109",
+    "code_question": "E_109",
+    "question_en": "Have you ever had deep vein thrombosis (DVT)?",
+    "question_fr": "Avez-vous déjà fait une thrombophlébite profonde?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_110": {
+    "name": "E_110",
+    "code_question": "E_110",
+    "question_en": "Have you been unable to move or get up for more than 3 consecutive days within the last 4 weeks?",
+    "question_fr": "Avez-vous été incapable de vous mobiliser ou vous lever plus de 3 jours consécutifs dans le dernier mois?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_17": {
+    "name": "E_17",
+    "code_question": "E_17",
+    "question_en": "Are you of Asian descent?",
+    "question_fr": "Avez-vous des origines asiatiques?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_18": {
+    "name": "E_18",
+    "code_question": "E_18",
+    "question_en": "Do you have cystic fibrosis?",
+    "question_fr": "Êtes-vous atteint par la fibrose kystique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_118": {
+    "name": "E_118",
+    "code_question": "E_117",
+    "question_en": "Have you ever had pneumonia?",
+    "question_fr": "Avez-vous déjà fait une pneumonie?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_123": {
+    "name": "E_123",
+    "code_question": "E_122",
+    "question_en": "Do you have a chronic obstructive pulmonary disease (COPD)?",
+    "question_fr": "Souffrez-vous de maladie pulmonaire obstructive chronique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_207": {
+    "name": "E_207",
+    "code_question": "E_207",
+    "question_en": "Do you live in in a big city?",
+    "question_fr": "Habitez-vous en dans une grande ville?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_86": {
+    "name": "E_86",
+    "code_question": "E_86",
+    "question_en": "Do you have any close family members who suffer from allergies (any type), hay fever or eczema?",
+    "question_fr": "Avez-vous des membres de votre famille proche qui souffre d’allergies (tout type), de rhume des foins ou d'eczéma?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_87": {
+    "name": "E_87",
+    "code_question": "E_85",
+    "question_en": "Do you have any family members who have asthma?",
+    "question_fr": "Avez-vous des membres de votre famille qui font de l’asthme?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_141": {
+    "name": "E_141",
+    "code_question": "E_141",
+    "question_en": "Did you have your first menstrual period before the age of 12?",
+    "question_fr": "Avez-vous eu vos premières menstruations avant l’âge de 12 ans?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_11": {
+    "name": "E_11",
+    "code_question": "E_11",
+    "question_en": "Have you breastfed one of your children for more than 9 months?",
+    "question_fr": "Avez-vous allaité plus de 9 mois un de vos enfants?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_186": {
+    "name": "E_186",
+    "code_question": "E_186",
+    "question_en": "Have you ever been diagnosed with obstructive sleep apnea (OSA)?",
+    "question_fr": "A-t-on déjà diagnostiqué chez vous un syndrome d’apnées hypopnées obstructives du sommeil (SAHOS)?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_106": {
+    "name": "E_106",
+    "code_question": "E_106",
+    "question_en": "Do you have heart failure?",
+    "question_fr": "Êtes-vous atteint d’insuffisance cardiaque?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_158": {
+    "name": "E_158",
+    "code_question": "E_158",
+    "question_en": "Were you diagnosed with endocrine disease or a hormone dysfunction?",
+    "question_fr": "Avez-vous une maladie endocrinienne ou un dysfonctionnement hormonal?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_187": {
+    "name": "E_187",
+    "code_question": "E_187",
+    "question_en": "Did you eat dark-fleshed fish (such as tuna) or Swiss cheese before the reaction occurred?",
+    "question_fr": "Avez-vous mangé du poisson à chair foncé (tel que le thon) ou fromage suisse avant la réaction?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_6": {
+    "name": "E_6",
+    "code_question": "E_6",
+    "question_en": "Do you have chronic pancreatitis?",
+    "question_fr": "Souffrez-vous de pancréatite chronique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_125": {
+    "name": "E_125",
+    "code_question": "E_125",
+    "question_en": "Have you ever been diagnosed with gastroesophageal reflux?",
+    "question_fr": "Avez-vous déjà reçu un diagnostic de reflux gastro-oesophagien?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_21": {
+    "name": "E_21",
+    "code_question": "E_21",
+    "question_en": "Have you ever had a spontaneous pneumothorax?",
+    "question_fr": "Avez vous déjà fait un pneumothorax spontané?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_222": {
+    "name": "E_222",
+    "code_question": "E_222",
+    "question_en": "Are you exposed to secondhand cigarette smoke on a daily basis?",
+    "question_fr": "Êtes-vous en contact régulièrement avec de la fumée de cigarette sans être vous-même fumeur?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_15": {
+    "name": "E_15",
+    "code_question": "E_15",
+    "question_en": "Have you started or taken any antipsychotic medication within the last 7 days?",
+    "question_fr": "Avez-vous pris ou commencer un antipsychotique dans les derniers 7 jours?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_147": {
+    "name": "E_147",
+    "code_question": "E_147",
+    "question_en": "Have you been treated in hospital recently for nausea, agitation, intoxication or aggressive behavior and received medication via an intravenous or intramuscular route?",
+    "question_fr": "Avez-vous été traité à l’hôpital récemment pour de la nausée, de l’agitation, une intoxication ou de l’agressivité et reçu un médicament via une voie intra-veineuse ou intra-musculaire?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_137": {
+    "name": "E_137",
+    "code_question": "E_137",
+    "question_en": "Have you ever had surgery to remove lymph nodes?",
+    "question_fr": "Vous a-t-on déjà retiré les ganglions lors d’une opération dans le passé?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_149": {
+    "name": "E_149",
+    "code_question": "E_149",
+    "question_en": "Do you take a calcium channel blockers (medication)?",
+    "question_fr": "Prenez-vous un médicaments de la classe des bloqueurs des canaux calciques?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_197": {
+    "name": "E_197",
+    "code_question": "E_197",
+    "question_en": "Do you have a known kidney problem resulting in an inability to retain proteins?",
+    "question_fr": "Avez-vous un problème rénal qui se caractérise par la perte de protéines via les reins?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_3": {
+    "name": "E_3",
+    "code_question": "E_3",
+    "question_en": "Have you ever had a pericarditis?",
+    "question_fr": "Avez-vous déjà eu une péricardite?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_29": {
+    "name": "E_29",
+    "code_question": "E_29",
+    "question_en": "Do any members of your immediate family have a psychiatric illness?",
+    "question_fr": "Avez-vous des membres de votre famille proche qui ont eu une maladie psychiatrique?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_225": {
+    "name": "E_225",
+    "code_question": "E_225",
+    "question_en": "Do you have close family members who had a cardiovascular disease problem before the age of 50?",
+    "question_fr": "Avez-vous des membres de votre famille proche qui ont eu un problème de maladie cardiovasculaire avant l’âge de 50 ans?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_73": {
+    "name": "E_73",
+    "code_question": "E_73",
+    "question_en": "In the last month, have you been in contact with anyone infected with the Ebola virus?",
+    "question_fr": "Avez-vous été en contact avec une personne infectée par le virus Ebola dans le dernier mois?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_138": {
+    "name": "E_138",
+    "code_question": "E_138",
+    "question_en": "Do you suffer from fibromyalgia?",
+    "question_fr": "Souffrez-vous de fibromyalgie?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_101": {
+    "name": "E_101",
+    "code_question": "E_101",
+    "question_en": "Have you been hospitalized for an asthma attack in the past year?",
+    "question_fr": "Avez-vous été hospitalisé pour une crise d’asthme dans la dernière année?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_46": {
+    "name": "E_46",
+    "code_question": "E_46",
+    "question_en": "Have you had 2 or more asthma attacks in the past year?",
+    "question_fr": "Avez-vous fait 2 crises d’asthme ou plus dans la dernière année?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_119": {
+    "name": "E_119",
+    "code_question": "E_119",
+    "question_en": "Have you been diagnosed with chronic sinusitis?",
+    "question_fr": "Avez-vous un diagnostic de sinusite chronique fait par un médecin?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_72": {
+    "name": "E_72",
+    "code_question": "E_72",
+    "question_en": "Have you had one or several flare ups of chronic obstructive pulmonary disease (COPD) in the past year?",
+    "question_fr": "Avez-vous eu une ou des épisodes d’aggravation ou de détérioration de votre maladie pulmonaire obstructive chronique dans la dernière année?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_198": {
+    "name": "E_198",
+    "code_question": "E_198",
+    "question_en": "Do you work in agriculture?",
+    "question_fr": "Travaillez-vous dans le domaine de l’agriculture?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_200": {
+    "name": "E_200",
+    "code_question": "E_200",
+    "question_en": "Do you work in the mining sector?",
+    "question_fr": "Travaillez-vous dans le domaine minier?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_199": {
+    "name": "E_199",
+    "code_question": "E_199",
+    "question_en": "Do you work in construction?",
+    "question_fr": "Travaillez-vous dans le domaine de la construction?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_121": {
+    "name": "E_121",
+    "code_question": "E_121",
+    "question_en": "Do you have a deviated nasal septum?",
+    "question_fr": "Êtes-vous connu pour avoir une déviation du septum ou cloison nasal?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_120": {
+    "name": "E_120",
+    "code_question": "E_120",
+    "question_en": "Do you have polyps in your nose?",
+    "question_fr": "Avez-vous des polypes dans le nez?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_142": {
+    "name": "E_142",
+    "code_question": "E_142",
+    "question_en": "Does your mother suffer from asthma?",
+    "question_fr": "Avez-vous une mère qui souffre d’asthme?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_195": {
+    "name": "E_195",
+    "code_question": "E_195",
+    "question_en": "Do you live in the suburbs?",
+    "question_fr": "Habitez-vous en banlieue?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_183": {
+    "name": "E_183",
+    "code_question": "E_183",
+    "question_en": "Do you live in a rural area?",
+    "question_fr": "Habitez-vous en à la campagne?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_224": {
+    "name": "E_224",
+    "code_question": "E_224",
+    "question_en": "Do you have family members who have had lung cancer?",
+    "question_fr": "Avez-vous des membres de votre famille ayant eu le cancer des poumons?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_223": {
+    "name": "E_223",
+    "code_question": "E_223",
+    "question_en": "Are there members of your family who have been diagnosed with pancreatic cancer?",
+    "question_fr": "Avez-vous des membre de votre famille proche qui sont atteints du cancer du pancréas?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  },
+  "E_5": {
+    "name": "E_5",
+    "code_question": "E_5",
+    "question_en": "Have you ever had fluid in your lungs?",
+    "question_fr": "Avez-vous déjà fait de l’eau sur les poumons?",
+    "is_antecedent": true,
+    "data_type": "B",
+    "default_value": 0,
+    "possible_values": [],
+    "value_meaning": {}
+  }
+}

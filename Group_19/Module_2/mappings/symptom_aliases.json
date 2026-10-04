@@ -1,0 +1,1693 @@
+{
+  "fever": {
+    "evidence_code": "E_91",
+    "type": "symptom",
+    "aliases": [
+      "fever",
+      "high fever",
+      "high temperature",
+      "running a fever",
+      "feeling feverish",
+      "temperature"
+    ]
+  },
+  "chills": {
+    "evidence_code": "E_94",
+    "type": "symptom",
+    "aliases": [
+      "chills",
+      "shivering",
+      "shivers",
+      "chills and shivers",
+      "feeling cold and shaky"
+    ]
+  },
+  "sore_throat": {
+    "evidence_code": "E_97",
+    "type": "symptom",
+    "aliases": [
+      "sore throat",
+      "throat pain",
+      "painful throat",
+      "throat hurts",
+      "my throat hurts",
+      "throat is sore",
+      "my throat is sore",
+      "my throat feels sore"
+    ]
+  },
+  "cough": {
+    "evidence_code": "E_201",
+    "type": "symptom",
+    "aliases": [
+      "cough",
+      "coughing",
+      "i am coughing",
+      "i've been coughing",
+      "been coughing"
+    ]
+  },
+  "productive_colored_cough": {
+    "evidence_code": "E_77",
+    "type": "symptom",
+    "aliases": [
+      "cough with colored sputum",
+      "coughing up colored sputum",
+      "coughing up mucus",
+      "cough with mucus",
+      "productive cough",
+      "cough with phlegm",
+      "colored phlegm",
+      "yellow sputum",
+      "yellow phlegm",
+      "green sputum",
+      "green phlegm",
+      "colored sputum",
+      "coloured sputum",
+      "colored phlegm",
+      "coloured phlegm",
+      "colored mucus when coughing"
+    ]
+  },
+  "nasal_congestion_or_clear_runny_nose": {
+    "evidence_code": "E_181",
+    "type": "symptom",
+    "aliases": [
+      "stuffy nose",
+      "blocked nose",
+      "nasal congestion",
+      "runny nose",
+      "clear runny nose",
+      "my nose is running",
+      "congested nose",
+      "nose is blocked",
+      "nose won't stop running"
+    ]
+  },
+  "colored_nasal_discharge": {
+    "evidence_code": "E_182",
+    "type": "symptom",
+    "aliases": [
+      "colored nasal discharge",
+      "yellow snot",
+      "green snot",
+      "yellow mucus from nose",
+      "green mucus from nose",
+      "colored mucus from nose",
+      "thick colored nasal discharge"
+    ]
+  },
+  "significant_shortness_of_breath": {
+    "evidence_code": "E_66",
+    "type": "symptom",
+    "aliases": [
+      "shortness of breath",
+      "short of breath",
+      "difficulty breathing",
+      "trouble breathing",
+      "hard to breathe",
+      "can't breathe properly",
+      "breathless",
+      "out of breath",
+      "struggling to breathe",
+      "breathing difficulty"
+    ]
+  },
+  "shortness_of_breath_on_minimal_effort": {
+    "evidence_code": "E_64",
+    "type": "symptom",
+    "aliases": [
+      "short of breath with minimal activity",
+      "breathless just walking a little",
+      "short of breath doing very little",
+      "get breathless with light activity"
+    ]
+  },
+  "night_choking_or_breathlessness": {
+    "evidence_code": "E_67",
+    "type": "symptom",
+    "aliases": [
+      "wake up choking at night",
+      "wake up gasping for air",
+      "breathless at night that wakes me up",
+      "sudden breathlessness at night"
+    ]
+  },
+  "wheezing": {
+    "evidence_code": "E_214",
+    "type": "symptom",
+    "aliases": [
+      "wheezing",
+      "wheeze",
+      "whistling sound when breathing",
+      "breathing makes a whistling noise"
+    ]
+  },
+  "coughing_up_blood": {
+    "evidence_code": "E_45",
+    "type": "symptom",
+    "aliases": [
+      "coughing up blood",
+      "blood in cough",
+      "blood when i cough",
+      "bloody sputum",
+      "coughing blood"
+    ]
+  },
+  "difficulty_swallowing": {
+    "evidence_code": "E_65",
+    "type": "symptom",
+    "aliases": [
+      "difficulty swallowing",
+      "trouble swallowing",
+      "hard to swallow",
+      "pain when swallowing",
+      "can't swallow properly",
+      "food gets stuck when swallowing"
+    ]
+  },
+  "chest_pain_at_rest": {
+    "evidence_code": "E_14",
+    "type": "symptom",
+    "aliases": [
+      "chest pain at rest",
+      "chest pain while resting",
+      "chest pain even when not active",
+      "chest pain sitting still"
+    ]
+  },
+  "diffuse_muscle_pain": {
+    "evidence_code": "E_144",
+    "type": "symptom",
+    "aliases": [
+      "muscle pain all over",
+      "body aches",
+      "generalized muscle pain",
+      "achy muscles everywhere",
+      "whole body hurts",
+      "muscle ache",
+      "muscle aches",
+      "aching muscles",
+      "sore muscles",
+      "muscles ache"
+    ]
+  },
+  "dizziness_or_lightheadedness": {
+    "evidence_code": "E_82",
+    "type": "symptom",
+    "aliases": [
+      "dizzy",
+      "dizziness",
+      "lightheaded",
+      "lightheadedness",
+      "feeling faint",
+      "feel like i might pass out",
+      "woozy"
+    ]
+  },
+  "loss_of_consciousness": {
+    "evidence_code": "E_159",
+    "type": "symptom",
+    "aliases": [
+      "passed out",
+      "fainted",
+      "lost consciousness",
+      "blacked out",
+      "i fainted",
+      "i passed out"
+    ]
+  },
+  "numbness_or_tingling_anywhere": {
+    "evidence_code": "E_177",
+    "type": "symptom",
+    "aliases": [
+      "numbness",
+      "tingling",
+      "pins and needles",
+      "numb feeling",
+      "tingling sensation",
+      "arm feels numb",
+      "leg feels numb",
+      "hands feel numb"
+    ]
+  },
+  "weakness_both_arms_or_legs": {
+    "evidence_code": "E_84",
+    "type": "symptom",
+    "aliases": [
+      "weakness in both arms",
+      "weakness in both legs",
+      "weak arms and legs",
+      "legs feel weak",
+      "arms feel weak",
+      "can't lift my arms",
+      "legs give out",
+      "muscle weakness",
+      "generalized weakness",
+      "difficulty walking",
+      "trouble walking",
+      "hard to walk",
+      "can't walk properly",
+      "unsteady when walking",
+      "legs feel weak when walking",
+      "difficulty to walk",
+      "struggling to walk",
+      "wobbly when walking",
+      "weak legs",
+      "hard time walking",
+      "walking is difficult"
+    ]
+  },
+  "facial_or_eye_muscle_weakness": {
+    "evidence_code": "E_83",
+    "type": "symptom",
+    "aliases": [
+      "eyelid drooping",
+      "eye muscle weakness",
+      "trouble moving my eyes",
+      "weakness around the eyes",
+      "face feels weak",
+      "trouble closing my eye"
+    ]
+  },
+  "facial_one_sided_weakness": {
+    "evidence_code": "E_156",
+    "type": "symptom",
+    "aliases": [
+      "one side of my face is weak",
+      "face drooping on one side",
+      "one-sided facial weakness",
+      "half my face feels weak"
+    ]
+  },
+  "loss_of_appetite_or_early_satiety": {
+    "evidence_code": "E_161",
+    "type": "symptom",
+    "aliases": [
+      "no appetite",
+      "loss of appetite",
+      "not hungry",
+      "get full quickly",
+      "feel full after eating a little",
+      "don't feel like eating"
+    ]
+  },
+  "unintentional_weight_loss": {
+    "evidence_code": "E_162",
+    "type": "symptom",
+    "aliases": [
+      "losing weight without trying",
+      "unexplained weight loss",
+      "lost weight without dieting",
+      "weight loss for no reason"
+    ]
+  },
+  "hoarse_or_changed_voice": {
+    "evidence_code": "E_212",
+    "type": "symptom",
+    "aliases": [
+      "hoarse voice",
+      "voice changed",
+      "raspy voice",
+      "losing my voice",
+      "my voice sounds different"
+    ]
+  },
+  "vomiting_multiple_times": {
+    "evidence_code": "E_211",
+    "type": "symptom",
+    "aliases": [
+      "vomiting repeatedly",
+      "throwing up multiple times",
+      "vomiting several times",
+      "been vomiting a lot"
+    ]
+  },
+  "vomiting_blood": {
+    "evidence_code": "E_210",
+    "type": "symptom",
+    "aliases": [
+      "vomiting blood",
+      "throwing up blood",
+      "blood in my vomit"
+    ]
+  },
+  "black_stools": {
+    "evidence_code": "E_140",
+    "type": "symptom",
+    "aliases": [
+      "black stools",
+      "black poop",
+      "dark tarry stool",
+      "tarry stool"
+    ]
+  },
+  "pain_worse_with_movement": {
+    "evidence_code": "E_216",
+    "type": "symptom",
+    "aliases": [
+      "pain gets worse when i move",
+      "pain worse with movement",
+      "hurts more when i move"
+    ]
+  },
+  "symptoms_worse_after_eating": {
+    "evidence_code": "E_215",
+    "type": "symptom",
+    "aliases": [
+      "worse after eating",
+      "symptoms worse after meals",
+      "gets worse after i eat"
+    ]
+  },
+  "symptoms_worse_lying_down": {
+    "evidence_code": "E_217",
+    "type": "symptom",
+    "aliases": [
+      "worse when lying down",
+      "worse lying flat",
+      "worse at night lying down"
+    ]
+  },
+  "nose_or_throat_itching": {
+    "evidence_code": "E_169",
+    "type": "symptom",
+    "aliases": [
+      "itchy nose",
+      "itchy throat",
+      "nose and throat itching"
+    ]
+  },
+  "severe_eye_itching": {
+    "evidence_code": "E_170",
+    "type": "symptom",
+    "aliases": [
+      "itchy eyes",
+      "eyes really itchy",
+      "severe eye itching"
+    ]
+  },
+  "diarrhea": {
+    "evidence_code": "E_51",
+    "type": "symptom",
+    "aliases": [
+      "diarrhea",
+      "loose stools",
+      "watery stools",
+      "runny stools",
+      "increase in stool frequency"
+    ]
+  },
+  "palpitations": {
+    "evidence_code": "E_155",
+    "type": "symptom",
+    "aliases": [
+      "heart racing",
+      "palpitations",
+      "heart pounding",
+      "heart fluttering",
+      "irregular heartbeat",
+      "heart skipping beats",
+      "my heart is racing"
+    ]
+  },
+  "swelling_body": {
+    "evidence_code": "E_151",
+    "type": "symptom",
+    "aliases": [
+      "swollen legs",
+      "swelling in my legs",
+      "legs are swollen",
+      "ankle swelling",
+      "swollen ankles",
+      "puffy legs",
+      "body swelling",
+      "swelling in my body"
+    ]
+  },
+  "fatigue": {
+    "evidence_code": "E_175",
+    "type": "symptom",
+    "aliases": [
+      "fatigue",
+      "tired",
+      "extremely tired",
+      "exhausted",
+      "no energy",
+      "tired all the time",
+      "feeling drained",
+      "generalized discomfort",
+      "not feeling like myself"
+    ]
+  },
+  "double_vision": {
+    "evidence_code": "E_52",
+    "type": "symptom",
+    "aliases": [
+      "double vision",
+      "seeing double",
+      "seeing two of everything",
+      "seeing two images of one object"
+    ]
+  },
+  "confusion": {
+    "evidence_code": "E_39",
+    "type": "symptom",
+    "aliases": [
+      "confused",
+      "confusion",
+      "trouble thinking clearly",
+      "not thinking straight",
+      "disoriented",
+      "feeling confused lately"
+    ]
+  },
+  "poor_circulation": {
+    "evidence_code": "E_108",
+    "type": "symptom",
+    "aliases": [
+      "cold hands and feet",
+      "poor circulation",
+      "circulation",
+      "hands and feet always cold",
+      "circulation problem"
+    ]
+  },
+  "current_smoker": {
+    "evidence_code": "E_79",
+    "type": "symptom",
+    "aliases": [
+      "i smoke",
+      "i am a smoker",
+      "smoke cigarettes",
+      "i smoke cigarettes"
+    ]
+  },
+  "former_smoker": {
+    "evidence_code": "E_191",
+    "type": "symptom",
+    "aliases": [
+      "used to smoke",
+      "former smoker",
+      "quit smoking",
+      "i quit smoking"
+    ]
+  },
+  "secondhand_smoke": {
+    "evidence_code": "E_222",
+    "type": "symptom",
+    "aliases": [
+      "exposed to secondhand smoke",
+      "around cigarette smoke daily"
+    ]
+  },
+  "alcohol_excess": {
+    "evidence_code": "E_78",
+    "type": "symptom",
+    "aliases": [
+      "drink alcohol excessively",
+      "alcohol addiction",
+      "heavy drinker",
+      "i drink too much alcohol"
+    ]
+  },
+  "diabetes_history": {
+    "evidence_code": "E_69",
+    "type": "symptom",
+    "aliases": [
+      "i have diabetes",
+      "i am diabetic",
+      "diabetic",
+      "history of diabetes"
+    ]
+  },
+  "hypertension_presenting": {
+    "evidence_code": "E_102",
+    "type": "symptom",
+    "aliases": [
+      "i have high blood pressure",
+      "high blood pressure",
+      "my bp is high",
+      "consulting for high blood pressure"
+    ]
+  },
+  "asthma_history": {
+    "evidence_code": "E_124",
+    "type": "symptom",
+    "aliases": [
+      "i have asthma",
+      "asthmatic",
+      "history of asthma",
+      "used a bronchodilator before",
+      "use an inhaler"
+    ]
+  },
+  "heart_attack_or_angina_history": {
+    "evidence_code": "E_105",
+    "type": "symptom",
+    "aliases": [
+      "history of heart attack",
+      "had a heart attack before",
+      "history of angina",
+      "chest pain from angina before"
+    ]
+  },
+  "severe_food_allergy": {
+    "evidence_code": "E_12",
+    "type": "symptom",
+    "aliases": [
+      "severe food allergy",
+      "known food allergy",
+      "allergic to food"
+    ]
+  },
+  "pregnancy": {
+    "evidence_code": "E_167",
+    "type": "symptom",
+    "aliases": [
+      "i am pregnant",
+      "currently pregnant",
+      "i think i am pregnant"
+    ]
+  },
+  "increased_sweating": {
+    "evidence_code": "E_50",
+    "type": "symptom",
+    "aliases": [
+      "sweating a lot",
+      "increased sweating",
+      "sweat more than usual",
+      "excessive sweating",
+      "sweating"
+    ]
+  },
+  "neck_stiffness": {
+    "evidence_code": "E_192",
+    "type": "symptom",
+    "aliases": [
+      "stiff neck",
+      "neck stiffness",
+      "can't turn my neck",
+      "muscle spasms in my neck"
+    ]
+  },
+  "auto_e_0": {
+    "evidence_code": "E_0",
+    "type": "antecedent",
+    "aliases": [
+      "a viral infection"
+    ]
+  },
+  "auto_e_1": {
+    "evidence_code": "E_1",
+    "type": "antecedent",
+    "aliases": [
+      "being treated or have you recently been treated with an oral antibiotic for an ear infection"
+    ]
+  },
+  "auto_e_10": {
+    "evidence_code": "E_10",
+    "type": "antecedent",
+    "aliases": [
+      "taking or have you recently taken anti-inflammatory drugs (nsaids)"
+    ]
+  },
+  "auto_e_100": {
+    "evidence_code": "E_100",
+    "type": "antecedent",
+    "aliases": [
+      "take hormones"
+    ]
+  },
+  "auto_e_101": {
+    "evidence_code": "E_101",
+    "type": "antecedent",
+    "aliases": [
+      "hospitalized for an asthma attack in the past year"
+    ]
+  },
+  "auto_e_103": {
+    "evidence_code": "E_103",
+    "type": "symptom",
+    "aliases": [
+      "lost your sense of smell"
+    ]
+  },
+  "auto_e_104": {
+    "evidence_code": "E_104",
+    "type": "antecedent",
+    "aliases": [
+      "have high blood pressure or do you take medications to treat high blood pressure"
+    ]
+  },
+  "auto_e_106": {
+    "evidence_code": "E_106",
+    "type": "antecedent",
+    "aliases": [
+      "have heart failure"
+    ]
+  },
+  "auto_e_107": {
+    "evidence_code": "E_107",
+    "type": "antecedent",
+    "aliases": [
+      "a stroke"
+    ]
+  },
+  "auto_e_109": {
+    "evidence_code": "E_109",
+    "type": "antecedent",
+    "aliases": [
+      "deep vein thrombosis (dvt)"
+    ]
+  },
+  "auto_e_11": {
+    "evidence_code": "E_11",
+    "type": "antecedent",
+    "aliases": [
+      "breastfed one of your children for more than 9 months"
+    ]
+  },
+  "auto_e_110": {
+    "evidence_code": "E_110",
+    "type": "antecedent",
+    "aliases": [
+      "unable to move or get up for more than 3 consecutive days within the last 4 weeks"
+    ]
+  },
+  "auto_e_111": {
+    "evidence_code": "E_111",
+    "type": "symptom",
+    "aliases": [
+      "feel like you are dying or were you afraid that you were about do die"
+    ]
+  },
+  "auto_e_112": {
+    "evidence_code": "E_112",
+    "type": "symptom",
+    "aliases": [
+      "wheeze while inhaling or is your breathing noisy after coughing spells"
+    ]
+  },
+  "auto_e_113": {
+    "evidence_code": "E_113",
+    "type": "antecedent",
+    "aliases": [
+      "have chronic kidney failure"
+    ]
+  },
+  "auto_e_114": {
+    "evidence_code": "E_114",
+    "type": "symptom",
+    "aliases": [
+      "more irritable or has your mood been very unstable recently"
+    ]
+  },
+  "auto_e_115": {
+    "evidence_code": "E_115",
+    "type": "antecedent",
+    "aliases": [
+      "unprotected sex with more than one partner in the last 6 months"
+    ]
+  },
+  "auto_e_116": {
+    "evidence_code": "E_116",
+    "type": "antecedent",
+    "aliases": [
+      "a cold in the last 2 weeks"
+    ]
+  },
+  "auto_e_118": {
+    "evidence_code": "E_118",
+    "type": "antecedent",
+    "aliases": [
+      "pneumonia"
+    ]
+  },
+  "auto_e_119": {
+    "evidence_code": "E_119",
+    "type": "antecedent",
+    "aliases": [
+      "diagnosed with chronic sinusitis"
+    ]
+  },
+  "auto_e_120": {
+    "evidence_code": "E_120",
+    "type": "antecedent",
+    "aliases": [
+      "have polyps in your nose"
+    ]
+  },
+  "auto_e_121": {
+    "evidence_code": "E_121",
+    "type": "antecedent",
+    "aliases": [
+      "have a deviated nasal septum"
+    ]
+  },
+  "auto_e_123": {
+    "evidence_code": "E_123",
+    "type": "antecedent",
+    "aliases": [
+      "have a chronic obstructive pulmonary disease (copd)"
+    ]
+  },
+  "auto_e_125": {
+    "evidence_code": "E_125",
+    "type": "antecedent",
+    "aliases": [
+      "diagnosed with gastroesophageal reflux"
+    ]
+  },
+  "auto_e_126": {
+    "evidence_code": "E_126",
+    "type": "antecedent",
+    "aliases": [
+      "have liver cirrhosis"
+    ]
+  },
+  "auto_e_127": {
+    "evidence_code": "E_127",
+    "type": "symptom",
+    "aliases": [
+      "feel that your eyes produce excessive tears"
+    ]
+  },
+  "auto_e_128": {
+    "evidence_code": "E_128",
+    "type": "symptom",
+    "aliases": [
+      "felt like you were suffocating for a very short time associated with inability to breathe or speak"
+    ]
+  },
+  "auto_e_129": {
+    "evidence_code": "E_129",
+    "type": "symptom",
+    "aliases": [
+      "have any lesions, redness or problems on your skin that you believe are related to the condition you are consulting for"
+    ]
+  },
+  "auto_e_13": {
+    "evidence_code": "E_13",
+    "type": "symptom",
+    "aliases": [
+      "find that your symptoms have worsened over the last 2 weeks and that progressively less effort is required to cause the symptoms"
+    ]
+  },
+  "auto_e_137": {
+    "evidence_code": "E_137",
+    "type": "antecedent",
+    "aliases": [
+      "surgery to remove lymph nodes"
+    ]
+  },
+  "auto_e_138": {
+    "evidence_code": "E_138",
+    "type": "antecedent",
+    "aliases": [
+      "suffer from fibromyalgia"
+    ]
+  },
+  "auto_e_139": {
+    "evidence_code": "E_139",
+    "type": "antecedent",
+    "aliases": [
+      "have a known heart defect"
+    ]
+  },
+  "auto_e_141": {
+    "evidence_code": "E_141",
+    "type": "antecedent",
+    "aliases": [
+      "have your first menstrual period before the age of 12"
+    ]
+  },
+  "auto_e_142": {
+    "evidence_code": "E_142",
+    "type": "antecedent",
+    "aliases": [
+      "mother suffer from asthma"
+    ]
+  },
+  "auto_e_143": {
+    "evidence_code": "E_143",
+    "type": "antecedent",
+    "aliases": [
+      "exercise regularly, 4 times per week or more"
+    ]
+  },
+  "auto_e_145": {
+    "evidence_code": "E_145",
+    "type": "symptom",
+    "aliases": [
+      "have very abundant or very long menstruation periods"
+    ]
+  },
+  "auto_e_146": {
+    "evidence_code": "E_146",
+    "type": "antecedent",
+    "aliases": [
+      "taking any new oral anticoagulants ((noacs)"
+    ]
+  },
+  "auto_e_147": {
+    "evidence_code": "E_147",
+    "type": "antecedent",
+    "aliases": [
+      "treated in hospital recently for nausea, agitation, intoxication or aggressive behavior and received medication via an intravenous or intramuscular route"
+    ]
+  },
+  "auto_e_148": {
+    "evidence_code": "E_148",
+    "type": "symptom",
+    "aliases": [
+      "feeling nauseous or do you feel like vomiting"
+    ]
+  },
+  "auto_e_149": {
+    "evidence_code": "E_149",
+    "type": "antecedent",
+    "aliases": [
+      "take a calcium channel blockers (medication)"
+    ]
+  },
+  "auto_e_15": {
+    "evidence_code": "E_15",
+    "type": "antecedent",
+    "aliases": [
+      "started or taken any antipsychotic medication within the last 7 days"
+    ]
+  },
+  "auto_e_150": {
+    "evidence_code": "E_150",
+    "type": "symptom",
+    "aliases": [
+      "able to pass stools or gas since your symptoms increased"
+    ]
+  },
+  "auto_e_153": {
+    "evidence_code": "E_153",
+    "type": "antecedent",
+    "aliases": [
+      "being treated for osteoporosis"
+    ]
+  },
+  "auto_e_154": {
+    "evidence_code": "E_154",
+    "type": "symptom",
+    "aliases": [
+      "skin much paler than usual"
+    ]
+  },
+  "auto_e_157": {
+    "evidence_code": "E_157",
+    "type": "symptom",
+    "aliases": [
+      "numbness, loss of sensation or tingling, in both arms and legs and around your mouth"
+    ]
+  },
+  "auto_e_158": {
+    "evidence_code": "E_158",
+    "type": "antecedent",
+    "aliases": [
+      "diagnosed with endocrine disease or a hormone dysfunction"
+    ]
+  },
+  "auto_e_16": {
+    "evidence_code": "E_16",
+    "type": "antecedent",
+    "aliases": [
+      "feel anxious"
+    ]
+  },
+  "auto_e_160": {
+    "evidence_code": "E_160",
+    "type": "antecedent",
+    "aliases": [
+      "born prematurely or did you suffer any complication at birth"
+    ]
+  },
+  "auto_e_163": {
+    "evidence_code": "E_163",
+    "type": "symptom",
+    "aliases": [
+      "any vaginal discharge"
+    ]
+  },
+  "auto_e_164": {
+    "evidence_code": "E_164",
+    "type": "symptom",
+    "aliases": [
+      "feel your heart is beating very irregularly or in a disorganized pattern"
+    ]
+  },
+  "auto_e_165": {
+    "evidence_code": "E_165",
+    "type": "antecedent",
+    "aliases": [
+      "have any of your family members ever had a pneumothorax"
+    ]
+  },
+  "auto_e_166": {
+    "evidence_code": "E_166",
+    "type": "symptom",
+    "aliases": [
+      "vomit after coughing"
+    ]
+  },
+  "auto_e_168": {
+    "evidence_code": "E_168",
+    "type": "symptom",
+    "aliases": [
+      "have trouble keeping your tongue in your mouth"
+    ]
+  },
+  "auto_e_17": {
+    "evidence_code": "E_17",
+    "type": "antecedent",
+    "aliases": [
+      "of asian descent"
+    ]
+  },
+  "auto_e_171": {
+    "evidence_code": "E_171",
+    "type": "symptom",
+    "aliases": [
+      "feel like you are detached from your own body or your surroundings"
+    ]
+  },
+  "auto_e_172": {
+    "evidence_code": "E_172",
+    "type": "symptom",
+    "aliases": [
+      "have a hard time opening/raising one or both eyelids"
+    ]
+  },
+  "auto_e_173": {
+    "evidence_code": "E_173",
+    "type": "symptom",
+    "aliases": [
+      "have a burning sensation that starts in your stomach then goes up into your throat, and can be associated with a bitter taste in your mouth"
+    ]
+  },
+  "auto_e_174": {
+    "evidence_code": "E_174",
+    "type": "symptom",
+    "aliases": [
+      "unintentionally losing weight or have you lost your appetite"
+    ]
+  },
+  "auto_e_176": {
+    "evidence_code": "E_176",
+    "type": "symptom",
+    "aliases": [
+      "previously, or do you currently, have any weakness/paralysis in one or more of your limbs or in your face"
+    ]
+  },
+  "auto_e_178": {
+    "evidence_code": "E_178",
+    "type": "symptom",
+    "aliases": [
+      "noticed any unusual bleeding or bruising related to your consultation today"
+    ]
+  },
+  "auto_e_179": {
+    "evidence_code": "E_179",
+    "type": "symptom",
+    "aliases": [
+      "noticed light red blood or blood clots in your stool"
+    ]
+  },
+  "auto_e_18": {
+    "evidence_code": "E_18",
+    "type": "antecedent",
+    "aliases": [
+      "have cystic fibrosis"
+    ]
+  },
+  "auto_e_180": {
+    "evidence_code": "E_180",
+    "type": "symptom",
+    "aliases": [
+      "unable to control the direction of your eyes"
+    ]
+  },
+  "auto_e_183": {
+    "evidence_code": "E_183",
+    "type": "antecedent",
+    "aliases": [
+      "live in a rural area"
+    ]
+  },
+  "auto_e_184": {
+    "evidence_code": "E_184",
+    "type": "antecedent",
+    "aliases": [
+      "take medication that dilates your blood vessels"
+    ]
+  },
+  "auto_e_185": {
+    "evidence_code": "E_185",
+    "type": "antecedent",
+    "aliases": [
+      "a head trauma"
+    ]
+  },
+  "auto_e_186": {
+    "evidence_code": "E_186",
+    "type": "antecedent",
+    "aliases": [
+      "diagnosed with obstructive sleep apnea (osa)"
+    ]
+  },
+  "auto_e_187": {
+    "evidence_code": "E_187",
+    "type": "antecedent",
+    "aliases": [
+      "eat dark-fleshed fish (such as tuna) or swiss cheese before the reaction occurred"
+    ]
+  },
+  "auto_e_188": {
+    "evidence_code": "E_188",
+    "type": "symptom",
+    "aliases": [
+      "have pale stools and dark urine"
+    ]
+  },
+  "auto_e_189": {
+    "evidence_code": "E_189",
+    "type": "antecedent",
+    "aliases": [
+      "sexual intercourse with an hiv-positive partner in the past 12 months"
+    ]
+  },
+  "auto_e_19": {
+    "evidence_code": "E_19",
+    "type": "antecedent",
+    "aliases": [
+      "diagnosed with hyperthyroidism"
+    ]
+  },
+  "auto_e_190": {
+    "evidence_code": "E_190",
+    "type": "symptom",
+    "aliases": [
+      "noticed that you produce more saliva than usual"
+    ]
+  },
+  "auto_e_193": {
+    "evidence_code": "E_193",
+    "type": "symptom",
+    "aliases": [
+      "have annoying muscle spasms in your face, neck or any other part of your body"
+    ]
+  },
+  "auto_e_194": {
+    "evidence_code": "E_194",
+    "type": "symptom",
+    "aliases": [
+      "noticed a high pitched sound when breathing in"
+    ]
+  },
+  "auto_e_195": {
+    "evidence_code": "E_195",
+    "type": "antecedent",
+    "aliases": [
+      "live in the suburbs"
+    ]
+  },
+  "auto_e_196": {
+    "evidence_code": "E_196",
+    "type": "antecedent",
+    "aliases": [
+      "surgery within the last month"
+    ]
+  },
+  "auto_e_197": {
+    "evidence_code": "E_197",
+    "type": "antecedent",
+    "aliases": [
+      "have a known kidney problem resulting in an inability to retain proteins"
+    ]
+  },
+  "auto_e_198": {
+    "evidence_code": "E_198",
+    "type": "antecedent",
+    "aliases": [
+      "work in agriculture"
+    ]
+  },
+  "auto_e_199": {
+    "evidence_code": "E_199",
+    "type": "antecedent",
+    "aliases": [
+      "work in construction"
+    ]
+  },
+  "auto_e_2": {
+    "evidence_code": "E_2",
+    "type": "antecedent",
+    "aliases": [
+      "infected with the human immunodeficiency virus (hiv)"
+    ]
+  },
+  "auto_e_20": {
+    "evidence_code": "E_20",
+    "type": "antecedent",
+    "aliases": [
+      "have rheumatoid arthritis"
+    ]
+  },
+  "auto_e_200": {
+    "evidence_code": "E_200",
+    "type": "antecedent",
+    "aliases": [
+      "work in the mining sector"
+    ]
+  },
+  "auto_e_202": {
+    "evidence_code": "E_202",
+    "type": "symptom",
+    "aliases": [
+      "does the person have a whooping cough"
+    ]
+  },
+  "auto_e_203": {
+    "evidence_code": "E_203",
+    "type": "symptom",
+    "aliases": [
+      "have intense coughing fits"
+    ]
+  },
+  "auto_e_205": {
+    "evidence_code": "E_205",
+    "type": "symptom",
+    "aliases": [
+      "suddenly have difficulty or an inability to open your mouth or have jaw pain when opening it"
+    ]
+  },
+  "auto_e_206": {
+    "evidence_code": "E_206",
+    "type": "symptom",
+    "aliases": [
+      "have painful mouth ulcers or sores"
+    ]
+  },
+  "auto_e_207": {
+    "evidence_code": "E_207",
+    "type": "antecedent",
+    "aliases": [
+      "live in in a big city"
+    ]
+  },
+  "auto_e_208": {
+    "evidence_code": "E_208",
+    "type": "antecedent",
+    "aliases": [
+      "bmi less than 18.5, or are you underweight"
+    ]
+  },
+  "auto_e_209": {
+    "evidence_code": "E_209",
+    "type": "antecedent",
+    "aliases": [
+      "are your vaccinations up to date"
+    ]
+  },
+  "auto_e_21": {
+    "evidence_code": "E_21",
+    "type": "antecedent",
+    "aliases": [
+      "a spontaneous pneumothorax"
+    ]
+  },
+  "auto_e_213": {
+    "evidence_code": "E_213",
+    "type": "antecedent",
+    "aliases": [
+      "taken decongestants or other substances that may have stimulant effects"
+    ]
+  },
+  "auto_e_218": {
+    "evidence_code": "E_218",
+    "type": "symptom",
+    "aliases": [
+      "have symptoms that are increased with physical exertion but alleviated with rest"
+    ]
+  },
+  "auto_e_219": {
+    "evidence_code": "E_219",
+    "type": "symptom",
+    "aliases": [
+      "are your symptoms more prominent at night"
+    ]
+  },
+  "auto_e_22": {
+    "evidence_code": "E_22",
+    "type": "antecedent",
+    "aliases": [
+      "have a known issue with one of your heart valves"
+    ]
+  },
+  "auto_e_220": {
+    "evidence_code": "E_220",
+    "type": "symptom",
+    "aliases": [
+      "have pain that is increased when you breathe in deeply"
+    ]
+  },
+  "auto_e_221": {
+    "evidence_code": "E_221",
+    "type": "symptom",
+    "aliases": [
+      "are the symptoms or pain increased with coughing, with an effort like lifting a weight or from forcing a bowel movement"
+    ]
+  },
+  "auto_e_223": {
+    "evidence_code": "E_223",
+    "type": "antecedent",
+    "aliases": [
+      "are there members of your family who have been diagnosed with pancreatic cancer"
+    ]
+  },
+  "auto_e_224": {
+    "evidence_code": "E_224",
+    "type": "antecedent",
+    "aliases": [
+      "have family members who have had lung cancer"
+    ]
+  },
+  "auto_e_225": {
+    "evidence_code": "E_225",
+    "type": "antecedent",
+    "aliases": [
+      "have close family members who had a cardiovascular disease problem before the age of 50"
+    ]
+  },
+  "auto_e_226": {
+    "evidence_code": "E_226",
+    "type": "antecedent",
+    "aliases": [
+      "more likely to develop common allergies than the general population"
+    ]
+  },
+  "auto_e_227": {
+    "evidence_code": "E_227",
+    "type": "antecedent",
+    "aliases": [
+      "immunosuppressed"
+    ]
+  },
+  "auto_e_23": {
+    "evidence_code": "E_23",
+    "type": "symptom",
+    "aliases": [
+      "temporarily stop breathing while you’re asleep"
+    ]
+  },
+  "auto_e_24": {
+    "evidence_code": "E_24",
+    "type": "antecedent",
+    "aliases": [
+      "a diagnosis of anemia"
+    ]
+  },
+  "auto_e_25": {
+    "evidence_code": "E_25",
+    "type": "antecedent",
+    "aliases": [
+      "have any of your family members been diagnosed with cluster headaches"
+    ]
+  },
+  "auto_e_26": {
+    "evidence_code": "E_26",
+    "type": "antecedent",
+    "aliases": [
+      "have any family members who have been diagnosed with anemia"
+    ]
+  },
+  "auto_e_27": {
+    "evidence_code": "E_27",
+    "type": "antecedent",
+    "aliases": [
+      "a sexually transmitted infection"
+    ]
+  },
+  "auto_e_28": {
+    "evidence_code": "E_28",
+    "type": "antecedent",
+    "aliases": [
+      "are there any members of your family who have been diagnosed myasthenia gravis"
+    ]
+  },
+  "auto_e_29": {
+    "evidence_code": "E_29",
+    "type": "antecedent",
+    "aliases": [
+      "do any members of your immediate family have a psychiatric illness"
+    ]
+  },
+  "auto_e_3": {
+    "evidence_code": "E_3",
+    "type": "antecedent",
+    "aliases": [
+      "a pericarditis"
+    ]
+  },
+  "auto_e_30": {
+    "evidence_code": "E_30",
+    "type": "symptom",
+    "aliases": [
+      "feel your abdomen is bloated or distended (swollen due to pressure from inside)"
+    ]
+  },
+  "auto_e_31": {
+    "evidence_code": "E_31",
+    "type": "antecedent",
+    "aliases": [
+      "have severe chronic obstructive pulmonary disease (copd)"
+    ]
+  },
+  "auto_e_32": {
+    "evidence_code": "E_32",
+    "type": "symptom",
+    "aliases": [
+      "have a decrease in appetite"
+    ]
+  },
+  "auto_e_33": {
+    "evidence_code": "E_33",
+    "type": "symptom",
+    "aliases": [
+      "have pain that improves when you lean forward"
+    ]
+  },
+  "auto_e_34": {
+    "evidence_code": "E_34",
+    "type": "antecedent",
+    "aliases": [
+      "have an active cancer"
+    ]
+  },
+  "auto_e_35": {
+    "evidence_code": "E_35",
+    "type": "antecedent",
+    "aliases": [
+      "regularly drink coffee or tea"
+    ]
+  },
+  "auto_e_37": {
+    "evidence_code": "E_37",
+    "type": "antecedent",
+    "aliases": [
+      "have metastatic cancer"
+    ]
+  },
+  "auto_e_38": {
+    "evidence_code": "E_38",
+    "type": "symptom",
+    "aliases": [
+      "have pain or weakness in your jaw"
+    ]
+  },
+  "auto_e_4": {
+    "evidence_code": "E_4",
+    "type": "antecedent",
+    "aliases": [
+      "or any member of your family ever had croup"
+    ]
+  },
+  "auto_e_40": {
+    "evidence_code": "E_40",
+    "type": "antecedent",
+    "aliases": [
+      "in contact with someone who has had pertussis (whoooping cough)"
+    ]
+  },
+  "auto_e_41": {
+    "evidence_code": "E_41",
+    "type": "antecedent",
+    "aliases": [
+      "in contact with a person with similar symptoms in the past 2 weeks"
+    ]
+  },
+  "auto_e_42": {
+    "evidence_code": "E_42",
+    "type": "symptom",
+    "aliases": [
+      "in contact with or ate something that you have an allergy to"
+    ]
+  },
+  "auto_e_43": {
+    "evidence_code": "E_43",
+    "type": "symptom",
+    "aliases": [
+      "lost consciousness associated with violent and sustained muscle contractions or had an absence episode"
+    ]
+  },
+  "auto_e_44": {
+    "evidence_code": "E_44",
+    "type": "antecedent",
+    "aliases": [
+      "take corticosteroids"
+    ]
+  },
+  "auto_e_46": {
+    "evidence_code": "E_46",
+    "type": "antecedent",
+    "aliases": [
+      "2 or more asthma attacks in the past year"
+    ]
+  },
+  "auto_e_47": {
+    "evidence_code": "E_47",
+    "type": "antecedent",
+    "aliases": [
+      "suffer from crohn’s disease or ulcerative colitis (uc)"
+    ]
+  },
+  "auto_e_48": {
+    "evidence_code": "E_48",
+    "type": "antecedent",
+    "aliases": [
+      "live with 4 or more people"
+    ]
+  },
+  "auto_e_49": {
+    "evidence_code": "E_49",
+    "type": "antecedent",
+    "aliases": [
+      "attend or work in a daycare"
+    ]
+  },
+  "auto_e_5": {
+    "evidence_code": "E_5",
+    "type": "antecedent",
+    "aliases": [
+      "fluid in your lungs"
+    ]
+  },
+  "auto_e_53": {
+    "evidence_code": "E_53",
+    "type": "symptom",
+    "aliases": [
+      "have pain somewhere, related to your reason for consulting"
+    ]
+  },
+  "auto_e_6": {
+    "evidence_code": "E_6",
+    "type": "antecedent",
+    "aliases": [
+      "have chronic pancreatitis"
+    ]
+  },
+  "auto_e_60": {
+    "evidence_code": "E_60",
+    "type": "antecedent",
+    "aliases": [
+      "consume energy drinks regularly"
+    ]
+  },
+  "auto_e_61": {
+    "evidence_code": "E_61",
+    "type": "antecedent",
+    "aliases": [
+      "using intravenous drugs"
+    ]
+  },
+  "auto_e_62": {
+    "evidence_code": "E_62",
+    "type": "antecedent",
+    "aliases": [
+      "regularly take stimulant drugs"
+    ]
+  },
+  "auto_e_63": {
+    "evidence_code": "E_63",
+    "type": "symptom",
+    "aliases": [
+      "have difficulty articulating words/speaking"
+    ]
+  },
+  "auto_e_7": {
+    "evidence_code": "E_7",
+    "type": "antecedent",
+    "aliases": [
+      "have a poor diet"
+    ]
+  },
+  "auto_e_70": {
+    "evidence_code": "E_70",
+    "type": "antecedent",
+    "aliases": [
+      "significantly overweight compared to people of the same height as you"
+    ]
+  },
+  "auto_e_71": {
+    "evidence_code": "E_71",
+    "type": "antecedent",
+    "aliases": [
+      "have high cholesterol or do you take medications to treat high cholesterol"
+    ]
+  },
+  "auto_e_72": {
+    "evidence_code": "E_72",
+    "type": "antecedent",
+    "aliases": [
+      "one or several flare ups of chronic obstructive pulmonary disease (copd) in the past year"
+    ]
+  },
+  "auto_e_73": {
+    "evidence_code": "E_73",
+    "type": "antecedent",
+    "aliases": [
+      "in the last month, have you been in contact with anyone infected with the ebola virus"
+    ]
+  },
+  "auto_e_74": {
+    "evidence_code": "E_74",
+    "type": "symptom",
+    "aliases": [
+      "noticed a diffuse (widespread) redness in one or both eyes"
+    ]
+  },
+  "auto_e_75": {
+    "evidence_code": "E_75",
+    "type": "symptom",
+    "aliases": [
+      "feel like you are (or were) choking or suffocating"
+    ]
+  },
+  "auto_e_76": {
+    "evidence_code": "E_76",
+    "type": "symptom",
+    "aliases": [
+      "feel slightly dizzy or lightheaded"
+    ]
+  },
+  "auto_e_8": {
+    "evidence_code": "E_8",
+    "type": "antecedent",
+    "aliases": [
+      "undergo dialysis"
+    ]
+  },
+  "auto_e_80": {
+    "evidence_code": "E_80",
+    "type": "antecedent",
+    "aliases": [
+      "diagnosed with depression"
+    ]
+  },
+  "auto_e_81": {
+    "evidence_code": "E_81",
+    "type": "antecedent",
+    "aliases": [
+      "suffer from chronic anxiety"
+    ]
+  },
+  "auto_e_86": {
+    "evidence_code": "E_86",
+    "type": "antecedent",
+    "aliases": [
+      "have any close family members who suffer from allergies (any type), hay fever or eczema"
+    ]
+  },
+  "auto_e_87": {
+    "evidence_code": "E_87",
+    "type": "antecedent",
+    "aliases": [
+      "have any family members who have asthma"
+    ]
+  },
+  "auto_e_88": {
+    "evidence_code": "E_88",
+    "type": "symptom",
+    "aliases": [
+      "feel so tired that you are unable to do your usual activities or are you stuck in your bed all day long"
+    ]
+  },
+  "auto_e_89": {
+    "evidence_code": "E_89",
+    "type": "symptom",
+    "aliases": [
+      "constantly feel fatigued or do you have non-restful sleep"
+    ]
+  },
+  "auto_e_9": {
+    "evidence_code": "E_9",
+    "type": "symptom",
+    "aliases": [
+      "have swollen or painful lymph nodes"
+    ]
+  },
+  "auto_e_90": {
+    "evidence_code": "E_90",
+    "type": "symptom",
+    "aliases": [
+      "do your symptoms of muscle weakness increase with fatigue and/or stress"
+    ]
+  },
+  "auto_e_92": {
+    "evidence_code": "E_92",
+    "type": "symptom",
+    "aliases": [
+      "cheeks suddenly turn red"
+    ]
+  },
+  "auto_e_93": {
+    "evidence_code": "E_93",
+    "type": "symptom",
+    "aliases": [
+      "have numbness, loss of sensation or tingling in the feet"
+    ]
+  },
+  "auto_e_95": {
+    "evidence_code": "E_95",
+    "type": "antecedent",
+    "aliases": [
+      "have parkinson’s disease"
+    ]
+  },
+  "auto_e_96": {
+    "evidence_code": "E_96",
+    "type": "symptom",
+    "aliases": [
+      "gained weight recently"
+    ]
+  },
+  "auto_e_98": {
+    "evidence_code": "E_98",
+    "type": "antecedent",
+    "aliases": [
+      "have a hiatal hernia"
+    ]
+  },
+  "auto_e_99": {
+    "evidence_code": "E_99",
+    "type": "antecedent",
+    "aliases": [
+      "a migraine or is a member of your family known to have migraines"
+    ]
+  }
+}

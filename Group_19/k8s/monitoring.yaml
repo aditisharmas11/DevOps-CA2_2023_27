@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: meditwin-backend
+  namespace: monitoring
+  labels:
+    app: meditwin
+spec:
+  namespaceSelector:
+    matchNames:
+      - meditwin
+
+  selector:
+    matchLabels:
+      app: backend
+
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 15s
+      scrapeTimeout: 10s

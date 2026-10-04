@@ -1,0 +1,314 @@
+{
+  "rxnorm::metoprolol": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Metoprolol",
+    "rxcui": "6918",
+    "normalized_name": "Metoprolol"
+  },
+  "openfda::metoprolol": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Metoprolol",
+    "brand_name": "METOPROLOL TARTRATE",
+    "sections": {
+      "indications_and_usage": [
+        "1 INDICATIONS AND USAGE Metoprolol tartrate tablet is a beta-adrenergic blocker indicated for the treatment of: \u2022 Hypertension, to lower blood pressure. Lowering blood pressure reduces the risk of fatal and non-fatal cardiovascular events, primarily strokes and myocardial infarctions. ( 1.1 ) \u2022 Angina Pectoris. ( 1.2 ) \u2022 Myocardial Infarction, to reduce the risk of cardiovascular mortality when used in conjunction with intravenous metoprolol therapy in patients with definite or suspected acute myocardial infarction in hemodynamically stable patients. ( 1.3 ) 1.1 Hypertension Metoprolol tartrat"
+      ],
+      "contraindications": [
+        "4 CONTRAINDICATIONS Metoprolol tartrate tablets are contraindicated in severe bradycardia, second-or third-degree heart block, cardiogenic shock, systolic blood pressure <100, decompensated heart failure, sick sinus syndrome (unless a permanent pacemaker is in place), and in patients who are hypersensitive to any component of this product. \u2022 Known hypersensitivity to product components. ( 4 ) \u2022 Severe bradycardia: Greater than first degree heart block, or sick sinus syndrome without a pacemaker. ( 4 ) \u2022 Cardiogenic shock or decompensated heart failure. ( 4 )"
+      ],
+      "warnings_and_cautions": [
+        "5 WARNINGS AND PRECAUTIONS \u2022 Abrupt cessation may exacerbate myocardial ischemia. ( 5.1 ) \u2022 Heart Failure: Worsening cardiac failure may occur. ( 5.2 ) \u2022 Bronchospastic Disease: Avoid beta-blockers. ( 5.3 ) \u2022 Pheochromocytoma: Initiate therapy with an alpha blocker. ( 5.4 ) \u2022 Major Surgery: Avoid initiation of high-dose extended-release metoprolol in patients undergoing non-cardiac surgery. Do not routinely withdraw chronic beta-blocker therapy prior to surgery. ( 5.5 , 6.1 ) \u2022 Diabetes: May mask symptoms of hypoglycemia. ( 5.6 ) \u2022 Thyrotoxicosis: Abrupt withdrawal in patients with thyrotoxico"
+      ]
+    }
+  },
+  "rxnorm::sublingual nitroglycerin": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Sublingual nitroglycerin",
+    "rxcui": "373106",
+    "normalized_name": "nitroglycerin Sublingual Tablet"
+  },
+  "rxnorm::aspirin": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Aspirin",
+    "rxcui": "1191",
+    "normalized_name": "Aspirin"
+  },
+  "openfda::aspirin": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Aspirin",
+    "brand_name": "Low Dose Aspirin",
+    "sections": {
+      "indications_and_usage": [
+        "Uses for the temporary relief of minor aches and pains or as recommended by your doctor. Because of its delayed action, this product will not provide fast relief of headaches or other symptoms needing immediate relief. ask your doctor about other uses for safety coated 81 mg aspirin"
+      ],
+      "warnings": [
+        "Warnings Reye's syndrome : Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product. When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye's syndrome, a rare but serious illness. Allergy alert : Aspirin may cause a severe allergic reaction, which may include: hives facial swelling shock asthma (wheezing) Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: are age 60"
+      ]
+    }
+  },
+  "rxnorm::atorvastatin": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Atorvastatin",
+    "rxcui": "83367",
+    "normalized_name": "Atorvastatin"
+  },
+  "openfda::atorvastatin": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Atorvastatin",
+    "brand_name": "Atorvastatin calcium",
+    "sections": {
+      "indications_and_usage": [
+        "1 INDICATIONS AND USAGE Atorvastatin calcium tablets are indicated: To reduce the risk of: Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults with multiple risk factors for coronary heart disease (CHD) but without clinically evident CHD MI and stroke in adults with type 2 diabetes mellitus with multiple risk factors for CHD but without clinically evident CHD Non-fatal MI, fatal and non-fatal stroke, revascularization procedures, hospitalization for congestive heart failure, and angina in adults with clinically evident CHD As an adjunct to diet to reduce low-"
+      ],
+      "contraindications": [
+        "4 CONTRAINDICATIONS Acute liver failure or decompensated cirrhosis [see Warnings and Precautions (5.3) ] Hypersensitivity to atorvastatin or any excipients in atorvastatin calcium. Hypersensitivity reactions, including anaphylaxis, angioneurotic edema, erythema multiforme, Stevens-Johnson syndrome, and toxic epidermal necrolysis, have been reported [see Adverse Reactions (6.2) ]. Acute liver failure or decompensated cirrhosis ( 4 ). Hypersensitivity to atorvastatin or any excipient in atorvastatin calcium ( 4 )."
+      ],
+      "warnings_and_cautions": [
+        "5 WARNINGS AND PRECAUTIONS Myopathy and Rhabdomyolysis: Risk factors include age 65 years or greater, uncontrolled hypothyroidism, renal impairment, concomitant use with certain other drugs, and higher atorvastatin calcium dosage. Discontinue atorvastatin calcium if markedly elevated CK levels occur or myopathy is diagnosed or suspected. Temporarily discontinue atorvastatin calcium in patients experiencing an acute or serious condition at high risk of developing renal failure secondary to rhabdomyolysis. Inform patients of the risk of myopathy and rhabdomyolysis when starting or increasing ato"
+      ]
+    }
+  },
+  "rxnorm::diltiazem": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Diltiazem",
+    "rxcui": "3443",
+    "normalized_name": "Diltiazem"
+  },
+  "openfda::diltiazem": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Diltiazem",
+    "brand_name": "diltiazem hydrochloride",
+    "sections": {
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diltiazem hydrochloride extended-release capsules are indicated for the treatment of hypertension. It may be used alone or in combination with other antihypertensive medications. Diltiazem hydrochloride extended-release capsules are indicated for the management of chronic stable angina and angina due to coronary artery spasm."
+      ],
+      "warnings": [
+        "WARNINGS Cardiac Conduction : Diltiazem hydrochloride prolongs AV node refractory periods without significantly prolonging sinus node recovery time, except in patients with sick sinus syndrome. This effect may rarely result in abnormally slow heart rates (particularly in patients with sick sinus syndrome) or second- or third-degree AV block (13 of 3290 patients or 0.40%). Concomitant use of diltiazem with beta-blockers or digitalis may result in additive effects on cardiac conduction. A patient with Prinzmetal's angina developed periods of asystole (2 to 5 seconds) after a single dose of 60 mg"
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Diltiazem hydrochloride is contraindicated in (1) patients with sick sinus syndrome except in the presence of a functioning ventricular pacemaker, (2) patients with second- or third-degree AV block except in the presence of a functioning ventricular pacemaker, (3) patients with hypotension (less than 90 mm Hg systolic), (4) patients who have demonstrated hypersensitivity to the drug, and (5) patients with acute myocardial infarction and pulmonary congestion documented by x-ray on admission."
+      ]
+    }
+  },
+  "rxnorm::apixaban/warfarin (per stroke risk score)": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Apixaban/Warfarin (per stroke risk score)",
+    "rxcui": "1364430",
+    "normalized_name": "Apixaban"
+  },
+  "rxnorm::ibuprofen": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Ibuprofen",
+    "rxcui": "5640",
+    "normalized_name": "Ibuprofen"
+  },
+  "openfda::ibuprofen": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Ibuprofen",
+    "brand_name": "Ibuprofen Dye Free",
+    "sections": {
+      "indications_and_usage": [
+        "Uses temporarily relieves minor aches and pains due to: headache toothache backache menstrual cramps the common cold muscular aches minor pain of arthritis temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: rash facial swelling asthma (wheezing) hives skin reddening shock blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: take more or for a longer time than directed take a blood thinning (anticoagulant) or steroid drug have had stomach ulcers or bleeding problems have 3 or more alcoholic drinks every day "
+      ]
+    }
+  },
+  "rxnorm::colchicine": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Colchicine",
+    "rxcui": "2683",
+    "normalized_name": "Colchicine"
+  },
+  "openfda::colchicine": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Colchicine",
+    "brand_name": "colchicine",
+    "sections": {
+      "indications_and_usage": [
+        "1 INDICATIONS AND USAGE Colchicine tablets are an alkaloid indicated for: \u2022 Prophylaxis and treatment of gout flares in adults ( 1.1 ). \u2022 Familial Mediterranean fever (FMF) in adults and children 4 years or older ( Error! Hyperlink reference not valid. ). 1.1 Gout Flares Colchicine tablets are indicated for prophylaxis and the treatment of acute gout flares. \u2022 Prophylaxis of Gout Flares: Colchicine tablets are indicated for prophylaxis of gout flares. \u2022 Treatment of Gout Flares: Colchicine tablets are indicated for treatment of acute gout flares when taken at the first sign of a flare. 1.2 Fam"
+      ],
+      "contraindications": [
+        "4 CONTRAINDICATIONS Patients with renal or hepatic impairment should not be given colchicine tablets in conjunction with P-gp or strong CYP3A4 inhibitors (this includes all protease inhibitors except fosamprenavir). In these patients, life-threatening and fatal colchicine toxicity has been reported with colchicine taken in therapeutic doses. Patients with renal or hepatic impairment should not be given colchicine tablets in conjunction with P-gp or strong CYP3A4 inhibitors ( Error! Hyperlink reference not valid. ). In these patients, life-threatening and fatal colchicine toxicity has been repo"
+      ],
+      "warnings_and_cautions": [
+        "5 WARNINGS AND PRECAUTIONS \u2022 Fatal overdoses have been reported with colchicine in adults and children. Keep colchicine tablets out of the reach of children ( Error! Hyperlink reference not valid. , Error! Hyperlink reference not valid. ). \u2022 Blood dyscrasias: myelosuppression, leukopenia, granulocytopenia, thrombocytopenia and aplastic anemia have been reported ( Error! Hyperlink reference not valid. ). \u2022 Monitor for toxicity and if present consider temporary interruption or discontinuation of colchicine ( Error! Hyperlink reference not valid. , Error! Hyperlink reference not valid. , Error! H"
+      ]
+    }
+  },
+  "rxnorm::aspirin (emergency)": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Aspirin (emergency)",
+    "rxcui": "1191",
+    "normalized_name": "Aspirin"
+  },
+  "rxnorm::atorvastatin (post-stabilization)": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Atorvastatin (post-stabilization)",
+    "rxcui": "83367",
+    "normalized_name": "Atorvastatin (post-stabilization)"
+  },
+  "rxnorm::heparin (in-hospital)": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Heparin (in-hospital)",
+    "rxcui": "5224",
+    "normalized_name": "Heparin (in-hospital)"
+  },
+  "rxnorm::metformin (first-line)": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Metformin (first-line)",
+    "rxcui": "6809",
+    "normalized_name": "Metformin (first-line)"
+  },
+  "rxnorm::empagliflozin": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Empagliflozin",
+    "rxcui": "1545653",
+    "normalized_name": "Empagliflozin"
+  },
+  "openfda::empagliflozin": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Empagliflozin",
+    "brand_name": "Synjardy",
+    "sections": {
+      "indications_and_usage": [
+        "1 INDICATIONS AND USAGE SYNJARDY SYNJARDY is a combination of empagliflozin, a sodium-glucose co-transporter 2 (SGLT2) inhibitor and metformin hydrochloride (HCl) immediate-release, a biguanide, indicated as an adjunct to diet and exercise to improve glycemic control in adults and pediatric patients aged 10 years and older with type 2 diabetes mellitus. SYNJARDY XR SYNJARDY XR is a combination of empagliflozin, a SGLT2 inhibitor and metformin HCl extended-release, a biguanide, indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus . Emp"
+      ],
+      "contraindications": [
+        "4 CONTRAINDICATIONS SYNJARDY and SYNJARDY XR are contraindicated in patients with: severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 ) [see Warnings and Precautions (5.1) and Use in Specific Populations (8.6) ]. acute or chronic metabolic acidosis, including diabetic ketoacidosis [see Warnings and Precautions (5.1) ]. hypersensitivity to empagliflozin, metformin HCl or any of the excipients in SYNJARDY or SYNJARDY XR, reactions such as angioedema have occurred [see Warnings and Precautions (5.7) ] . Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) ( 4 ) Metabolic acidosis, inc"
+      ],
+      "warnings_and_cautions": [
+        "5 WARNINGS AND PRECAUTIONS Diabetic Ketoacidosis in Patients with Type 1 Diabetes Mellitus and Other Ketoacidosis: Consider ketone monitoring in patients at risk of ketoacidosis, as indicated. Assess for ketoacidosis regardless of presenting blood glucose levels and discontinue SYNJARDY or SYNJARDY XR if ketoacidosis is suspected. Monitor patients for resolution of ketoacidosis before restarting. ( 5.2 ) Volume Depletion: Before initiating SYNJARDY or SYNJARDY XR, assess volume status and renal function in patients with impaired renal function, elderly patients, or patients on loop diuretics. "
+      ],
+      "boxed_warning": [
+        "WARNING: LACTIC ACIDOSIS Postmarketing cases of metformin-associated lactic acidosis have resulted in death, hypothermia, hypotension, and resistant bradyarrhythmias. The onset of metformin-associated lactic acidosis is often subtle, accompanied only by nonspecific symptoms such as malaise, myalgias, respiratory distress, somnolence, and abdominal pain. Metformin-associated lactic acidosis was characterized by elevated blood lactate levels (>5 mmol/Liter), anion gap acidosis (without evidence of ketonuria or ketonemia), an increased lactate/pyruvate ratio; and metformin plasma levels generally"
+      ]
+    }
+  },
+  "rxnorm::semaglutide": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Semaglutide",
+    "rxcui": "1991302",
+    "normalized_name": "Semaglutide"
+  },
+  "openfda::semaglutide": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Semaglutide",
+    "brand_name": "OZEMPIC",
+    "sections": {
+      "indications_and_usage": [
+        "1 INDICATIONS AND USAGE RYBELSUS and OZEMPIC tablets are indicated: \u2022 as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus. \u2022 to reduce the risk of major adverse cardiovascular (CV) events (CV death, non-fatal myocardial infarction or non-fatal stroke) in adults with type 2 diabetes mellitus who are at high risk for these events. RYBELSUS and OZEMPIC tablets are glucagon-like peptide-1 (GLP-1) receptor agonists indicated: \u2022 as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus. ( 1 ) \u2022 to reduce "
+      ],
+      "contraindications": [
+        "4 CONTRAINDICATIONS RYBELSUS and OZEMPIC tablets are contraindicated in patients with: \u2022 A personal or family history of medullary thyroid carcinoma (MTC) or in patients with Multiple Endocrine Neoplasia syndrome type 2 (MEN 2) [see Warnings and Precautions ( 5.1 )] . \u2022 A prior serious hypersensitivity reaction to semaglutide or to any of the excipients in RYBELSUS or OZEMPIC tablets. Serious hypersensitivity reactions including anaphylaxis and angioedema have been reported with semaglutide tablets [see Warnings and Precautions ( 5.7 )] . \u2022 Personal or family history of MTC or in patients with"
+      ],
+      "warnings_and_cautions": [
+        "5 WARNINGS AND PRECAUTIONS \u2022 Acute Pancreatitis : Has been observed in patients treated with GLP-1 receptor agonists, including RYBELSUS or OZEMPIC tablets. Discontinue if pancreatitis is suspected. ( 5.2 ) \u2022 Diabetic Retinopathy Complications : Has been reported in a cardiovascular outcomes trial with semaglutide injection. Patients with a history of diabetic retinopathy should be monitored. ( 5.3 ) \u2022 Hypoglycemia with Concomitant Use of Insulin Secretagogues or Insulin : May increase the risk of hypoglycemia, including severe hypoglycemia. Reducing the dosage of insulin secretagogue or insul"
+      ],
+      "boxed_warning": [
+        "WARNING: RISK OF THYROID C-CELL TUMORS \u2022 In rodents, semaglutide causes dose-dependent and treatment-duration-dependent thyroid C-cell tumors at clinically relevant exposures. It is unknown whether RYBELSUS and OZEMPIC tablets cause thyroid C-cell tumors, including medullary thyroid carcinoma (MTC), in humans as human relevance of semaglutide-induced rodent thyroid C-cell tumors has not been determined [see Warnings and Precautions ( 5.1 ), Nonclinical Toxicology ( 13.1 )] . \u2022 RYBELSUS and OZEMPIC tablets are contraindicated in patients with a personal or family history of MTC or in patients w"
+      ]
+    }
+  },
+  "rxnorm::lisinopril": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Lisinopril",
+    "rxcui": "29046",
+    "normalized_name": "Lisinopril"
+  },
+  "openfda::lisinopril": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Lisinopril",
+    "brand_name": "Lisinopril and Hydrochlorothiazide",
+    "sections": {
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Lisinopril and hydrochlorothiazide tablets are indicated for the treatment of hypertension, to lower blood pressure. Lowering blood pressure lowers the risk of fatal and non-fatal cardiovascular events, primarily strokes and myocardial infarctions. These benefits have been seen in controlled trials of antihypertensive drugs from a wide variety of pharmacologic classes including lisinopril and hydrochlorothiazide. Control of high blood pressure should be part of comprehensive cardiovascular risk management, including, as appropriate, lipid control, diabetes management, ant"
+      ],
+      "warnings": [
+        "WARNINGS General Lisinopril Anaphylactoid and Possibly Related Reactions: Presumably because angiotensin-converting enzyme inhibitors affect the metabolism of eicosanoids and polypeptides, including endogenous bradykinin, patients receiving ACE inhibitors (including lisinopril and hydrochlorothiazide tablets) may be subject to a variety of adverse reactions, some of them serious. Head and Neck Angioedema: Angioedema of the face, extremities, lips, tongue, glottis and/or larynx has been reported rarely in patients treated with angiotensin converting enzyme inhibitors, including lisinopril. This"
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Lisinopril and hydrochlorothiazide tablets are contraindicated in patients who are hypersensitive to any component of this product and in patients with a history of angioedema related to previous treatment with an angiotensin converting enzyme inhibitor and in patients with hereditary or idiopathic angioedema. Because of the hydrochlorothiazide component, this product is contraindicated in patients with anuria or hypersensitivity to other sulfonamide-derived drugs. Lisinopril and hydrochlorothiazide tablets are contraindicated in combination with a neprilysin inhibitor (e.g.,"
+      ],
+      "boxed_warning": [
+        "WARNING: FETAL TOXICITY When pregnancy is detected, discontinue lisinopril and hydrochlorothiazide tablets as soon as possible. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. See Warnings, Fetal Toxicity ."
+      ]
+    }
+  },
+  "rxnorm::losartan": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Losartan",
+    "rxcui": "52175",
+    "normalized_name": "Losartan"
+  },
+  "openfda::losartan": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Losartan",
+    "brand_name": "Losartan Potassium",
+    "sections": {
+      "indications_and_usage": [
+        "1 INDICATIONS AND USAGE Losartan potassium tablets are an angiotensin II receptor blocker (ARB) indicated for: \u2022 Treatment of hypertension, to lower blood pressure in adults and children greater than 6 years old. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial infarctions. (1.1) \u2022 Reduction of the risk of stroke in patients with hypertension and left ventricular hypertrophy. There is evidence that this benefit does not apply to Black patients. (1.2) \u2022 Treatment of diabetic nephropathy with an elevated serum creatinine and p"
+      ],
+      "contraindications": [
+        "4 CONTRAINDICATIONS Losartan potassium is contraindicated: \u2022 In patients who are hypersensitive to any component of this product. \u2022 For coadministration with aliskiren in patients with diabetes. \u2022 Hypersensitivity to any component. (4) \u2022 Coadministration with aliskiren in patients with diabetes. (4)"
+      ],
+      "warnings_and_cautions": [
+        "5 WARNINGS AND PRECAUTIONS \u2022 Hypotension: Correct volume or salt depletion prior to administration of losartan potassium. (5.2) \u2022 Monitor renal function and potassium in susceptible patients. (5.3 , 5.4) 5.1 Fetal Toxicity Losartan potassium can cause fetal harm when administered to a pregnant woman. Use of drugs that act on the renin-angiotensin system during the second and third trimesters of pregnancy reduces fetal renal function and increases fetal and neonatal morbidity and death. Resulting oligohydramnios can be associated with fetal lung hypoplasia and skeletal deformations. Potential n"
+      ],
+      "boxed_warning": [
+        "WARNING: FETAL TOXICITY When pregnancy is detected, discontinue losartan potassium as soon as possible. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus [see Warnings and Precautions (5.1) ]. WARNING: FETAL TOXICITY See full prescribing information for complete boxed warning. When pregnancy is detected, discontinue losartan potassium as soon as possible. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. (5.1)"
+      ]
+    }
+  },
+  "rxnorm::amlodipine": {
+    "source": "rxnorm",
+    "status": "found",
+    "query": "Amlodipine",
+    "rxcui": "17767",
+    "normalized_name": "Amlodipine"
+  },
+  "openfda::amlodipine": {
+    "source": "openfda",
+    "status": "found",
+    "query": "Amlodipine",
+    "brand_name": "Amlodipine Besylate",
+    "sections": {
+      "indications_and_usage": [
+        "1 INDICATIONS AND USAGE Amlodipine besylate tablets are calcium channel blocker and may be used alone or in combination with other antihypertensive and antianginal agents for the treatment of: \u2022Hypertension ( 1.1 ) \u043e Amlodipine besylate tablets are indicated for the treatment of hypertension, to lower blood pressure. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial infarctions. \u2022Coronary Artery Disease ( 1.2 ) \u043e Chronic Stable Angina \u043e Vasospastic Angina (Prinzmetal's or Variant Angina) \u043e Angiographically Documented Coronary"
+      ],
+      "contraindications": [
+        "4 CONTRAINDICATIONS Known sensitivity to amlodipine ( 4 ) Amlodipine besylate tablets are contraindicated in patients with known sensitivity to amlodipine."
+      ],
+      "warnings_and_cautions": [
+        "5 WARNINGS AND PRECAUTIONS Symptomatic hypotension is possible, particularly in patients with severe aortic stenosis. However, acute hypotension is unlikely. ( 5.1 ) Worsening angina and acute myocardial infarction can develop after starting or increasing the dose of amlodipine, particularly in patients with severe obstructive coronary artery disease. ( 5.2 ) Titrate slowly in patients with severe hepatic impairment. ( 5.3 ) 5.1 Hypotension Symptomatic hypotension is possible, particularly in patients with severe aortic stenosis. Because of the gradual onset of action, acute hypotension is unl"
+      ]
+    }
+  }
+}

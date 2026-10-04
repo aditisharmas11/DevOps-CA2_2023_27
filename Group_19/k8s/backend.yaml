@@ -1,0 +1,114 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: meditwin
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: meditwin-backend-service:v3-monitoring
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 5000
+
+          env:
+            - name: PORT
+              value: "5000"
+
+            - name: MONGO_URI
+              value: "mongodb://mongodb-service:27017/meditwin_db"
+
+            - name: PYTHON_EXEC
+              value: "python"
+
+            - name: CLIENT_ORIGIN
+              value: "http://localhost:8081"
+
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: meditwin-backend-secret
+                  key: GOOGLE_CLIENT_ID
+
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: meditwin-backend-secret
+                  key: JWT_SECRET
+
+            - name: ADMIN_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: meditwin-backend-secret
+                  key: ADMIN_EMAIL
+
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: meditwin-backend-secret
+                  key: ADMIN_PASSWORD
+
+            - name: ADMIN_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: meditwin-backend-secret
+                  key: ADMIN_NAME
+
+          readinessProbe:
+            httpGet:
+              path: /api/ping
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 6
+
+          livenessProbe:
+            httpGet:
+              path: /api/ping
+              port: 5000
+            initialDelaySeconds: 60
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 5
+
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "2"
+              memory: "4Gi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: meditwin
+  labels:
+    app: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - name: metrics
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP
