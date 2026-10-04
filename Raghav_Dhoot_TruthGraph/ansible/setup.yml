@@ -1,0 +1,41 @@
+---
+- name: Configure TruthGraph runtime environment
+  hosts: truthgraph_servers
+  connection: local
+  gather_facts: true
+
+  vars:
+    truthgraph_runtime_dir: "/tmp/truthgraph-runtime"
+
+  tasks:
+    - name: Verify Python is installed
+      ansible.builtin.command: python3 --version
+      register: python_version
+      changed_when: false
+
+    - name: Display Python version
+      ansible.builtin.debug:
+        var: python_version.stdout
+
+    - name: Create TruthGraph runtime directory
+      ansible.builtin.file:
+        path: "{{ truthgraph_runtime_dir }}"
+        state: directory
+        mode: "0755"
+
+    - name: Create TruthGraph configuration file
+      ansible.builtin.copy:
+        dest: "{{ truthgraph_runtime_dir }}/app.conf"
+        content: |
+          APP_NAME=TruthGraph
+          ENVIRONMENT=development
+          API_PORT=8000
+        mode: "0644"
+
+    - name: Create deployment information file
+      ansible.builtin.copy:
+        dest: "{{ truthgraph_runtime_dir }}/deployment-info.txt"
+        content: |
+          TruthGraph runtime environment
+          Managed using Ansible
+        mode: "0644"
