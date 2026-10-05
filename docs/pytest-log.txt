@@ -1,0 +1,16 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.2, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\Archisha\scoop\apps\python\current\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Archisha\Documents\semVII\btech proj devops\Clinical-Copilot-main
+configfile: pyproject.toml
+plugins: anyio-4.8.0
+collecting ... collected 6 items
+
+test_service.py::test_root PASSED                                        [ 16%]
+test_service.py::test_health PASSED                                      [ 33%]
+test_service.py::test_analyze_no_interaction PASSED                      [ 50%]
+test_service.py::test_analyze_severe_interaction PASSED                  [ 66%]
+test_service.py::test_analyze_moderate PASSED                            [ 83%]
+test_service.py::test_metrics_exposed PASSED                             [100%]
+
+============================== 6 passed in 1.21s ==============================
