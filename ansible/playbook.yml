@@ -1,0 +1,40 @@
+---
+- name: Configure Chaos Healer Runtime Environment
+  hosts: local
+  become: true
+
+  tasks:
+
+    - name: Install required runtime packages
+      apt:
+        name:
+          - nodejs
+          - npm
+        state: present
+        update_cache: yes
+
+    - name: Create application user
+      user:
+        name: chaosuser
+        shell: /bin/bash
+        create_home: yes
+        state: present
+
+    - name: Create application directory
+      file:
+        path: /opt/chaos-healer
+        state: directory
+        owner: chaosuser
+        group: chaosuser
+        mode: '0755'
+
+    - name: Create application configuration file
+      copy:
+        dest: /opt/chaos-healer/app.conf
+        content: |
+          APP_NAME=Chaos-Healer
+          APP_ENV=development
+          APP_PORT=3000
+        owner: chaosuser
+        group: chaosuser
+        mode: '0644'

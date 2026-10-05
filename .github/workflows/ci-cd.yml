@@ -1,0 +1,35 @@
+name: Chaos Healer CI/CD
+
+on:
+  push:
+    branches:
+      - ca2-devops
+  pull_request:
+    branches:
+      - ca2-devops
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check JavaScript syntax
+        run: node --check server.js
+
+      - name: Build Docker image
+        run: docker build -t chaos-healer:latest -f dockerfile .
+
+      - name: Validate Docker image
+        run: docker image inspect chaos-healer:latest

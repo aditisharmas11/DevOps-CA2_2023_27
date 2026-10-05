@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chaos-healer
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chaos-healer
+  template:
+    metadata:
+      labels:
+        app: chaos-healer
+    spec:
+      containers:
+        - name: mushroom-app
+          image: pbl2-mushroom-app:v2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
