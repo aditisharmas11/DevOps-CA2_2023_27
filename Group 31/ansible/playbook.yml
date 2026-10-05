@@ -1,0 +1,49 @@
+---
+- name: Configure runtime environment for Task Tracker
+  hosts: appservers
+  become: true
+  vars:
+    app_user: appuser
+    app_dir: /opt/task-tracker
+    app_port: 5000
+  tasks:
+    - name: Install required packages
+      ansible.builtin.apt:
+        name: [docker.io, python3-pip, curl, git]
+        state: present
+        update_cache: true
+
+    - name: Ensure Docker is running and enabled
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Create application user
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        shell: /bin/bash
+        groups: docker
+        append: true
+        create_home: true
+
+    - name: Create application directory
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ app_user }}"
+        mode: "0755"
+
+    - name: Deploy environment file from template
+      ansible.builtin.template:
+        src: app.env.j2
+        dest: "{{ app_dir }}/app.env"
+        owner: "{{ app_user }}"
+        mode: "0640"
+
+    - name: Copy README banner
+      ansible.builtin.copy:
+        content: "Managed by Ansible - do not edit by hand\n"
+        dest: "{{ app_dir }}/MANAGED_BY_ANSIBLE.txt"
+        owner: "{{ app_user }}"
+        mode: "0644"

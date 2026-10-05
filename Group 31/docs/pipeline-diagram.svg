@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1090 190" font-family="Arial,sans-serif">
+<rect width="100%" height="100%" fill="white"/>
+<text x="545.0" y="30" text-anchor="middle" font-size="18" font-weight="bold">CI/CD Pipeline - Task Tracker Service</text>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#111"/></marker></defs>
+<rect x="20" y="60" width="150" height="70" rx="10" fill="#6b7280"/>
+<text x="95.0" y="90" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Developer</text>
+<text x="95.0" y="112" text-anchor="middle" fill="white" font-size="12">git push</text>
+<line x1="170" y1="95.0" x2="198" y2="95.0" stroke="#111" stroke-width="2" marker-end="url(#a)"/>
+<rect x="200" y="60" width="150" height="70" rx="10" fill="#374151"/>
+<text x="275.0" y="90" text-anchor="middle" fill="white" font-size="15" font-weight="bold">GitHub</text>
+<text x="275.0" y="112" text-anchor="middle" fill="white" font-size="12">Repository</text>
+<line x1="350" y1="95.0" x2="378" y2="95.0" stroke="#111" stroke-width="2" marker-end="url(#a)"/>
+<rect x="380" y="60" width="150" height="70" rx="10" fill="#2563eb"/>
+<text x="455.0" y="90" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Build & Test</text>
+<text x="455.0" y="112" text-anchor="middle" fill="white" font-size="12">pip + pytest</text>
+<line x1="530" y1="95.0" x2="558" y2="95.0" stroke="#111" stroke-width="2" marker-end="url(#a)"/>
+<rect x="560" y="60" width="150" height="70" rx="10" fill="#0891b2"/>
+<text x="635.0" y="90" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Docker Build</text>
+<text x="635.0" y="112" text-anchor="middle" fill="white" font-size="12">push to GHCR</text>
+<line x1="710" y1="95.0" x2="738" y2="95.0" stroke="#111" stroke-width="2" marker-end="url(#a)"/>
+<rect x="740" y="60" width="150" height="70" rx="10" fill="#16a34a"/>
+<text x="815.0" y="90" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Deploy</text>
+<text x="815.0" y="112" text-anchor="middle" fill="white" font-size="12">kubectl apply</text>
+<line x1="890" y1="95.0" x2="918" y2="95.0" stroke="#111" stroke-width="2" marker-end="url(#a)"/>
+<rect x="920" y="60" width="150" height="70" rx="10" fill="#d97706"/>
+<text x="995.0" y="90" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Monitor</text>
+<text x="995.0" y="112" text-anchor="middle" fill="white" font-size="12">Prometheus + Grafana</text>
+<text x="545.0" y="165" text-anchor="middle" font-size="12" fill="#444">Tests fail -> pipeline stops. Rollout fails -> kubectl rollout undo.</text>
+</svg>
