@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "HerDoc",
+    "slug": "herdoc-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.herdoc.mobile"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "HerDoc uses your location only to include it in an Emergency SOS alert."
+        }
+      ]
+    ]
+  }
+}
