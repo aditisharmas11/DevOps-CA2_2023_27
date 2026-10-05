@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-delivery-app
+spec:
+  template:
+    spec:
+      containers:
+        - name: food-delivery-app
+          image: food-delivery-app:v2
