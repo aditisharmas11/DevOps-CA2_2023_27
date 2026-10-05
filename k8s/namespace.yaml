@@ -1,0 +1,10 @@
+# =============================================================================
+# Kubernetes Namespace
+# =============================================================================
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: student-app
+  labels:
+    app: student-management
+    environment: production
