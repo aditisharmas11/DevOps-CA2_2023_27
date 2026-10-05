@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airline-api
+  namespace: airline
+  labels:
+    app: airline-api
+  annotations:
+    kubernetes.io/change-cause: "initial release v1"
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10          # keeps old ReplicaSets so `kubectl rollout undo` can go back
+  selector:
+    matchLabels:
+      app: airline-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1                   # at most 1 extra pod during an update
+      maxUnavailable: 0             # never drop below 3 ready pods -> zero downtime
+  minReadySeconds: 5
+  progressDeadlineSeconds: 120      # a broken release is marked as failed after 2 minutes
+  template:
+    metadata:
+      labels:
+        app: airline-api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+      containers:
+        - name: api
+          image: airline-api:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+          env:                      # APP_VERSION is baked into the image (Dockerfile build-arg)
+            - name: MODEL_PATH
+              value: /app/models/model.joblib
+            - name: LOG_LEVEL
+              value: INFO
+          readinessProbe:           # traffic only goes to pods whose model is loaded
+            httpGet:
+              path: /ready
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+            failureThreshold: 3
+          livenessProbe:            # restart the container if the process hangs
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}

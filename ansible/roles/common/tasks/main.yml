@@ -1,0 +1,48 @@
+---
+- name: Install base packages
+  ansible.builtin.apt:
+    name: "{{ common_packages }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Create the application group
+  ansible.builtin.group:
+    name: "{{ app_group }}"
+    gid: "{{ app_uid }}"
+    system: true
+    state: present
+
+- name: Create the application user (no login shell)
+  ansible.builtin.user:
+    name: "{{ app_user }}"
+    uid: "{{ app_uid }}"
+    group: "{{ app_group }}"
+    system: true
+    shell: /usr/sbin/nologin
+    home: "{{ app_root }}"
+    create_home: false
+    comment: Airline Satisfaction API service account
+    state: present
+
+- name: Create application directories
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: "{{ item.mode }}"
+  loop:
+    - { path: "{{ app_root }}", mode: "0755" }
+    - { path: "{{ app_src_dir }}", mode: "0755" }
+    - { path: "{{ app_model_dir }}", mode: "0750" }
+    - { path: "{{ app_log_dir }}", mode: "0750" }
+    - { path: "{{ app_config_dir }}", mode: "0750" }
+
+- name: Install the login banner
+  ansible.builtin.template:
+    src: motd.j2
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: "0644"

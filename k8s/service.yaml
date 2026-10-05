@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: airline-api
+  namespace: airline
+  labels:
+    app: airline-api
+spec:
+  type: NodePort
+  selector:
+    app: airline-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      nodePort: 30080

@@ -1,0 +1,13 @@
+# Local cluster: kind create cluster --name airline --config k8s/kind-config.yaml
+# Maps the NodePorts to localhost: API -> http://localhost:30080, Prometheus -> :30090, Grafana -> :30300
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 30080
+      - containerPort: 30090
+        hostPort: 30090
+      - containerPort: 30300
+        hostPort: 30300

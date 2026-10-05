@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+# Model artefacts are rebuilt by the pipeline / Dockerfile
+models/
+# Older notebook version - "main copy.ipynb" is the source of the project
+main.ipynb
+submission.csv

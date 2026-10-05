@@ -1,0 +1,22 @@
+---
+# Configures a Linux server to run the Airline Satisfaction API:
+#   common      -> packages, service user/group, directories, MOTD
+#   airline_api -> code, Python virtualenv, model training, config file, systemd service
+- name: Configure runtime environment for the Airline Satisfaction API
+  hosts: app_servers
+  become: true
+  roles:
+    - common
+    - airline_api
+
+  post_tasks:
+    - name: Show the deployed version
+      ansible.builtin.uri:
+        url: "http://127.0.0.1:{{ app_port }}/version"
+        return_content: true
+      register: deployed_version
+      become: false
+
+    - name: Deployment summary
+      ansible.builtin.debug:
+        msg: "{{ deployed_version.json }}"

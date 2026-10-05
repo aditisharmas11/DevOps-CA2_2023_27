@@ -1,0 +1,26 @@
+flowchart TB
+    nb["main copy.ipynb<br/>EDA · tuning · XGBoost chosen"] -->|"same pipeline + best params"| tr["training/train.py"]
+    data[("airline_dataset.csv<br/>103,904 passengers")] --> tr
+    tr -->|"model.joblib + metrics"| img
+
+    subgraph img["Docker image airline-api (multi-stage)"]
+        api["FastAPI + uvicorn<br/>/predict · /ready · /health · /version · /metrics"]
+    end
+
+    subgraph k8s["Kubernetes cluster"]
+        subgraph ns1["namespace airline"]
+            svc["Service airline-api<br/>NodePort 30080"] --> p1["Pod v2"] & p2["Pod v2"] & p3["Pod v2"]
+        end
+        subgraph ns2["namespace monitoring"]
+            prom["Prometheus<br/>pod discovery + alert rules"] --> graf["Grafana<br/>provisioned dashboard"]
+        end
+        prom -.->|"scrape /metrics every 5s"| p1
+        prom -.-> p2 & p3
+    end
+    img --> k8s
+    user([Client / load test]) --> svc
+
+    subgraph vm["Linux VM (Ansible-managed alternative)"]
+        sysd["systemd airline-api<br/>user airline · venv · /opt/airline-api"]
+    end
+    ans["ansible/site.yml<br/>roles: common, airline_api"] --> vm

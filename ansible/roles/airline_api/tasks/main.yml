@@ -1,0 +1,91 @@
+---
+- name: Copy application code
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../{{ item }}"
+    dest: "{{ app_src_dir }}/"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: u=rwX,g=rX,o=rX
+  loop:
+    - app
+    - training
+    - requirements.txt
+  notify: Restart airline-api
+
+- name: Copy the training dataset
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../airline_dataset.csv"
+    dest: "{{ app_src_dir }}/airline_dataset.csv"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: "0640"
+  register: dataset
+
+- name: Create the virtualenv and install Python dependencies
+  ansible.builtin.pip:
+    requirements: "{{ app_src_dir }}/requirements.txt"
+    virtualenv: "{{ app_venv }}"
+    virtualenv_command: python3 -m venv
+  become_user: "{{ app_user }}"
+  notify: Restart airline-api
+
+- name: Remove the old model when the dataset changed
+  ansible.builtin.file:
+    path: "{{ app_model_dir }}/model.joblib"
+    state: absent
+  when: dataset.changed
+
+- name: Train the model (skipped if it already exists)
+  ansible.builtin.command:
+    cmd: >-
+      {{ app_venv }}/bin/python training/train.py
+      --data airline_dataset.csv --out {{ app_model_dir }}/model.joblib
+      --min-roc-auc {{ app_min_roc_auc }}
+    chdir: "{{ app_src_dir }}"
+    creates: "{{ app_model_dir }}/model.joblib"
+  become_user: "{{ app_user }}"
+  register: training
+  notify: Restart airline-api
+
+- name: Show training metrics
+  ansible.builtin.debug:
+    msg: "{{ training.stdout_lines }}"
+  when: training.changed
+
+- name: Write the service configuration
+  ansible.builtin.template:
+    src: airline-api.env.j2
+    dest: "{{ app_config_dir }}/airline-api.env"
+    owner: root
+    group: "{{ app_group }}"
+    mode: "0640"
+  notify: Restart airline-api
+
+- name: Install the systemd unit
+  ansible.builtin.template:
+    src: airline-api.service.j2
+    dest: /etc/systemd/system/airline-api.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart airline-api
+
+- name: Enable and start the service
+  ansible.builtin.systemd_service:
+    name: airline-api
+    enabled: true
+    state: started
+    daemon_reload: true
+
+- name: Apply pending restarts now
+  ansible.builtin.meta: flush_handlers
+
+- name: Wait until the API reports ready
+  ansible.builtin.uri:
+    url: "http://127.0.0.1:{{ app_port }}/ready"
+    status_code: 200
+  register: ready
+  until: ready.status == 200
+  retries: 20
+  delay: 3
+  become: false

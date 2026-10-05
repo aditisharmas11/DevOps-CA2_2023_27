@@ -1,0 +1,17 @@
+flowchart LR
+    dev([Developer<br/>git push / PR]) --> gh[(GitHub repo)]
+    gh --> T
+
+    subgraph GA["GitHub Actions — ci-cd.yml"]
+        direction LR
+        T["1 · test<br/>ruff lint<br/>train model<br/>quality gate ROC-AUC ≥ 0.98<br/>pytest (9 API tests)"]
+        B["2 · build<br/>multi-stage Docker build<br/>container smoke test<br/>/ready · /predict · /metrics"]
+        A["3 · ansible<br/>playbook on runner<br/>re-run → changed=0<br/>(idempotent)"]
+        K["4 · deploy-k8s (kind)<br/>apply manifests<br/>rolling update v1→v2<br/>broken release → rollback<br/>Prometheus + Grafana"]
+        P["5 · publish<br/>push image to GHCR<br/>:sha · :latest<br/>(main only)"]
+        T --> B --> K --> P
+        T --> A --> P
+    end
+
+    P --> reg[(ghcr.io<br/>airline-api)]
+    K -.evidence.-> art[/"artifacts: model, logs,<br/>rollout log, dashboard PNG"/]
