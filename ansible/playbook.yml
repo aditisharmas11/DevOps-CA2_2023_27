@@ -1,0 +1,76 @@
+---
+- name: Configure Server Runtime Environment for Warehouse Logistics System
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Update apt cache & upgrade system packages
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install required baseline system packages
+      apt:
+        name:
+          - curl
+          - git
+          - htop
+          - ufw
+          - python3-pip
+          - ca-certificates
+          - gnupg
+          - lsb-release
+        state: present
+
+    - name: Create deployment system user group
+      group:
+        name: devops
+        state: present
+
+    - name: Create dedicated deployuser with sudo access
+      user:
+        name: deployuser
+        group: devops
+        groups: sudo
+        append: yes
+        shell: /bin/bash
+        create_home: yes
+
+    - name: Install Docker and Docker Compose plugin
+      apt:
+        name:
+          - docker.io
+          - docker-compose-plugin
+        state: present
+
+    - name: Ensure Docker service is started and enabled on boot
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add deployuser to docker group
+      user:
+        name: deployuser
+        groups: docker
+        append: yes
+
+    - name: Create project root directory
+      file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: deployuser
+        group: devops
+        mode: '0755'
+
+    - name: Create environment configuration file (.env)
+      copy:
+        dest: "{{ app_dir }}/.env"
+        owner: deployuser
+        group: devops
+        mode: '0600'
+        content: |
+          POSTGRES_DB=logistics_db
+          POSTGRES_USER=postgres
+          POSTGRES_PASSWORD=postgres
+          DB_HOST=db
+          DB_PORT=5432
