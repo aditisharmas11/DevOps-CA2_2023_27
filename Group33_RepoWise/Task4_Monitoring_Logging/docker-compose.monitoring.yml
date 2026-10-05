@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # ==============================================================================
+  # SERVICE 1: Prometheus Time-Series Metrics Database
+  # ==============================================================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: repowise-prometheus
+    restart: unless-stopped
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - monitoring-net
+
+  # ==============================================================================
+  # SERVICE 2: Grafana Visualization Dashboard Engine
+  # ==============================================================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: repowise-grafana
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring-net
+
+networks:
+  monitoring-net:
+    driver: bridge
+
+volumes:
+  prometheus_data:
+  grafana_data:

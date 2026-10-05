@@ -1,0 +1,32 @@
+# ==============================================================================
+# Prometheus Configuration for RepoWise Infrastructure Observability
+# ==============================================================================
+
+global:
+  scrape_interval: 5s          # Fast scrape interval for responsive real-time metrics
+  evaluation_interval: 5s      # Evaluation interval for alerting rules
+  scrape_timeout: 4s
+
+# Alertmanager configuration (optional / extensible)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+# Scrape Configurations
+scrape_configs:
+  # Job 1: Scrape Prometheus internal operational telemetry
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Job 2: Scrape RepoWise Node.js Express Backend Service
+  - job_name: 'repowise-backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+    static_configs:
+      - targets: ['repowise-server:5000']
+        labels:
+          environment: 'production'
+          service: 'repowise-api'
+          tier: 'backend'

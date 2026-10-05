@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps CA-II Case Study Report - Kshitiz Shah (23070122121)</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 14mm 14mm 14mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', Times, serif;
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.42;
+      font-size: 8.8pt;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Academic Header Block */
+    .report-header {
+      border-bottom: 2px solid #1e3a8a;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .inst-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #4b5563;
+      margin-bottom: 3px;
+    }
+
+    .report-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.25;
+      margin: 0 0 4px 0;
+    }
+
+    .report-subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 8.8pt;
+      font-weight: 500;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 7.8pt;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+    }
+
+    .meta-table td {
+      padding: 4px 8px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .meta-label {
+      font-weight: 700;
+      color: #475569;
+      width: 16%;
+      background: #f1f5f9;
+      text-transform: uppercase;
+      font-size: 6.8pt;
+      letter-spacing: 0.4px;
+    }
+
+    .meta-val {
+      color: #0f172a;
+      font-weight: 600;
+      width: 34%;
+    }
+
+    /* Headings */
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin: 12px 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      break-after: avoid;
+    }
+
+    h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin: 8px 0 3px 0;
+      break-after: avoid;
+    }
+
+    p {
+      margin: 0 0 5px 0;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    ul, ol {
+      margin: 2px 0 6px 0;
+      padding-left: 16px;
+    }
+
+    li {
+      margin-bottom: 3px;
+      text-align: justify;
+    }
+
+    strong {
+      color: #0f172a;
+    }
+
+    /* Prompt Box */
+    .prompt-box {
+      background: #f8fafc;
+      border-left: 3px solid #1e3a8a;
+      padding: 6px 10px;
+      margin: 6px 0 8px 0;
+      font-size: 8pt;
+      color: #334155;
+      font-style: italic;
+      break-inside: avoid;
+    }
+
+    .prompt-box strong {
+      font-style: normal;
+      color: #1e3a8a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    /* Figures */
+    .figure-container {
+      margin: 8px 0 10px 0;
+      border: 1px solid #cbd5e1;
+      background: #fbfcfd;
+      padding: 6px 8px;
+      text-align: center;
+      break-inside: avoid;
+    }
+
+    .figure-content {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 7.5pt;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 4px 0;
+    }
+
+    .figure-box {
+      border: 1px solid #94a3b8;
+      background: #ffffff;
+      padding: 5px 8px;
+      border-radius: 4px;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    .figure-box-title {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .figure-box-sub {
+      font-size: 6.8pt;
+      color: #64748b;
+    }
+
+    .arrow-icon {
+      font-size: 13pt;
+      color: #2563eb;
+      font-weight: bold;
+      padding: 0 6px;
+    }
+
+    .figure-caption {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 7.2pt;
+      color: #64748b;
+      margin-top: 4px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 3px;
+    }
+
+    /* Tables */
+    table.academic-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 10px 0;
+      font-size: 7.8pt;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      break-inside: avoid;
+    }
+
+    table.academic-table th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+      text-align: left;
+      padding: 5px 7px;
+      border: 1px solid #cbd5e1;
+      font-size: 7.2pt;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    table.academic-table td {
+      padding: 5px 7px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+      line-height: 1.3;
+    }
+
+    table.academic-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .code-inline {
+      font-family: -apple-system, BlinkMacSystemFont, monospace;
+      font-size: 7.5pt;
+      background: #f1f5f9;
+      padding: 1px 3px;
+      border-radius: 3px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .academic-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 4px;
+      margin-top: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 7pt;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Academic Header Block -->
+  <div class="report-header">
+    <div class="inst-title">Department of Computer Science & Engineering &bull; DevOps</div>
+    <h1 class="report-title">Continuous Assessment II (CA-II): Case Study Evaluation Report</h1>
+    <div class="report-subtitle">Architectural Fragility, Microservices Transition, and High-Velocity DevOps Engineering</div>
+    
+    <table class="meta-table">
+      <tr>
+        <td class="meta-label">Group</td>
+        <td class="meta-val" colspan="3">Group 33</td>
+      </tr>
+      <tr>
+        <td class="meta-label">Member 1</td>
+        <td class="meta-val">Kshitiz Shah (PRN: 23070122121)</td>
+        <td class="meta-label">Member 2</td>
+        <td class="meta-val">Nitesh Ghimire (PRN: 23070122150)</td>
+      </tr>
+      <tr>
+        <td class="meta-label">Member 3</td>
+        <td class="meta-val">Nigel Francy (PRN: 23070122148)</td>
+        <td class="meta-label">Member 4</td>
+        <td class="meta-val">Omkar Kadam (PRN: 23070122158)</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>1. Executive Summary & Overview</h2>
+  <p>
+    This report presents a comprehensive academic evaluation of two seminal industry case studies in cloud computing, system architecture, and DevOps culture: <strong>Netflix Inc.</strong> and <strong>Amazon.com Inc.</strong> Both technology leaders faced catastrophic scalability ceilings, single points of failure, and deployment gridlock during their early growth phases while operating centralized monolithic architectures. Through a methodical deconstruction of the technical catalysts, architectural decisions (loosely coupled microservices and cloud infrastructure), and organizational restructuring (Two-Pizza teams and Chaos Engineering), this evaluation analyzes how these organizations transformed operational vulnerabilities into competitive, industry-defining engineering advantages.
+  </p>
+
+  <h2>2. Case Study 1: Netflix Inc. – High-Resilience Cloud Migration & Chaos Engineering</h2>
+
+  <div class="prompt-box">
+    <strong>Case Study Scenario (Q1):</strong> In August 2008, a major relational database corruption halted Netflix’s DVD shipments for three consecutive days, highlighting the systemic fragility of their monolithic architecture. <em>Analyze the specific challenges faced by Netflix with its monolithic system, evaluate their transition to cloud-native microservices, and explain how the pioneering of Chaos Engineering transformed platform resilience and scalability.</em>
+  </div>
+
+  <h3>2.1 Specific Challenges Highlighted by the 2008 Database Outage</h3>
+  <p>
+    In 2008, Netflix operated on an on-premises monolithic system hosted in private datacenters, backed by a centralized relational database (Oracle RDBMS). The 72-hour operational paralysis caused by database table corruption revealed deep-seated structural vulnerabilities:
+  </p>
+  <ul>
+    <li>
+      <strong>Catastrophic Single Point of Failure (SPOF):</strong> The entire operational workflow—DVD shipping queue generation, inventory tracking, customer billing, and account management—shared a common database cluster. A single database corruption incident paralyzed all business operations simultaneously.
+    </li>
+    <li>
+      <strong>Tight Architectural Coupling and Unbounded Blast Radius:</strong> In a monolithic codebase, disparate functional domains run within a shared execution process and share memory and datastore connections. A software fault or deadlocked query in one subsystem cascaded across the entire platform without fault containment boundaries.
+    </li>
+    <li>
+      <strong>Vertical Hardware Scalability Ceilings:</strong> Datacenter monoliths could only scale vertically by purchasing progressively larger and more expensive enterprise servers. When Netflix began streaming video over the internet, extreme peak evening traffic surges regularly saturated physical datacenter bandwidth and compute capacity.
+    </li>
+    <li>
+      <strong>Deployment Risk & Release Coordination Overhead:</strong> Code contributions from across the engineering team were merged into a single massive release artifact. Releases required prolonged manual regression testing, extensive coordination meetings, and high-risk maintenance downtime windows.
+    </li>
+  </ul>
+
+  <div class="figure-container">
+    <div class="figure-content">
+      <div class="figure-box" style="width: 40%;">
+        <div class="figure-box-title">2008 Monolithic Architecture</div>
+        <div class="figure-box-sub">Monolithic App: DVD + Billing + Catalog + UI</div>
+        <div style="margin: 3px 0; font-size: 7.2pt; color: #dc2626; font-weight: bold;">&darr; Shared Oracle Database (SPOF)</div>
+        <div class="figure-box-sub" style="color: #b91c1c; font-weight: 600;">Table Corruption &rarr; 3-Day Global Outage</div>
+      </div>
+      <div class="arrow-icon">&rarr;</div>
+      <div class="figure-box" style="width: 52%;">
+        <div class="figure-box-title">Cloud-Native Microservices (AWS)</div>
+        <div class="figure-box-sub">Decoupled Domains: Auth API &bull; Playback API &bull; Recommendations</div>
+        <div style="margin: 3px 0; font-size: 7.2pt; color: #16a34a; font-weight: bold;">&darr; Polyglot NoSQL (Cassandra, DynamoDB, EVCache)</div>
+        <div class="figure-box-sub" style="color: #15803d; font-weight: 600;">Isolated Blast Radius: Video Playback Never Fails</div>
+      </div>
+    </div>
+    <div class="figure-caption">Figure 1: Architectural Transition from Monolithic Single Point of Failure to Cloud-Native Distributed Microservices at Netflix.</div>
+  </div>
+
+  <h3>2.2 Architectural Transition: Microservices and AWS Cloud Adoption</h3>
+  <p>
+    Following the 2008 outage, Netflix initiated a multi-year strategic migration to Amazon Web Services (AWS), decomposing the monolith into a cloud-native microservices architecture:
+  </p>
+  <ul>
+    <li>
+      <strong>Decoupled Microservice Boundaries:</strong> The application was partitioned into hundreds of independently managed microservices (e.g., Discovery Service, Playback API, Recommendation Engine, Billing). Each service communicates strictly over lightweight RESTful HTTP/JSON interfaces.
+    </li>
+    <li>
+      <strong>Database-per-Service Paradigm:</strong> Netflix decommissioned the centralized relational database, giving each microservice its own dedicated datastore. The architecture adopted distributed, horizontally scalable NoSQL systems (<span class="code-inline">Apache Cassandra</span>, <span class="code-inline">Amazon DynamoDB</span>, and <span class="code-inline">Amazon S3</span>) complemented by high-performance distributed caching (<span class="code-inline">EVCache</span>). A database issue in user reviews cannot disrupt subscriber playback authentication.
+    </li>
+    <li>
+      <strong>Immutable Infrastructure:</strong> Virtual machine images (AMIs) are baked automatically through CI/CD pipelines using <span class="code-inline">Spinnaker</span> and <span class="code-inline">Aminator</span>. Infrastructure is treated as immutable—servers are never modified in-place; updates are deployed by provisioning fresh cloud instances and terminating old ones.
+    </li>
+    <li>
+      <strong>Automated Canary Deployments:</strong> Using automated analysis tools (<span class="code-inline">Kayenta</span>), continuous delivery pipelines route 1–2% of production traffic to canary instances, algorithmically validating error rates and latency telemetry before completing fleet-wide rollout.
+    </li>
+  </ul>
+
+  <h3>2.3 Pioneering Chaos Engineering: Proactive Anti-Fragility</h3>
+  <p>
+    In large-scale distributed cloud systems spanning thousands of virtual servers, localized component failures, disk corruptions, and network partitions are inevitable. Netflix concluded that attempting to prevent all failures was futile; instead, systems must be built to survive failure gracefully. This philosophy created the discipline of <strong>Chaos Engineering</strong>:
+  </p>
+  <ul>
+    <li>
+      <strong>Guiding Philosophy:</strong> <em>"The best way to avoid failure is to fail constantly."</em> Rather than waiting for outages to occur unexpectedly during peak hours, engineers deliberately inject controlled failures into production during standard business hours when engineering teams are actively monitoring systems.
+    </li>
+    <li>
+      <strong>The Simian Army Tool Suite:</strong>
+      <ul>
+        <li><strong>Chaos Monkey:</strong> Randomly terminates running Amazon EC2 instances in production to prove that application instances self-heal and load balancers redirect traffic without customer impact.</li>
+        <li><strong>Chaos Gorilla:</strong> Simulates a catastrophic failure of an entire AWS Availability Zone (AZ), verifying automated multi-datacenter failover.</li>
+        <li><strong>Chaos Kong:</strong> Simulates an entire AWS Region outage, validating global multi-region active-active failover via Route 53 and cross-region data replication.</li>
+        <li><strong>Latency Monkey / FIT (Failure Injection Testing):</strong> Introduces artificial network latency and dropped packets between microservices to expose latent cascading timeout deadlocks.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Defensive Architectural Resilience Patterns:</strong>
+      <ul>
+        <li><strong>Circuit Breakers (<span class="code-inline">Hystrix</span>):</strong> When a downstream microservice exceeds pre-defined error or latency thresholds, circuit breakers trip open immediately, shielding thread pools from starvation.</li>
+        <li><strong>Graceful Degradation:</strong> If personalized recommendation machine-learning algorithms fail or slow down, the presentation UI gracefully degrades to a cached list of top-ranked movies. The core business operation—allowing the customer to press "Play"—remains fully functional.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>2.4 Measurable Resilience and Scalability Impact</h3>
+  <p>
+    By pairing distributed microservices with continuous chaos testing, Netflix eliminated centralized single points of failure. The architecture routinely delivers <strong>99.999% availability ("five nines")</strong> at planetary scale, supporting over 260 million global subscribers across 190+ countries while handling tens of millions of concurrent video streams with zero single-point dependency.
+  </p>
+
+  <h2>3. Case Study 2: Amazon Inc. – Decentralized Architecture, Two-Pizza Teams, and Continuous Delivery</h2>
+
+  <div class="prompt-box">
+    <strong>Case Study Scenario (Q2):</strong> In the early 2000s, Amazon’s rapid growth was severely hampered by a monolithic architecture that led to frequent outages and slow feature releases, directly impacting customer satisfaction and revenue. <em>Analyze how Amazon's adoption of 'Two-Pizza Teams' and a microservices architecture directly addressed these challenges, and explain how this cultural and architectural shift fostered the 'culture of continuous innovation' that allowed them to deploy code, on average, every 11.7 seconds.</em>
+  </div>
+
+  <h3>3.1 Monolithic Constraints: The "Obidos" Bottleneck</h3>
+  <p>
+    During its first decade of exponential commercial expansion, Amazon operated its retail website on a massive monolithic C/C++ application known internally as <strong>"Obidos"</strong> (named after a town on the Amazon River). Obidos coupled the user interface, shopping cart, product catalog, customer reviews, and order fulfillment workflows into a single executable binary.
+  </p>
+  <ul>
+    <li>
+      <strong>Brooks’ Law & Communication Drag:</strong> As Amazon expanded its engineering headcount to meet commercial demand, team coordination overhead expanded quadratically ($N(N-1)/2$). Engineers spent the majority of their time in cross-functional synchronization meetings, dependency negotiations, and resolving git merge conflicts.
+    </li>
+    <li>
+      <strong>Deployment Queues ("Deployment Trains"):</strong> Hundreds of engineers committed code into the monolithic Obidos repository. Releases ran on scheduled "trains." If one engineer committed code with a fatal regression or broken unit test, the entire deployment train was halted for all teams across the enterprise.
+    </li>
+    <li>
+      <strong>Unconstrained Blast Radius:</strong> Because all application modules shared the same operating system process, a memory leak or null pointer exception in a non-essential feature (e.g., book review comments) could bring down the entire checkout engine, costing millions of dollars in lost transactional revenue.
+    </li>
+  </ul>
+
+  <div class="figure-container">
+    <div class="figure-content">
+      <div class="figure-box" style="width: 44%;">
+        <div class="figure-box-title">Autonomous Two-Pizza Team (6–10 Devs)</div>
+        <div class="figure-box-sub">Single-Threaded Ownership of One Service Domain</div>
+        <div style="font-size: 7.2pt; color: #1e3a8a; margin-top: 3px; font-weight: 600;">"You Build It, You Run It" (Dev + Ops Unified)</div>
+      </div>
+      <div class="arrow-icon">&harr;</div>
+      <div class="figure-box" style="width: 48%;">
+        <div class="figure-box-title">Automated CI/CD Delivery Pipeline</div>
+        <div class="figure-box-sub">Brazil Build System &bull; Apollo Deployment Engine</div>
+        <div style="font-size: 7.2pt; color: #15803d; font-weight: 600; margin-top: 3px;">Continuous Canary Deployments: 1 Every 11.7s</div>
+      </div>
+    </div>
+    <div class="figure-caption">Figure 2: Organizational and Pipeline Alignment at Amazon: Two-Pizza Autonomous Teams and Continuous Delivery.</div>
+  </div>
+
+  <h3>3.2 Architectural Decoupling: The 2002 Bezos "API Mandate"</h3>
+  <p>
+    Around 2002, CEO Jeff Bezos issued his famous architectural memorandum, known throughout the software engineering industry as the <strong>API Mandate</strong>. The memorandum established non-negotiable rules for all software development across Amazon:
+  </p>
+  <ol>
+    <li>All teams must expose their data and functionality exclusively through well-defined service interfaces (APIs).</li>
+    <li>Teams must communicate with each other solely through these interfaces.</li>
+    <li>No direct inter-process communication, shared memory, or direct database access across teams is permitted.</li>
+    <li>The interface technology must be completely platform-agnostic (HTTP, REST, XML/JSON).</li>
+    <li>Every interface must be architected, built, and tested so that it can be externalized to third-party developers without refactoring.</li>
+  </ol>
+  <p>
+    This mandate systematically decoupled Obidos into autonomous, service-oriented modules (Product Catalog, Shopping Cart, Pricing Engine, Payment Gateway). Furthermore, the discipline of building externalizable service APIs directly laid the architectural, technological, and infrastructural foundation for <strong>Amazon Web Services (AWS)</strong>.
+  </p>
+
+  <h3>3.3 Organizational Re-engineering: Conway’s Law & "Two-Pizza Teams"</h3>
+  <p>
+    Amazon recognized that architectural transformation cannot succeed within a traditional, centralized organizational hierarchy. This realization is rooted in <strong>Conway's Law</strong>: <em>"Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."</em> To support decoupled microservices, Amazon executed a deliberate "Reverse Conway Maneuver":
+  </p>
+  <ul>
+    <li>
+      <strong>Two-Pizza Team Topology:</strong> Engineering teams were capped at a size that could be adequately fed by two pizzas—typically between 6 and 10 engineers. Small team sizes eliminate communication drag, eliminate coordination meetings, and allow rapid consensus.
+    </li>
+    <li>
+      <strong>Single-Threaded Ownership:</strong> Each two-pizza team has end-to-end, single-threaded ownership over one discrete service or customer-facing capability (e.g., one team owns the "1-Click Ordering" service, another owns "Customer Review Moderation").
+    </li>
+    <li>
+      <strong>"You Build It, You Run It" (Werner Vogels Philosophy):</strong> Operational silos between developers and system administrators were dissolved. Developers who write the service code are responsible for testing, automated deployment, monitoring, performance tuning, and carrying the 24/7 on-call operational pager. This direct operational accountability creates powerful incentives to write maintainable, resilient, and observable code.
+    </li>
+    <li>
+      <strong>Decentralized Autonomy:</strong> Teams operate as autonomous internal business units. They choose the programming languages, database engines, and frameworks best suited for their specific domain, releasing features directly based on customer telemetry without centralized approvals.
+    </li>
+  </ul>
+
+  <h3>3.4 Continuous Innovation and the 11.7-Second Deployment Rate</h3>
+  <p>
+    To enable thousands of autonomous two-pizza teams to deploy code independently without breaking the retail website, Amazon developed sophisticated internal DevOps automation:
+  </p>
+  <ul>
+    <li>
+      <strong>Automated CI/CD Tooling (<span class="code-inline">Brazil</span> & <span class="code-inline">Apollo</span>):</strong> Amazon built the <span class="code-inline">Brazil</span> build system and the <span class="code-inline">Apollo</span> deployment engine. Whenever an engineer commits code, the pipeline automatically compiles the artifact, executes comprehensive unit and integration test suites, performs automated security and compliance scans, and triggers progressive rollouts to isolated fleet cells.
+    </li>
+    <li>
+      <strong>Elimination of "Big-Bang" Risk:</strong> Decomposing monolithic releases into continuous micro-deployments drastically lowered deployment risk. Because each deployment contains only a minimal code diff, the blast radius of any failure is tiny. If an automated metric alarm detects elevated error rates or latency degradation, Apollo automatically halts the canary rollout and reverts to the previous stable state within seconds.
+    </li>
+    <li>
+      <strong>High-Frequency Cadence (11.7 Seconds):</strong> By reaching an average of <strong>one production deployment every 11.7 seconds</strong> across its microservices fleet, deployment was transformed from a stressful quarterly event into a routine, continuous background activity. This velocity empowers Amazon teams to conduct rapid A/B testing, gather real-time customer data, and iterate constantly without operational risk.
+    </li>
+  </ul>
+
+  <h2>4. Comparative Synthesis Matrix</h2>
+  
+  <table class="academic-table">
+    <thead>
+      <tr>
+        <th style="width: 18%;">Dimension</th>
+        <th style="width: 41%;">Netflix Case Study (Q1)</th>
+        <th style="width: 41%;">Amazon Challenge (Q2)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Triggering Catalyst</strong></td>
+        <td>2008 centralized database corruption causing a 3-day complete operational outage.</td>
+        <td>Early 2000s commercial growth gridlock, deployment trains, and frequent Obidos site crashes.</td>
+      </tr>
+      <tr>
+        <td><strong>Architectural Shift</strong></td>
+        <td>Monolithic application to cloud-native microservices on AWS with dedicated NoSQL stores.</td>
+        <td>Obidos monolith to decentralized Service-Oriented Architecture via the 2002 API Mandate.</td>
+      </tr>
+      <tr>
+        <td><strong>DevOps Methodology</strong></td>
+        <td><strong>Chaos Engineering:</strong> Simian Army (Chaos Monkey, Gorilla, Kong) in production.</td>
+        <td><strong>Two-Pizza Teams:</strong> <em>"You build it, you run it"</em> single-threaded ownership.</td>
+      </tr>
+      <tr>
+        <td><strong>Resilience Mechanism</strong></td>
+        <td>Circuit breakers (Hystrix), bulkheads, and graceful presentation degradation.</td>
+        <td>Cell-based architecture, automated canary analysis, and instant automated rollback (Apollo).</td>
+      </tr>
+      <tr>
+        <td><strong>Key Outcome</strong></td>
+        <td><strong>99.999% availability</strong> across global regions supporting &gt;260M subscribers.</td>
+        <td>Continuous deployment cadence averaging <strong>one release every 11.7 seconds</strong>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>5. Engineering Lessons & Academic Conclusion</h2>
+  <p>
+    The evolutionary trajectories of Netflix and Amazon demonstrate foundational principles of modern software engineering and DevOps:
+  </p>
+  <ul>
+    <li>
+      <strong>Conway's Law is Inevitable:</strong> High-performing microservice architectures cannot function within monolithic, siloed organizational structures. Amazon’s Two-Pizza teams and Netflix's culture of Freedom and Responsibility demonstrate that organizational restructuring (Reverse Conway Maneuver) is a mandatory prerequisite for architectural scalability.
+    </li>
+    <li>
+      <strong>Anti-Fragility over Fragile Perfection:</strong> In planetary-scale cloud systems, failures are statistically certain. Netflix’s Chaos Engineering proves that intentionally injecting failure and designing for graceful degradation produces resilient, self-healing platforms.
+    </li>
+    <li>
+      <strong>Small Batch Size De-risks Delivery:</strong> Releasing code in micro-batches (averaging every 11.7 seconds at Amazon) eradicates the catastrophic risk of "big-bang" releases, enabling continuous experimentation and sustainable competitive advantage.
+    </li>
+  </ul>
+
+  <div class="academic-footer">
+    <div>DevOps Continuous Assessment II (CA-II) &bull; Group Submission: Kshitiz Shah, Nitesh Ghimire, Nigel Francy, Omkar Kadam</div>
+    <div>Department of Computer Science & Engineering &bull; Formal Academic Report</div>
+  </div>
+
+</body>
+</html>

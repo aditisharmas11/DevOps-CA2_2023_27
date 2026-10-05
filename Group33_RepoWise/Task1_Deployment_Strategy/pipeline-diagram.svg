@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 280" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #64748b; }
+      .stage-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 700; fill: #ffffff; }
+      .box-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; fill: #334155; }
+      .box-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 8.5px; fill: #64748b; }
+      .arrow { stroke: #2563eb; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-head { fill: #2563eb; }
+      .stage-hdr { rx: 6px; ry: 6px; }
+      .card-body { rx: 6px; ry: 6px; fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.04)); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="950" height="280" fill="#f8fafc" rx="10" ry="10" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- Diagram Header -->
+  <text x="30" y="32" class="title">RepoWise Backend Service — Automated CI/CD Deployment Pipeline</text>
+  <text x="30" y="48" class="subtitle">Continuous Integration, Multi-Stage Containerization & Zero-Downtime Deployment Architecture</text>
+
+  <!-- STAGE 1: TRIGGER -->
+  <g transform="translate(30, 70)">
+    <rect width="150" height="180" class="card-body" />
+    <path d="M 0 0 L 150 0 L 150 34 L 0 34 Z" fill="#3b82f6" rx="6" />
+    <text x="75" y="22" text-anchor="middle" class="stage-title">1. Trigger Event</text>
+    
+    <rect x="12" y="48" width="126" height="34" rx="4" fill="#eff6ff" stroke="#bfdbfe" />
+    <text x="75" y="64" text-anchor="middle" class="box-text" font-weight="600">Git Push / PR</text>
+    <text x="75" y="76" text-anchor="middle" class="box-sub">branch: main</text>
+
+    <rect x="12" y="92" width="126" height="34" rx="4" fill="#f1f5f9" stroke="#cbd5e1" />
+    <text x="75" y="108" text-anchor="middle" class="box-text">Path Filtering</text>
+    <text x="75" y="120" text-anchor="middle" class="box-sub">paths: 'server/**'</text>
+
+    <rect x="12" y="136" width="126" height="30" rx="4" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="75" y="152" text-anchor="middle" class="box-text">Manual Dispatch</text>
+    <text x="75" y="161" text-anchor="middle" class="box-sub">workflow_dispatch</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="180" y1="160" x2="215" y2="160" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- STAGE 2: CI (LINT, PRISMA, TEST, BUILD) -->
+  <g transform="translate(225, 70)">
+    <rect width="210" height="180" class="card-body" />
+    <path d="M 0 0 L 210 0 L 210 34 L 0 34 Z" fill="#6366f1" rx="6" />
+    <text x="105" y="22" text-anchor="middle" class="stage-title">2. Continuous Integration</text>
+    
+    <rect x="15" y="46" width="180" height="26" rx="4" fill="#eef2ff" stroke="#c7d2fe" />
+    <text x="105" y="63" text-anchor="middle" class="box-text">Setup Node.js 22 & npm ci</text>
+
+    <rect x="15" y="78" width="180" height="26" rx="4" fill="#eef2ff" stroke="#c7d2fe" />
+    <text x="105" y="95" text-anchor="middle" class="box-text">Generate Prisma ORM Client</text>
+
+    <rect x="15" y="110" width="180" height="26" rx="4" fill="#eef2ff" stroke="#c7d2fe" />
+    <text x="105" y="127" text-anchor="middle" class="box-text">Vitest Unit & API Tests</text>
+
+    <rect x="15" y="142" width="180" height="26" rx="4" fill="#eef2ff" stroke="#c7d2fe" />
+    <text x="105" y="159" text-anchor="middle" class="box-text">TypeScript Build (tsc -> dist/)</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="435" y1="160" x2="470" y2="160" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- STAGE 3: DOCKER CONTAINERIZATION -->
+  <g transform="translate(480, 70)">
+    <rect width="200" height="180" class="card-body" />
+    <path d="M 0 0 L 200 0 L 200 34 L 0 34 Z" fill="#0284c7" rx="6" />
+    <text x="100" y="22" text-anchor="middle" class="stage-title">3. Package & Containerize</text>
+    
+    <rect x="15" y="48" width="170" height="34" rx="4" fill="#f0f9ff" stroke="#bae6fd" />
+    <text x="100" y="65" text-anchor="middle" class="box-text" font-weight="600">Multi-Stage Dockerfile</text>
+    <text x="100" y="76" text-anchor="middle" class="box-sub">builder & runner (Node 22)</text>
+
+    <rect x="15" y="92" width="170" height="34" rx="4" fill="#f0f9ff" stroke="#bae6fd" />
+    <text x="100" y="109" text-anchor="middle" class="box-text">GitHub Packages (GHCR)</text>
+    <text x="100" y="120" text-anchor="middle" class="box-sub">Login via GITHUB_TOKEN</text>
+
+    <rect x="15" y="136" width="170" height="30" rx="4" fill="#f0f9ff" stroke="#bae6fd" />
+    <text x="100" y="151" text-anchor="middle" class="box-text">Push Image Tags</text>
+    <text x="100" y="161" text-anchor="middle" class="box-sub">:latest, :sha-xxxxxxx</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="680" y1="160" x2="715" y2="160" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- STAGE 4: CD / DEPLOYMENT & HEALTHCHECK -->
+  <g transform="translate(725, 70)">
+    <rect width="195" height="180" class="card-body" />
+    <path d="M 0 0 L 195 0 L 195 34 L 0 34 Z" fill="#16a34a" rx="6" />
+    <text x="97" y="22" text-anchor="middle" class="stage-title">4. Deploy & Verify</text>
+    
+    <rect x="15" y="48" width="165" height="34" rx="4" fill="#f0fdf4" stroke="#bbf7d0" />
+    <text x="97" y="65" text-anchor="middle" class="box-text" font-weight="600">Kubernetes Cluster</text>
+    <text x="97" y="76" text-anchor="middle" class="box-sub">Rolling Update Trigger</text>
+
+    <rect x="15" y="92" width="165" height="34" rx="4" fill="#f0fdf4" stroke="#bbf7d0" />
+    <text x="97" y="109" text-anchor="middle" class="box-text">Zero-Downtime Rollout</text>
+    <text x="97" y="120" text-anchor="middle" class="box-sub">kubectl rollout status</text>
+
+    <rect x="15" y="136" width="165" height="30" rx="4" fill="#f0fdf4" stroke="#bbf7d0" />
+    <text x="97" y="151" text-anchor="middle" class="box-text">Automated Smoke Test</text>
+    <text x="97" y="161" text-anchor="middle" class="box-sub">curl -f http://.../health</text>
+  </g>
+</svg>

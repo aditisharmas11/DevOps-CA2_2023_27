@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: repowise-server
+  labels:
+    app: repowise-server
+    tier: backend
+    version: v1.0.0
+spec:
+  # High Availability: 3 Pod Replicas
+  replicas: 3
+  
+  # Zero-Downtime Rolling Update Strategy Configuration
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1        # Creates at most 1 additional pod above desired replica count
+      maxUnavailable: 0  # Guarantees 100% capacity: never terminates an old pod before new pod is ready
+      
+  selector:
+    matchLabels:
+      app: repowise-server
+      tier: backend
+
+  template:
+    metadata:
+      labels:
+        app: repowise-server
+        tier: backend
+        version: v1.0.0
+    spec:
+      containers:
+        - name: repowise-server
+          image: ghcr.io/kshitiz-shah/repowise-server:v1.0.0
+          imagePullPolicy: IfNotPresent
+          
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "5000"
+            - name: DATABASE_URL
+              value: "postgresql://repowise:repowise_dev_password@repowise-postgres:5432/repowise?schema=public"
+            - name: QDRANT_URL
+              value: "http://repowise-qdrant:6333"
+            - name: JWT_SECRET
+              value: "repowise_production_jwt_secret_token_key_2026"
+
+          # Resource Governance (prevents noisy neighbor issues)
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+
+          # Readiness Probe: Informs Kubernetes when the Pod is ready to accept user traffic
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+
+          # Liveness Probe: Automatically restarts the Pod if the application deadlocks
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3

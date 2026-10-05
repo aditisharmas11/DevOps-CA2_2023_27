@@ -1,0 +1,208 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "id": 1,
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "type": "stat",
+      "title": "Service Uptime (Last 1h)",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": null },
+              { "color": "yellow", "value": 95 },
+              { "color": "green", "value": 99 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"] },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area"
+      },
+      "targets": [
+        {
+          "expr": "avg_over_time(up{job=\"repowise-backend\"}[1h]) * 100",
+          "legendFormat": "Uptime %",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "type": "stat",
+      "title": "Current Request Throughput",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "blue", "value": null },
+              { "color": "green", "value": 10 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"] },
+        "colorMode": "value",
+        "graphMode": "area"
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{job=\"repowise-backend\"}[1m]))",
+          "legendFormat": "Total Req/sec",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "type": "stat",
+      "title": "Error Rate (HTTP 5xx %)",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 1 },
+              { "color": "red", "value": 5 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"] },
+        "colorMode": "value",
+        "graphMode": "area"
+      },
+      "targets": [
+        {
+          "expr": "(sum(rate(http_requests_total{job=\"repowise-backend\",status_code=~\"5..\"}[1m])) or vector(0)) / (sum(rate(http_requests_total{job=\"repowise-backend\"}[1m])) > 0) * 100",
+          "legendFormat": "5xx Error Rate",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "type": "stat",
+      "title": "P95 Latency",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 200 },
+              { "color": "red", "value": 500 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"] },
+        "colorMode": "value",
+        "graphMode": "area"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job=\"repowise-backend\"}[1m])) by (le)) * 1000",
+          "legendFormat": "p95 Duration",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "type": "timeseries",
+      "title": "Throughput by HTTP Status Code (Rate)",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "drawStyle": "line", "lineInterpolation": "smooth", "fillOpacity": 15 },
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{job=\"repowise-backend\"}[1m])) by (status_code)",
+          "legendFormat": "HTTP {{status_code}}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "type": "timeseries",
+      "title": "Latency Distribution: P50, P90, P99 Duration",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "drawStyle": "line", "lineInterpolation": "smooth", "fillOpacity": 10 },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket{job=\"repowise-backend\"}[1m])) by (le)) * 1000",
+          "legendFormat": "p50 (Median)",
+          "refId": "A"
+        },
+        {
+          "expr": "histogram_quantile(0.90, sum(rate(http_request_duration_seconds_bucket{job=\"repowise-backend\"}[1m])) by (le)) * 1000",
+          "legendFormat": "p90",
+          "refId": "B"
+        },
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket{job=\"repowise-backend\"}[1m])) by (le)) * 1000",
+          "legendFormat": "p99 (Tail)",
+          "refId": "C"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["repowise", "observability", "devops", "ca-2"],
+  "time": { "from": "now-30m", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "RepoWise Service Observability & RED Metrics Dashboard",
+  "version": 1
+}

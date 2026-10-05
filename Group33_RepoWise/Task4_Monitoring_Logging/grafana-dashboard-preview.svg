@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="100%">
+  <defs>
+    <style>
+      .dash-bg { fill: #111217; }
+      .panel-bg { fill: #181b1f; stroke: #262a30; stroke-width: 1.5; rx: 6px; }
+      .panel-hdr { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #ccccdc; }
+      .stat-val { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 26px; font-weight: 700; }
+      .stat-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; fill: #8e8e9e; }
+      .title-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #f0f0f5; }
+      .sub-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; fill: #8e8e9e; }
+      .axis-text { font-family: 'JetBrains Mono', Courier, monospace; font-size: 8px; fill: #52545c; }
+    </style>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#73bf69" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#73bf69" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5794f2" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#5794f2" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dashboard Background -->
+  <rect width="1000" height="480" class="dash-bg" rx="8" />
+
+  <!-- Top Navbar -->
+  <rect width="1000" height="44" fill="#141619" stroke="#22252b" stroke-width="1" />
+  <circle cx="26" cy="22" r="10" fill="#f97316" />
+  <text x="22" y="26" font-family="sans-serif" font-size="12" font-weight="900" fill="#ffffff">G</text>
+  <text x="46" y="27" class="title-text">RepoWise / Service Observability &amp; RED Metrics Dashboard</text>
+  <rect x="830" y="11" width="145" height="22" rx="4" fill="#1f2329" stroke="#343841" />
+  <text x="840" y="26" font-family="sans-serif" font-size="9.5" fill="#ccccdc">⏱ Last 30 minutes &bull; 5s</text>
+
+  <!-- ROW 1: 4 STAT PANELS (Uptime, Throughput, Errors, Latency) -->
+  
+  <!-- Panel 1: Uptime -->
+  <g transform="translate(20, 56)">
+    <rect width="225" height="110" class="panel-bg" />
+    <text x="16" y="26" class="panel-hdr">SERVICE UPTIME (1H)</text>
+    <text x="16" y="68" class="stat-val" fill="#73bf69">99.98%</text>
+    <text x="16" y="90" class="stat-sub">Target SLA: &gt; 99.90% &bull; <tspan fill="#73bf69">Healthy</tspan></text>
+  </g>
+
+  <!-- Panel 2: Request Rate -->
+  <g transform="translate(265, 56)">
+    <rect width="225" height="110" class="panel-bg" />
+    <text x="16" y="26" class="panel-hdr">CURRENT THROUGHPUT</text>
+    <text x="16" y="68" class="stat-val" fill="#5794f2">48.2 <tspan font-size="16">req/s</tspan></text>
+    <text x="16" y="90" class="stat-sub">HTTP 2xx: 99.9% &bull; Active conn: 12</text>
+  </g>
+
+  <!-- Panel 3: Error Rate (5xx) -->
+  <g transform="translate(510, 56)">
+    <rect width="225" height="110" class="panel-bg" />
+    <text x="16" y="26" class="panel-hdr">ERROR RATE (HTTP 5XX)</text>
+    <text x="16" y="68" class="stat-val" fill="#73bf69">0.02%</text>
+    <text x="16" y="90" class="stat-sub">Threshold: 1.00% &bull; <tspan fill="#73bf69">Nominal</tspan></text>
+  </g>
+
+  <!-- Panel 4: P95 Latency -->
+  <g transform="translate(755, 56)">
+    <rect width="225" height="110" class="panel-bg" />
+    <text x="16" y="26" class="panel-hdr">P95 LATENCY (DURATION)</text>
+    <text x="16" y="68" class="stat-val" fill="#f2cc0c">42.8 <tspan font-size="16">ms</tspan></text>
+    <text x="16" y="90" class="stat-sub">Median p50: 18ms &bull; p99: 110ms</text>
+  </g>
+
+  <!-- ROW 2: 2 TIME-SERIES GRAPHS -->
+
+  <!-- Graph 1: Throughput by Status Code -->
+  <g transform="translate(20, 180)">
+    <rect width="470" height="280" class="panel-bg" />
+    <text x="18" y="24" class="panel-hdr">THROUGHPUT BY HTTP STATUS CODE (RATE)</text>
+    
+    <!-- Y-Axis Labels -->
+    <text x="35" y="65" class="axis-text" text-anchor="end">60</text>
+    <text x="35" y="125" class="axis-text" text-anchor="end">40</text>
+    <text x="35" y="185" class="axis-text" text-anchor="end">20</text>
+    <text x="35" y="245" class="axis-text" text-anchor="end">0</text>
+
+    <!-- Grid lines -->
+    <line x1="45" y1="60" x2="445" y2="60" stroke="#262a30" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="45" y1="120" x2="445" y2="120" stroke="#262a30" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="45" y1="180" x2="445" y2="180" stroke="#262a30" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="45" y1="240" x2="445" y2="240" stroke="#343841" stroke-width="1" />
+
+    <!-- 200 OK Wave (Blue) -->
+    <path d="M 45 130 Q 95 100 145 120 T 245 90 T 345 110 T 445 95 L 445 240 L 45 240 Z" fill="url(#blueGrad)" />
+    <path d="M 45 130 Q 95 100 145 120 T 245 90 T 345 110 T 445 95" fill="none" stroke="#5794f2" stroke-width="2" />
+
+    <!-- 500 Error Line (Tiny flat red near bottom) -->
+    <line x1="45" y1="239" x2="445" y2="239" stroke="#f2495c" stroke-width="1.5" />
+
+    <!-- Legend -->
+    <rect x="50" y="256" width="8" height="8" rx="2" fill="#5794f2" />
+    <text x="64" y="263" font-family="sans-serif" font-size="8.5" fill="#ccccdc">HTTP 200 (OK)</text>
+
+    <rect x="150" y="256" width="8" height="8" rx="2" fill="#73bf69" />
+    <text x="164" y="263" font-family="sans-serif" font-size="8.5" fill="#ccccdc">HTTP 304 (Cached)</text>
+
+    <rect x="260" y="256" width="8" height="8" rx="2" fill="#f2495c" />
+    <text x="274" y="263" font-family="sans-serif" font-size="8.5" fill="#ccccdc">HTTP 500 (Internal Error)</text>
+  </g>
+
+  <!-- Graph 2: Latency Percentiles (p50, p90, p99) -->
+  <g transform="translate(510, 180)">
+    <rect width="470" height="280" class="panel-bg" />
+    <text x="18" y="24" class="panel-hdr">LATENCY DURATION: P50 (MEDIAN), P90, P99 PERCENTILES (MS)</text>
+    
+    <!-- Y-Axis Labels -->
+    <text x="35" y="65" class="axis-text" text-anchor="end">120ms</text>
+    <text x="35" y="125" class="axis-text" text-anchor="end">80ms</text>
+    <text x="35" y="185" class="axis-text" text-anchor="end">40ms</text>
+    <text x="35" y="245" class="axis-text" text-anchor="end">0ms</text>
+
+    <!-- Grid lines -->
+    <line x1="45" y1="60" x2="445" y2="60" stroke="#262a30" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="45" y1="120" x2="445" y2="120" stroke="#262a30" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="45" y1="180" x2="445" y2="180" stroke="#262a30" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="45" y1="240" x2="445" y2="240" stroke="#343841" stroke-width="1" />
+
+    <!-- p50 curve (Green area) -->
+    <path d="M 45 210 Q 95 215 145 205 T 245 212 T 345 208 T 445 210 L 445 240 L 45 240 Z" fill="url(#greenGrad)" />
+    <path d="M 45 210 Q 95 215 145 205 T 245 212 T 345 208 T 445 210" fill="none" stroke="#73bf69" stroke-width="2" />
+
+    <!-- p90 curve (Yellow) -->
+    <path d="M 45 170 Q 95 180 145 165 T 245 175 T 345 168 T 445 172" fill="none" stroke="#f2cc0c" stroke-width="1.8" />
+
+    <!-- p99 curve (Red spikes) -->
+    <path d="M 45 110 Q 95 85 145 130 T 245 75 T 345 120 T 445 90" fill="none" stroke="#f2495c" stroke-width="1.8" stroke-dasharray="4,2" />
+
+    <!-- Legend -->
+    <line x1="50" y1="260" x2="62" y2="260" stroke="#73bf69" stroke-width="2" />
+    <text x="68" y="263" font-family="sans-serif" font-size="8.5" fill="#ccccdc">p50 (~18ms)</text>
+
+    <line x1="150" y1="260" x2="162" y2="260" stroke="#f2cc0c" stroke-width="2" />
+    <text x="168" y="263" font-family="sans-serif" font-size="8.5" fill="#ccccdc">p90 (~45ms)</text>
+
+    <line x1="250" y1="260" x2="262" y2="260" stroke="#f2495c" stroke-width="2" stroke-dasharray="3,2" />
+    <text x="268" y="263" font-family="sans-serif" font-size="8.5" fill="#ccccdc">p99 (~98ms Tail)</text>
+  </g>
+</svg>

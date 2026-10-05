@@ -1,0 +1,40 @@
+# ==============================================================================
+# Systemd Service Unit Configuration for RepoWise Server
+# Managed automatically by Ansible - DO NOT EDIT MANUALLY
+# ==============================================================================
+
+[Unit]
+Description=RepoWise API Backend Service
+Documentation=https://github.com/kshitiz-shah/Repowise
+After=network.target docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+User={{ app_user }}
+Group={{ app_group }}
+WorkingDirectory={{ app_root_dir }}/app
+EnvironmentFile={{ app_root_dir }}/config/.env
+
+# Execute Node.js runtime with compiled JavaScript entry point
+ExecStart=/usr/bin/node dist/server.js
+
+# Automated restart behavior on failure
+Restart=always
+RestartSec=5s
+
+# Security Hardening Directives (Principle of Least Privilege)
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=read-only
+PrivateTmp=true
+
+# Standard I/O redirection to logging directory
+StandardOutput=append:{{ app_root_dir }}/logs/app_stdout.log
+StandardError=append:{{ app_root_dir }}/logs/app_stderr.log
+
+# Resource Limits
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

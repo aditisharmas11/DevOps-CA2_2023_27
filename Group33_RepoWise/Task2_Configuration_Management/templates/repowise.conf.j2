@@ -1,0 +1,54 @@
+# ==============================================================================
+# Nginx Reverse Proxy Configuration for RepoWise API Service
+# Managed automatically by Ansible - DO NOT EDIT MANUALLY
+# ==============================================================================
+
+upstream repowise_backend {
+    server 127.0.0.1:{{ app_port }};
+    keepalive 32;
+}
+
+server {
+    listen 80;
+    server_name {{ inventory_hostname }}.repowise.internal localhost;
+
+    # Maximum upload size for repository metadata uploads
+    client_max_body_size 50M;
+
+    # Access and Error Logging
+    access_log {{ app_root_dir }}/logs/nginx_access.log;
+    error_log {{ app_root_dir }}/logs/nginx_error.log warn;
+
+    # Gzip compression for API payloads
+    gzip on;
+    gzip_types application/json text/plain text/css application/javascript;
+    gzip_min_length 1000;
+
+    location / {
+        proxy_pass http://repowise_backend;
+        proxy_http_version 1.1;
+
+        # Standard Proxy Headers
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # WebSocket Support for real-time repository indexing logs
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+
+        # Timeouts for long-running AI code analysis queries
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 120s;
+        proxy_read_timeout 120s;
+    }
+
+    # Internal Healthcheck endpoint bypass
+    location /health {
+        proxy_pass http://repowise_backend/health;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        access_log off;
+    }
+}
