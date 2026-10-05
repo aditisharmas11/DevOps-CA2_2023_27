@@ -1,0 +1,30 @@
+# ---- service account ----
+app_user: airline
+app_group: airline
+app_uid: 10001
+
+# ---- layout on the server ----
+app_root: /opt/airline-api
+app_src_dir: "{{ app_root }}/app"          # code + dataset
+app_venv: "{{ app_root }}/venv"
+app_model_dir: "{{ app_root }}/models"
+app_log_dir: /var/log/airline-api
+app_config_dir: /etc/airline-api
+
+# ---- runtime ----
+app_version: v1
+app_port: 8000
+app_log_level: INFO
+app_min_roc_auc: 0.98                      # training quality gate
+
+# ---- packages ----
+common_packages:
+  - python3
+  - python3-venv
+  - python3-pip
+  - libgomp1          # OpenMP runtime needed by XGBoost
+  - curl
+  - git
+  - htop
+  - acl               # lets Ansible "become" an unprivileged user
+  - ca-certificates

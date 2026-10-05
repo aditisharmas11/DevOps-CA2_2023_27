@@ -1,0 +1,236 @@
+name: CI/CD - Airline Satisfaction API
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.11"
+  IMAGE_NAME: airline-api
+  MIN_ROC_AUC: "0.98"
+
+jobs:
+  # ------------------------------------------------------------------
+  # 1. Lint, train the model (quality gate) and run the API tests
+  # ------------------------------------------------------------------
+  test:
+    name: Lint, train & test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: requirements*.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Lint (ruff)
+        run: ruff check app training tests scripts
+
+      - name: Train model + quality gate (ROC-AUC >= ${{ env.MIN_ROC_AUC }})
+        run: python training/train.py --data airline_dataset.csv --out models/model.joblib --min-roc-auc $MIN_ROC_AUC
+
+      - name: Unit / API tests
+        env:
+          MODEL_PATH: models/model.joblib
+        run: pytest -v
+
+      - name: Model metrics to job summary
+        run: |
+          echo "### Model metrics (hold-out set)" >> $GITHUB_STEP_SUMMARY
+          python -c "import json;m=json.load(open('models/model.json'))['metrics'];print('| metric | value |\n|---|---|');[print(f'| {k} | {v} |') for k,v in m.items()]" >> $GITHUB_STEP_SUMMARY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: model
+          path: models/
+
+  # ------------------------------------------------------------------
+  # 2. Build the Docker image and smoke-test the running container
+  # ------------------------------------------------------------------
+  build:
+    name: Build & smoke-test image
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: ${{ env.IMAGE_NAME }}:ci
+          build-args: APP_VERSION=${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Smoke test the container
+        run: |
+          docker run -d --name api -p 8000:8000 $IMAGE_NAME:ci
+          for i in $(seq 1 30); do curl -fs localhost:8000/ready && break; sleep 2; done
+          curl -fs localhost:8000/version | tee version.json
+          curl -fs -X POST localhost:8000/predict -H 'Content-Type: application/json' -d '{
+            "Gender":"Female","Customer Type":"Loyal Customer","Age":41,"Type of Travel":"Business travel",
+            "Class":"Business","Flight Distance":2300,"Departure Delay in Minutes":0,"Inflight wifi service":5,
+            "Online boarding":5,"Seat comfort":5,"Inflight entertainment":5,"Leg room service":5}' | tee prediction.json
+          grep -q '"prediction":"satisfied"' prediction.json
+          curl -fs localhost:8000/metrics | grep airline_api_predictions_total
+          docker inspect --format '{{.State.Health.Status}}' api
+          docker image ls $IMAGE_NAME:ci
+
+      - name: Container logs
+        if: always()
+        run: docker logs api || true
+
+  # ------------------------------------------------------------------
+  # 3. Configuration management: run the Ansible playbook on the runner
+  # ------------------------------------------------------------------
+  ansible:
+    name: Ansible - configure runtime
+    needs: test
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ansible
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Ansible
+        run: pipx install ansible-core && ansible --version
+
+      - name: Syntax check
+        run: ansible-playbook -i inventory/local.ini site.yml --syntax-check
+
+      - name: Run playbook
+        run: ansible-playbook -i inventory/local.ini site.yml | tee ../ansible-run.log
+
+      - name: Run again - must report changed=0 (idempotent)
+        run: |
+          ansible-playbook -i inventory/local.ini site.yml | tee ../ansible-rerun.log
+          grep -E 'changed=0 ' ../ansible-rerun.log
+
+      - name: Verify what Ansible configured
+        run: |
+          id airline
+          ls -la /opt/airline-api /opt/airline-api/models
+          systemctl status airline-api --no-pager
+          curl -fs localhost:8000/version
+          cat /etc/motd
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ansible-logs
+          path: ansible-*.log
+
+  # ------------------------------------------------------------------
+  # 4. Deploy to a Kubernetes (kind) cluster: rolling update + rollback,
+  #    then Prometheus + Grafana with a dashboard screenshot
+  # ------------------------------------------------------------------
+  deploy-k8s:
+    name: Deploy to Kubernetes (kind) + monitoring
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build v1 and v2 images (from cache)
+        run: |
+          for v in v1 v2; do
+            docker buildx build --load -t $IMAGE_NAME:$v --build-arg APP_VERSION=$v \
+              --cache-from type=gha .
+          done
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: airline
+          config: k8s/kind-config.yaml
+
+      - name: Rolling update & rollback demo
+        env:
+          CLUSTER: kind
+          KIND_NAME: airline
+          SKIP_BUILD: "1"
+        run: bash scripts/k8s-rollout-demo.sh
+
+      - name: Deploy Prometheus + Grafana
+        run: |
+          kubectl apply -k monitoring/
+          kubectl -n monitoring rollout status deploy/prometheus --timeout=180s
+          kubectl -n monitoring rollout status deploy/grafana --timeout=180s
+          kubectl -n airline get pods,svc
+          kubectl -n monitoring get pods,svc
+
+      - name: Generate traffic, then roll v1 -> v2 again so the dashboard shows the update
+        run: |
+          pip install pandas requests
+          python scripts/load_test.py --url http://localhost:30080 --rps 10 --duration 240 --invalid-ratio 0.03 &
+          sleep 100
+          kubectl -n airline set image deployment/airline-api api=$IMAGE_NAME:v2
+          kubectl -n airline rollout status deployment/airline-api --timeout=180s
+          wait
+          curl -s 'http://localhost:30090/api/v1/query?query=sum(up{job="airline-api"})'
+
+      - name: Screenshot Grafana dashboard
+        run: |
+          mkdir -p docs/evidence
+          google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1800,1500 \
+            --virtual-time-budget=20000 --screenshot=docs/evidence/grafana-k8s.png \
+            'http://localhost:30300/d/airline-api/airline-satisfaction-api?orgId=1&from=now-10m&to=now&kiosk'
+          kubectl -n airline get deploy,rs,pods -o wide > docs/evidence/k8s-final-state.txt
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: k8s-evidence
+          path: docs/evidence/
+
+  # ------------------------------------------------------------------
+  # 5. Publish the image to GitHub Container Registry (main branch only)
+  # ------------------------------------------------------------------
+  publish:
+    name: Push image to GHCR
+    needs: [deploy-k8s, ansible]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,format=short
+            type=raw,value=latest
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: APP_VERSION=${{ github.sha }}
+          cache-from: type=gha

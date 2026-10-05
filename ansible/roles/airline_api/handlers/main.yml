@@ -1,0 +1,6 @@
+---
+- name: Restart airline-api
+  ansible.builtin.systemd_service:
+    name: airline-api
+    state: restarted
+    daemon_reload: true
