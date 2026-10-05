@@ -1,0 +1,6 @@
+---
+- name: Configure runtime environment for quote-service
+  hosts: appservers
+  become: true
+  roles:
+    - runtime

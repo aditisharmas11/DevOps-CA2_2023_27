@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#334155"/></marker>
+  </defs>
+  <rect width="980" height="380" fill="#ffffff"/>
+  <text x="490" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">CI/CD Pipeline - quote-service (GitHub Actions)</text>
+
+  <g font-size="14" text-anchor="middle" fill="#0f172a">
+    <rect x="20" y="80" width="120" height="70" rx="8" fill="#e2e8f0" stroke="#334155"/>
+    <text x="80" y="110">Developer</text><text x="80" y="130" font-size="12">git push / PR</text>
+
+    <rect x="190" y="80" width="130" height="70" rx="8" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="255" y="110">Test</text><text x="255" y="130" font-size="12">pytest</text>
+
+    <rect x="190" y="200" width="130" height="70" rx="8" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="255" y="230">Validate infra</text><text x="255" y="250" font-size="12">yamllint + ansible check</text>
+
+    <rect x="380" y="140" width="150" height="70" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="455" y="170">Build + Push</text><text x="455" y="190" font-size="12">Docker image to GHCR</text>
+
+    <rect x="590" y="140" width="150" height="70" rx="8" fill="#fef9c3" stroke="#a16207"/>
+    <text x="665" y="170">Deploy</text><text x="665" y="190" font-size="12">kubectl apply + rollout</text>
+
+    <rect x="800" y="80" width="160" height="70" rx="8" fill="#fee2e2" stroke="#b91c1c"/>
+    <text x="880" y="110">Rollback</text><text x="880" y="130" font-size="12">kubectl rollout undo</text>
+
+    <rect x="800" y="200" width="160" height="70" rx="8" fill="#ede9fe" stroke="#6d28d9"/>
+    <text x="880" y="230">Monitor</text><text x="880" y="250" font-size="12">Prometheus + Grafana</text>
+  </g>
+
+  <g stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M140 115 H190"/>
+    <path d="M80 150 V235 H190"/>
+    <path d="M320 115 H350 V160 H380"/>
+    <path d="M320 235 H350 V190 H380"/>
+    <path d="M530 175 H590"/>
+    <path d="M740 160 L800 120" stroke-dasharray="6 4"/>
+    <path d="M740 190 L800 230"/>
+  </g>
+  <text x="735" y="105" font-size="12" fill="#b91c1c">on failure</text>
+  <text x="20" y="330" font-size="13" fill="#475569">Push to main runs all stages. Pull requests run Test and Validate only. Each stage gates the next.</text>
+</svg>
