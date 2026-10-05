@@ -1,0 +1,9 @@
+.sm-footer { background: var(--sm-footer-bg); color: #cbd5e1; margin-top: 40px; }
+.sm-footer .container { padding: 32px 24px; }
+.cols { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 18px; }
+.brand { color: #fff; font-weight: 900; font-size: 22px; margin-bottom: 8px; }
+.title { color: #fff; font-weight: 700; margin-bottom: 10px; }
+.sm-footer a { color: #cbd5e1; text-decoration: none; display: block; margin: 6px 0; }
+.sm-footer a:hover { color: #fff; }
+.bottom { padding-top: 16px; font-size: 13px; color: #94a3b8; }
+

@@ -1,0 +1,9 @@
+.sm-header { background: #fff; border-bottom: 1px solid var(--sm-border); position: sticky; top: 0; z-index: 20; }
+.sm-header-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { font-weight: 900; font-size: 22px; color: var(--sm-color-primary); text-decoration: none; }
+.nav { display: flex; gap: 12px; align-items: center; }
+.join { padding: 10px 16px; }
+.tabs { gap: 18px; }
+.tab { color: var(--sm-text-body); text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; }
+.tab.active { color: var(--sm-color-primary); border-color: var(--sm-color-primary); }
+

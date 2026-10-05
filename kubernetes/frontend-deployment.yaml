@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: matrimonial-frontend
+  namespace: matrimonial
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: matrimonial-frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: matrimonial-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: your-dockerhub-user/matrimonial-frontend:latest
+          ports:
+            - containerPort: 80

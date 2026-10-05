@@ -1,0 +1,102 @@
+---
+- name: Configure Matrimonial Website Runtime
+  hosts: webservers
+  become: true
+  vars:
+    app_user: "matrimonial"
+    app_dir: "/opt/matrimonial"
+    app_repo: "https://github.com/Gunveer06/Matrimonial-Website.git"
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Install base packages
+      apt:
+        name:
+          - curl
+          - git
+          - unzip
+          - wget
+          - ca-certificates
+          - gnupg
+          - software-properties-common
+        state: present
+
+    - name: Install OpenJDK 17
+      apt:
+        name: openjdk-17-jdk
+        state: present
+
+    - name: Install Docker dependencies
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+        state: present
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Install Docker CE
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+
+    - name: Ensure Docker service is running
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Create application user
+      user:
+        name: "{{ app_user }}"
+        create_home: true
+        shell: /bin/bash
+        state: present
+
+    - name: Create app directory
+      file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: "0755"
+
+    - name: Create env file
+      copy:
+        dest: "{{ app_dir }}/.env"
+        content: |
+          APP_ENV=production
+          MYSQL_HOST=localhost
+          MYSQL_PORT=3306
+          MYSQL_DB=matrimonial_db
+          MONGO_HOST=localhost
+          MONGO_PORT=27017
+          JWT_SECRET=your_jwt_secret_here
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: "0600"
+
+    - name: Clone app repo
+      git:
+        repo: "{{ app_repo }}"
+        dest: "{{ app_dir }}/app"
+        version: main
+        update: yes
+      become_user: "{{ app_user }}"

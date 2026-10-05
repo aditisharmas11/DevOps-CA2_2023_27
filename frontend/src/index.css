@@ -1,0 +1,48 @@
+:root {
+  --sm-color-primary: #a86bff;
+  --sm-color-bg-alt: #f7f3ff;
+  --sm-text-title: #2d1a4a;
+  --sm-text-body: #4c3c6e;
+  --sm-border: #d5c9f0;
+  --sm-footer-bg: #0f172a;
+}
+
+body {
+  background: linear-gradient(180deg, #f5f0ff 0%, #fff 100%);
+  font-family: 'Poppins', sans-serif;
+  color: var(--sm-text-body);
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.sm-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(120, 60, 200, 0.1);
+}
+
+.sm-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.sm-btn-primary {
+  background: var(--sm-color-primary);
+  color: #fff;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.field span {
+  font-weight: 600;
+}
