@@ -1,0 +1,86 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  KUBECONFIG: ${{ secrets.KUBECONFIG }}
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          
+      - name: Build Spring Boot Backend
+        run: |
+          cd backend/heart-disease-backend
+          ./mvnw clean package -DskipTests
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Build React Frontend
+        run: |
+          cd frontend/heart-disease-app
+          npm install
+          npm run build
+
+  dockerize-and-push:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.DOCKER_USERNAME }}
+          password: ${{ env.DOCKER_PASSWORD }}
+
+      - name: Build & Push Backend Image
+        run: |
+          docker build -t gunveer06/heart-disease-backend:latest -f devops-submission/docker/backend/Dockerfile .
+          docker push gunveer06/heart-disease-backend:latest
+
+      - name: Build & Push Frontend Image
+        run: |
+          docker build -t gunveer06/heart-disease-frontend:latest -f devops-submission/docker/frontend/Dockerfile .
+          docker push gunveer06/heart-disease-frontend:latest
+
+  deploy-to-k8s:
+    needs: dockerize-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        
+      - name: Configure Kubernetes
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ env.KUBECONFIG }}" > ~/.kube/config
+          chmod 600 ~/.kube/config
+          
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f devops-submission/k8s/namespace-config-secret.yaml
+          kubectl apply -f devops-submission/k8s/backend.yaml
+          kubectl apply -f devops-submission/k8s/frontend.yaml
+          kubectl apply -f devops-submission/k8s/ingress.yaml
+          kubectl rollout restart deployment backend-deployment -n heart-disease-prod
+          kubectl rollout restart deployment frontend-deployment -n heart-disease-prod

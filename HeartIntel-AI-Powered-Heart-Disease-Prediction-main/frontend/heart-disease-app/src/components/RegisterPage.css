@@ -1,0 +1,87 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+    z-index: 1;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.auth-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #00ffaa;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth-input:focus {
+    box-shadow: 0 0 10px #00ffaa;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.neon-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: #00ffaa;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
+}
+
+.neon-btn:hover {
+    background: #00cc88;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 1);
+}
+
+.switch-auth {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.switch-auth a {
+    color: #00ffaa;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.switch-auth a:hover {
+    text-shadow: 0 0 10px #00ffaa;
+}
