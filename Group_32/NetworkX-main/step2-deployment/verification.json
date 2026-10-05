@@ -1,0 +1,36 @@
+{
+  "base_url": "https://networkx-devops-group32.onrender.com",
+  "checked_at_utc": "2026-10-05T16:23:46.893325+00:00",
+  "/health": {
+    "http_status": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "/ready": {
+    "http_status": 200,
+    "body": {
+      "status": "ready"
+    }
+  },
+  "/version": {
+    "http_status": 200,
+    "body": {
+      "commit": "4f25beb2114acbce635d13aee327570451d37e53"
+    }
+  },
+  "/docs": {
+    "http_status": 200
+  },
+  "/predict": {
+    "http_status": 200,
+    "rows": 12,
+    "features": 30,
+    "prediction_column": true
+  },
+  "/train": {
+    "http_status": 403,
+    "training_disabled": true
+  },
+  "result": "PASS"
+}

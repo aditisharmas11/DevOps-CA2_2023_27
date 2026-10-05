@@ -1,0 +1,9 @@
+apiVersion: 1
+providers:
+  - name: Task4
+    folder: Task 4
+    type: file
+    disableDeletion: true
+    updateIntervalSeconds: 10
+    options:
+      path: 'E:/Case Study Devops/Task4/dashboards'

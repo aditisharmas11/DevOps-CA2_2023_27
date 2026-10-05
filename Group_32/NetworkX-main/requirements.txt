@@ -1,0 +1,17 @@
+python-dotenv
+pandas
+numpy
+pymongo
+certifi
+pymongo[srv]
+scikit-learn
+mlflow
+pyaml
+dagshub
+fastapi
+prometheus-client==0.26.0
+uvicorn
+python-multipart
+
+
+##-e .

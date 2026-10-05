@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: networkx-devops-group32
+    runtime: docker
+    rootDir: NetworkX-main
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /ready
+    autoDeployTrigger: "off"
+    envVars:
+      - key: METRICS_TOKEN
+        sync: false
+      - key: ENABLE_TRAINING
+        value: "false"
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"

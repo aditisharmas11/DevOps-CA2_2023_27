@@ -1,0 +1,90 @@
+
+---
+- name: Configure Lex Orion application server
+  hosts: app_servers
+  become: yes
+
+  vars:
+    app_user: lexapp
+    app_dir: /opt/lex-orion
+    repo_url: https://github.com/Sreenair-1/devops.git
+
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install required system packages
+      apt:
+        name:
+          - python3
+          - python3-pip
+          - python3-venv
+          - git
+        state: present
+
+    - name: Create application user
+      user:
+        name: "{{ app_user }}"
+        system: yes
+        create_home: yes
+        shell: /usr/sbin/nologin
+
+    - name: Create application directory
+      file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: "0755"
+
+    - name: Clone application repository
+      command:
+        cmd: git clone --branch main https://github.com/Sreenair-1/devops.git /opt/lex-orion
+        creates: /opt/lex-orion/.git
+
+    - name: Set application directory ownership
+      file:
+        path: "{{ app_dir }}"
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        recurse: yes
+
+    - name: Create Python virtual environment
+      command:
+        cmd: python3 -m venv "{{ app_dir }}/.venv"
+        creates: "{{ app_dir }}/.venv/bin/python"
+
+    - name: Install Python dependencies
+      pip:
+        requirements: /opt/lex-orion/requirements.txt
+        virtualenv: /opt/lex-orion/.venv
+        extra_args: --default-timeout=300 --retries=10
+
+    - name: Create systemd service
+      copy:
+        dest: /etc/systemd/system/lex-orion.service
+        mode: "0644"
+        content: |
+          [Unit]
+          Description=Lex Orion Streamlit Application
+          After=network.target
+
+          [Service]
+          Type=simple
+          User={{ app_user }}
+          WorkingDirectory={{ app_dir }}
+          ExecStart={{ app_dir }}/.venv/bin/streamlit run app.py --server.address 0.0.0.0 --server.port 8501
+          Restart=always
+          RestartSec=5
+
+          [Install]
+          WantedBy=multi-user.target
+
+    - name: Enable and start application service
+      systemd:
+        name: lex-orion
+        enabled: yes
+        state: started
+        daemon_reload: yes

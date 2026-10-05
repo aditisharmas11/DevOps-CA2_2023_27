@@ -1,0 +1,44 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+venv/
+env/
+.venv/
+
+# Data, artifacts, logs, and models
+Artifacts/
+logs/
+mlruns/
+mlflow.db
+final_model/*
+!final_model/model.pkl
+!final_model/preprocessor.pkl
+prediction_output/
+Network_Data/*
+!Network_Data/phisingData.csv
+*.npy
+*.csv
+!valid_data/test.csv
+!Network_Data/phisingData.csv
+step2-deployment/*.log
+step2-deployment/.docker/
+/test_mongodb.py
+/app_out.txt
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+venv
+.env
+# Step 4 local monitoring secrets and evidence
+monitoring/secrets/
+monitoring/evidence/
+step4-changes.patch
+step4-changes.zip
