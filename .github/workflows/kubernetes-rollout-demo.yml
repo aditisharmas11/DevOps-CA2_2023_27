@@ -1,0 +1,48 @@
+
+name: ZenGen Kubernetes Rollout and Rollback Demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/kubernetes-rollout-demo.yml"
+
+jobs:
+  rollout-demo:
+    name: Kubernetes Deployment and Rollback
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create Kubernetes Cluster
+        uses: helm/kind-action@v1.12.0
+
+      - name: Create Initial Deployment
+        run: |
+          kubectl create deployment zengen-rollout-demo --image=nginx:1.27-alpine
+          kubectl rollout status deployment/zengen-rollout-demo --timeout=120s
+          kubectl get deployments
+          kubectl get pods
+
+      - name: Perform Rolling Update
+        run: |
+          kubectl set image deployment/zengen-rollout-demo nginx=nginx:1.28-alpine
+          kubectl rollout status deployment/zengen-rollout-demo --timeout=120s
+          kubectl rollout history deployment/zengen-rollout-demo
+
+      - name: Demonstrate Rollback
+        run: |
+          kubectl set image deployment/zengen-rollout-demo nginx=nginx:does-not-exist
+          if kubectl rollout status deployment/zengen-rollout-demo --timeout=45s; then
+            echo "Unexpected: invalid image rollout succeeded"
+            exit 1
+          else
+            echo "Expected failed rollout detected"
+          fi
+          kubectl rollout undo deployment/zengen-rollout-demo
+          kubectl rollout status deployment/zengen-rollout-demo --timeout=120s
+          kubectl get deployments
+          kubectl get pods

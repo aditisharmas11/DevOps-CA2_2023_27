@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 270 4.8% 95.9%;
+  --muted-foreground: 270 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 270 5.9% 90%;
+  --input: 270 5.9% 90%;
+  --primary: 270 76% 60%;     /* #8A4FFF - Purple */
+  --primary-foreground: 270 100% 99%;
+  --secondary: 290 76% 60%;   /* #C54FFF - Magenta/Purple */
+  --secondary-foreground: 290 100% 99%;
+  --accent: 250 76% 90%;      /* Lighter purple */
+  --accent-foreground: 250 10% 10%;
+  --destructive: 0 84.2% 60.2%; /* #E74C3C - Keep red for destructive */
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 270 76% 60%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 270 20% 10%;
+  --foreground: 270 10% 98%;
+  --muted: 270 15% 15.9%;
+  --muted-foreground: 270 10% 64.9%;
+  --popover: 270 20% 10%;
+  --popover-foreground: 270 10% 98%;
+  --card: 270 20% 10%;
+  --card-foreground: 270 10% 98%;
+  --border: 270 15% 20%;
+  --input: 270 15% 20%;
+  --primary: 270 80% 70%;
+  --primary-foreground: 270 10% 10%;
+  --secondary: 290 80% 65%;
+  --secondary-foreground: 290 10% 10%;
+  --accent: 260 50% 30%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 270 50% 60%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply max-w-[80%] mb-3 leading-relaxed p-3 rounded-[20px] relative break-words;
+  }
+  
+  .chat-message-user {
+    @apply ml-auto bg-primary text-white rounded-br-none;
+  }
+  
+  .chat-message-bot {
+    @apply mr-auto bg-accent text-accent-foreground rounded-bl-none;
+  }
+  
+  .progress-step {
+    @apply rounded-full h-8 w-8 flex items-center justify-center border-2;
+  }
+  
+  .progress-step.active {
+    @apply border-primary bg-primary text-white;
+  }
+  
+  .progress-step:not(.active) {
+    @apply border-gray-300 text-gray-600;
+  }
+}
+
+@layer utilities {
+  .link-hover {
+    @apply transition-colors duration-200 hover:text-primary hover:underline;
+  }
+}
