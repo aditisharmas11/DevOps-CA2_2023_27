@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 20% 98%;
+  --foreground: 240 10% 12%;
+  --muted: 250 15% 94%;
+  --muted-foreground: 240 5% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 12%;
+  --border: 240 10% 89%;
+  --input: 240 10% 89%;
+  --primary: 265 83% 58%;         /* #7C3AED - Calm Royal Purple */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 285 75% 55%;       /* Soft Magenta Purple */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 265 60% 94%;          /* Lavender tint */
+  --accent-foreground: 265 80% 40%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 265 83% 58%;
+  --radius: 0.75rem;
+
+  --chart-1: 265 83% 58%;
+  --chart-2: 285 75% 55%;
+  --chart-3: 200 80% 50%;
+  --chart-4: 150 70% 45%;
+  --chart-5: 35 90% 55%;
+}
+
+.dark {
+  --background: 250 25% 8%;       /* Deep calm violet-black */
+  --foreground: 240 10% 96%;
+  --muted: 250 20% 14%;
+  --muted-foreground: 240 10% 65%;
+  --popover: 250 22% 12%;
+  --popover-foreground: 240 10% 96%;
+  --card: 250 22% 11%;
+  --card-foreground: 240 10% 96%;
+  --border: 250 20% 18%;
+  --input: 250 20% 18%;
+  --primary: 265 85% 68%;         /* Vibrant lavender purple */
+  --primary-foreground: 250 25% 8%;
+  --secondary: 285 75% 65%;
+  --secondary-foreground: 250 25% 8%;
+  --accent: 265 40% 20%;
+  --accent-foreground: 265 85% 85%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 265 85% 68%;
+
+  --chart-1: 265 85% 68%;
+  --chart-2: 285 75% 65%;
+  --chart-3: 200 80% 60%;
+  --chart-4: 150 70% 55%;
+  --chart-5: 35 90% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply max-w-[85%] mb-3 leading-relaxed p-4 rounded-2xl relative break-words shadow-sm;
+  }
+  
+  .chat-message-user {
+    @apply ml-auto bg-primary text-primary-foreground rounded-br-sm;
+  }
+  
+  .chat-message-bot {
+    @apply mr-auto bg-muted text-foreground border border-border/60 rounded-bl-sm;
+  }
+  
+  .progress-step {
+    @apply rounded-full h-8 w-8 flex items-center justify-center border-2 text-xs font-semibold transition-all duration-200;
+  }
+  
+  .progress-step.active {
+    @apply border-primary bg-primary text-primary-foreground shadow-sm;
+  }
+  
+  .progress-step:not(.active) {
+    @apply border-border bg-card text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .link-hover {
+    @apply transition-colors duration-200 hover:text-primary hover:underline;
+  }
+}

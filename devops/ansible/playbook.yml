@@ -1,0 +1,38 @@
+
+---
+- name: Configure ZenGen Application Server
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install required system packages
+      package:
+        name:
+          - curl
+          - git
+        state: present
+
+    - name: Create ZenGen application directory
+      file:
+        path: /opt/zengen
+        state: directory
+        mode: "0755"
+
+    - name: Create application service user
+      user:
+        name: zengen
+        system: true
+        shell: /usr/sbin/nologin
+        create_home: false
+        state: present
+
+    - name: Create application configuration file
+      copy:
+        dest: /opt/zengen/app.conf
+        content: |
+          APP_NAME=ZenGen
+          PORT=5000
+          NODE_ENV=production
+        owner: root
+        group: root
+        mode: "0644"
